@@ -508,16 +508,6 @@
                                 <a href="#" class="btn-buy">Registrasi</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="box featured" data-aos="fade-up" data-aos-delay="300">
-                            <form>
-                                <input type="text" name="nim" placeholder="masukan nim..."></input>
-                            </form>
-                            <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Registrasi</a>
-                            </div>
-                        </div>
                     </div>         
 
                 </div>
