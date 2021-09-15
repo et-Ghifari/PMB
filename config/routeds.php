@@ -3,7 +3,7 @@
 
     switch ($modul) {
         default:
-            include 'index.php';
+            include APP.'dashboard.php';
             break;
     }
 ?>

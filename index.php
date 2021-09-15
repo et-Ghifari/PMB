@@ -63,7 +63,7 @@
             </nav><!-- .nav-menu -->
             
             <!-- <a class="appointment-btn scrollto" href="#"><span class="d-none d-md-inline"><b>HOME</b></span></a> -->
-            <a class="appointment-btn scrollto" href="login.php"><span class="d-none d-md-inline"><b>LOGIN</b></span></a>       
+            <a class="appointment-btn scrollto" href="auth/login.php"><b>LOGIN</b></a>       
         
         </div>
     </header>
@@ -346,7 +346,7 @@
                 <div class="text-center">
                     <h3>Belum Punya Akun?</h3>
                     <p></p>
-                    <a class="cta-btn scrollto" href="3">Buat Akun</a>
+                    <a class="cta-btn scrollto" href="auth/register.php">Buat Akun</a>
                 </div>
 
             </div>
