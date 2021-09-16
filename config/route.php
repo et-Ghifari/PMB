@@ -3,7 +3,6 @@
 
     switch ($modul) {
         default:
-            include 'index.php';
+            include 'home.php';
             break;
     }
-?>

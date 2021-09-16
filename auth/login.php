@@ -1,3 +1,7 @@
+<?php
+    require "function.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,14 +43,14 @@
             </div>
             <div align="center">
                 <div class="col-lg-4">
-                    <form action="../apps/controller/loginController.php" method="post" class="php-email-form">                       
+                    <form action="" method="post" class="php-email-form">                       
                         <div class="form-group">
                             <input type="email" class="form-control" name="email" id="email" placeholder="Alamat Email..." data-rule="email" require autofocus/>
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" name="password" id="password" placeholder="Password..." require/>
                         </div>                        
-                        <button type="submit"><b>BUAT AKUN</b></button>
+                        <button type="submit"><b>MASUK</b></button>
                     </form>
                     <div class="mt-5">
                         <p>Belum Punya Akun? <b><u><a style="color:cta" href="register.php">Buat Akun</a></u></b></p>

@@ -1,3 +1,13 @@
+<?php
+    require "function.php";
+
+    if(isset($_POST["tambah"])){
+        if(reg($_POST)){
+        }
+        echo mysqli_error($conn);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,21 +49,29 @@
             </div>
             <div align="center">
                 <div class="col-lg-4">
-                    <form action="../apps/controller/registerController.php" method="post" class="php-email-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Nama lengkap..." require autofocus/>
-                        </div>                        
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Alamat Email..." data-rule="email" require autofocus/>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Password..." require/>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Confirm password..." require/>
-                        </div>                         
-                        <button type="submit"><b>BUAT AKUN</b></button>
-                    </form>
+                <form action="" method="POST">
+                    <ul>
+                        <li>
+                            <label>Nama Lengkap</label>
+                            <input type="text" name="name" id="name" placeholder="Nama Lengkap..." require autofocus>
+                        </li>
+                        <li>
+                            <label>Alamat Email</label>
+                            <input type="text" name="email" id="email" placeholder="Alamat Email..." require autofocus>
+                        </li>
+                        <li>
+                            <label>Password</label>
+                            <input type="password" name="password" id="password" placeholder="Nama Lengkap..." require autofocus>
+                        </li>
+                        <li>
+                            <label>Konfirmasi Password</label>
+                            <input type="password" name="cpassword" id="cpassword" placeholder="Nama Lengkap..." require autofocus>
+                        </li>
+                        <li>
+                            <button type="submit" name="tambah">Tambah</button>
+                        </li>
+                    </ul>
+                </form>
                     <div class="mt-5">
                         <p>Sudah Punya Akun? <b><u><a style="color:cta" href="login.php">Masuk Akun</a></u></b></p>
                     </div>

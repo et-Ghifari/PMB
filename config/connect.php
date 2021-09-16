@@ -4,5 +4,4 @@
     $password = "";
     $database = "pendaftaran";
 
-    $conn = mysqli_connect($server,$username,$password,$database) or mysqli_connect_error();
-?>
+    $conn = mysqli_connect($server,$username,$password,$database) or die ("Koneksi gagal".mysqli_connect_error());
