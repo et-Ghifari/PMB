@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Sep 2021 pada 09.49
+-- Waktu pembuatan: 20 Sep 2021 pada 13.08
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 7.3.30
 
@@ -39,11 +39,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama`, `email`, `password`) VALUES
-(1, 'Wawan', 'wawan@gmail.com', '$2y$10$2GFc0uOkA6WinNNLCJ7yCuIZUfH2Q9/tt/MPckSb0YNii7tJrNjMa'),
-(2, 'Admin', 'admin@gmail.com', '$2y$10$bUaXV2CZfd2a2MARFcMOVuNrgH9fq3r//BXEepgJVsx/RUf2XI95m'),
-(4, 'Udin', 'udin@gmail.com', '$2y$10$GnogxhIJ2I1t.GHUgfEKie8wCD0f2VW5ePAx0Sz8Hg.VsADoznnaO'),
-(14, 'Bambang', 'bambang@gmail.com', '$2y$10$BLqsNkzQYo99RXdbZ6.2juOGYVQxQ4EXmeh4K1XYXaPqxNfYAibuC'),
-(18, 'Coba', 'coba@gmail.com', '$2y$10$1yJ1kRLal6KQKf6T/gDSI.QKavjrp9gDaJcHbsPkJGdp2pi45Q08G');
+(22, 'Wawan', 'wawan@gmail.com', '$2y$10$hZD6SXws.5jX/bWecGhuVe98bdxitaWzdK8G1WWeEFPsfx3tqsxZq');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +59,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
