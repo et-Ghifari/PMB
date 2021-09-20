@@ -1,13 +1,13 @@
 <?php
 require_once 'dbconnect.php';
 
-function register($regsiter){
+function register($register){
     global $conn;
 
-    $name = $regsiter["name"];
-    $email = strtolower($regsiter["email"]);
-    $password = mysqli_real_escape_string($conn, $regsiter["password"]);
-    $confirm = mysqli_real_escape_string($conn, $regsiter["confirm"]);
+    $name = $register["name"];
+    $email = strtolower($register["email"]);
+    $password = mysqli_real_escape_string($conn, $register["password"]);
+    $confirm = mysqli_real_escape_string($conn, $register["confirm"]);
 
     $rslt = mysqli_query($conn, "SELECT email FROM user WHERE email = '$email'");
     
@@ -34,4 +34,23 @@ function register($regsiter){
     mysqli_query ($conn, "INSERT INTO user (id_user, nama, email, password) VALUES ('','$name','$email','$password')");
     
     return mysqli_affected_rows($conn);
+}
+
+function login($login){
+    global $conn;
+
+    $email = $_POST["email"];
+        $password = $_POST["password"];
+
+        $result = mysqli_query($conn,"SELECT * FROM user WHERE email = '$email'");
+
+        if (mysqli_num_rows($result) === 1){
+
+            $row = mysqli_fetch_assoc($result);
+            if (password_verify($password, $row["password"])){
+                header("Location: index.php");
+                exit;
+            }
+        }
+        $error = true;
 }

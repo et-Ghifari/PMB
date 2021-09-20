@@ -2,21 +2,10 @@
     require_once 'auth/function.php';
 
     if(isset($_POST["login"])){
-        $email = $_POST ["email"];
-        $password = $_POST ["password"];
+        if(login($_POST)){
 
-        $result = mysqli_query($conn,"SELECT email FROM user WHERE email = '$email'");
-
-        if (mysqli_num_rows($result) === 1){
-
-            $row = mysqli_fetch_assoc($result);
-            if (password_verify($password, $row["password"])){
-                header("Location: index.php");
-                exit;
-            }
         }
-        $error = true;
-        
+        echo mysqli_error($conn);        
     }
 ?>
 
