@@ -63,7 +63,7 @@
             </nav><!-- .nav-menu -->
             
             <!-- <a class="appointment-btn scrollto" href="#"><span class="d-none d-md-inline"><b>HOME</b></span></a> -->
-            <a class="appointment-btn scrollto" href="auth/login.php"><b>LOGIN</b></a>       
+            <a class="appointment-btn scrollto" href="login.php"><b>LOGIN</b></a>       
         
         </div>
     </header>
