@@ -1,42 +1,28 @@
 <?php
     require_once 'auth/function.php';
 
-    if(isset($_POST["login"])){
+    if(isset($_POST['login'])){
         if(login($_POST)){
 
         }
         echo mysqli_error($conn);        
     }
 ?>
-
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>PMB | POLIBANG</title>
-    <!-- Favicons -->
-    <link href="assets/hm/img/favicon.png" rel="icon">
-    <link href="assets/hm/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
+    <link href="assets/image/favicon.png" rel="icon">
+    <link href="assets/image/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
-
-    <!-- Bootstrap Core Css -->
-    <link href="assets/ds/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Waves Effect Css -->
-    <link href="assets/ds/plugins/node-waves/waves.css" rel="stylesheet" />
-
-    <!-- Animation Css -->
-    <link href="assets/ds/plugins/animate-css/animate.css" rel="stylesheet" />
-
-    <!-- Custom Css -->
-    <link href="assets/ds/css/style.css" rel="stylesheet">
+    <link href="assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/plugins/node-waves/waves.css" rel="stylesheet" />
+    <link href="assets/plugins/animate-css/animate.css" rel="stylesheet" />
+    <link href="assets/css/style.ds.css" rel="stylesheet">
 </head>
-
 <body class="login-page">
     <div class="login-box">
         <div class="logo">
@@ -52,7 +38,7 @@
                             <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                        <input type="email" class="form-control" name="email" placeholder="Alamat Email" required autofocus>
+                            <input type="email" class="form-control" name="email" placeholder="Alamat Email" required autofocus>
                         </div>
                     </div>
                     <div class="input-group">
@@ -71,19 +57,10 @@
             </div>
         </div>
     </div>
-
-    <!-- Jquery Core Js -->
-    <script src="assets/ds/plugins/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core Js -->
-    <script src="assets/ds/plugins/bootstrap/js/bootstrap.js"></script>
-
-    <!-- Waves Effect Plugin Js -->
-    <script src="assets/ds/plugins/node-waves/waves.js"></script>
-
-    <!-- Custom Js -->
-    <script src="assets/ds/js/admin.js"></script>
-    <script src="assets/ds/js/pages/examples/sign-in.js"></script>
+    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.js"></script>
+    <script src="assets/plugins/node-waves/waves.js"></script>
+    <script src="assets/js/admin.js"></script>
+    <script src="assets/js/pages/examples/sign-in.js"></script>
 </body>
-
 </html>
