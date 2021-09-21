@@ -56,6 +56,9 @@
                 </form>
             </div>
         </div>
+        <div align="center">
+            <a href="index.php" type="button" class="btn btn-default btn-circle-lg waves-effect waves-circle waves-float"><i class="material-icons">navigate_before</i></a>
+        </div>
     </div>
     <script src="assets/plugins/jquery/jquery.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.js"></script>
