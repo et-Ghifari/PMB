@@ -14,6 +14,9 @@
             include_once APP.'editUserController.php';
             break;
 
+        case 'deleteUser' :
+            include_once APP.'deleteUserController.php';
+
         default :
             include_once APP.'homeController.php';
             break;

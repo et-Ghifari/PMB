@@ -17,8 +17,8 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>PMB | POLIBANG</title>
-    <link href="assets/image/favicon.png" rel="icon">
-    <link href="assets/image/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="assets/images/favicon.png" rel="icon">
+    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
     <link href="assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -41,7 +41,7 @@
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="name" placeholder="Nama Lengkap" required autofocus>
+                            <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required autofocus>
                         </div>
                     </div>
                     <div class="input-group">
