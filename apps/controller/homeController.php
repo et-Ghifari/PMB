@@ -1,5 +1,5 @@
 <?php
 
-$tittle = 'Dhasboard';
+$tittle  = 'Dhasboard';
 $content = VIEW . 'homeView.php';
 include VIEW . 'template.php';

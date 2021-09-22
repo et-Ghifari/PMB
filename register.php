@@ -5,8 +5,9 @@ if (isset($_POST['register'])) {
     if (register($_POST)) {
         echo
         '<script>
-                alert("Pembuatan akun berhasil!");
-            </script>';
+            alert("Pembuatan akun berhasil!")
+            document.location.href = "login.php"
+        </script>';
     }
     echo mysqli_error($conn);
 }

@@ -5,10 +5,10 @@ function register($register)
 {
     global $conn;
 
-    $nama = $register['nama'];
-    $email = strtolower($register['email']);
+    $nama     = $register['nama'];
+    $email    = strtolower($register['email']);
     $password = mysqli_real_escape_string($conn, $register['password']);
-    $confirm = mysqli_real_escape_string($conn, $register['confirm']);
+    $confirm  = mysqli_real_escape_string($conn, $register['confirm']);
 
     $rslt = mysqli_query($conn, 'SELECT `email` FROM `user` WHERE `email` = "' . $email . '"');
 
@@ -24,7 +24,7 @@ function register($register)
     if ($password != $confirm) {
         echo
         '<script>
-            alert("Konfirmasi password salah!");
+            alert("Konfirmasi password tidak sama!");
         </script>';
 
         return false;
@@ -49,8 +49,14 @@ function login($login)
 
         $row = mysqli_fetch_assoc($result);
         if (password_verify($password, $row['password'])) {
-            header('Location: dhasboard.php?m=home');
-            exit;
+            return mysqli_affected_rows($conn);
+        } else {
+            echo
+            '<script>
+                alert("Email atau password yang dimasukkan salah!");
+            </script>';
+
+            return false;
         }
     }
     $error = true;
