@@ -1,18 +1,19 @@
 <?php
-    require_once 'auth/function.php';
+require_once 'auth/function.php';
 
-    if(isset($_POST['register'])){
-        if(register($_POST)){
-            echo
-            '<script>
+if (isset($_POST['register'])) {
+    if (register($_POST)) {
+        echo
+        '<script>
                 alert("Pembuatan akun berhasil!");
             </script>';
-        }
-        echo mysqli_error($conn);
     }
+    echo mysqli_error($conn);
+}
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -26,6 +27,7 @@
     <link href="assets/plugins/animate-css/animate.css" rel="stylesheet" />
     <link href="assets/css/style.ds.css" rel="stylesheet">
 </head>
+
 <body class="signup-page">
     <div class="signup-box">
         <div class="logo">
@@ -68,7 +70,7 @@
                             <input type="password" class="form-control" name="confirm" minlength="6" placeholder="Konfirmasi Password" required>
                         </div>
                     </div>
-                    <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit"name="register">BUAT AKUN</button>
+                    <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" name="register">BUAT AKUN</button>
                     <div class="m-t-25 m-b--5 align-center">
                         <a href="login.php">Sudah Mempunyai Akun?</a>
                     </div>
@@ -82,4 +84,5 @@
     <script src="assets/js/admin.js"></script>
     <script src="assets/js/pages/examples/sign-up.js"></script>
 </body>
+
 </html>

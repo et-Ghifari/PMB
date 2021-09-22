@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -18,6 +19,7 @@
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
+
 <body>
     <!-- ======= Top Bar ======= -->
     <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
@@ -43,11 +45,11 @@
                     <li><a href="#panduan">Panduan</a></li>
                     <li><a href="#prodi">Prodi</a></li>
                     <li><a href="#fasilitas">Fasilitas</a></li>
-                    <li><a href="#biaya">Biaya</a></li>          
-                    <li><a href="#testimoni">Testimoni</a></li>          
+                    <li><a href="#biaya">Biaya</a></li>
+                    <li><a href="#testimoni">Testimoni</a></li>
                 </ul>
             </nav>
-            <a class="appointment-btn scrollto" href="login.php"><b>LOGIN</b></a>    
+            <a class="appointment-btn scrollto" href="login.php"><b>LOGIN</b></a>
         </div>
     </header>
     <!-- ======= Gambabar Sliding Fakultas ======= -->
@@ -82,7 +84,7 @@
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
                         <h3>Visi</h3>
-                        <p class="font-italic">Menjadi Politeknik yang Berdaya Saing Global, Professional dan beraqidah Ahlus Sunnah Wal Jama’ah.</p>            
+                        <p class="font-italic">Menjadi Politeknik yang Berdaya Saing Global, Professional dan beraqidah Ahlus Sunnah Wal Jama’ah.</p>
                         <h3>Misi</h3>
                         <ol>
                             <li>Menyelenggarakan dan mengembangkan pendidikan yang mampu berdaya saing dalam era globalisasi;</li>
@@ -95,70 +97,88 @@
             </div>
         </section>
         <!-- ======= Beasiswa ======= -->
-        <section id="beasiswa" class="counts">            
+        <section id="beasiswa" class="counts">
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
                     <h2>Beasiswa Kuliah</h2><br>
-                    <p>Bagi Lulusan SMA/MA/SMK yang masih pusing cari kuliah/kerja? Yuk gabung bersama kami di POLIBANG JEPARA <b><h6>buruan ambil <u>KESEMPATAN EMAS</u> ini</h6></b></p>
+                    <p>Bagi Lulusan SMA/MA/SMK yang masih pusing cari kuliah/kerja? Yuk gabung bersama kami di POLIBANG JEPARA <b>
+                            <h6>buruan ambil <u>KESEMPATAN EMAS</u> ini</h6>
+                        </b></p>
                 </div>
                 <div class="row no-gutters">
                     <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch">
                         <div class="count-box">
-                            <i class="icofont-book"></i>              
-                            <span><h4>Beasiswa Tahfidz (Hafal Al-Qur'an)</h4></span>
+                            <i class="icofont-book"></i>
+                            <span>
+                                <h4>Beasiswa Tahfidz (Hafal Al-Qur'an)</h4>
+                            </span>
                             <p>Bagi kalian yang Hafal Al-Qur'an<br></br>
-                            <strong>10 Juz GRATIS 2 SEMESTER</strong><br>
-                            <strong>15 Juz GRATIS 4 SEMESTER</strong><br>
-                            <strong>20 Juz GRATIS 6 SEMESTER</strong><br>
-                            <strong>30 Juz GRATIS 8 SEMESTER</strong><br></br>
-                            (dibuktikan dengan test hafalan)</p>  
-                        </div>            
-                    </div>              
+                                <strong>10 Juz GRATIS 2 SEMESTER</strong><br>
+                                <strong>15 Juz GRATIS 4 SEMESTER</strong><br>
+                                <strong>20 Juz GRATIS 6 SEMESTER</strong><br>
+                                <strong>30 Juz GRATIS 8 SEMESTER</strong><br></br>
+                                (dibuktikan dengan test hafalan)
+                            </p>
+                        </div>
+                    </div>
                     <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch">
                         <div class="count-box">
                             <i class="icofont-read-book"></i>
-                            <span><h4>Beasiswa Baca Kitab Kuning</h4></span>
+                            <span>
+                                <h4>Beasiswa Baca Kitab Kuning</h4>
+                            </span>
                             <p>Bagi kalian yang mampu Membaca dan Memahami isi kandung <strong>KITAB FATHUL MU`IN GRATIS 8 SEMESTER</strong><br></br>
-                            (dibuktikan dengan test membaca kitab kuning)</p>
+                                (dibuktikan dengan test membaca kitab kuning)</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch">
                         <div class="count-box">
                             <i class="icofont-brainstorming"></i>
-                            <span><h4>Beasiswa Prestasi Akademik</h4></span>
+                            <span>
+                                <h4>Beasiswa Prestasi Akademik</h4>
+                            </span>
                             <p>Bagi kalian yang memiliki Prestasi Akademik pada tingkat berikut :<br></br>
-                            <strong>KABUPATEN GRATIS 1 SEMESTER</strong><br>
-                            <strong>PROVINSI GRATIS 2 SEMESTER</strong><br>
-                            <strong>NASIONAL GRATIS 4 SEMESTER</strong><br></br>
-                            (dibuktikan dengan piagam kejuaraan asli)</p>
+                                <strong>KABUPATEN GRATIS 1 SEMESTER</strong><br>
+                                <strong>PROVINSI GRATIS 2 SEMESTER</strong><br>
+                                <strong>NASIONAL GRATIS 4 SEMESTER</strong><br></br>
+                                (dibuktikan dengan piagam kejuaraan asli)
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch">
                         <div class="count-box">
                             <i class="icofont-medal"></i>
-                            <span><h4>Beasiswa Prestasi Non Akademik</h4></span>
+                            <span>
+                                <h4>Beasiswa Prestasi Non Akademik</h4>
+                            </span>
                             <p>Bagi kalian yang memiliki Prestasi Non Akademik pada tingkat berikut :<br></br>
-                            <strong>KABUPATEN GRATIS 1 SEMESTER</strong><br>
-                            <strong>PROVINSI GRATIS 2 SEMESTER</strong><br>
-                            <strong>NASIONAL GRATIS 4 SEMESTER</strong><br></br>
-                            (dibuktikan dengan piagam kejuaraan asli)</p>
+                                <strong>KABUPATEN GRATIS 1 SEMESTER</strong><br>
+                                <strong>PROVINSI GRATIS 2 SEMESTER</strong><br>
+                                <strong>NASIONAL GRATIS 4 SEMESTER</strong><br></br>
+                                (dibuktikan dengan piagam kejuaraan asli)
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch">
                         <div class="count-box">
                             <i class="icofont-certificate-alt-1"></i>
-                            <span><h4>Beasiswa Prestasi Kelas</h4></span>              
+                            <span>
+                                <h4>Beasiswa Prestasi Kelas</h4>
+                            </span>
                             <p>Bagi kalian yang memiliki Rangking Pararel<br></br>
-                            <strong>RANGKING 1 GRATIS 4 SEMESTER</strong><br>
-                            <strong>RANGKING 2 GRATIS 2 SEMESTER</strong><br>
-                            <strong>RANGKING 3 GRATIS 1 SEMESTER</strong><br></br>
-                            (dibuktikan dengan Raport Asli & Surat Keterangan dari sekolah)</p>
+                                <strong>RANGKING 1 GRATIS 4 SEMESTER</strong><br>
+                                <strong>RANGKING 2 GRATIS 2 SEMESTER</strong><br>
+                                <strong>RANGKING 3 GRATIS 1 SEMESTER</strong><br></br>
+                                (dibuktikan dengan Raport Asli & Surat Keterangan dari sekolah)
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch">
                         <div class="count-box">
                             <i class="icofont-graduate-alt"></i>
-                            <span><h4>Alumni Balekambang</h4></span>              
+                            <span>
+                                <h4>Alumni Balekambang</h4>
+                            </span>
                             <p>Bagi alumni Balekambang yang memiliki <strong>RANGKING 1/2/3 PARAREL GRATIS 8 SEMESTER</strong> selain kategori diatas <strong>GRATIS 1 SEMESTER</strong></p>
                         </div>
                     </div>
@@ -187,7 +207,7 @@
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
                             <img src="assets/images/panduan/tahap3.png" class="img-fluid" alt="">
                         </div>
-                    </div>        
+                    </div>
                 </div>
                 <br>
                 <div class="row">
@@ -205,7 +225,7 @@
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
                             <img src="assets/images/panduan/tahap6.png" class="img-fluid" alt="">
                         </div>
-                    </div>      
+                    </div>
                 </div>
             </div>
         </section>
@@ -236,7 +256,7 @@
                                     <h4>D4 Akuntansi Keuangan Publik</h4>
                                     <p>Lulusan Prodi AKP merupakan Sarjana Terapan Akuntansi (S.Tr.Ak.)</p>
                                 </a>
-                            </li>          
+                            </li>
                         </ul>
                     </div>
                     <div class="col-lg-8">
@@ -261,7 +281,7 @@
                                 <img src="assets/images/akuntansi.jpg" alt="" class="img-fluid">
                                 <p>Program Studi Akuntansi Keuangan Publik Mengajarkan ilmu akuntansi dalam ruang lingkup organisasi sektor publik</p>
                                 <p>Sektor publik tersebut antara lain seperti organisasi pemerintahan pusat dan daerah, Lembaga Swadaya Masyarakat (LSM), Rumah Sakit, dan Pendidikan</p>
-                            </div>              
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -366,7 +386,7 @@
                             <h3>Kelas Reguler</h3>
                             <h4><sup>Rp. </sup>4.485.000</h4>
                             <ul>
-                            <li>Sumbangan Pengembangan Institusi<br>(Rp. 1.500.000)</li>
+                                <li>Sumbangan Pengembangan Institusi<br>(Rp. 1.500.000)</li>
                                 <li>Biaya Perkuliahan/Semester<br>(Rp. 2.500.000)</li>
                                 <li>Jas Almamater<br>(Rp. 200.000)</li>
                                 <li>Ospek<br>(Rp. 250.000)</li>
@@ -384,7 +404,7 @@
                             <h3>Kelas Karyawan</h3>
                             <h4><sup>Rp. </sup>4.985.000</h4>
                             <ul>
-                            <li>Sumbangan Pengembangan Institusi<br>(Rp. 1.500.000)</li>
+                                <li>Sumbangan Pengembangan Institusi<br>(Rp. 1.500.000)</li>
                                 <li>Biaya Perkuliahan/Semester<br>(Rp. 3.000.000)</li>
                                 <li>Jas Almamater<br>(Rp. 200.000)</li>
                                 <li>Ospek<br>(Rp. 250.000)</li>
@@ -408,16 +428,16 @@
                                 <li>Ospek<br>(Rp. 250.000)</li>
                                 <li>Majalah<br>(Rp. 35.000)</li>
                                 <li>Biaya Operasional/Bulan<br>(Rp. 600.000)</li>
-                                <li>Almari (Hak Pakai Selama di Pondok)<br>(Rp. 600.000)</li>                
+                                <li>Almari (Hak Pakai Selama di Pondok)<br>(Rp. 600.000)</li>
                             </ul>
                             <div class="btn-wrap">
                                 <a href="#" class="btn-buy">Registrasi</a>
                             </div>
                         </div>
-                    </div>         
+                    </div>
                 </div>
             </div>
-        </section>   
+        </section>
         <!-- ======= Testimoni ======= -->
         <section id="testimoni" class="testimonials">
             <div class="container" data-aos="fade-up">
@@ -428,9 +448,9 @@
                 <div class="owl-carousel testimonials-carousel" data-aos="fade-up" data-aos-delay="100">
                     <div class="testimonial-item">
                         <p><i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                        Politeknik Balekambang Jepara adalah salah satu tempat yang terbaik di Indonesia untuk mengembangkan Kompetensi dan Karakter.<br>
-                        Saya Berharap mahasiswa politeknik menjadi orang-orang sukses, baik dan kompeten.
-                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                            Politeknik Balekambang Jepara adalah salah satu tempat yang terbaik di Indonesia untuk mengembangkan Kompetensi dan Karakter.<br>
+                            Saya Berharap mahasiswa politeknik menjadi orang-orang sukses, baik dan kompeten.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                         </p>
                         <img src="assets/images/testimonials/wikan.jpg" class="testimonial-img">
                         <h3>Wikan Sakarinto, ST.,M.Sc.,Ph.D.,</h3>
@@ -438,9 +458,10 @@
                     </div>
                     <div class="testimonial-item">
                         <p><i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                        Pendidikan Politeknik Balekambang Jepara merupakan program pemerintah untuk menciptakan SDM yang memiliki keahlian baik. <br>
-                        Disini anda bisa belajar agama dan juga pendidikan  keahlian. Mari kuliah di Politeknik Balekambang  Jepara.
-                        <i class="bx bxs-quote-alt-right quote-icon-right"></i></p>
+                            Pendidikan Politeknik Balekambang Jepara merupakan program pemerintah untuk menciptakan SDM yang memiliki keahlian baik. <br>
+                            Disini anda bisa belajar agama dan juga pendidikan keahlian. Mari kuliah di Politeknik Balekambang Jepara.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
                         <img src="assets/images/testimonials/andang.jpg" class="testimonial-img"">
                         <h3>Andang Wahyu Triyanto,SE.,MM.,</h3>
                         <h4>Anggota DPRD Provinsi Jawa Tengah</h4>
@@ -449,25 +470,25 @@
             </div>
         </section>
         <!-- ======= Gallery ======= -->
-        <section id="galeri" class="gallery">
-            <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                    <h2>Galeri</h2><br>
-                    <p>Beberapa kegiatan Politeknik Balekambang Jepara</p>
-                </div>
-                <div class="owl-carousel gallery-carousel" data-aos="fade-up" data-aos-delay="100">
-                    <a href="assets/images/gallery/gallery-1.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-1.jpg" alt=""></a>
-                    <a href="assets/images/gallery/gallery-2.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-2.jpg" alt=""></a>
-                    <a href="assets/images/gallery/gallery-3.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-3.jpg" alt=""></a>
-                    <a href="assets/images/gallery/gallery-4.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-4.jpg" alt=""></a>
-                    <a href="assets/images/gallery/gallery-5.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-5.jpg" alt=""></a>
-                    <a href="assets/images/gallery/gallery-6.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-6.jpg" alt=""></a>
-                    <a href="assets/images/gallery/gallery-7.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-7.jpg" alt=""></a>
-                    <a href="assets/images/gallery/gallery-8.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-8.jpg" alt=""></a>
-                    <a href="assets/images/gallery/gallery-9.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-9.jpg" alt=""></a>
-                    <a href="assets/images/gallery/gallery-10.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-10.jpg" alt=""></a>
-                </div>
-            </div>
+        <section id=" galeri" class="gallery">
+                        <div class="container" data-aos="fade-up">
+                            <div class="section-title">
+                                <h2>Galeri</h2><br>
+                                <p>Beberapa kegiatan Politeknik Balekambang Jepara</p>
+                            </div>
+                            <div class="owl-carousel gallery-carousel" data-aos="fade-up" data-aos-delay="100">
+                                <a href="assets/images/gallery/gallery-1.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-1.jpg" alt=""></a>
+                                <a href="assets/images/gallery/gallery-2.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-2.jpg" alt=""></a>
+                                <a href="assets/images/gallery/gallery-3.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-3.jpg" alt=""></a>
+                                <a href="assets/images/gallery/gallery-4.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-4.jpg" alt=""></a>
+                                <a href="assets/images/gallery/gallery-5.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-5.jpg" alt=""></a>
+                                <a href="assets/images/gallery/gallery-6.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-6.jpg" alt=""></a>
+                                <a href="assets/images/gallery/gallery-7.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-7.jpg" alt=""></a>
+                                <a href="assets/images/gallery/gallery-8.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-8.jpg" alt=""></a>
+                                <a href="assets/images/gallery/gallery-9.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-9.jpg" alt=""></a>
+                                <a href="assets/images/gallery/gallery-10.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-10.jpg" alt=""></a>
+                            </div>
+                        </div>
         </section>
         <!-- ======= Kontak ======= -->
         <section id="kontak" class="contact">
@@ -499,8 +520,8 @@
                             <p>pmb@polibang.ac.id<br><br>
                                 <a href="https://www.youtube.com/channel/UCpqNI0TmjPTDbIg9H83d99g" class="youtube"><i class="bx bxl-youtube"></i></a>
                                 <a href="https://www.facebook.com/politbang/" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                <a href="https://www.instagram.com/politeknikbalekambang/" class="instagram"><i class="bx bxl-instagram"></i></a>                  
-                            </p>                          
+                                <a href="https://www.instagram.com/politeknikbalekambang/" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -512,12 +533,12 @@
                             <p>+1 5589 55488 55 (Kang Beken)</p>
                         </div>
                     </div>
-                </div>        
+                </div>
             </div>
         </section>
     </main>
     <!-- ======= Footer ======= -->
-    <footer id="footer">   
+    <footer id="footer">
         <div class="container">
             <div class="copyright">
                 &copy; Copyright <strong><span>POLITEKNIK BALEKAMBANG JEPARA</span></strong>. All Rights Reserved
@@ -539,4 +560,5 @@
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

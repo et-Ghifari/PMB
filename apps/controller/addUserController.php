@@ -1,7 +1,7 @@
 <?php
 require_once 'auth/function.php';
-if(isset($_POST['register'])){
-    if(register($_POST)){
+if (isset($_POST['register'])) {
+    if (register($_POST)) {
         echo
         '<script>
             alert("Pembuatan akun berhasil!");
@@ -11,5 +11,5 @@ if(isset($_POST['register'])){
 }
 
 $tittle = 'Tambah User';
-$content = VIEW.'addUserView.php';
-include VIEW.'template.php';
+$content = VIEW . 'addUserView.php';
+include VIEW . 'template.php';

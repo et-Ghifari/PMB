@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>PMB | POLIBANG</title>
     <link href="assets/images/favicon.png" rel="icon">
@@ -15,6 +16,7 @@
     <link href="assets/css/themes/all-themes.css" rel="stylesheet" />
 </head>
 </head>
+
 <body class="theme-cyan">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
@@ -32,7 +34,7 @@
             <p>Please wait...</p>
         </div>
     </div>
-    <div class="overlay"></div>  
+    <div class="overlay"></div>
     <!-- Top Bar -->
     <nav class="navbar">
         <div class="container-fluid">
@@ -84,7 +86,7 @@
                             <i class="material-icons">layers</i>
                             <span>Menu</span>
                         </a>
-                    </li>                  
+                    </li>
                 </ul>
             </div>
             <!-- Footer -->
@@ -100,9 +102,9 @@
     </section>
     <section class="content">
         <div class="container-fluid">
-            <?php 
-			    include $content;
-			?>            
+            <?php
+            include $content;
+            ?>
         </div>
     </section>
     <script src="assets/plugins/jquery/jquery.min.js"></script>
@@ -113,4 +115,5 @@
     <script src="assets/js/admin.js"></script>
     <script src="assets/js/demo.js"></script>
 </body>
+
 </html>

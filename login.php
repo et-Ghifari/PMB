@@ -1,15 +1,15 @@
 <?php
-    require_once 'auth/function.php';
+require_once 'auth/function.php';
 
-    if(isset($_POST['login'])){
-        if(login($_POST)){
-
-        }
-        echo mysqli_error($conn);        
+if (isset($_POST['login'])) {
+    if (login($_POST)) {
     }
+    echo mysqli_error($conn);
+}
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -23,6 +23,7 @@
     <link href="assets/plugins/animate-css/animate.css" rel="stylesheet" />
     <link href="assets/css/style.ds.css" rel="stylesheet">
 </head>
+
 <body class="login-page">
     <div class="login-box">
         <div class="logo">
@@ -66,4 +67,5 @@
     <script src="assets/js/admin.js"></script>
     <script src="assets/js/pages/examples/sign-in.js"></script>
 </body>
+
 </html>

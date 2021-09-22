@@ -4,4 +4,3 @@
     define('ASET', 'assets/');
     define('AUTH', 'auth/');
     define('VIEW', 'apps/view/');
-?>

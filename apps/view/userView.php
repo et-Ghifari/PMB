@@ -10,7 +10,7 @@
                 </ul>
             </div>
             <div class="body table-responsive">
-                <table class="table">                    
+                <table class="table">
                     <thead>
                         <tr>
                             <th>NAMA LENGKAP</th>
@@ -20,15 +20,15 @@
                     </thead>
                     <tbody>
                         <?php foreach ($users as $user) : ?>
-                        <tr>
-                            <td><?php echo $user['nama'] ?></td>
-                            <td><?php echo $user['email'] ?></td>
-                            <td>
-                                <a href="?m=editUser&id_user=<?php echo $user['id_user'] ?>" class="btn btn-primary waves-effect">edit</a>
-                                <a href="?m=deleteUser&id_user=<?php echo $user['id_user'] ?>" class="btn btn-danger waves-effect" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">delete</a>
-                            </td>
-                        </tr>
-                        <?php endforeach ?>                        
+                            <tr>
+                                <td><?php echo $user['nama'] ?></td>
+                                <td><?php echo $user['email'] ?></td>
+                                <td>
+                                    <a href="?m=editUser&id_user=<?php echo $user['id_user'] ?>" class="btn btn-primary waves-effect">edit</a>
+                                    <a href="?m=deleteUser&id_user=<?php echo $user['id_user'] ?>" class="btn btn-danger waves-effect" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">delete</a>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
                     </tbody>
                 </table>
             </div>
