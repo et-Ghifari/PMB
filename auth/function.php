@@ -34,7 +34,13 @@ function register($register)
 
     mysqli_query($conn, 'INSERT INTO `user` (`nama`, `email`, `password`) VALUES ("' . $nama . '","' . $email . '","' . $password . '")');
 
-    return mysqli_affected_rows($conn);
+    if (mysqli_affected_rows($conn)){
+        echo
+        '<script>
+            alert("Pembuatan akun berhasil!")
+            document.location.href = "login.php"
+        </script>';
+    }
 }
 
 function login($login)
@@ -49,7 +55,13 @@ function login($login)
 
         $row = mysqli_fetch_assoc($result);
         if (password_verify($password, $row['password'])) {
-            return mysqli_affected_rows($conn);
+            if (mysqli_affected_rows($conn)){
+                echo
+                '<script>
+                    alert("Login Berhasil!")
+                    document.location.href = "dhasboard.php?m=home"
+                </script>';
+            };
         } else {
             echo
             '<script>

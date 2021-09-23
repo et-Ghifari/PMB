@@ -4,7 +4,7 @@ if (isset($_POST['register'])) {
     if (register($_POST)) {
         echo
         '<script>
-            alert("Pembuatan akun berhasil!")
+            alert("Pemambahan user berhasil!")
             document.location.href = "?m=user"
         </script>';
     }

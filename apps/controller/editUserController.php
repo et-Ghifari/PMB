@@ -1,14 +1,21 @@
 <?php
 if ($_POST){
+    $idUSer   = $_GET['id_user'];
     $nama     = $_POST['nama'];
     $email    = $_POST['email'];
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
     $password = password_hash($password, PASSWORD_DEFAULT);
 
-    mysqli_query($conn, 'UPDATE `user` SET `nama` = "'.$nama.'", `email` = "'.$email.'", `password` = "'.$password.'" WHERE `email` = "'.$email.'"');
+    $result   = mysqli_query($conn, 'UPDATE `user` SET `nama` = "'.$nama.'", `email` = "'.$email.'", `password` = "'.$password.'" WHERE `id_user` = "'.$idUSer.'"');
 
-    header ('Location: ?m=user');    
+    if (mysqli_affected_rows($conn)){
+        echo
+        '<script>
+            alert("Perubahan user berhasil!")
+            document.location.href = "?m=user"
+        </script>';
+    }    
 }
 
 if ($_GET['id_user']){
