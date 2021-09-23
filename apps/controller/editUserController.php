@@ -6,7 +6,7 @@ if ($_POST) {
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
     $password = password_hash($password, PASSWORD_DEFAULT);
-    $result   = mysqli_query($conn, 'UPDATE `user` SET `nama` = "' . $nama . '", `email` = "' . $email . '", `password` = "' . $password . '" WHERE `id_user` = "' . $idUSer . '"');
+    mysqli_query($conn, 'UPDATE `user` SET `nama` = "' . $nama . '", `email` = "' . $email . '", `password` = "' . $password . '" WHERE `id_user` = "' . $idUSer . '"');
 
     if (mysqli_affected_rows($conn)) {
         echo

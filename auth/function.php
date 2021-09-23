@@ -34,13 +34,7 @@ function register($register)
 
     mysqli_query($conn, 'INSERT INTO `user` (`nama`, `email`, `password`) VALUES ("' . $nama . '","' . $email . '","' . $password . '")');
 
-    if (mysqli_affected_rows($conn)) {
-        echo
-        '<script>
-            alert("Pembuatan akun berhasil!")
-            document.location.href = "login.php"
-        </script>';
-    }
+    return mysqli_affected_rows($conn);
 }
 
 function login($login)
