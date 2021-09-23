@@ -3,11 +3,6 @@ require_once 'auth/function.php';
 
 if (isset($_POST['login'])) {
     if (login($_POST)) {
-        echo
-        '<script>
-            alert("Login Berhasil!")
-            document.location.href = "dhasboard.php?m=home"
-        </script>';
     }
     echo mysqli_error($conn);
 }

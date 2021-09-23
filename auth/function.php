@@ -34,7 +34,7 @@ function register($register)
 
     mysqli_query($conn, 'INSERT INTO `user` (`nama`, `email`, `password`) VALUES ("' . $nama . '","' . $email . '","' . $password . '")');
 
-    if (mysqli_affected_rows($conn)){
+    if (mysqli_affected_rows($conn)) {
         echo
         '<script>
             alert("Pembuatan akun berhasil!")
@@ -55,7 +55,7 @@ function login($login)
 
         $row = mysqli_fetch_assoc($result);
         if (password_verify($password, $row['password'])) {
-            if (mysqli_affected_rows($conn)){
+            if (mysqli_affected_rows($conn)) {
                 echo
                 '<script>
                     alert("Login Berhasil!")
