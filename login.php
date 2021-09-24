@@ -39,7 +39,7 @@ if (isset($_POST['login'])) {
                             <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="email" class="form-control" name="email" placeholder="Alamat Email" required autofocus>
+                            <input type="email" class="form-control" name="email" placeholder="Alamat Email" required>
                         </div>
                     </div>
                     <div class="input-group">

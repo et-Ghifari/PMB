@@ -44,7 +44,7 @@ if (isset($_POST['register'])) {
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required autofocus>
+                            <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required>
                         </div>
                     </div>
                     <div class="input-group">

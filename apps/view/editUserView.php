@@ -44,7 +44,10 @@
                     </div>
                     <div class="row clearfix">
                         <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
-                            <button type="submit" class="btn btn-primary m-t-15 waves-effect" name="simpan">SIMPAN</button>
+                            <div class="button-demo">
+                                <button type="submit" class="btn btn-success m-t-15 waves-effect" name="simpan">SIMPAN</button>
+                                <a type="button" href="?m=user" class="btn btn-danger m-t-15 waves-effect">KEMBALI</a>
+                            </div>
                         </div>
                     </div>
                 </form>
