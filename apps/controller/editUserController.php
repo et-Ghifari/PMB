@@ -1,27 +1,57 @@
 <?php
 if ($_POST) {
-    $idUSer   = $_GET['id_user'];
-    $nama     = $_POST['nama'];
-    $email    = $_POST['email'];
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $userid   = $_GET['usersId'];
+    $name     = $_POST['name'];
+    $email     = $_POST['email'];
+    $username    = $_POST['username'];
+    $password = $_POST['password'];
 
-    $password = password_hash($password, PASSWORD_DEFAULT);
-    mysqli_query($conn, 'UPDATE `user` SET `nama` = "' . $nama . '", `email` = "' . $email . '", `password` = "' . $password . '" WHERE `id_user` = "' . $idUSer . '"');
+    require_once 'auth/functionAuth.php';
 
-    if (mysqli_affected_rows($conn)) {
+    if (invalidEmail($email) != false) {
         echo
         '<script>
-            alert("Perubahan user berhasil!")
+            alert("Email tidak sesuai!")
             document.location.href = "?m=user"
         </script>';
+        exit();
+    }
+
+    if (invalidUid($username) != false) {
+        echo
+        '<script>
+            alert("Username tidak sesuai!")
+            document.location.href = "?m=user"
+        </script>';
+        exit();
+    }
+
+    if (uidExist($conn, $username, $email) != false) {
+        echo
+        '<script>
+            alert("Email/Usernamae sudah terdaftar!")
+            document.location.href = "?m=user"
+        </script>';
+        exit();
+    }
+
+    if (updateUser($conn, $userid, $name, $email, $username, $password)){
+        echo
+        '<script>
+            alert("Penambahan akun berhasil")
+            document.location.href = "?m=user"
+        </script>';
+        exit();
     }
 }
 
-if ($_GET['id_user']) {
+if ($_GET['usersId']) {
 
-    $idUSer = $_GET['id_user'];
-    $data   = mysqli_query($conn, 'SELECT `id_user`, `nama`, `email`, `password` FROM `user` WHERE `id_user` = "' . $idUSer . '"');
-    $nilai  = mysqli_fetch_assoc($data);
+    $userid = $_GET['usersId'];
+    
+    if (readUser($conn, $userid)){
+
+    }
 
     $tittle  = 'Ubah User';
     $content = VIEW . 'editUserView.php';

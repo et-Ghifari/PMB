@@ -1,3 +1,7 @@
+<?php
+
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -18,6 +22,22 @@
 </head>
 
 <body class="theme-cyan">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-cyan">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
     <div class="overlay"></div>
     <!-- Top Bar -->
     <nav class="navbar">
@@ -37,14 +57,16 @@
                     <img src="assets/images/user.png" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                    <div class="email">john.doe@example.com</div>
+                    <?php if (isset($_SESSION['useruid'])) { ?>
+                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['useruid'] ?></div>
+                        <div class="email"><?php echo $_SESSION['useremail'] ?></div>
+                    <?php } ?>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
                             <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="index.php"><i class="material-icons">input</i>Sign Out</a></li>
+                            <li><a href="auth/logoutAuth.php"><i class="material-icons">input</i>Log Out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -79,7 +101,7 @@
                     &copy; Copyright <strong><span>POLITEKNIK BALEKAMBANG JEPARA</span></strong>. All Rights Reserved
                 </div>
                 <div class="version">
-                    Designed by <b><a href="#">PMB | POLIBANG</a></b>
+                    Designed by <b><a href="index.php">PMB | POLIBANG</a></b>
                 </div>
             </div>
         </aside>
@@ -96,7 +118,12 @@
     <script src="assets/plugins/bootstrap-select/js/bootstrap-select.js"></script>
     <script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
     <script src="assets/plugins/node-waves/waves.js"></script>
+    <script src="assets/plugins/autosize/autosize.js"></script>
+    <script src="assets/plugins/momentjs/moment.js"></script>
+    <script src="assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
     <script src="assets/js/admin.js"></script>
+    <script src="assets/js/pages/forms/basic-form-elements.js"></script>
     <script src="assets/js/demo.js"></script>
 </body>
 

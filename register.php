@@ -1,16 +1,5 @@
 <?php
-require_once 'auth/function.php';
 
-if (isset($_POST['register'])) {
-    if (register($_POST)) {
-        echo
-        '<script>
-            alert("Pembuatan akun berhasil!")
-            document.location.href = "login.php"
-        </script>';        
-    }
-    echo mysqli_error($conn);
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,16 +24,35 @@ if (isset($_POST['register'])) {
             <a>Sign - <b>Up</b></a>
             <small>PMB | POLIBANG</small>
         </div>
+        <div class="logo">
+            <?php
+            if (isset($_GET['error'])) {
+                if ($_GET['error'] == 'mptinput') {
+                    echo '<small>Isi semua formulir yang ada!</small>';
+                } elseif ($_GET['error'] == 'invemail') {
+                    echo '<small>Email tidak sesuai!</small>';
+                } elseif ($_GET['error'] == 'invuid') {
+                    echo '<small>Username tidak sesuai!</small>';
+                } elseif ($_GET['error'] == 'cnfrmwrong') {
+                    echo '<small>Konfirmasi password tidak sama!</small>';
+                } elseif ($_GET['error'] == 'teken') {
+                    echo '<small>Email/Usernamae sudah terdaftar!</small>';
+                } elseif ($_GET['error'] == 'none') {
+                    echo '<small>Akun berhasil dibuat!</small>';
+                }
+            }
+            ?>
+        </div>        
         <div class="card">
             <div class="body">
-                <form action="" id="sign_up" method="POST">
+                <form action="auth/registerAuth.php" method="POST">
                     <div class="msg">Registrasi pembuatan akun baru</div>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required>
+                            <input type="text" class="form-control" name="name" placeholder="Nama Lengkap">
                         </div>
                     </div>
                     <div class="input-group">
@@ -52,7 +60,15 @@ if (isset($_POST['register'])) {
                             <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="email" class="form-control" name="email" placeholder="Alamat Email" required>
+                            <input type="email" class="form-control" name="email" placeholder="Alamat Email">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">account_circle</i>
+                        </span>
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="username" placeholder="Username">
                         </div>
                     </div>
                     <div class="input-group">
@@ -60,7 +76,7 @@ if (isset($_POST['register'])) {
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="password" minlength="6" placeholder="Password" required>
+                            <input type="password" class="form-control" name="password" minlength="6" placeholder="Password">
                         </div>
                     </div>
                     <div class="input-group">
@@ -68,7 +84,7 @@ if (isset($_POST['register'])) {
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="confirm" minlength="6" placeholder="Konfirmasi Password" required>
+                            <input type="password" class="form-control" name="confirm" minlength="6" placeholder="Konfirmasi Password">
                         </div>
                     </div>
                     <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" name="register">BUAT AKUN</button>
@@ -79,6 +95,7 @@ if (isset($_POST['register'])) {
             </div>
         </div>
     </div>
+    
     <script src="assets/plugins/jquery/jquery.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.js"></script>
     <script src="assets/plugins/node-waves/waves.js"></script>

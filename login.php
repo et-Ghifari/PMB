@@ -1,11 +1,5 @@
 <?php
-require_once 'auth/function.php';
 
-if (isset($_POST['login'])) {
-    if (login($_POST)) {
-    }
-    echo mysqli_error($conn);
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,16 +24,29 @@ if (isset($_POST['login'])) {
             <a>Log - <b>In</b></a>
             <small>PMB | POLIBANG</small>
         </div>
+        <div class="logo">
+            <?php
+            if (isset($_GET['error'])) {
+                if ($_GET['error'] == 'mptinput') {
+                    echo '<small>Isi semua formulir yang ada!</small>';
+                } elseif ($_GET['error'] == 'wrnguseremail') {
+                    echo '<small>Email/Username yang dimasukkan salah!</small>';
+                } elseif ($_GET['error'] == 'wrngpassword') {
+                    echo '<small>Password yang dimasukkan salah!</small>';
+                }
+            }
+            ?>
+        </div>
         <div class="card">
             <div class="body">
-                <form id="sign_in" method="POST">
+                <form id="sign_in" method="POST" action="auth/loginAuth.php">
                     <div class="msg">Masuk untuk memulai sesi anda</div>
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">email</i>
+                            <i class="material-icons">account_circle</i>
                         </span>
                         <div class="form-line">
-                            <input type="email" class="form-control" name="email" placeholder="Alamat Email" required>
+                            <input type="text" class="form-control" name="uid" placeholder="Username/Alamat Email">
                         </div>
                     </div>
                     <div class="input-group">
@@ -47,7 +54,7 @@ if (isset($_POST['login'])) {
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="password" placeholder="Password" required>
+                            <input type="password" class="form-control" name="password" placeholder="Password">
                         </div>
                     </div>
                     <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" name="login">MASUK</button>

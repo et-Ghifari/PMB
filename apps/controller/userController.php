@@ -1,6 +1,6 @@
 <?php
 
-$users = mysqli_query($conn, 'SELECT `id_user`, `nama`, `email` FROM `user`');
+$users = mysqli_query($conn, 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users`');
 
 $tittle  = 'Managemen User';
 $content = VIEW . 'userView.php';

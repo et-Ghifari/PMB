@@ -1,3 +1,7 @@
+<?php
+
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +53,13 @@
                     <li><a href="#testimoni">Testimoni</a></li>
                 </ul>
             </nav>
-            <a class="appointment-btn scrollto" href="login.php"><b>LOGIN</b></a>
+            <?php
+            if(isset($_SESSION['useremail'])){
+                echo '<a class="appointment-btn scrollto" href="dhasboard.php?m=home"><b>HOME</b></a>';
+            }else{
+                echo '<a class="appointment-btn scrollto" href="login.php"><b>LOGIN</b></a>';
+            }
+            ?>
         </div>
     </header>
     <!-- ======= Gambabar Sliding Fakultas ======= -->
@@ -544,7 +554,7 @@
                 &copy; Copyright <strong><span>POLITEKNIK BALEKAMBANG JEPARA</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
-                Designed by <b><a href="#">PMB | POLIBANG</a></b>
+                Designed by <b><a href="index.php">PMB | POLIBANG</a></b>
             </div>
         </div>
     </footer>

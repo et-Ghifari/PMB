@@ -1,10 +1,10 @@
 <?php
-if ($_GET['id_user']) {
-    $id_user = $_GET['id_user'];
+if ($_GET['usersId']) {
+    $userid = $_GET['usersId'];
 
-    mysqli_query($conn, 'DELETE FROM `user` WHERE `id_user` = "' . $id_user . '"');
+    require_once 'auth/functionAuth.php';
 
-    if (mysqli_affected_rows($conn)) {
+    if (deleteUser($conn, $userid)){
         echo
         '<script>
             alert("User berhasil dihapus!")
