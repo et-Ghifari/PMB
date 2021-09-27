@@ -7,11 +7,11 @@ if(!isset($_SESSION['useremail'])){
 }
 
 if (isset($_POST['register'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
+    $name     = $_POST['name'];
+    $email    = $_POST['email'];
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $confirm = $_POST['confirm'];
+    $confirm  = $_POST['confirm'];
 
     require_once 'auth/functionAuth.php';
 

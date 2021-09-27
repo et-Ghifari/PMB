@@ -9,8 +9,8 @@ if(!isset($_SESSION['useremail'])){
 if ($_POST) {
     $userid   = $_GET['usersId'];
     $name     = $_POST['name'];
-    $email     = $_POST['email'];
-    $username    = $_POST['username'];
+    $email    = $_POST['email'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
     require_once 'auth/functionAuth.php';
@@ -54,8 +54,7 @@ if ($_POST) {
 
 if ($_GET['usersId']) {
 
-    $userid = $_GET['usersId'];
-    
+    $userid = $_GET['usersId'];    
     $data   = mysqli_query($conn, 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid`, `usersPwd` FROM `users` WHERE `usersId` = "' . $userid . '"');
     $nilai  = mysqli_fetch_assoc($data);
 

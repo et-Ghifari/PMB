@@ -34,7 +34,7 @@ function pwdMatch($password, $confirm)
 
 function uidExist($conn, $email, $username)
 {
-    $sql = 'SELECT `usersEmail`, `usersUid`, `usersPwd` FROM `users` WHERE `usersUid` = ? OR `usersEmail` = ?;';
+    $sql  = 'SELECT `usersEmail`, `usersUid`, `usersPwd` FROM `users` WHERE `usersUid` = ? OR `usersEmail` = ?;';
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -58,7 +58,7 @@ function uidExist($conn, $email, $username)
 
 function createUser($conn, $name, $email, $username, $password)
 {
-    $sql = 'INSERT INTO `users` (`usersName`, `usersEmail`, `usersUid`, `usersPwd`) VALUES (?, ?, ?, ?);';
+    $sql  = 'INSERT INTO `users` (`usersName`, `usersEmail`, `usersUid`, `usersPwd`) VALUES (?, ?, ?, ?);';
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -94,7 +94,7 @@ function invalidLogin($conn, $username, $password)
     }
 
     $pwdHashed = $uidExists['usersPwd'];
-    $checkPwd = password_verify($password, $pwdHashed);
+    $checkPwd  = password_verify($password, $pwdHashed);
 
     if ($checkPwd == false) {
         header('Location: ../login.php?error=wrngpassword');
