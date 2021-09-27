@@ -38,6 +38,11 @@ if (isset($_POST['register'])) {
     }
 
     if (createUser($conn, $name, $email, $username, $password)){
-        header('Location: ../register.php?error=none');
+        echo
+        '<script>
+            alert("Pembuatan akun berhasil!!")
+            document.location.href = "../login.php"
+        </script>';
+        exit();
     }
 }

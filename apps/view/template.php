@@ -54,7 +54,7 @@ session_start();
             <!-- Informasi User -->
             <div class="user-info">
                 <div class="image">
-                    <img src="assets/images/user.png" width="48" height="48" alt="User" />
+                    <img src="assets/images/users.png" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
                     <?php if (isset($_SESSION['useruid'])) { ?>
