@@ -1,6 +1,5 @@
 <?php
 
-
 function emptyInputRegister($name, $email, $username, $password, $confirm)
 {
     if (empty($name) || empty($email) || empty($username) || empty($password) || empty($confirm)) {
@@ -104,23 +103,10 @@ function invalidLogin($conn, $username, $password)
         session_start();
         $_SESSION['useruid'] = $uidExists['usersUid'];
         $_SESSION['useremail'] = $uidExists['usersEmail'];
-        echo
-        '<script>
-            alert("Login Berhasil!")
-            document.location.href = "../dhasboard.php?m=home.php"
-        </script>';
+
+        return mysqli_affected_rows($conn);
         exit();
     }
-}
-
-function readUSer($conn, $userid){
-    $data   = mysqli_query($conn, 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid`, `usersPwd` FROM `users` WHERE `usersId` = "' . $userid . '"');
-    $nilai  = mysqli_fetch_assoc($data);
-
-    return mysqli_affected_rows($conn);
-    exit();
-
-
 }
 
 function updateUser($conn, $userid, $name, $email, $username, $password)

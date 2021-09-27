@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['useremail'])){
+    header ('location: login.php');
+    exit;
+}
+
 if ($_POST) {
     $userid   = $_GET['usersId'];
     $name     = $_POST['name'];
@@ -49,9 +56,8 @@ if ($_GET['usersId']) {
 
     $userid = $_GET['usersId'];
     
-    if (readUser($conn, $userid)){
-
-    }
+    $data   = mysqli_query($conn, 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid`, `usersPwd` FROM `users` WHERE `usersId` = "' . $userid . '"');
+    $nilai  = mysqli_fetch_assoc($data);
 
     $tittle  = 'Ubah User';
     $content = VIEW . 'editUserView.php';

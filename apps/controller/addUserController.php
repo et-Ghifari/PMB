@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['useremail'])){
+    header ('location: login.php');
+    exit;
+}
 
 if (isset($_POST['register'])) {
     $name = $_POST['name'];

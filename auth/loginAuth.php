@@ -14,6 +14,11 @@ if (isset($_POST['login'])){
     }
 
     if (invalidLogin($conn, $username, $password) != false){
+        echo
+        '<script>
+            alert("Login Berhasil!")
+            document.location.href = "../dhasboard.php?m=home.php"
+        </script>';
         exit();
     }
 }
