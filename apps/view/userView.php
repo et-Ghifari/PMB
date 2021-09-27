@@ -4,7 +4,7 @@
             <div class="header">
                 <h2><?php echo $tittle ?></h2>
                 <ul class="header-dropdown m-r-0 m-t-0">
-                    <li>
+                    <li class="button-demo">
                         <a href="?m=addUser" class="btn btn-success waves-effect">Tambah</a>
                     </li>
                 </ul>
