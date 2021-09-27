@@ -42,7 +42,7 @@
                 }
             }
             ?>
-        </div>        
+        </div>
         <div class="card">
             <div class="body">
                 <form action="auth/registerAuth.php" method="POST">
@@ -95,7 +95,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="assets/plugins/jquery/jquery.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.js"></script>
     <script src="assets/plugins/node-waves/waves.js"></script>

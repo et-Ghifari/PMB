@@ -54,9 +54,9 @@ session_start();
                 </ul>
             </nav>
             <?php
-            if(isset($_SESSION['useremail'])){
+            if (isset($_SESSION['useremail'])) {
                 echo '<a class="appointment-btn scrollto" href="dhasboard.php?m=home"><b>HOME</b></a>';
-            }else{
+            } else {
                 echo '<a class="appointment-btn scrollto" href="login.php"><b>LOGIN</b></a>';
             }
             ?>
