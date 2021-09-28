@@ -24,23 +24,20 @@
             <a>Log - <b>In</b></a>
             <small>PMB | POLIBANG</small>
         </div>
-        <div class="logo">
-            <?php
-            if (isset($_GET['error'])) {
-                if ($_GET['error'] == 'mptinput') {
-                    echo '<small>Isi semua formulir yang ada!</small>';
-                } elseif ($_GET['error'] == 'wrnguseremail') {
-                    echo '<small>Email/Username yang dimasukkan salah!</small>';
-                } elseif ($_GET['error'] == 'wrngpassword') {
-                    echo '<small>Password yang dimasukkan salah!</small>';
-                }
-            }
-            ?>
-        </div>
         <div class="card">
             <div class="body">
                 <form id="sign_in" method="POST" action="auth/loginAuth.php">
-                    <div class="msg">Masuk untuk memulai sesi anda</div>
+                    <?php
+                    if (isset($_GET['error'])) {
+                        if ($_GET['error'] == 'mptinput') {
+                            echo '<div class="alert alert-danger"><strong>Isi semua formulir yang ada!</strong></div>';
+                        } elseif ($_GET['error'] == 'wrnguseremail') {
+                            echo '<div class="alert alert-danger"><strong>Email/Username yang dimasukkan salah!</strong></div>';
+                        } elseif ($_GET['error'] == 'wrngpassword') {
+                            echo '<div class="alert alert-danger"><strong>Password yang dimasukkan salah!</strong></div>';
+                        }
+                    }
+                    ?>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">account_circle</i>

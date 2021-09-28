@@ -49,7 +49,7 @@
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="password" name="password" class="form-control" minlength="6" value="<?php echo $nilai['usresPwd'] ?>">
+                                    <input type="password" name="password" class="form-control">
                                 </div>
                             </div>
                         </div>

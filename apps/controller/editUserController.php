@@ -33,15 +33,6 @@ if ($_POST) {
         exit();
     }
 
-    if (uidExist($conn, $username, $email) != false) {
-        echo
-        '<script>
-            alert("Email/Usernamae sudah terdaftar!")
-            document.location.href = "?m=user"
-        </script>';
-        exit();
-    }
-
     if (updateUser($conn, $userid, $name, $email, $username, $password)){
         echo
         '<script>

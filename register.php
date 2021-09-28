@@ -24,29 +24,24 @@
             <a>Sign - <b>Up</b></a>
             <small>PMB | POLIBANG</small>
         </div>
-        <div class="logo">
-            <?php
-            if (isset($_GET['error'])) {
-                if ($_GET['error'] == 'mptinput') {
-                    echo '<small>Isi semua formulir yang ada!</small>';
-                } elseif ($_GET['error'] == 'invemail') {
-                    echo '<small>Email tidak sesuai!</small>';
-                } elseif ($_GET['error'] == 'invuid') {
-                    echo '<small>Username tidak sesuai!</small>';
-                } elseif ($_GET['error'] == 'cnfrmwrong') {
-                    echo '<small>Konfirmasi password tidak sama!</small>';
-                } elseif ($_GET['error'] == 'teken') {
-                    echo '<small>Email/Usernamae sudah terdaftar!</small>';
-                } elseif ($_GET['error'] == 'none') {
-                    echo '<small>Akun berhasil dibuat!</small>';
-                }
-            }
-            ?>
-        </div>
         <div class="card">
             <div class="body">
                 <form action="auth/registerAuth.php" method="POST">
-                    <div class="msg">Registrasi pembuatan akun baru</div>
+                    <?php
+                    if (isset($_GET['error'])) {
+                        if ($_GET['error'] == 'mptinput') {
+                            echo '<div class="alert alert-danger"><strong>Isi semua formulir yang ada!</strong></div>';
+                        } elseif ($_GET['error'] == 'invemail') {
+                            echo '<div class="alert alert-danger"><strong>Email tidak sesuai!</strong></div>';
+                        } elseif ($_GET['error'] == 'invuid') {
+                            echo '<div class="alert alert-danger"><strong>Username tidak sesuai!</strong></div>';
+                        } elseif ($_GET['error'] == 'cnfrmwrong') {
+                            echo '<div class="alert alert-danger"><strong>Konfirmasi password tidak sama!</strong></div>';
+                        } elseif ($_GET['error'] == 'teken') {
+                            echo '<div class="alert alert-danger"><strong>Email/Usernamae sudah terdaftar!</strong></div>';
+                        }
+                    }
+                    ?>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
@@ -76,7 +71,7 @@
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="password" minlength="6" placeholder="Password">
+                            <input type="password" class="form-control" name="password" placeholder="Password">
                         </div>
                     </div>
                     <div class="input-group">
@@ -84,7 +79,7 @@
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="confirm" minlength="6" placeholder="Konfirmasi Password">
+                            <input type="password" class="form-control" name="confirm" placeholder="Konfirmasi Password">
                         </div>
                     </div>
                     <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" name="register">BUAT AKUN</button>

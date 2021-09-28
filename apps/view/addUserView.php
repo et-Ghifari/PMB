@@ -37,7 +37,7 @@
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="text" name="username" class="form-control" placeholder="Alamat Email">
+                                    <input type="text" name="username" class="form-control" placeholder="Username">
                                 </div>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="password" name="password" class="form-control" minlength="6" placeholder="Password">
+                                    <input type="password" name="password" class="form-control" placeholder="Password">
                                 </div>
                             </div>
                         </div>
@@ -61,7 +61,7 @@
                         <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="password" name="confirm" class="form-control" minlength="6" placeholder="Konfirmasi Password">
+                                    <input type="password" name="confirm" class="form-control" placeholder="Konfirmasi Password">
                                 </div>
                             </div>
                         </div>

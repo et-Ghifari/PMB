@@ -9,30 +9,40 @@
                     </li>
                 </ul>
             </div>
-            <div class="body table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>NAMA LENGKAP</th>
-                            <th>ALAMAT EMAIL</th>
-                            <th>USERNAME</th>
-                            <th>AKSI</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($users as $user) : ?>
+            <div class="body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                        <thead>
                             <tr>
-                                <td><?php echo $user['usersName'] ?></td>
-                                <td><?php echo $user['usersEmail'] ?></td>
-                                <td><?php echo $user['usersUid'] ?></td>
-                                <td>
-                                    <a href="?m=editUser&usersId=<?php echo $user['usersId'] ?>" class="btn btn-primary waves-effect">edit</a>
-                                    <a href="?m=deleteUser&usersId=<?php echo $user['usersId'] ?>" class="btn btn-danger waves-effect" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">delete</a>
-                                </td>
+                                <th>NAMA LENGKAP</th>
+                                <th>ALAMAT EMAIL</th>
+                                <th>USERNAME</th>
+                                <th>AKSI</th>
                             </tr>
-                        <?php endforeach ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>NAMA LENGKAP</th>
+                                <th>ALAMAT EMAIL</th>
+                                <th>USERNAME</th>
+                                <th>AKSI</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <?php foreach ($users as $user) : ?>
+                                <tr>
+                                    <td><?php echo $user['usersName'] ?></td>
+                                    <td><?php echo $user['usersEmail'] ?></td>
+                                    <td><?php echo $user['usersUid'] ?></td>
+                                    <td>
+                                        <a href="?m=editUser&usersId=<?php echo $user['usersId'] ?>" class="btn btn-primary waves-effect">edit</a>
+                                        <a href="?m=deleteUser&usersId=<?php echo $user['usersId'] ?>" class="btn btn-danger waves-effect" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">delete</a>
+                                    </td>
+                                </tr>
+                            <?php endforeach ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
