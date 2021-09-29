@@ -95,7 +95,6 @@
     <script src="assets/plugins/bootstrap/js/bootstrap.js"></script>
     <script src="assets/plugins/node-waves/waves.js"></script>
     <script src="assets/js/admin.js"></script>
-    <script src="assets/js/pages/examples/sign-up.js"></script>
 </body>
 
 </html>

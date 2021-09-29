@@ -16,6 +16,7 @@ switch ($modul) {
 
     case 'deleteUser':
         include_once APP . 'deleteUserController.php';
+        break;
 
     default:
         include_once APP . 'homeController.php';
