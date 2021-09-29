@@ -115,7 +115,6 @@
     <script src="assets/js/admin.js"></script>
     <script src="assets/js/pages/tables/jquery-datatable.js"></script>
     <script src="assets/js/demo.js"></script>
-
 </body>
 
 </html>
