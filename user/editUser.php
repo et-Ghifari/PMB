@@ -1,9 +1,5 @@
 <?php
 require_once '../progres/userProgres.php';
-
-$id     = @$_GET['id'];
-$data   = mysqli_query($conn, 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users` WHERE `usersId` = "' . $id . '"');
-$nilai  = mysqli_fetch_assoc($data);
 ?>
 <!DOCTYPE html>
 <html>

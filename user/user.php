@@ -42,9 +42,9 @@ require_once '../progres/userProgres.php';
                                     <tbody>
                                         <?php foreach ($users as $user) : ?>
                                             <tr>
-                                                <td><?php echo $user['usersName'] ?></td>
-                                                <td><?php echo $user['usersEmail'] ?></td>
-                                                <td><?php echo $user['usersUid'] ?></td>
+                                                <td><?= $user['usersName'] ?></td>
+                                                <td><?= $user['usersEmail'] ?></td>
+                                                <td><?= $user['usersUid'] ?></td>
                                                 <td>
                                                     <a href="editUser.php?id=<?= $user['usersId'] ?>" class="btn btn-primary waves-effect">edit</a>
                                                     <a href="deleteUser.php?id=<?= $user['usersId'] ?>" class="btn btn-danger waves-effect" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">delete</a>

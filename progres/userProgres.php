@@ -113,6 +113,19 @@ if (isset($_POST['add'])) {
             document.location="' . base_url('user') . '";
         </script>';
     exit();
+} elseif (isset($_GET['id'])) {
+    $id         = @$_GET['id'];
+    $dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users` WHERE `usersId` = "' . $id . '"';
+    $stmtselect = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {
+        echo '<script>window.location="' . base_url('user/editUser.php?error=stmtfailed') . '";</script>';
+        exit();
+    }
+
+    mysqli_stmt_execute($stmtselect);
+    $resultData = mysqli_stmt_get_result($stmtselect);
+    $nilai  = mysqli_fetch_assoc($resultData);
 } else {
     $dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users`';
     $stmtselect = mysqli_stmt_init($conn);
@@ -121,6 +134,7 @@ if (isset($_POST['add'])) {
         echo '<script>window.location="' . base_url('user/addUser.php?error=stmtfailed') . '";</script>';
         exit();
     }
+
     mysqli_stmt_execute($stmtselect);
     $users = mysqli_stmt_get_result($stmtselect);
 }
