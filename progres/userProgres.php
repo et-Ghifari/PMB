@@ -94,9 +94,9 @@ if (isset($_POST['add'])) {
         exit();
     }
 
-    $dataupdate = 'UPDATE `users` SET `usersName` = ?, `usersEmail` = ?, `usersUid` = ?, `usersPwd` = ? WHERE `usersId` = "'.$id.'"';
+    $dataupdate = 'UPDATE `users` SET `usersName` = ?, `usersEmail` = ?, `usersUid` = ?, `usersPwd` = ? WHERE `usersId` = "' . $id . '"';
     $stmtupdate = mysqli_stmt_init($conn);
-    
+
     if (!mysqli_stmt_prepare($stmtupdate, $dataupdate)) {
         echo '<script>window.location="' . base_url('user/editUser.php?error=stmtfailed') . '";</script>';
         exit();

@@ -13,7 +13,7 @@ require_once '../config/connect.php';
         </div>
         <div class="card">
             <div class="body">
-                <form method="POST" action="<?=base_url('progres/authProgres.php')?>">
+                <form method="POST" action="<?= base_url('progres/authProgres.php') ?>">
                     <?php
                     if (isset($_GET['error'])) {
                         if ($_GET['error'] == 'emptyinput') {
