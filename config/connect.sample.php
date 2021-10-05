@@ -10,7 +10,7 @@ $conn = mysqli_connect($dbserver, $dbusername, $dbpassword, $dbdatabase) or die(
 
 function base_url($url = null)
 {
-    $base_url = 'http://localhost/pmb_dasar';
+    $base_url = 'http://localhost/pendaftaran';
     if ($url != null) {
         return $base_url . '/' . $url;
     } else {

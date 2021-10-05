@@ -1,5 +1,5 @@
 <?php
-require_once '../config/connect.php';
+require_once '../progres/authProgres.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,7 +13,7 @@ require_once '../config/connect.php';
         </div>
         <div class="card">
             <div class="body">
-                <form action="<?= base_url('progres/authProgres.php') ?>" method="POST">
+                <form action="" method="POST">
                     <?php
                     if (isset($_GET['error'])) {
                         if ($_GET['error'] == 'emptyinput') {

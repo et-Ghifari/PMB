@@ -48,7 +48,6 @@ require_once '../progres/userProgres.php';
                                                 <td>
                                                     <a href="editUser.php?id=<?= $user['usersId'] ?>" class="btn btn-primary waves-effect">edit</a>
                                                     <a href="deleteUser.php?id=<?= $user['usersId'] ?>" class="btn btn-danger waves-effect" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">delete</a>
-                                                    <!-- <a href="?m=deleteUser&usersId=<?php echo $user['usersId'] ?>" class="btn btn-danger waves-effect" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">delete</a> -->
                                                 </td>
                                             </tr>
                                         <?php endforeach ?>
