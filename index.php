@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once 'config/connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,17 +10,17 @@ session_start();
     <title>PMB | POLIBANG</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-    <link href="assets/images/favicon.png" rel="icon">
-    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="<?=base_url('assets/images/favicon.png')?>" rel="icon">
+    <link href="<?=base_url('assets/images/apple-touch-icon.png')?>" rel="apple-touch-icon">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="<?=base_url('assets/vendor/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
+    <link href="<?=base_url('assets/vendor/icofont/icofont.min.css')?>" rel="stylesheet">
+    <link href="<?=base_url('assets/vendor/boxicons/css/boxicons.min.css')?>" rel="stylesheet">
+    <link href="<?=base_url('assets/vendor/animate.css/animate.min.css')?>" rel="stylesheet">
+    <link href="<?=base_url('assets/vendor/owl.carousel/assets/owl.carousel.min.css')?>" rel="stylesheet">
+    <link href="<?=base_url('assets/vendor/venobox/venobox.css')?>" rel="stylesheet">
+    <link href="<?=base_url('assets/vendor/aos/aos.css')?>" rel="stylesheet">
+    <link href="<?=base_url('assets/css/style.css')?>" rel="stylesheet">
 </head>
 
 <body>
@@ -38,8 +38,8 @@ session_start();
     <!-- ======= Menu ======= -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
-            <a href="index.php" class="logo mr-auto">
-                <img src="assets/images/logo.png">
+            <a href="<?=base_url()?>" class="logo mr-auto">
+                <img src="<?=base_url('assets/images/logo.png')?>">
             </a>
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
@@ -53,12 +53,11 @@ session_start();
                 </ul>
             </nav>
             <?php
-            if (isset($_SESSION['useremail'])) {
-                echo '<a class="appointment-btn scrollto" href="dhasboard.php?m=home"><b>HOME</b></a>';
-            } else {
-                echo '<a class="appointment-btn scrollto" href="login.php"><b>LOGIN</b></a>';
-            }
-            ?>
+            if (isset($_SESSION['useremail'])) { ?>
+                <a class="appointment-btn scrollto" href="<?=base_url('dhasboard')?>"><b>HOME</b></a>
+            <?php } else { ?>
+                <a class="appointment-btn scrollto" href="<?=base_url('auth')?>"><b>LOGIN</b></a>
+            <?php } ?>
         </div>
     </header>
     <!-- ======= Gambabar Sliding Fakultas ======= -->
@@ -66,9 +65,9 @@ session_start();
         <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
             <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
             <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active" style="background-image: url(assets/images/slide/slide-1.jpg)"></div>
-                <div class="carousel-item" style="background-image: url(assets/images/slide/slide-2.jpg)"></div>
-                <div class="carousel-item" style="background-image: url(assets/images/slide/slide-3.jpg)"></div>
+                <div class="carousel-item active" style="background-image: url(<?=base_url('assets/images/slide/slide-1.jpg')?>)"></div>
+                <div class="carousel-item" style="background-image: url(<?=base_url('assets/images/slide/slide-2.jpg')?>)"></div>
+                <div class="carousel-item" style="background-image: url(<?=base_url('assets/images/slide/slide-3.jpg')?>)"></div>
             </div>
             <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon icofont-simple-left" aria-hidden="true"></span>
@@ -89,7 +88,7 @@ session_start();
                 </div>
                 <div class="row">
                     <div class="col-lg-6" data-aos="fade-right">
-                        <img src="assets/images/about.png" class="img-fluid">
+                        <img src="<?=base_url('assets/images/about.png')?>" class="img-fluid">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
                         <h3>Visi</h3>
@@ -204,17 +203,17 @@ session_start();
                 <div class="row">
                     <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <img src="assets/images/panduan/tahap1.png" class="img-fluid" alt="">
+                            <img src="<?=base_url('assets/images/panduan/tahap1.png')?>" class="img-fluid" alt="">
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-3 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                            <img src="assets/images/panduan/tahap2.png" class="img-fluid" alt="">
+                            <img src="<?=base_url('assets/images/panduan/tahap2.png')?>" class="img-fluid" alt="">
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                            <img src="assets/images/panduan/tahap3.png" class="img-fluid" alt="">
+                            <img src="<?=base_url('assets/images/panduan/tahap3.png')?>" class="img-fluid" alt="">
                         </div>
                     </div>
                 </div>
@@ -222,17 +221,17 @@ session_start();
                 <div class="row">
                     <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <img src="assets/images/panduan/tahap4.png" class="img-fluid" alt="">
+                            <img src="<?=base_url('assets/images/panduan/tahap4.png')?>" class="img-fluid" alt="">
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-3 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                            <img src="assets/images/panduan/tahap5.png" class="img-fluid" alt="">
+                            <img src="<?=base_url('assets/images/panduan/tahap5.png')?>" class="img-fluid" alt="">
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                            <img src="assets/images/panduan/tahap6.png" class="img-fluid" alt="">
+                            <img src="<?=base_url('assets/images/panduan/tahap6.png')?>" class="img-fluid" alt="">
                         </div>
                     </div>
                 </div>
@@ -273,21 +272,21 @@ session_start();
                             <div class="tab-pane active show" id="tab-1">
                                 <h3>Rekayasa Perangkat Lunak</h3>
                                 <p class="font-italic">Menjadi Program Studi Vokasi dibidang Rekayasa Perangkat Lunak yang Berdaya Saing Global, Profesional, Religius dan berjiwa Technopreunership</p>
-                                <img src="assets/images/rpl.jpg" alt="" class="img-fluid">
+                                <img src="<?=base_url('assets/images/rpl.jpg')?>" alt="" class="img-fluid">
                                 <p>RPL merupakan domain Bidang Ilmu Informatika & Komputer dalam aspek pengembangan software mulai dari tahap awal spesifikasi, desain, konstruksi, testing sampai pemeliharaan</p>
                                 <p>Profesi-profesi lulusan RPL antara lain Programmer, System Analyst, Software Quality Assurance Engineer (SQAE), Database Administrator, Software Architect, Software Support, Konsultan IT, Web Designer.</p>
                             </div>
                             <div class="tab-pane" id="tab-2">
                                 <h3>Administrasi Bisnis Internasional</h3>
                                 <p class="font-italic">Menjadi program studi vokasi bidang Administrasi bisnis internasional yang berdaya saing global, profesional, dan religius berdasar aqidah Ahlus Sunnah Wal Jama’ah</p>
-                                <img src="assets/images/administrasi.jpg" alt="" class="img-fluid">
+                                <img src="<?=base_url('assets/images/administrasi.jpg')?>" alt="" class="img-fluid">
                                 <p>Merupakan program studi yang fokus pada tantangan yang dihadapi oleh dunia bisnis di pasar internasional. Mahasiswa akan mempelajari etika dan hukum bisnis dalam skala internasional</p>
                                 <p>Selain itu, akan dilatih untuk berpikir secara global dalam menciptakan ide dan solusi dalam permasalahan ekonomi dan bisnis di lingkup internasional</p>
                             </div>
                             <div class="tab-pane" id="tab-3">
                                 <h3>Akuntansi Keuangan Publik</h3>
                                 <p class="font-italic">Menjadi rujukan pendidikan vokasi bidang Akuntansi Keuangan Publik yang unggul berdasar aqidah Ahlus Sunnah Wal Jama’ah</p>
-                                <img src="assets/images/akuntansi.jpg" alt="" class="img-fluid">
+                                <img src="<?=base_url('assets/images/akuntansi.jpg')?>" alt="" class="img-fluid">
                                 <p>Program Studi Akuntansi Keuangan Publik Mengajarkan ilmu akuntansi dalam ruang lingkup organisasi sektor publik</p>
                                 <p>Sektor publik tersebut antara lain seperti organisasi pemerintahan pusat dan daerah, Lembaga Swadaya Masyarakat (LSM), Rumah Sakit, dan Pendidikan</p>
                             </div>
@@ -316,7 +315,7 @@ session_start();
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="100">
                             <div class="member-img">
-                                <img src="assets/images/slide/slide-1.jpg" class="img-fluid">
+                                <img src="<?=base_url('assets/images/slide/slide-1.jpg')?>" class="img-fluid">
                             </div>
                             <div class="member-info">
                                 <h4>Gedung Utama</h4>
@@ -327,7 +326,7 @@ session_start();
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="200">
                             <div class="member-img">
-                                <img src="assets/images/slide/slide-8.jpg" class="img-fluid">
+                                <img src="<?=base_url('assets/images/slide/slide-8.jpg')?>" class="img-fluid">
                             </div>
                             <div class="member-info">
                                 <h4>Aula</h4>
@@ -338,7 +337,7 @@ session_start();
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="300">
                             <div class="member-img">
-                                <img src="assets/images/slide/slide-5.jpg" class="img-fluid">
+                                <img src="<?=base_url('assets/images/slide/slide-5.jpg')?>" class="img-fluid">
                             </div>
                             <div class="member-info">
                                 <h4>Unit Bisnis</h4>
@@ -349,7 +348,7 @@ session_start();
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="400">
                             <div class="member-img">
-                                <img src="assets/images/slide/slide-6.jpg" class="img-fluid">
+                                <img src="<?=base_url('assets/images/slide/slide-6.jpg')?>" class="img-fluid">
                             </div>
                             <div class="member-info">
                                 <h4>Lab Programmer</h4>
@@ -360,7 +359,7 @@ session_start();
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="500">
                             <div class="member-img">
-                                <img src="assets/images/slide/slide-7.jpg" class="img-fluid">
+                                <img src="<?=base_url('assets/images/slide/slide-7.jpg')?>" class="img-fluid">
                             </div>
                             <div class="member-info">
                                 <h4>Lab Bisnis</h4>
@@ -371,7 +370,7 @@ session_start();
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="600">
                             <div class="member-img">
-                                <img src="assets/images/slide/slide-4.jpg" class="img-fluid">
+                                <img src="<?=base_url('assets/images/slide/slide-4.jpg')?>" class="img-fluid">
                             </div>
                             <div class="member-info">
                                 <h4>Homestay</h4>
@@ -461,7 +460,7 @@ session_start();
                             Saya Berharap mahasiswa politeknik menjadi orang-orang sukses, baik dan kompeten.
                             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                         </p>
-                        <img src="assets/images/testimonials/wikan.jpg" class="testimonial-img">
+                        <img src="<?=base_url('assets/images/testimonials/wikan.jpg')?>" class="testimonial-img">
                         <h3>Wikan Sakarinto, ST.,M.Sc.,Ph.D.,</h3>
                         <h4>Direktur Jendral Pendidikan Vokasi</h4>
                     </div>
@@ -471,7 +470,7 @@ session_start();
                             Disini anda bisa belajar agama dan juga pendidikan keahlian. Mari kuliah di Politeknik Balekambang Jepara.
                             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                         </p>
-                        <img src="assets/images/testimonials/andang.jpg" class="testimonial-img"">
+                        <img src="<?=base_url('assets/images/testimonials/andang.jpg')?>" class="testimonial-img"">
                         <h3>Andang Wahyu Triyanto,SE.,MM.,</h3>
                         <h4>Anggota DPRD Provinsi Jawa Tengah</h4>
                     </div>
@@ -486,16 +485,16 @@ session_start();
                                 <p>Beberapa kegiatan Politeknik Balekambang Jepara</p>
                             </div>
                             <div class="owl-carousel gallery-carousel" data-aos="fade-up" data-aos-delay="100">
-                                <a href="assets/images/gallery/gallery-1.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-1.jpg" alt=""></a>
-                                <a href="assets/images/gallery/gallery-2.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-2.jpg" alt=""></a>
-                                <a href="assets/images/gallery/gallery-3.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-3.jpg" alt=""></a>
-                                <a href="assets/images/gallery/gallery-4.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-4.jpg" alt=""></a>
-                                <a href="assets/images/gallery/gallery-5.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-5.jpg" alt=""></a>
-                                <a href="assets/images/gallery/gallery-6.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-6.jpg" alt=""></a>
-                                <a href="assets/images/gallery/gallery-7.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-7.jpg" alt=""></a>
-                                <a href="assets/images/gallery/gallery-8.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-8.jpg" alt=""></a>
-                                <a href="assets/images/gallery/gallery-9.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-9.jpg" alt=""></a>
-                                <a href="assets/images/gallery/gallery-10.jpg" class="venobox" data-gall="gallery-carousel"><img src="assets/images/gallery/gallery-10.jpg" alt=""></a>
+                                <a href="<?=base_url('assets/images/gallery/gallery-1.jpg')?>" class="venobox" data-gall="gallery-carousel"><img src="<?=base_url('assets/images/gallery/gallery-1.jpg')?>" alt=""></a>
+                                <a href="<?=base_url('assets/images/gallery/gallery-2.jpg')?>" class="venobox" data-gall="gallery-carousel"><img src="<?=base_url('assets/images/gallery/gallery-2.jpg')?>" alt=""></a>
+                                <a href="<?=base_url('assets/images/gallery/gallery-3.jpg')?>" class="venobox" data-gall="gallery-carousel"><img src="<?=base_url('assets/images/gallery/gallery-3.jpg')?>" alt=""></a>
+                                <a href="<?=base_url('assets/images/gallery/gallery-4.jpg')?>" class="venobox" data-gall="gallery-carousel"><img src="<?=base_url('assets/images/gallery/gallery-4.jpg')?>" alt=""></a>
+                                <a href="<?=base_url('assets/images/gallery/gallery-5.jpg')?>" class="venobox" data-gall="gallery-carousel"><img src="<?=base_url('assets/images/gallery/gallery-5.jpg')?>" alt=""></a>
+                                <a href="<?=base_url('assets/images/gallery/gallery-6.jpg')?>" class="venobox" data-gall="gallery-carousel"><img src="<?=base_url('assets/images/gallery/gallery-6.jpg')?>" alt=""></a>
+                                <a href="<?=base_url('assets/images/gallery/gallery-7.jpg')?>" class="venobox" data-gall="gallery-carousel"><img src="<?=base_url('assets/images/gallery/gallery-7.jpg')?>" alt=""></a>
+                                <a href="<?=base_url('assets/images/gallery/gallery-8.jpg')?>" class="venobox" data-gall="gallery-carousel"><img src="<?=base_url('assets/images/gallery/gallery-8.jpg')?>" alt=""></a>
+                                <a href="<?=base_url('assets/images/gallery/gallery-9.jpg')?>" class="venobox" data-gall="gallery-carousel"><img src="<?=base_url('assets/images/gallery/gallery-9.jpg')?>" alt=""></a>
+                                <a href="<?=base_url('assets/images/gallery/gallery-10.jpg')?>" class="venobox" data-gall="gallery-carousel"><img src="<?=base_url('assets/images/gallery/gallery-10.jpg')?>" alt=""></a>
                             </div>
                         </div>
         </section>
@@ -553,21 +552,21 @@ session_start();
                 &copy; Copyright <strong><span>POLITEKNIK BALEKAMBANG JEPARA</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
-                Designed by <b><a href="index.php">PMB | POLIBANG</a></b>
+                Designed by <b><a href="<?=base_url()?>">PMB | POLIBANG</a></b>
             </div>
         </div>
     </footer>
     <div id="preloader"></div>
     <a class="back-to-top"><i class="icofont-simple-up"></i></a>
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-    <script src="assets/vendor/counterup/counterup.min.js"></script>
-    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="assets/vendor/venobox/venobox.min.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="<?=base_url('assets/vendor/jquery/jquery.min.js')?>"></script>
+    <script src="<?=base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
+    <script src="<?=base_url('assets/vendor/jquery.easing/jquery.easing.min.js')?>"></script>
+    <script src="<?=base_url('assets/vendor/waypoints/jquery.waypoints.min.js')?>"></script>
+    <script src="<?=base_url('assets/vendor/counterup/counterup.min.js')?>"></script>
+    <script src="<?=base_url('assets/vendor/owl.carousel/owl.carousel.min.js')?>"></script>
+    <script src="<?=base_url('assets/vendor/venobox/venobox.min.js')?>"></script>
+    <script src="<?=base_url('assets/vendor/aos/aos.js')?>"></script>
+    <script src="<?=base_url('assets/js/main.js')?>"></script>
 </body>
 
 </html>

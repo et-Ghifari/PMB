@@ -1,22 +1,9 @@
 <?php
-
+require_once '../config/connect.php';
 ?>
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>PMB | POLIBANG</title>
-    <link href="assets/images/favicon.png" rel="icon">
-    <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
-    <link href="assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/plugins/node-waves/waves.css" rel="stylesheet" />
-    <link href="assets/plugins/animate-css/animate.css" rel="stylesheet" />
-    <link href="assets/css/style.ds.css" rel="stylesheet">
-</head>
+<?php include_once '../include/head.php'; ?>
 
 <body class="signup-page">
     <div class="signup-box">
@@ -26,19 +13,19 @@
         </div>
         <div class="card">
             <div class="body">
-                <form action="auth/registerAuth.php" method="POST">
+                <form action="<?=base_url('progres/authProgres.php')?>" method="POST">
                     <?php
                     if (isset($_GET['error'])) {
-                        if ($_GET['error'] == 'mptinput') {
-                            echo '<div class="alert alert-danger"><strong>Isi semua formulir yang ada!</strong></div>';
-                        } elseif ($_GET['error'] == 'invemail') {
-                            echo '<div class="alert alert-danger"><strong>Email tidak sesuai!</strong></div>';
-                        } elseif ($_GET['error'] == 'invuid') {
-                            echo '<div class="alert alert-danger"><strong>Username tidak sesuai!</strong></div>';
-                        } elseif ($_GET['error'] == 'cnfrmwrong') {
-                            echo '<div class="alert alert-danger"><strong>Konfirmasi password tidak sama!</strong></div>';
-                        } elseif ($_GET['error'] == 'teken') {
-                            echo '<div class="alert alert-danger"><strong>Email/Usernamae sudah terdaftar!</strong></div>';
+                        if ($_GET['error'] == 'emptyinput') {
+                            echo '<div class="alert alert-danger" align="center"><strong>Isi semua formulir yang ada!</strong></div>';
+                        } elseif ($_GET['error'] == 'invalidemail') {
+                            echo '<div class="alert alert-danger" align="center"><strong>Email tidak sesuai!</strong></div>';
+                        } elseif ($_GET['error'] == 'invaliduid') {
+                            echo '<div class="alert alert-danger" align="center"><strong>Username tidak sesuai!</strong></div>';
+                        } elseif ($_GET['error'] == 'confirmwrong') {
+                            echo '<div class="alert alert-danger" align="center"><strong>Konfirmasi password tidak sama!</strong></div>';
+                        } elseif ($_GET['error'] == 'registed') {
+                            echo '<div class="alert alert-danger" align="center"><strong>Email/Usernamae sudah terdaftar!</strong></div>';
                         }
                     }
                     ?>
@@ -84,17 +71,13 @@
                     </div>
                     <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" name="register">BUAT AKUN</button>
                     <div class="m-t-25 m-b--5 align-center">
-                        <a href="login.php">Sudah Mempunyai Akun?</a>
+                        <a href="<?= base_url('auth/login.php') ?>">Sudah Mempunyai Akun?</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-    <script src="assets/plugins/jquery/jquery.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.js"></script>
-    <script src="assets/plugins/node-waves/waves.js"></script>
-    <script src="assets/js/admin.js"></script>
+    <?php include_once '../include/script.php'; ?>
 </body>
 
 </html>
