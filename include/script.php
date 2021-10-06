@@ -6,5 +6,7 @@
 <script src="<?= base_url('assets/plugins/jquery-datatable/jquery.dataTables.js') ?>"></script>
 <script src="<?= base_url('assets/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js') ?>"></script>
 <script src="<?= base_url('assets/js/admin.js') ?>"></script>
+<script src="<?= base_url('assets/js/pages/ui/tooltips-popovers.js') ?>"></script>
+<script src="<?= base_url('assets/js/pages/forms/basic-form-elements.js') ?>"></script>
 <script src="<?= base_url('assets/js/pages/tables/jquery-datatable.js') ?>"></script>
 <script src="<?= base_url('assets/js/demo.js') ?>"></script>

@@ -39,7 +39,7 @@ require_once '../progres/userProgres.php';
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" autofocus>
+                                                <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" autofocus autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -51,7 +51,7 @@ require_once '../progres/userProgres.php';
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="email" name="email" class="form-control" placeholder="Alamat Email">
+                                                <input type="email" name="email" class="form-control" placeholder="Alamat Email" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -63,7 +63,7 @@ require_once '../progres/userProgres.php';
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" name="username" class="form-control" placeholder="Username">
+                                                <input type="text" name="username" class="form-control" placeholder="Username" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -95,9 +95,18 @@ require_once '../progres/userProgres.php';
                                 <div class="row clearfix">
                                     <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
                                         <div class="button-demo">
-                                            <button type="submit" class="btn btn-success m-t-15 waves-effect" name="add">SIMPAN</button>
-                                            <button type="reset" class="btn btn-default m-t-15 waves-effect">HAPUS</button>
-                                            <a type="button" href="<?= base_url('user') ?>" class="btn btn-danger m-t-15 waves-effect">KEMBALI</a>
+                                            <button type="submit" class="btn bg-green m-t-15 waves-effect" name="add">
+                                                <i class="material-icons">save</i>
+                                                <span><strong>SIMPAN</strong></span>
+                                            </button>
+                                            <button type="reset" class="btn btn-default m-t-15 waves-effect">
+                                                <i class="material-icons">clear</i>
+                                                <span><strong>HAPUS</strong></span>
+                                            </button>
+                                            <a type="button" href="<?= base_url('user') ?>" class="btn bg-red m-t-15 waves-effect">
+                                                <i class="material-icons">backspace</i>
+                                                <span><strong>KEMBALI</strong></span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

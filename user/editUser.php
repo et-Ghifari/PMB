@@ -16,17 +16,6 @@ require_once '../progres/userProgres.php';
                             <h2>Edit User</h2>
                         </div>
                         <div class="body">
-                            <?php
-                            if (isset($_GET['error'])) {
-                                if ($_GET['error'] == 'emptyinput') {
-                                    echo '<div class="alert alert-danger" align="center"><strong>Isi semua formulir yang ada!</strong></div>';
-                                } elseif ($_GET['error'] == 'invalidemail') {
-                                    echo '<div class="alert alert-danger" align="center"><strong>Email tidak sesuai!</strong></div>';
-                                } elseif ($_GET['error'] == 'invaliduid') {
-                                    echo '<div class="alert alert-danger" align="center"><strong>Username tidak sesuai!</strong></div>';
-                                }
-                            }
-                            ?>
                             <form class="form-horizontal" action="" method="POST">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
@@ -35,7 +24,7 @@ require_once '../progres/userProgres.php';
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line disabled">
-                                                <input type="text" name="name" class="form-control" value="<?= $nilai['usersName'] ?>">
+                                                <input type="text" name="name" class="form-control" value="<?= $nilai['usersName'] ?>" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -47,7 +36,7 @@ require_once '../progres/userProgres.php';
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line disabled">
-                                                <input type="email" name="email" class="form-control" value="<?= $nilai['usersEmail'] ?>">
+                                                <input type="email" name="email" class="form-control" value="<?= $nilai['usersEmail'] ?>" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -59,7 +48,7 @@ require_once '../progres/userProgres.php';
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line disabled">
-                                                <input type="text" name="username" class="form-control" value="<?= $nilai['usersUid'] ?>">
+                                                <input type="text" name="username" class="form-control" value="<?= $nilai['usersUid'] ?>" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -71,7 +60,7 @@ require_once '../progres/userProgres.php';
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="password" name="password" class="form-control">
+                                                <input type="password" name="password" class="form-control" required>
                                             </div>
                                         </div>
                                     </div>
@@ -79,8 +68,13 @@ require_once '../progres/userProgres.php';
                                 <div class="row clearfix">
                                     <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
                                         <div class="button-demo">
-                                            <button type="submit" class="btn btn-success m-t-15 waves-effect" name="edit">SIMPAN</button>
-                                            <a type="button" href="<?= base_url('user') ?>" class="btn btn-danger m-t-15 waves-effect">KEMBALI</a>
+                                            <button type="submit" class="btn btn-success m-t-15 waves-effect" name="edit">
+                                                <i class="material-icons">save</i>
+                                                <span><strong>SIMPAN</strong></span>
+                                            </button>
+                                            <a type="button" href="<?= base_url('user') ?>" class="btn btn-danger m-t-15 waves-effect">
+                                                <i class="material-icons">backspace</i>
+                                                <span><strong>KEMBALI</strong></span></a>
                                         </div>
                                     </div>
                                 </div>

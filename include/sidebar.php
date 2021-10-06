@@ -31,19 +31,19 @@
         <div class="menu">
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
-                <li class="active">
+                <li class="">
                     <a href="<?= base_url('dhasboard') ?>">
                         <i class="material-icons active">home</i>
                         <span>Dhasboard</span>
                     </a>
                 </li>
-                <li class="active">
+                <li class="">
                     <a href="<?= base_url('user') ?>">
                         <i class="material-icons">person</i>
                         <span>User</span>
                     </a>
                 </li>
-                <li class="active">
+                <li class="">
                     <a href="<?= base_url('menu') ?>">
                         <i class="material-icons">layers</i>
                         <span>Menu</span>

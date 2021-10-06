@@ -79,22 +79,7 @@ if (isset($_POST['add'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    if (empty($name) || empty($email) || empty($username) || empty($password)) {
-        echo '<script>window.location="' . base_url('user/editUser.php?error=emptyinput') . '";</script>';
-        exit();
-    }
-
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo '<script>window.location="' . base_url('user/editUser.php?error=invalidemail') . '";</script>';
-        exit();
-    }
-
-    if (!preg_match('/^[a-zA-Z0-9]*$/', $username)) {
-        echo '<script>window.location="' . base_url('user/editUser.php?error=invaliduid') . '";</script>';
-        exit();
-    }
-
-    $dataupdate = 'UPDATE `users` SET `usersName` = ?, `usersEmail` = ?, `usersUid` = ?, `usersPwd` = ? WHERE `usersId` = "' . $id . '"';
+    $dataupdate = 'UPDATE `users` SET `usersName` = ?, `usersEmail` = ?, `usersUid` = ?, `usersPwd` = ? WHERE `usersId` = ?';
     $stmtupdate = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmtupdate, $dataupdate)) {
@@ -103,7 +88,7 @@ if (isset($_POST['add'])) {
     }
 
     $pwdHashed = password_hash($password, PASSWORD_DEFAULT);
-    mysqli_stmt_bind_param($stmtupdate, 'ssss', $name, $email, $username, $pwdHashed);
+    mysqli_stmt_bind_param($stmtupdate, 'sssss', $name, $email, $username, $pwdHashed, $id);
     mysqli_stmt_execute($stmtupdate);
     mysqli_stmt_close($stmtupdate);
 
@@ -115,7 +100,7 @@ if (isset($_POST['add'])) {
     exit();
 } elseif (isset($_GET['id'])) {
     $id         = @$_GET['id'];
-    $dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users` WHERE `usersId` = "' . $id . '"';
+    $dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users` WHERE `usersId` = ?';
     $stmtselect = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {
@@ -123,11 +108,29 @@ if (isset($_POST['add'])) {
         exit();
     }
 
+    mysqli_stmt_bind_param($stmtselect, 's', $id);
     mysqli_stmt_execute($stmtselect);
     $resultData = mysqli_stmt_get_result($stmtselect);
     $nilai  = mysqli_fetch_assoc($resultData);
+} elseif (isset($_POST['search'])) {
+    $keyword = '%' . $_POST['keyword'] . '%';
+
+    $dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users` WHERE
+    `usersName` LIKE ? OR
+    `usersEmail` LIKE ? OR
+    `usersUid` LIKE ?';
+    $stmtselect = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {
+        echo '<script>window.location="' . base_url('user/user.php?error=stmtfailed') . '";</script>';
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmtselect, 'sss', $keyword, $keyword, $keyword);
+    mysqli_stmt_execute($stmtselect);
+    $users = mysqli_stmt_get_result($stmtselect);
 } else {
-    $dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users`';
+    $dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users` ORDER BY `usersName`';
     $stmtselect = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {

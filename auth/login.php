@@ -30,7 +30,7 @@ require_once '../progres/authProgres.php';
                             <i class="material-icons">account_circle</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="uid" placeholder="Username/Alamat Email">
+                            <input type="text" class="form-control" name="uid" placeholder="Username/Alamat Email" autofocus autocomplete="off">
                         </div>
                     </div>
                     <div class="input-group">
@@ -38,7 +38,7 @@ require_once '../progres/authProgres.php';
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="password" placeholder="Password">
+                            <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="off">
                         </div>
                     </div>
                     <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" name="login">MASUK</button>

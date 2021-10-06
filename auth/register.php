@@ -34,7 +34,7 @@ require_once '../progres/authProgres.php';
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="name" placeholder="Nama Lengkap">
+                            <input type="text" class="form-control" name="name" placeholder="Nama Lengkap" autofocus autocomplete="off">
                         </div>
                     </div>
                     <div class="input-group">
@@ -42,7 +42,7 @@ require_once '../progres/authProgres.php';
                             <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="email" class="form-control" name="email" placeholder="Alamat Email">
+                            <input type="email" class="form-control" name="email" placeholder="Alamat Email" autocomplete="off">
                         </div>
                     </div>
                     <div class="input-group">
@@ -50,7 +50,7 @@ require_once '../progres/authProgres.php';
                             <i class="material-icons">account_circle</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="username" placeholder="Username">
+                            <input type="text" class="form-control" name="username" placeholder="Username" autocomplete="off">
                         </div>
                     </div>
                     <div class="input-group">
