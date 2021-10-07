@@ -2,7 +2,7 @@
 require_once '../config/connect.php';
 
 if (!isset($_SESSION['useremail'])) {
-    echo '<script>window.location="' . base_url('login.php') . '";</script>';
+    echo '<script>window.location="' . base_url('auth/login.php') . '";</script>';
     exit();
 }
 ?>

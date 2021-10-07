@@ -1,12 +1,13 @@
 <?php
 include_once '../config/connect.php';
 
-if (!isset($_SESSION['useremail'])) {
+if (!isset($_SESSION['useremail'])) { //Kondisi sesi login
     echo '<script>window.location="' . base_url('auth/login.php') . '";</script>';
     exit();
 }
 
-if (isset($_POST['add'])) {
+//Add user
+if (isset($_POST['add'])) { //Menambahkan user ke tabel users
     $name     = $_POST['name'];
     $email    = $_POST['email'];
     $username = $_POST['username'];
@@ -71,34 +72,10 @@ if (isset($_POST['add'])) {
             document.location="' . base_url('user') . '";
         </script>';
     exit();
-} elseif (isset($_POST['edit'])) {
+}
 
-    $id       = @$_GET['id'];
-    $name     = $_POST['name'];
-    $email    = $_POST['email'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $dataupdate = 'UPDATE `users` SET `usersName` = ?, `usersEmail` = ?, `usersUid` = ?, `usersPwd` = ? WHERE `usersId` = ?';
-    $stmtupdate = mysqli_stmt_init($conn);
-
-    if (!mysqli_stmt_prepare($stmtupdate, $dataupdate)) {
-        echo '<script>window.location="' . base_url('user/editUser.php?error=stmtfailed') . '";</script>';
-        exit();
-    }
-
-    $pwdHashed = password_hash($password, PASSWORD_DEFAULT);
-    mysqli_stmt_bind_param($stmtupdate, 'sssss', $name, $email, $username, $pwdHashed, $id);
-    mysqli_stmt_execute($stmtupdate);
-    mysqli_stmt_close($stmtupdate);
-
-    echo
-    '<script>
-            alert("Perubahan Akun Berhasil")
-            document.location="' . base_url('user') . '";
-        </script>';
-    exit();
-} elseif (isset($_GET['id'])) {
+//Edit user
+if (isset($_GET['id'])) {
     $id         = @$_GET['id'];
     $dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users` WHERE `usersId` = ?';
     $stmtselect = mysqli_stmt_init($conn);
@@ -111,33 +88,70 @@ if (isset($_POST['add'])) {
     mysqli_stmt_bind_param($stmtselect, 's', $id);
     mysqli_stmt_execute($stmtselect);
     $resultData = mysqli_stmt_get_result($stmtselect);
-    $nilai  = mysqli_fetch_assoc($resultData);
-} elseif (isset($_POST['search'])) {
-    $keyword = '%' . $_POST['keyword'] . '%';
+    $value  = mysqli_fetch_assoc($resultData);
 
-    $dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users` WHERE
-    `usersName` LIKE ? OR
-    `usersEmail` LIKE ? OR
-    `usersUid` LIKE ?';
-    $stmtselect = mysqli_stmt_init($conn);
+    //Update user
+    if (isset($_POST['edit'])) {
+        $name     = $_POST['name'];
+        $email    = $_POST['email'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-    if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {
+        $dataupdate = 'UPDATE `users` SET `usersName` = ?, `usersEmail` = ?, `usersUid` = ?, `usersPwd` = ? WHERE `usersId` = ?';
+        $stmtupdate = mysqli_stmt_init($conn);
+
+        if (!mysqli_stmt_prepare($stmtupdate, $dataupdate)) {
+            echo '<script>window.location="' . base_url('user/editUser.php?error=stmtfailed') . '";</script>';
+            exit();
+        }
+
+        $pwdHashed = password_hash($password, PASSWORD_DEFAULT);
+        mysqli_stmt_bind_param($stmtupdate, 'sssss', $name, $email, $username, $pwdHashed, $id);
+        mysqli_stmt_execute($stmtupdate);
+        mysqli_stmt_close($stmtupdate);
+
+        echo
+        '<script>
+            alert("Perubahan Akun Berhasil")
+            document.location="' . base_url('user') . '";
+        </script>';
+        exit();
+    }
+}
+
+//Read user   
+$dataPage = 3;
+$query   = mysqli_query($conn, 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users`');
+$data     = mysqli_num_rows($query);
+$page     = ceil($data / $dataPage);
+$actPage  = (isset($_GET['page'])) ? $_GET['page'] : 1;
+$stData   = ($dataPage * $actPage) - $dataPage;
+
+$dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users` ORDER BY `usersName` LIMIT ?, ?';
+$stmtselect = mysqli_stmt_init($conn);
+
+if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {
+    echo '<script>window.location="' . base_url('user/addUser.php?error=stmtfailed') . '";</script>';
+    exit();
+}
+
+mysqli_stmt_bind_param($stmtselect, 'ss', $stData, $dataPage);
+mysqli_stmt_execute($stmtselect);
+$users = mysqli_stmt_get_result($stmtselect);
+
+//Search user
+if (isset($_POST['search'])) {
+    $keyword  = '%' . $_POST['keyword'] . '%';
+
+    $datasearch = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users` WHERE `usersName` LIKE ? OR `usersEmail` LIKE ? OR `usersUid` LIKE ?';
+    $stmtsearch = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmtsearch, $datasearch)) {
         echo '<script>window.location="' . base_url('user/user.php?error=stmtfailed') . '";</script>';
         exit();
     }
 
-    mysqli_stmt_bind_param($stmtselect, 'sss', $keyword, $keyword, $keyword);
-    mysqli_stmt_execute($stmtselect);
-    $users = mysqli_stmt_get_result($stmtselect);
-} else {
-    $dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users` ORDER BY `usersName`';
-    $stmtselect = mysqli_stmt_init($conn);
-
-    if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {
-        echo '<script>window.location="' . base_url('user/addUser.php?error=stmtfailed') . '";</script>';
-        exit();
-    }
-
-    mysqli_stmt_execute($stmtselect);
-    $users = mysqli_stmt_get_result($stmtselect);
+    mysqli_stmt_bind_param($stmtsearch, 'sss', $keyword, $keyword, $keyword);
+    mysqli_stmt_execute($stmtsearch);
+    $users = mysqli_stmt_get_result($stmtsearch);
 }

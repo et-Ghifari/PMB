@@ -17,28 +17,26 @@ require_once '../progres/userProgres.php';
                         </div>
                         <div class="body">
                             <div class="row clearfix">
-
                                 <div class="col-sm-2">
                                     <div class="form-group">
                                         <div class="form-line">
                                             <form action="" method="POST">
-                                                <input type="text" name="keyword" class="form-control" placeholder="Cari..." autofocus autocomplete="off">
-                                                <span></span>
+                                            <input type="text" name="keyword" class="form-control" placeholder="Cari..." autofocus autocomplete="off">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-2">
+                                <div class="col-sm-1">
                                     <div class="form-group">
-                                        <div>
-                                            <button type="submit" name="search" class="btn bg-grey btn-circle waves-effect waves-circle waves-float" data-toggle="tooltip" data-placement="bottom" title="Cari"><i class="material-icons">search</i></button>
+                                        <div class="">
+                                            <button type="submit" name="search" class="btn btn-default waves-effect" data-toggle="tooltip" data-placement="bottom" title="Cari"><i class="material-icons">search</i></button>
                                             </form>
-                                            <a type="button" href="<?= base_url('user') ?>" class="btn bg-grey btn-circle waves-effect waves-circle waves-float" data-toggle="tooltip" data-placement="bottom" title="Perbarui"><i class="material-icons">refresh</i></a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-8">
+                                <div class="col-sm-9">
                                     <div class="form-group">
                                         <div align="right">
+                                            <a type="button" href="<?= base_url('user') ?>" class="btn btn-default waves-effect" data-toggle="tooltip" data-placement="bottom" title="Perbarui"><i class="material-icons">refresh</i></a>
                                             <a href="addUser.php" class="btn btn-success waves-effect">
                                                 <i class="material-icons">add_circle_outline</i>
                                                 <span><strong>TAMBAH</strong></span>
@@ -51,8 +49,8 @@ require_once '../progres/userProgres.php';
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>NAMA LENGKAP</th>
-                                            <th>ALAMAT EMAIL</th>
+                                            <th class="col-sm-4">NAMA LENGKAP</th>
+                                            <th class="col-sm-4">ALAMAT EMAIL</th>
                                             <th class="col-sm-2">USERNAME</th>
                                             <th class="col-sm-2"><i class="material-icons">settings</i></th>
                                         </tr>
@@ -74,9 +72,31 @@ require_once '../progres/userProgres.php';
                             </div>
                             <div align="center">
                                 <ul class="pagination">
-                                    <li class="active"><a href="javascript:void(0);">1</a></li>
-                                    <li><a href="javascript:void(0);" class="waves-effect">2</a></li>
-                                    <li><a href="javascript:void(0);" class="waves-effect">3</a></li>
+                                    <?php if ($actPage > 1) : ?>
+                                        <li class="">
+                                            <a href="?page=<?= $actPage - 1 ?>"><i class="material-icons">chevron_left</i></a>
+                                        </li>
+                                    <?php else : ?>
+                                        <li class="disabled">
+                                            <a><i class="material-icons">chevron_left</i></a>
+                                        </li>
+                                    <?php endif ?>
+                                    <?php for ($i = 1; $i <= $page; $i++) : ?>
+                                        <?php if ($i == $actPage) : ?>
+                                            <li class="active"><a href="?page=<?= $i ?>" class="waves-effect"><?= $i ?></a></li>
+                                        <?php else : ?>
+                                            <li><a href="?page=<?= $i ?>" class="waves-effect"><?= $i ?></a></li>
+                                        <?php endif ?>
+                                    <?php endfor ?>
+                                    <?php if ($actPage < $page) : ?>
+                                        <li class="">
+                                            <a href="?page=<?= $actPage + 1 ?>"><i class="material-icons">chevron_right</i></a>
+                                        </li>
+                                    <?php else : ?>
+                                        <li class="disabled">
+                                            <a><i class="material-icons">chevron_right</i></a>
+                                        </li>
+                                    <?php endif ?>
                                 </ul>
                             </div>
                         </div>

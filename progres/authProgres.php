@@ -1,6 +1,7 @@
 <?php
 include_once '../config/connect.php';
 
+//Register user
 if (isset($_POST['register'])) {
     $name     = $_POST['name'];
     $email    = $_POST['email'];
@@ -68,6 +69,7 @@ if (isset($_POST['register'])) {
     exit();
 }
 
+//Login user
 if (isset($_POST['login'])) {
     $uid      = $_POST['uid'];
     $password = $_POST['password'];
@@ -109,7 +111,7 @@ if (isset($_POST['login'])) {
         echo
         '<script>
             alert("Selamat Login Berhasil")
-            document.location="' . base_url('dhasboard') . '";
+            document.location="' . base_url('dashboard') . '";
         </script>';
         exit();
     }

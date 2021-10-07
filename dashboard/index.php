@@ -2,7 +2,7 @@
 require_once '../config/connect.php';
 
 if (!isset($_SESSION['useremail'])) {
-    echo '<script>window.location="' . base_url('login.php') . '";</script>';
+    echo '<script>window.location="' . base_url('auth/login.php') . '";</script>';
     exit();
 }
 ?>
@@ -14,7 +14,7 @@ if (!isset($_SESSION['useremail'])) {
     <?php include_once '../include/sidebar.php'; ?>
     <section class="content">
         <div class="container-fluid">
-            Dhasboard
+            Dashboard
         </div>
     </section>
     <?php include_once '../include/script.php'; ?>

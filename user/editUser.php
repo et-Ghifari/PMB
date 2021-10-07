@@ -24,7 +24,7 @@ require_once '../progres/userProgres.php';
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line disabled">
-                                                <input type="text" name="name" class="form-control" value="<?= $nilai['usersName'] ?>" autocomplete="off">
+                                                <input type="text" name="name" class="form-control" value="<?= $value['usersName'] ?>" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -36,7 +36,7 @@ require_once '../progres/userProgres.php';
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line disabled">
-                                                <input type="email" name="email" class="form-control" value="<?= $nilai['usersEmail'] ?>" autocomplete="off">
+                                                <input type="email" name="email" class="form-control" value="<?= $value['usersEmail'] ?>" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -48,7 +48,7 @@ require_once '../progres/userProgres.php';
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line disabled">
-                                                <input type="text" name="username" class="form-control" value="<?= $nilai['usersUid'] ?>" autocomplete="off">
+                                                <input type="text" name="username" class="form-control" value="<?= $value['usersUid'] ?>" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
