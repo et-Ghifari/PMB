@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <a href="javascript:void(0);" class="bars"></a>
-            <b><a class="navbar-brand" href="<?= base_url('dhasboard') ?>">PMB - POLIBANG</a></b>
+            <b><a class="navbar-brand" href="<?= base_url('dashboard') ?>">PMB - POLIBANG</a></b>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse"></div>
     </div>
@@ -12,7 +12,7 @@
         <!-- Informasi User -->
         <div class="user-info">
             <div class="image">
-                <img src="<?= base_url('assets/images/users.png') ?>" width="48" height="48" alt="User" />
+                <img src="<?= base_url('assets/images/admin.png') ?>" width="48" height="48" alt="User" />
             </div>
             <div class="info-container">
                 <?php if (isset($_SESSION['useruid'])) { ?>
@@ -32,7 +32,7 @@
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="">
-                    <a href="<?= base_url('dhasboard') ?>">
+                    <a href="<?= base_url('dashboard') ?>">
                         <i class="material-icons active">home</i>
                         <span>Dhasboard</span>
                     </a>

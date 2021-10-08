@@ -20,20 +20,11 @@ require_once '../progres/userProgres.php';
                                 <div class="col-sm-2">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <form action="" method="POST">
-                                            <input type="text" name="keyword" class="form-control" placeholder="Cari..." autofocus autocomplete="off">
+                                                <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Cari..." autofocus autocomplete="off">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-1">
-                                    <div class="form-group">
-                                        <div class="">
-                                            <button type="submit" name="search" class="btn btn-default waves-effect" data-toggle="tooltip" data-placement="bottom" title="Cari"><i class="material-icons">search</i></button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-9">
+                                <div class="col-sm-10">
                                     <div class="form-group">
                                         <div align="right">
                                             <a type="button" href="<?= base_url('user') ?>" class="btn btn-default waves-effect" data-toggle="tooltip" data-placement="bottom" title="Perbarui"><i class="material-icons">refresh</i></a>
@@ -45,7 +36,7 @@ require_once '../progres/userProgres.php';
                                     </div>
                                 </div>
                             </div>
-                            <div class="table-responsive">
+                            <div id="userTable" class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr>
@@ -69,35 +60,35 @@ require_once '../progres/userProgres.php';
                                         <?php endforeach ?>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div align="center">
-                                <ul class="pagination">
-                                    <?php if ($actPage > 1) : ?>
-                                        <li class="">
-                                            <a href="?page=<?= $actPage - 1 ?>"><i class="material-icons">chevron_left</i></a>
-                                        </li>
-                                    <?php else : ?>
-                                        <li class="disabled">
-                                            <a><i class="material-icons">chevron_left</i></a>
-                                        </li>
-                                    <?php endif ?>
-                                    <?php for ($i = 1; $i <= $page; $i++) : ?>
-                                        <?php if ($i == $actPage) : ?>
-                                            <li class="active"><a href="?page=<?= $i ?>" class="waves-effect"><?= $i ?></a></li>
+                                <div align="center">
+                                    <ul class="pagination">
+                                        <?php if ($actPage > 1) : ?>
+                                            <li class="">
+                                                <a href="?page=<?= $actPage - 1 ?>"><i class="material-icons">chevron_left</i></a>
+                                            </li>
                                         <?php else : ?>
-                                            <li><a href="?page=<?= $i ?>" class="waves-effect"><?= $i ?></a></li>
+                                            <li class="disabled">
+                                                <a><i class="material-icons">chevron_left</i></a>
+                                            </li>
                                         <?php endif ?>
-                                    <?php endfor ?>
-                                    <?php if ($actPage < $page) : ?>
-                                        <li class="">
-                                            <a href="?page=<?= $actPage + 1 ?>"><i class="material-icons">chevron_right</i></a>
-                                        </li>
-                                    <?php else : ?>
-                                        <li class="disabled">
-                                            <a><i class="material-icons">chevron_right</i></a>
-                                        </li>
-                                    <?php endif ?>
-                                </ul>
+                                        <?php for ($i = 1; $i <= $page; $i++) : ?>
+                                            <?php if ($i == $actPage) : ?>
+                                                <li class="active"><a href="?page=<?= $i ?>" class="waves-effect"><?= $i ?></a></li>
+                                            <?php else : ?>
+                                                <li><a href="?page=<?= $i ?>" class="waves-effect"><?= $i ?></a></li>
+                                            <?php endif ?>
+                                        <?php endfor ?>
+                                        <?php if ($actPage < $page) : ?>
+                                            <li class="">
+                                                <a href="?page=<?= $actPage + 1 ?>"><i class="material-icons">chevron_right</i></a>
+                                            </li>
+                                        <?php else : ?>
+                                            <li class="disabled">
+                                                <a><i class="material-icons">chevron_right</i></a>
+                                            </li>
+                                        <?php endif ?>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>

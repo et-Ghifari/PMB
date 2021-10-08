@@ -3,11 +3,11 @@ include_once '../config/connect.php';
 
 //Register user
 if (isset($_POST['register'])) {
-    $name     = $_POST['name'];
-    $email    = $_POST['email'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $confirm  = $_POST['confirm'];
+    $name     = trim(mysqli_real_escape_string($conn, $_POST['name']));
+    $email    = trim(mysqli_real_escape_string($conn, $_POST['email']));
+    $username = trim(mysqli_real_escape_string($conn, $_POST['username']));
+    $password = trim(mysqli_real_escape_string($conn, $_POST['password']));
+    $confirm  = trim(mysqli_real_escape_string($conn, $_POST['confirm']));
 
     if (empty($name) || empty($email) || empty($username) || empty($password) || empty($confirm)) {
         echo '<script>window.location="' . base_url('auth/register.php?error=emptyinput') . '";</script>';
@@ -71,8 +71,8 @@ if (isset($_POST['register'])) {
 
 //Login user
 if (isset($_POST['login'])) {
-    $uid      = $_POST['uid'];
-    $password = $_POST['password'];
+    $uid      = trim(mysqli_real_escape_string($conn, $_POST['uid']));
+    $password = trim(mysqli_real_escape_string($conn, $_POST['password']));
 
     if (empty($uid) || empty($password)) {
         echo '<script>window.location="' . base_url('auth/login.php?error=emptyinput') . '";</script>';
@@ -99,13 +99,13 @@ if (isset($_POST['login'])) {
     }
 
     $pwdHashed = $data['usersPwd'];
-    $checkPwd = password_verify($password, $pwdHashed);
+    $checkPwd  = password_verify($password, $pwdHashed);
 
     if ($checkPwd == false) {
         echo '<script>window.location="' . base_url('auth/login.php?error=pwdwrong') . '";</script>';
         exit();
     } elseif ($checkPwd == true) {
-        $_SESSION['useruid'] = $data['usersUid'];
+        $_SESSION['useruid']   = $data['usersUid'];
         $_SESSION['useremail'] = $data['usersEmail'];
 
         echo

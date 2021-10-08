@@ -8,11 +8,11 @@ if (!isset($_SESSION['useremail'])) { //Kondisi sesi login
 
 //Add user
 if (isset($_POST['add'])) { //Menambahkan user ke tabel users
-    $name     = $_POST['name'];
-    $email    = $_POST['email'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $confirm  = $_POST['confirm'];
+    $name     = trim(mysqli_real_escape_string($conn, $_POST['name']));
+    $email    = trim(mysqli_real_escape_string($conn, $_POST['email']));
+    $username = trim(mysqli_real_escape_string($conn, $_POST['username']));
+    $password = trim(mysqli_real_escape_string($conn, $_POST['password']));
+    $confirm  = trim(mysqli_real_escape_string($conn, $_POST['confirm']));
 
     if (empty($name) || empty($email) || empty($username) || empty($password) || empty($confirm)) {
         echo '<script>window.location="' . base_url('user/addUser.php?error=emptyinput') . '";</script>';
@@ -92,10 +92,10 @@ if (isset($_GET['id'])) {
 
     //Update user
     if (isset($_POST['edit'])) {
-        $name     = $_POST['name'];
-        $email    = $_POST['email'];
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+        $name     = trim(mysqli_real_escape_string($conn, $_POST['name']));
+        $email    = trim(mysqli_real_escape_string($conn, $_POST['email']));
+        $username = trim(mysqli_real_escape_string($conn, $_POST['username']));
+        $password = trim(mysqli_real_escape_string($conn, $_POST['password']));
 
         $dataupdate = 'UPDATE `users` SET `usersName` = ?, `usersEmail` = ?, `usersUid` = ?, `usersPwd` = ? WHERE `usersId` = ?';
         $stmtupdate = mysqli_stmt_init($conn);
@@ -120,8 +120,8 @@ if (isset($_GET['id'])) {
 }
 
 //Read user   
-$dataPage = 3;
-$query   = mysqli_query($conn, 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users`');
+$dataPage = 4;
+$query    = mysqli_query($conn, 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users`');
 $data     = mysqli_num_rows($query);
 $page     = ceil($data / $dataPage);
 $actPage  = (isset($_GET['page'])) ? $_GET['page'] : 1;
@@ -138,20 +138,3 @@ if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {
 mysqli_stmt_bind_param($stmtselect, 'ss', $stData, $dataPage);
 mysqli_stmt_execute($stmtselect);
 $users = mysqli_stmt_get_result($stmtselect);
-
-//Search user
-if (isset($_POST['search'])) {
-    $keyword  = '%' . $_POST['keyword'] . '%';
-
-    $datasearch = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users` WHERE `usersName` LIKE ? OR `usersEmail` LIKE ? OR `usersUid` LIKE ?';
-    $stmtsearch = mysqli_stmt_init($conn);
-
-    if (!mysqli_stmt_prepare($stmtsearch, $datasearch)) {
-        echo '<script>window.location="' . base_url('user/user.php?error=stmtfailed') . '";</script>';
-        exit();
-    }
-
-    mysqli_stmt_bind_param($stmtsearch, 'sss', $keyword, $keyword, $keyword);
-    mysqli_stmt_execute($stmtsearch);
-    $users = mysqli_stmt_get_result($stmtsearch);
-}
