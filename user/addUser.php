@@ -1,5 +1,14 @@
 <?php
+include_once '../config/connect.php';
+include_once '../config/function.php';
 require_once '../progres/userProgres.php';
+
+//Kondisi sesi login
+if (!isset($_SESSION['useremail']))
+{
+    echo '<script>window.location="' . base_url('auth/login.php') . '";</script>';
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,8 +26,10 @@ require_once '../progres/userProgres.php';
                         </div>
                         <div class="body">
                             <?php
-                            if (isset($_GET['error'])) {
-                                if ($_GET['error'] == 'emptyinput') {
+                            if (isset($_GET['error']))
+                            {
+                                if ($_GET['error'] == 'emptyinput')
+                                {
                                     echo '<div class="alert alert-danger" align="center"><strong>Isi semua formulir yang ada!</strong></div>';
                                 } elseif ($_GET['error'] == 'invalidemail') {
                                     echo '<div class="alert alert-danger" align="center"><strong>Email tidak sesuai!</strong></div>';

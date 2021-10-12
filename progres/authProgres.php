@@ -1,30 +1,34 @@
 <?php
-include_once '../config/connect.php';
 
 //Register user
-if (isset($_POST['register'])) {
+if (isset($_POST['register']))
+{
     $name     = trim(mysqli_real_escape_string($conn, $_POST['name']));
     $email    = trim(mysqli_real_escape_string($conn, $_POST['email']));
     $username = trim(mysqli_real_escape_string($conn, $_POST['username']));
     $password = trim(mysqli_real_escape_string($conn, $_POST['password']));
     $confirm  = trim(mysqli_real_escape_string($conn, $_POST['confirm']));
 
-    if (empty($name) || empty($email) || empty($username) || empty($password) || empty($confirm)) {
+    if (empty($name) || empty($email) || empty($username) || empty($password) || empty($confirm))
+    {
         echo '<script>window.location="' . base_url('auth/register.php?error=emptyinput') . '";</script>';
         exit();
     }
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL))
+    {
         echo '<script>window.location="' . base_url('auth/register.php?error=invalidemail') . '";</script>';
         exit();
     }
 
-    if (!preg_match('/^[a-zA-Z0-9]*$/', $username)) {
+    if (!preg_match('/^[a-zA-Z0-9]*$/', $username))
+    {
         echo '<script>window.location="' . base_url('auth/register.php?error=invaliduid') . '";</script>';
         exit();
     }
 
-    if ($password != $confirm) {
+    if ($password != $confirm)
+    {
         echo '<script>window.location="' . base_url('auth/register.php?error=confirmwrong') . '";</script>';
         exit();
     }
@@ -32,7 +36,8 @@ if (isset($_POST['register'])) {
     $dataselect = 'SELECT `usersEmail`, `usersUid`, `usersPwd` FROM `users` WHERE `usersEmail` = ? OR `usersUid` = ?';
     $stmtselect = mysqli_stmt_init($conn);
 
-    if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {
+    if (!mysqli_stmt_prepare($stmtselect, $dataselect))
+    {
         echo '<script>window.location="' . base_url('auth/register.php?error=stmtfailed') . '";</script>';
         exit();
     }
@@ -42,7 +47,8 @@ if (isset($_POST['register'])) {
 
     $resultData = mysqli_stmt_get_result($stmtselect);
 
-    if ($row = mysqli_fetch_assoc($resultData)) {
+    if ($row = mysqli_fetch_assoc($resultData))
+    {
         echo '<script>window.location="' . base_url('auth/register.php?error=registed') . '";</script>';
         exit();
     }
@@ -50,7 +56,8 @@ if (isset($_POST['register'])) {
     $datainsert = 'INSERT INTO `users` (`usersName`, `usersEmail`, `usersUid`, `usersPwd`) VALUES (?, ?, ?, ?)';
     $stmtinsert = mysqli_stmt_init($conn);
 
-    if (!mysqli_stmt_prepare($stmtinsert, $datainsert)) {
+    if (!mysqli_stmt_prepare($stmtinsert, $datainsert))
+    {
         echo '<script>window.location="' . base_url('auth/register.php?error=stmtfailed') . '";</script>';
         exit();
     }
@@ -70,11 +77,13 @@ if (isset($_POST['register'])) {
 }
 
 //Login user
-if (isset($_POST['login'])) {
+if (isset($_POST['login']))
+{
     $uid      = trim(mysqli_real_escape_string($conn, $_POST['uid']));
     $password = trim(mysqli_real_escape_string($conn, $_POST['password']));
 
-    if (empty($uid) || empty($password)) {
+    if (empty($uid) || empty($password))
+    {
         echo '<script>window.location="' . base_url('auth/login.php?error=emptyinput') . '";</script>';
         exit();
     }
@@ -82,7 +91,8 @@ if (isset($_POST['login'])) {
     $dataselect = 'SELECT `usersEmail`, `usersUid`, `usersPwd` FROM `users` WHERE `usersEmail` = ? OR `usersUid` = ?';
     $stmtselect = mysqli_stmt_init($conn);
 
-    if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {
+    if (!mysqli_stmt_prepare($stmtselect, $dataselect))
+    {
         echo '<script>window.location="' . base_url('auth/login.php?error=stmtfailed') . '";</script>';
         exit();
     }
@@ -93,7 +103,8 @@ if (isset($_POST['login'])) {
     $resultData = mysqli_stmt_get_result($stmtselect);
     $data = mysqli_fetch_assoc($resultData);
 
-    if ($data == false) {
+    if ($data == false)
+    {
         echo '<script>window.location="' . base_url('auth/login.php?error=uidwrong') . '";</script>';
         exit();
     }
@@ -101,7 +112,8 @@ if (isset($_POST['login'])) {
     $pwdHashed = $data['usersPwd'];
     $checkPwd  = password_verify($password, $pwdHashed);
 
-    if ($checkPwd == false) {
+    if ($checkPwd == false)
+    {
         echo '<script>window.location="' . base_url('auth/login.php?error=pwdwrong') . '";</script>';
         exit();
     } elseif ($checkPwd == true) {

@@ -1,7 +1,12 @@
 <?php
 require_once '../config/connect.php';
+require_once '../config/function.php';
 
-$id = @$_GET['id'];
+$id = !empty($_GET['id']) ? intval($_GET['id']) : 0;
+if (empty($id))
+{
+    return false;
+}
 
 $datadelete = 'DELETE FROM `users` WHERE `usersId` = ?';
 $stmtdelete = mysqli_stmt_init($conn);

@@ -1,4 +1,6 @@
 <?php
+require_once '../config/connect.php';
+require_once '../config/function.php';
 require_once '../progres/authProgres.php';
 ?>
 <!DOCTYPE html>
@@ -15,7 +17,8 @@ require_once '../progres/authProgres.php';
             <div class="body">
                 <form method="POST" action="">
                     <?php
-                    if (isset($_GET['error'])) {
+                    if (isset($_GET['error']))
+                    {
                         if ($_GET['error'] == 'emptyinput') {
                             echo '<div class="alert alert-danger" align="center"><strong>Isi semua formulir yang ada!</strong></div>';
                         } elseif ($_GET['error'] == 'uidwrong') {

@@ -1,5 +1,13 @@
 <?php
-require_once '../progres/menusProgres.php';
+include_once '../config/connect.php';
+include_once '../config/function.php';
+require_once '../progres/menuProgres.php';
+//Kondisi sesi login
+if (!isset($_SESSION['useremail']))
+{
+    echo '<script>window.location="' . base_url('auth/login.php') . '";</script>';
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -47,7 +55,10 @@ require_once '../progres/menusProgres.php';
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($menus as $menu) : ?>
+                                        <?php
+                                        foreach ($menus as $menu)
+                                        {
+                                            ?>
                                             <tr>
                                                 <td><?= $menu['menusOrder'] ?></td>
                                                 <td><?= $menu['menusName'] ?></td>
@@ -57,7 +68,9 @@ require_once '../progres/menusProgres.php';
                                                     <a href="deleteMenu.php?id=<?= $user['menusId'] ?>" class="btn btn-danger waves-effect" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="right" title="Hapus Menu"><i class="material-icons">delete</i></a>
                                                 </td>
                                             </tr>
-                                        <?php endforeach ?>
+                                        <?php
+                                        }
+                                            ?>
                                     </tbody>
                                 </table>
                                 <div align="center">

@@ -1,5 +1,7 @@
 <?php
 require_once 'config/connect.php';
+require_once 'config/function.php';
+require_once 'progres/menuProgres.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,21 +45,28 @@ require_once 'config/connect.php';
             </a>
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
-                    <li><a href="#visi_misi">Visi Misi</a></li>
-                    <li><a href="#beasiswa">Beasiswa</a></li>
-                    <li><a href="#panduan">Panduan</a></li>
-                    <li><a href="#prodi">Prodi</a></li>
-                    <li><a href="#fasilitas">Fasilitas</a></li>
-                    <li><a href="#biaya">Biaya</a></li>
-                    <li><a href="#testimoni">Testimoni</a></li>
+                    <?php
+                    foreach ($menus as $menu)
+                    {
+                        ?>
+                        <li><a href="<?= $menu['menusUrl'] ?>"><?= $menu['menusName'] ?></a></li>
+                    <?php
+                    }
+                        ?>
                 </ul>
             </nav>
             <?php
-            if (isset($_SESSION['useremail'])) { ?>
+            if (isset($_SESSION['useremail']))
+            {
+                ?>
                 <a class="appointment-btn scrollto" href="<?= base_url('dashboard') ?>"><b>HOME</b></a>
-            <?php } else { ?>
+            <?php
+            } else {
+                ?>
                 <a class="appointment-btn scrollto" href="<?= base_url('auth') ?>"><b>LOGIN</b></a>
-            <?php } ?>
+            <?php
+            }
+                ?>
         </div>
     </header>
     <!-- ======= Gambabar Sliding Fakultas ======= -->

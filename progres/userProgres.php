@@ -1,35 +1,34 @@
 <?php
-include_once '../config/connect.php';
-
-if (!isset($_SESSION['useremail'])) { //Kondisi sesi login
-    echo '<script>window.location="' . base_url('auth/login.php') . '";</script>';
-    exit();
-}
 
 //Add user
-if (isset($_POST['add'])) { //Menambahkan user ke tabel users
+if (isset($_POST['add']))
+{
     $name     = trim(mysqli_real_escape_string($conn, $_POST['name']));
     $email    = trim(mysqli_real_escape_string($conn, $_POST['email']));
     $username = trim(mysqli_real_escape_string($conn, $_POST['username']));
     $password = trim(mysqli_real_escape_string($conn, $_POST['password']));
     $confirm  = trim(mysqli_real_escape_string($conn, $_POST['confirm']));
 
-    if (empty($name) || empty($email) || empty($username) || empty($password) || empty($confirm)) {
+    if (empty($name) || empty($email) || empty($username) || empty($password) || empty($confirm))
+    {
         echo '<script>window.location="' . base_url('user/addUser.php?error=emptyinput') . '";</script>';
         exit();
     }
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL))
+    {
         echo '<script>window.location="' . base_url('user/addUser.php?error=invalidemail') . '";</script>';
         exit();
     }
 
-    if (!preg_match('/^[a-zA-Z0-9]*$/', $username)) {
+    if (!preg_match('/^[a-zA-Z0-9]*$/', $username))
+    {
         echo '<script>window.location="' . base_url('user/addUser.php?error=invaliduid') . '";</script>';
         exit();
     }
 
-    if ($password != $confirm) {
+    if ($password != $confirm)
+    {
         echo '<script>window.location="' . base_url('user/addUser.php?error=confirmwrong') . '";</script>';
         exit();
     }
@@ -37,7 +36,8 @@ if (isset($_POST['add'])) { //Menambahkan user ke tabel users
     $dataselect = 'SELECT `usersEmail`, `usersUid`, `usersPwd` FROM `users` WHERE `usersEmail` = ? OR `usersUid` = ?';
     $stmtselect = mysqli_stmt_init($conn);
 
-    if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {
+    if (!mysqli_stmt_prepare($stmtselect, $dataselect))
+    {
         echo '<script>window.location="' . base_url('user/addUser.php?error=stmtfailed') . '";</script>';
         exit();
     }
@@ -47,7 +47,8 @@ if (isset($_POST['add'])) { //Menambahkan user ke tabel users
 
     $resultData = mysqli_stmt_get_result($stmtselect);
 
-    if ($row = mysqli_fetch_assoc($resultData)) {
+    if ($row = mysqli_fetch_assoc($resultData))
+    {
         echo '<script>window.location="' . base_url('user/addUser.php?error=registed') . '";</script>';
         exit();
     }
@@ -55,7 +56,8 @@ if (isset($_POST['add'])) { //Menambahkan user ke tabel users
     $datainsert = 'INSERT INTO `users` (`usersName`, `usersEmail`, `usersUid`, `usersPwd`) VALUES (?, ?, ?, ?)';
     $stmtinsert = mysqli_stmt_init($conn);
 
-    if (!mysqli_stmt_prepare($stmtinsert, $datainsert)) {
+    if (!mysqli_stmt_prepare($stmtinsert, $datainsert))
+    {
         echo '<script>window.location="' . base_url('user/addUser.php?error=stmtfailed') . '";</script>';
         exit();
     }
@@ -75,12 +77,19 @@ if (isset($_POST['add'])) { //Menambahkan user ke tabel users
 }
 
 //Edit user
-if (isset($_GET['id'])) {
-    $id         = @$_GET['id'];
+if (isset($_GET['id']))
+{
+    $id = !empty($_GET['id']) ? intval($_GET['id']) : 0;
+    if (empty($id))
+    {
+        return false;
+    }
+
     $dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users` WHERE `usersId` = ?';
     $stmtselect = mysqli_stmt_init($conn);
 
-    if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {
+    if (!mysqli_stmt_prepare($stmtselect, $dataselect))
+    {
         echo '<script>window.location="' . base_url('user/editUser.php?error=stmtfailed') . '";</script>';
         exit();
     }
@@ -91,7 +100,8 @@ if (isset($_GET['id'])) {
     $value  = mysqli_fetch_assoc($resultData);
 
     //Update user
-    if (isset($_POST['edit'])) {
+    if (isset($_POST['edit']))
+    {
         $name     = trim(mysqli_real_escape_string($conn, $_POST['name']));
         $email    = trim(mysqli_real_escape_string($conn, $_POST['email']));
         $username = trim(mysqli_real_escape_string($conn, $_POST['username']));
@@ -100,7 +110,8 @@ if (isset($_GET['id'])) {
         $dataupdate = 'UPDATE `users` SET `usersName` = ?, `usersEmail` = ?, `usersUid` = ?, `usersPwd` = ? WHERE `usersId` = ?';
         $stmtupdate = mysqli_stmt_init($conn);
 
-        if (!mysqli_stmt_prepare($stmtupdate, $dataupdate)) {
+        if (!mysqli_stmt_prepare($stmtupdate, $dataupdate))
+        {
             echo '<script>window.location="' . base_url('user/editUser.php?error=stmtfailed') . '";</script>';
             exit();
         }
@@ -130,7 +141,8 @@ $stData   = ($dataPage * $actPage) - $dataPage;
 $dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users` ORDER BY `usersName` LIMIT ?, ?';
 $stmtselect = mysqli_stmt_init($conn);
 
-if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {
+if (!mysqli_stmt_prepare($stmtselect, $dataselect))
+{
     echo '<script>window.location="' . base_url('user/user.php?error=stmtfailed') . '";</script>';
     exit();
 }

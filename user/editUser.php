@@ -1,5 +1,14 @@
 <?php
+include_once '../config/connect.php';
+include_once '../config/function.php';
 require_once '../progres/userProgres.php';
+
+//Kondisi sesi login
+if (!isset($_SESSION['useremail']))
+{
+    echo '<script>window.location="' . base_url('auth/login.php') . '";</script>';
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html>

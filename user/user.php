@@ -1,5 +1,14 @@
 <?php
+include_once '../config/connect.php';
+include_once '../config/function.php';
 require_once '../progres/userProgres.php';
+
+//Kondisi sesi login
+if (!isset($_SESSION['useremail']))
+{
+    echo '<script>window.location="' . base_url('auth/login.php') . '";</script>';
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -47,7 +56,10 @@ require_once '../progres/userProgres.php';
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($users as $user) : ?>
+                                        <?php
+                                        foreach ($users as $user)
+                                        {
+                                            ?>
                                             <tr>
                                                 <td><?= $user['usersName'] ?></td>
                                                 <td><?= $user['usersEmail'] ?></td>
@@ -57,36 +69,63 @@ require_once '../progres/userProgres.php';
                                                     <a href="deleteUser.php?id=<?= $user['usersId'] ?>" class="btn btn-danger waves-effect" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="right" title="Hapus User"><i class="material-icons">delete</i></a>
                                                 </td>
                                             </tr>
-                                        <?php endforeach ?>
+                                        <?php
+                                        }
+                                            ?>
                                     </tbody>
                                 </table>
                                 <div align="center">
                                     <ul class="pagination">
-                                        <?php if ($actPage > 1) : ?>
+                                        <?php
+                                        if ($actPage > 1)
+                                        {
+                                            ?>
                                             <li class="">
                                                 <a href="?page=<?= $actPage - 1 ?>"><i class="material-icons">chevron_left</i></a>
                                             </li>
-                                        <?php else : ?>
+                                        <?php
+                                        } else
+                                        {
+                                            ?>
                                             <li class="disabled">
                                                 <a><i class="material-icons">chevron_left</i></a>
                                             </li>
-                                        <?php endif ?>
-                                        <?php for ($i = 1; $i <= $page; $i++) : ?>
-                                            <?php if ($i == $actPage) : ?>
+                                        <?php
+                                        }
+                                            ?>
+                                        <?php
+                                        for ($i = 1; $i <= $page; $i++)
+                                        {
+                                            if ($i == $actPage)
+                                            {
+                                                ?>
                                                 <li class="active"><a href="?page=<?= $i ?>" class="waves-effect"><?= $i ?></a></li>
-                                            <?php else : ?>
+                                            <?php
+                                            } else
+                                            {
+                                                ?>
                                                 <li><a href="?page=<?= $i ?>" class="waves-effect"><?= $i ?></a></li>
-                                            <?php endif ?>
-                                        <?php endfor ?>
-                                        <?php if ($actPage < $page) : ?>
+                                            <?php
+                                            }
+                                        }
+                                                ?>
+                                        <?php
+                                        if ($actPage < $page)
+                                        {
+                                            ?>
                                             <li class="">
                                                 <a href="?page=<?= $actPage + 1 ?>"><i class="material-icons">chevron_right</i></a>
                                             </li>
-                                        <?php else : ?>
+                                        <?php
+                                        } else
+                                        {
+                                            ?>
                                             <li class="disabled">
                                                 <a><i class="material-icons">chevron_right</i></a>
                                             </li>
-                                        <?php endif ?>
+                                        <?php
+                                        }
+                                            ?>
                                     </ul>
                                 </div>
                             </div>
