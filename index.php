@@ -54,7 +54,7 @@ require_once 'config/connect.php';
             </nav>
             <?php
             if (isset($_SESSION['useremail'])) { ?>
-                <a class="appointment-btn scrollto" href="<?= base_url('dhasboard') ?>"><b>HOME</b></a>
+                <a class="appointment-btn scrollto" href="<?= base_url('dashboard') ?>"><b>HOME</b></a>
             <?php } else { ?>
                 <a class="appointment-btn scrollto" href="<?= base_url('auth') ?>"><b>LOGIN</b></a>
             <?php } ?>

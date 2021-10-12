@@ -131,7 +131,7 @@ $dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `use
 $stmtselect = mysqli_stmt_init($conn);
 
 if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {
-    echo '<script>window.location="' . base_url('user/addUser.php?error=stmtfailed') . '";</script>';
+    echo '<script>window.location="' . base_url('user/user.php?error=stmtfailed') . '";</script>';
     exit();
 }
 
