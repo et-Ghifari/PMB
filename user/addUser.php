@@ -28,21 +28,21 @@ if (!isset($_SESSION['useremail']))
                             <?php
                             if (isset($_GET['error']))
                             {
-                                if ($_GET['error'] == 'emptyinput')
+                                if ($_GET['error'] == 'invalidemail')
                                 {
-                                    echo '<div class="alert alert-danger" align="center"><strong>Isi semua formulir yang ada!</strong></div>';
-                                } elseif ($_GET['error'] == 'invalidemail') {
                                     echo '<div class="alert alert-danger" align="center"><strong>Email tidak sesuai!</strong></div>';
-                                } elseif ($_GET['error'] == 'invaliduid') {
+                                }
+                                if ($_GET['error'] == 'invaliduid')
+                                {
                                     echo '<div class="alert alert-danger" align="center"><strong>Username tidak sesuai!</strong></div>';
-                                } elseif ($_GET['error'] == 'confirmwrong') {
-                                    echo '<div class="alert alert-danger" align="center"><strong>Konfirmasi password tidak sama!</strong></div>';
-                                } elseif ($_GET['error'] == 'registed') {
+                                }
+                                if ($_GET['error'] == 'registed')
+                                {
                                     echo '<div class="alert alert-danger" align="center"><strong>Email/Usernamae sudah terdaftar!</strong></div>';
                                 }
                             }
                             ?>
-                            <form class="form-horizontal" action="" method="POST">
+                            <form id="sign_up" class="form-horizontal" action="" method="POST">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="nama">Nama Lengkap</label>
@@ -50,7 +50,7 @@ if (!isset($_SESSION['useremail']))
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" autofocus autocomplete="off">
+                                                <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" autofocus required>
                                             </div>
                                         </div>
                                     </div>
@@ -62,7 +62,7 @@ if (!isset($_SESSION['useremail']))
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="email" name="email" class="form-control" placeholder="Alamat Email" autocomplete="off">
+                                                <input type="email" name="email" class="form-control" placeholder="Alamat Email" required>
                                             </div>
                                         </div>
                                     </div>
@@ -74,7 +74,7 @@ if (!isset($_SESSION['useremail']))
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" name="username" class="form-control" placeholder="Username" autocomplete="off">
+                                                <input type="text" name="username" class="form-control" placeholder="Username" required>
                                             </div>
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@ if (!isset($_SESSION['useremail']))
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="password" name="password" class="form-control" placeholder="Password">
+                                                <input type="password" name="password" class="form-control" placeholder="Password" required>
                                             </div>
                                         </div>
                                     </div>
@@ -98,7 +98,7 @@ if (!isset($_SESSION['useremail']))
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="password" name="confirm" class="form-control" placeholder="Konfirmasi Password">
+                                                <input type="password" name="confirm" class="form-control" placeholder="Konfirmasi Password" required>
                                             </div>
                                         </div>
                                     </div>

@@ -9,12 +9,6 @@ if (isset($_POST['register']))
     $password = trim(mysqli_real_escape_string($conn, $_POST['password']));
     $confirm  = trim(mysqli_real_escape_string($conn, $_POST['confirm']));
 
-    if (empty($name) || empty($email) || empty($username) || empty($password) || empty($confirm))
-    {
-        echo '<script>window.location="' . base_url('auth/register.php?error=emptyinput') . '";</script>';
-        exit();
-    }
-
     if (!filter_var($email, FILTER_VALIDATE_EMAIL))
     {
         echo '<script>window.location="' . base_url('auth/register.php?error=invalidemail') . '";</script>';
@@ -24,12 +18,6 @@ if (isset($_POST['register']))
     if (!preg_match('/^[a-zA-Z0-9]*$/', $username))
     {
         echo '<script>window.location="' . base_url('auth/register.php?error=invaliduid') . '";</script>';
-        exit();
-    }
-
-    if ($password != $confirm)
-    {
-        echo '<script>window.location="' . base_url('auth/register.php?error=confirmwrong') . '";</script>';
         exit();
     }
 
@@ -81,12 +69,6 @@ if (isset($_POST['login']))
 {
     $uid      = trim(mysqli_real_escape_string($conn, $_POST['uid']));
     $password = trim(mysqli_real_escape_string($conn, $_POST['password']));
-
-    if (empty($uid) || empty($password))
-    {
-        echo '<script>window.location="' . base_url('auth/login.php?error=emptyinput') . '";</script>';
-        exit();
-    }
 
     $dataselect = 'SELECT `usersEmail`, `usersUid`, `usersPwd` FROM `users` WHERE `usersEmail` = ? OR `usersUid` = ?';
     $stmtselect = mysqli_stmt_init($conn);

@@ -25,7 +25,7 @@ if (!isset($_SESSION['useremail']))
                             <h2>Edit User</h2>
                         </div>
                         <div class="body">
-                            <form class="form-horizontal" action="" method="POST">
+                            <form id="sign_up" class="form-horizontal" action="" method="POST">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="nama">Nama Lengkap</label>
@@ -33,7 +33,7 @@ if (!isset($_SESSION['useremail']))
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line disabled">
-                                                <input type="text" name="name" class="form-control" value="<?= $value['usersName'] ?>" autocomplete="off">
+                                                <input type="text" name="name" class="form-control" value="<?= $value['usersName'] ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -45,7 +45,7 @@ if (!isset($_SESSION['useremail']))
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line disabled">
-                                                <input type="email" name="email" class="form-control" value="<?= $value['usersEmail'] ?>" autocomplete="off">
+                                                <input type="email" name="email" class="form-control" value="<?= $value['usersEmail'] ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -57,7 +57,7 @@ if (!isset($_SESSION['useremail']))
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line disabled">
-                                                <input type="text" name="username" class="form-control" value="<?= $value['usersUid'] ?>" autocomplete="off">
+                                                <input type="text" name="username" class="form-control" value="<?= $value['usersUid'] ?>" required>
                                             </div>
                                         </div>
                                     </div>

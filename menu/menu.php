@@ -36,7 +36,7 @@ if (!isset($_SESSION['useremail']))
                                     <div class="form-group">
                                         <div align="right">
                                             <a type="button" href="<?= base_url('menu') ?>" class="btn btn-default waves-effect" data-toggle="tooltip" data-placement="bottom" title="Perbarui"><i class="material-icons">refresh</i></a>
-                                            <a href="addUser.php" class="btn btn-success waves-effect">
+                                            <a href="addMenu.php" class="btn btn-success waves-effect">
                                                 <i class="material-icons">add_circle_outline</i>
                                                 <span><strong>TAMBAH</strong></span>
                                             </a>
@@ -64,8 +64,8 @@ if (!isset($_SESSION['useremail']))
                                                 <td><?= $menu['menusName'] ?></td>
                                                 <td><?= $menu['menusUrl'] ?></td>
                                                 <td>
-                                                    <a href="editMenu.php?id=<?= $user['menusId'] ?>" class="btn btn-primary waves-effect" data-toggle="tooltip" data-placement="left" title="Edit Menu"><i class="material-icons">edit</i></a>
-                                                    <a href="deleteMenu.php?id=<?= $user['menusId'] ?>" class="btn btn-danger waves-effect" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="right" title="Hapus Menu"><i class="material-icons">delete</i></a>
+                                                    <a href="editMenu.php?id=<?= $menu['menusId'] ?>" class="btn btn-primary waves-effect" data-toggle="tooltip" data-placement="left" title="Edit Menu"><i class="material-icons">edit</i></a>
+                                                    <a href="deleteMenu.php?id=<?= $menu['menusId'] ?>" class="btn btn-danger waves-effect" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="right" title="Hapus Menu"><i class="material-icons">delete</i></a>
                                                 </td>
                                             </tr>
                                         <?php
@@ -73,35 +73,6 @@ if (!isset($_SESSION['useremail']))
                                             ?>
                                     </tbody>
                                 </table>
-                                <div align="center">
-                                    <ul class="pagination">
-                                        <?php if ($actPage > 1) : ?>
-                                            <li class="">
-                                                <a href="?page=<?= $actPage - 1 ?>"><i class="material-icons">chevron_left</i></a>
-                                            </li>
-                                        <?php else : ?>
-                                            <li class="disabled">
-                                                <a><i class="material-icons">chevron_left</i></a>
-                                            </li>
-                                        <?php endif ?>
-                                        <?php for ($i = 1; $i <= $page; $i++) : ?>
-                                            <?php if ($i == $actPage) : ?>
-                                                <li class="active"><a href="?page=<?= $i ?>" class="waves-effect"><?= $i ?></a></li>
-                                            <?php else : ?>
-                                                <li><a href="?page=<?= $i ?>" class="waves-effect"><?= $i ?></a></li>
-                                            <?php endif ?>
-                                        <?php endfor ?>
-                                        <?php if ($actPage < $page) : ?>
-                                            <li class="">
-                                                <a href="?page=<?= $actPage + 1 ?>"><i class="material-icons">chevron_right</i></a>
-                                            </li>
-                                        <?php else : ?>
-                                            <li class="disabled">
-                                                <a><i class="material-icons">chevron_right</i></a>
-                                            </li>
-                                        <?php endif ?>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                     </div>

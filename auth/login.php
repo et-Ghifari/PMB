@@ -15,15 +15,16 @@ require_once '../progres/authProgres.php';
         </div>
         <div class="card">
             <div class="body">
-                <form method="POST" action="">
+                <form id="sign_in" method="POST" action="">
                     <?php
                     if (isset($_GET['error']))
                     {
-                        if ($_GET['error'] == 'emptyinput') {
-                            echo '<div class="alert alert-danger" align="center"><strong>Isi semua formulir yang ada!</strong></div>';
-                        } elseif ($_GET['error'] == 'uidwrong') {
+                        if ($_GET['error'] == 'uidwrong')
+                        {
                             echo '<div class="alert alert-danger" align="center"><strong>Email/Username yang dimasukkan salah!</strong></div>';
-                        } elseif ($_GET['error'] == 'pwdwrong') {
+                        }
+                        if ($_GET['error'] == 'pwdwrong')
+                        {
                             echo '<div class="alert alert-danger" align="center"><strong>Password yang dimasukkan salah!</strong></div>';
                         }
                     }
@@ -33,7 +34,7 @@ require_once '../progres/authProgres.php';
                             <i class="material-icons">account_circle</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="uid" placeholder="Username/Alamat Email" autofocus autocomplete="off">
+                            <input type="text" class="form-control" name="uid" placeholder="Username/Alamat Email" required autofocus>
                         </div>
                     </div>
                     <div class="input-group">
@@ -41,7 +42,7 @@ require_once '../progres/authProgres.php';
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="off">
+                            <input type="password" class="form-control" name="password" placeholder="Password" required>
                         </div>
                     </div>
                     <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" name="login">MASUK</button>

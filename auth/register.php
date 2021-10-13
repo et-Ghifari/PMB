@@ -15,19 +15,20 @@ require_once '../progres/authProgres.php';
         </div>
         <div class="card">
             <div class="body">
-                <form action="" method="POST">
+                <form id="sign_up" action="" method="POST">
                     <?php
                     if (isset($_GET['error']))
                     {
-                        if ($_GET['error'] == 'emptyinput') {
-                            echo '<div class="alert alert-danger" align="center"><strong>Isi semua formulir yang ada!</strong></div>';
-                        } elseif ($_GET['error'] == 'invalidemail') {
+                        if ($_GET['error'] == 'invalidemail')
+                        {
                             echo '<div class="alert alert-danger" align="center"><strong>Email tidak sesuai!</strong></div>';
-                        } elseif ($_GET['error'] == 'invaliduid') {
+                        }
+                        if ($_GET['error'] == 'invaliduid')
+                        {
                             echo '<div class="alert alert-danger" align="center"><strong>Username tidak sesuai!</strong></div>';
-                        } elseif ($_GET['error'] == 'confirmwrong') {
-                            echo '<div class="alert alert-danger" align="center"><strong>Konfirmasi password tidak sama!</strong></div>';
-                        } elseif ($_GET['error'] == 'registed') {
+                        }
+                        if ($_GET['error'] == 'registed')
+                        {
                             echo '<div class="alert alert-danger" align="center"><strong>Email/Usernamae sudah terdaftar!</strong></div>';
                         }
                     }
@@ -37,7 +38,7 @@ require_once '../progres/authProgres.php';
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="name" placeholder="Nama Lengkap" autofocus autocomplete="off">
+                            <input type="text" class="form-control" name="name" placeholder="Name Surname" required autofocus>
                         </div>
                     </div>
                     <div class="input-group">
@@ -45,7 +46,7 @@ require_once '../progres/authProgres.php';
                             <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="email" class="form-control" name="email" placeholder="Alamat Email" autocomplete="off">
+                            <input type="email" class="form-control" name="email" placeholder="Alamat Email" required>
                         </div>
                     </div>
                     <div class="input-group">
@@ -53,7 +54,7 @@ require_once '../progres/authProgres.php';
                             <i class="material-icons">account_circle</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="username" placeholder="Username" autocomplete="off">
+                            <input type="text" class="form-control" name="username" placeholder="Username" required>
                         </div>
                     </div>
                     <div class="input-group">
@@ -61,7 +62,7 @@ require_once '../progres/authProgres.php';
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="password" placeholder="Password">
+                            <input type="password" class="form-control" name="password" minlength="6" placeholder="Password" required>
                         </div>
                     </div>
                     <div class="input-group">
@@ -69,8 +70,12 @@ require_once '../progres/authProgres.php';
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="confirm" placeholder="Konfirmasi Password">
+                            <input type="password" class="form-control" name="confirm" minlength="6" placeholder="Konfirmasi Password" required>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" name="terms" id="terms" class="filled-in chk-col-pink">
+                        <label for="terms">Saya membaca dan menyetujui <a href="javascript:void(0);">syarat penggunaan</a>.</label>
                     </div>
                     <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" name="register">BUAT AKUN</button>
                     <div class="m-t-25 m-b--5 align-center">

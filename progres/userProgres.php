@@ -9,12 +9,6 @@ if (isset($_POST['add']))
     $password = trim(mysqli_real_escape_string($conn, $_POST['password']));
     $confirm  = trim(mysqli_real_escape_string($conn, $_POST['confirm']));
 
-    if (empty($name) || empty($email) || empty($username) || empty($password) || empty($confirm))
-    {
-        echo '<script>window.location="' . base_url('user/addUser.php?error=emptyinput') . '";</script>';
-        exit();
-    }
-
     if (!filter_var($email, FILTER_VALIDATE_EMAIL))
     {
         echo '<script>window.location="' . base_url('user/addUser.php?error=invalidemail') . '";</script>';
@@ -24,12 +18,6 @@ if (isset($_POST['add']))
     if (!preg_match('/^[a-zA-Z0-9]*$/', $username))
     {
         echo '<script>window.location="' . base_url('user/addUser.php?error=invaliduid') . '";</script>';
-        exit();
-    }
-
-    if ($password != $confirm)
-    {
-        echo '<script>window.location="' . base_url('user/addUser.php?error=confirmwrong') . '";</script>';
         exit();
     }
 
@@ -70,7 +58,7 @@ if (isset($_POST['add']))
 
     echo
     '<script>
-            alert("Pembuatan Akun Berhasil")
+            alert("Penambahan Akun Berhasil")
             document.location="' . base_url('user') . '";
         </script>';
     exit();
