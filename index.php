@@ -309,7 +309,7 @@ require_once 'progres/menuProgres.php';
             <div class="buat_akun" data-aos="zoom-in">
                 <div class="text-center">
                     <h3>Belum Punya Akun?</h3>
-                    <a class="cta-btn scrollto" href="register.php">Buat Akun</a>
+                    <a class="cta-btn scrollto" href="<?= base_url('auth/register.php') ?>">Buat Akun</a>
                 </div>
             </div>
         </section>

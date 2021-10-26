@@ -11,13 +11,13 @@ if (isset($_POST['add']))
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL))
     {
-        echo '<script>window.location="' . base_url('user/addUser.php?error=invalidemail') . '";</script>';
+        echo '<script>window.location="' . base_url('addUser.php?error=invalidemail') . '";</script>';
         exit();
     }
 
     if (!preg_match('/^[a-zA-Z0-9]*$/', $username))
     {
-        echo '<script>window.location="' . base_url('user/addUser.php?error=invaliduid') . '";</script>';
+        echo '<script>window.location="' . base_url('addUser.php?error=invaliduid') . '";</script>';
         exit();
     }
 
@@ -26,7 +26,7 @@ if (isset($_POST['add']))
 
     if (!mysqli_stmt_prepare($stmtselect, $dataselect))
     {
-        echo '<script>window.location="' . base_url('user/addUser.php?error=stmtfailed') . '";</script>';
+        echo '<script>window.location="' . base_url('addUser.php?error=stmtfailed') . '";</script>';
         exit();
     }
 
@@ -37,7 +37,7 @@ if (isset($_POST['add']))
 
     if ($row = mysqli_fetch_assoc($resultData))
     {
-        echo '<script>window.location="' . base_url('user/addUser.php?error=registed') . '";</script>';
+        echo '<script>window.location="' . base_url('addUser.php?error=registed') . '";</script>';
         exit();
     }
 
@@ -46,7 +46,7 @@ if (isset($_POST['add']))
 
     if (!mysqli_stmt_prepare($stmtinsert, $datainsert))
     {
-        echo '<script>window.location="' . base_url('user/addUser.php?error=stmtfailed') . '";</script>';
+        echo '<script>window.location="' . base_url('addUser.php?error=stmtfailed') . '";</script>';
         exit();
     }
 
@@ -59,7 +59,7 @@ if (isset($_POST['add']))
     echo
     '<script>
             alert("Penambahan Akun Berhasil")
-            document.location="' . base_url('user') . '";
+            document.location="' . base_url('user.php') . '";
         </script>';
     exit();
 }
@@ -78,7 +78,7 @@ if (isset($_GET['id']))
 
     if (!mysqli_stmt_prepare($stmtselect, $dataselect))
     {
-        echo '<script>window.location="' . base_url('user/editUser.php?error=stmtfailed') . '";</script>';
+        echo '<script>window.location="' . base_url('editUser.php?error=stmtfailed') . '";</script>';
         exit();
     }
 
@@ -100,7 +100,7 @@ if (isset($_GET['id']))
 
         if (!mysqli_stmt_prepare($stmtupdate, $dataupdate))
         {
-            echo '<script>window.location="' . base_url('user/editUser.php?error=stmtfailed') . '";</script>';
+            echo '<script>window.location="' . base_url('editUser.php?error=stmtfailed') . '";</script>';
             exit();
         }
 
@@ -112,7 +112,7 @@ if (isset($_GET['id']))
         echo
         '<script>
             alert("Perubahan Akun Berhasil")
-            document.location="' . base_url('user') . '";
+            document.location="' . base_url('user.php') . '";
         </script>';
         exit();
     }
@@ -131,7 +131,7 @@ $stmtselect = mysqli_stmt_init($conn);
 
 if (!mysqli_stmt_prepare($stmtselect, $dataselect))
 {
-    echo '<script>window.location="' . base_url('user/user.php?error=stmtfailed') . '";</script>';
+    echo '<script>window.location="' . base_url('user.php?error=stmtfailed') . '";</script>';
     exit();
 }
 

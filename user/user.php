@@ -6,7 +6,7 @@ require_once '../progres/userProgres.php';
 //Kondisi sesi login
 if (!isset($_SESSION['useremail']))
 {
-    echo '<script>window.location="' . base_url('auth/login.php') . '";</script>';
+    echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();
 }
 ?>
@@ -36,7 +36,7 @@ if (!isset($_SESSION['useremail']))
                                 <div class="col-sm-10">
                                     <div class="form-group">
                                         <div align="right">
-                                            <a type="button" href="<?= base_url('user') ?>" class="btn btn-default waves-effect" data-toggle="tooltip" data-placement="bottom" title="Perbarui"><i class="material-icons">refresh</i></a>
+                                            <a type="button" href="<?= base_url('../user') ?>" class="btn btn-default waves-effect" data-toggle="tooltip" data-placement="bottom" title="Perbarui"><i class="material-icons">refresh</i></a>
                                             <a href="addUser.php" class="btn btn-success waves-effect">
                                                 <i class="material-icons">add_circle_outline</i>
                                                 <span><strong>TAMBAH</strong></span>

@@ -23,6 +23,6 @@ mysqli_stmt_close($stmtdelete);
 echo
 '<script>
     alert("Menu Berhasil di Hapus")
-    document.location="' . base_url('menu') . '";
+    document.location="' . base_url('menu.php') . '";
 </script>';
 exit();

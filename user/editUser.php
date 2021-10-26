@@ -6,7 +6,7 @@ require_once '../progres/userProgres.php';
 //Kondisi sesi login
 if (!isset($_SESSION['useremail']))
 {
-    echo '<script>window.location="' . base_url('auth/login.php') . '";</script>';
+    echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();
 }
 ?>
@@ -81,7 +81,7 @@ if (!isset($_SESSION['useremail']))
                                                 <i class="material-icons">save</i>
                                                 <span><strong>SIMPAN</strong></span>
                                             </button>
-                                            <a type="button" href="<?= base_url('user') ?>" class="btn btn-danger m-t-15 waves-effect">
+                                            <a type="button" href="<?= base_url('user.php') ?>" class="btn btn-danger m-t-15 waves-effect">
                                                 <i class="material-icons">backspace</i>
                                                 <span><strong>KEMBALI</strong></span></a>
                                         </div>

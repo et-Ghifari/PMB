@@ -1,8 +1,8 @@
 <nav class="navbar">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a href="javascript:void(0);" class="bars"></a>
-            <b><a class="navbar-brand" href="<?= base_url('dashboard') ?>">PMB - POLIBANG</a></b>
+            <a class="bars"></a>
+            <b><a class="navbar-brand" href="<?= base_url('../dashboard') ?>">PMB - POLIBANG</a></b>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse"></div>
     </div>
@@ -12,17 +12,29 @@
         <!-- Informasi User -->
         <div class="user-info">
             <div class="image">
-                <img src="<?= base_url('assets/images/admin.png') ?>" width="48" height="48" alt="User" />
+                <?php
+                if (isset($_SESSION['useruid']))
+                {
+                    ?>
+                    <img src="<?= base_url('../assets/images/admin.png') ?>" width="48" height="48" alt="User" />
+                <?php
+                }
+                    ?>
             </div>
             <div class="info-container">
-                <?php if (isset($_SESSION['useruid'])) { ?>
+                <?php
+                if (isset($_SESSION['useruid']))
+                {
+                    ?>
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['useruid'] ?></div>
                     <div class="email"><?php echo $_SESSION['useremail'] ?></div>
-                <?php } ?>
+                <?php
+                }
+                    ?>
                 <div class="btn-group user-helper-dropdown">
                     <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                     <ul class="dropdown-menu pull-right">
-                        <li><a href="<?= base_url('auth/logout.php') ?>"><i class="material-icons">input</i>Log Out</a></li>
+                        <li><a href="<?= base_url('../auth/logout.php') ?>"><i class="material-icons">input</i>Log Out</a></li>
                     </ul>
                 </div>
             </div>
@@ -31,22 +43,30 @@
         <div class="menu">
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
-                <li class="">
-                    <a href="<?= base_url('dashboard') ?>">
-                        <i class="material-icons active">home</i>
+                <li>
+                    <a href="<?= base_url('../dashboard') ?>">
+                        <i class="material-icons">home</i>
                         <span>Dhasboard</span>
                     </a>
                 </li>
-                <li class="">
-                    <a href="<?= base_url('user') ?>">
+                <li>
+                    <a class="menu-toggle">
                         <i class="material-icons">person</i>
-                        <span>User</span>
+                        <span>Admin</span>
                     </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="<?= base_url('../user') ?>">User</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('../menu') ?>">Menu</a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="">
-                    <a href="<?= base_url('menu') ?>">
-                        <i class="material-icons">layers</i>
-                        <span>Menu</span>
+                <li>
+                    <a href="<?= base_url('../dashboard') ?>">
+                        <i class="material-icons">home</i>
+                        <span>Dhasboard</span>
                     </a>
                 </li>
             </ul>
@@ -57,7 +77,7 @@
                 &copy; Copyright <strong><span>POLITEKNIK BALEKAMBANG JEPARA</span></strong>. All Rights Reserved
             </div>
             <div class="version">
-                Designed by <b><a href="<?= base_url() ?>">PMB | POLIBANG</a></b>
+                Designed by <b><a href="<?= base_url('../') ?>">PMB | POLIBANG</a></b>
             </div>
         </div>
     </aside>

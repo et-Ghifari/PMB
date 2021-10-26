@@ -5,7 +5,7 @@ require_once '../progres/menuProgres.php';
 //Kondisi sesi login
 if (!isset($_SESSION['useremail']))
 {
-    echo '<script>window.location="' . base_url('auth/login.php') . '";</script>';
+    echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();
 }
 ?>
@@ -25,17 +25,10 @@ if (!isset($_SESSION['useremail']))
                         </div>
                         <div class="body">
                             <div class="row clearfix">
-                                <div class="col-sm-2">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                                <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Cari..." autofocus autocomplete="off">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-10">
+                                <div class="col-sm-12">
                                     <div class="form-group">
                                         <div align="right">
-                                            <a type="button" href="<?= base_url('menu') ?>" class="btn btn-default waves-effect" data-toggle="tooltip" data-placement="bottom" title="Perbarui"><i class="material-icons">refresh</i></a>
+                                            <a type="button" href="<?= base_url('menu.php') ?>" class="btn btn-default waves-effect" data-toggle="tooltip" data-placement="bottom" title="Perbarui"><i class="material-icons">refresh</i></a>
                                             <a href="addMenu.php" class="btn btn-success waves-effect">
                                                 <i class="material-icons">add_circle_outline</i>
                                                 <span><strong>TAMBAH</strong></span>
@@ -48,9 +41,9 @@ if (!isset($_SESSION['useremail']))
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th class="col-sm-4">POSISI MENU</th>
+                                            <th class="col-sm-2">POSISI MENU</th>
                                             <th class="col-sm-4">NAMA MENU</th>
-                                            <th class="col-sm-2">URL MENU</th>
+                                            <th class="col-sm-4">URL MENU</th>
                                             <th class="col-sm-2"><i class="material-icons">settings</i></th>
                                         </tr>
                                     </thead>

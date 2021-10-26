@@ -12,7 +12,7 @@ if (isset($_POST['add']))
 
     if (!mysqli_stmt_prepare($stmtselect, $dataselect))
     {
-        echo '<script>window.location="' . base_url('menu/addMenu.php?error=stmtselect') . '";</script>';
+        echo '<script>window.location="' . base_url('addMenu.php?error=stmtselect') . '";</script>';
         exit();
     }
 
@@ -23,7 +23,7 @@ if (isset($_POST['add']))
 
     if ($row = mysqli_fetch_assoc($resultData))
     {
-        echo '<script>window.location="' . base_url('menu/addMenu.php?error=registed') . '";</script>';
+        echo '<script>window.location="' . base_url('addMenu.php?error=registed') . '";</script>';
         exit();
     }
 
@@ -32,7 +32,7 @@ if (isset($_POST['add']))
 
     if (!mysqli_stmt_prepare($stmtinsert, $datainsert))
     {
-        echo '<script>window.location="' . base_url('menu/addMenu.php?error=stmtinsert') . '";</script>';
+        echo '<script>window.location="' . base_url('addMenu.php?error=stmtinsert') . '";</script>';
         exit();
     }
 
@@ -43,7 +43,7 @@ if (isset($_POST['add']))
     echo
     '<script>
             alert("Penambahan Menu Berhasil")
-            document.location="' . base_url('menu') . '";
+            document.location="' . base_url('menu.php') . '";
         </script>';
     exit();
 }
@@ -62,7 +62,7 @@ if (isset($_GET['id']))
 
     if (!mysqli_stmt_prepare($stmtselect, $dataselect))
     {
-        echo '<script>window.location="' . base_url('menu/editMenu.php?error=stmtfailed') . '";</script>';
+        echo '<script>window.location="' . base_url('editMenu.php?error=stmtfailed') . '";</script>';
         exit();
     }
 
@@ -83,7 +83,7 @@ if (isset($_GET['id']))
 
         if (!mysqli_stmt_prepare($stmtupdate, $dataupdate))
         {
-            echo '<script>window.location="' . base_url('user/editUser.php?error=stmtfailed') . '";</script>';
+            echo '<script>window.location="' . base_url('editUser.php?error=stmtfailed') . '";</script>';
             exit();
         }
 
@@ -94,7 +94,7 @@ if (isset($_GET['id']))
         echo
         '<script>
             alert("Perubahan Menu Berhasil")
-            document.location="' . base_url('menu') . '";
+            document.location="' . base_url('menu.php') . '";
         </script>';
         exit();
     }
@@ -106,7 +106,7 @@ $stmtselect = mysqli_stmt_init($conn);
 
 if (!mysqli_stmt_prepare($stmtselect, $dataselect))
 {
-    echo '<script>window.location="' . base_url('menu/menu.php?error=stmtfailed') . '";</script>';
+    echo '<script>window.location="' . base_url('menu.php?error=stmtfailed') . '";</script>';
     exit();
 }
 

@@ -11,13 +11,13 @@ if (isset($_POST['register']))
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL))
     {
-        echo '<script>window.location="' . base_url('auth/register.php?error=invalidemail') . '";</script>';
+        echo '<script>window.location="' . base_url('register.php?error=invalidemail') . '";</script>';
         exit();
     }
 
     if (!preg_match('/^[a-zA-Z0-9]*$/', $username))
     {
-        echo '<script>window.location="' . base_url('auth/register.php?error=invaliduid') . '";</script>';
+        echo '<script>window.location="' . base_url('register.php?error=invaliduid') . '";</script>';
         exit();
     }
 
@@ -26,7 +26,7 @@ if (isset($_POST['register']))
 
     if (!mysqli_stmt_prepare($stmtselect, $dataselect))
     {
-        echo '<script>window.location="' . base_url('auth/register.php?error=stmtfailed') . '";</script>';
+        echo '<script>window.location="' . base_url('register.php?error=stmtfailed') . '";</script>';
         exit();
     }
 
@@ -37,7 +37,7 @@ if (isset($_POST['register']))
 
     if ($row = mysqli_fetch_assoc($resultData))
     {
-        echo '<script>window.location="' . base_url('auth/register.php?error=registed') . '";</script>';
+        echo '<script>window.location="' . base_url('register.php?error=registed') . '";</script>';
         exit();
     }
 
@@ -46,7 +46,7 @@ if (isset($_POST['register']))
 
     if (!mysqli_stmt_prepare($stmtinsert, $datainsert))
     {
-        echo '<script>window.location="' . base_url('auth/register.php?error=stmtfailed') . '";</script>';
+        echo '<script>window.location="' . base_url('register.php?error=stmtfailed') . '";</script>';
         exit();
     }
 
@@ -59,7 +59,7 @@ if (isset($_POST['register']))
     echo
     '<script>
             alert("Pembuatan Akun Berhasil")
-            document.location="' . base_url('auth') . '";
+            document.location="' . base_url('login.php') . '";
         </script>';
     exit();
 }
@@ -75,7 +75,7 @@ if (isset($_POST['login']))
 
     if (!mysqli_stmt_prepare($stmtselect, $dataselect))
     {
-        echo '<script>window.location="' . base_url('auth/login.php?error=stmtfailed') . '";</script>';
+        echo '<script>window.location="' . base_url('login.php?error=stmtfailed') . '";</script>';
         exit();
     }
 
@@ -87,7 +87,7 @@ if (isset($_POST['login']))
 
     if ($data == false)
     {
-        echo '<script>window.location="' . base_url('auth/login.php?error=uidwrong') . '";</script>';
+        echo '<script>window.location="' . base_url('login.php?error=uidwrong') . '";</script>';
         exit();
     }
 
@@ -96,7 +96,7 @@ if (isset($_POST['login']))
 
     if ($checkPwd == false)
     {
-        echo '<script>window.location="' . base_url('auth/login.php?error=pwdwrong') . '";</script>';
+        echo '<script>window.location="' . base_url('login.php?error=pwdwrong') . '";</script>';
         exit();
     } elseif ($checkPwd == true) {
         $_SESSION['useruid']   = $data['usersUid'];
@@ -105,7 +105,7 @@ if (isset($_POST['login']))
         echo
         '<script>
             alert("Selamat Login Berhasil")
-            document.location="' . base_url('dashboard') . '";
+            document.location="' . base_url('../dashboard') . '";
         </script>';
         exit();
     }

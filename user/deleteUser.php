@@ -23,6 +23,6 @@ mysqli_stmt_close($stmtdelete);
 echo
 '<script>
     alert("Akun Berhasil di Hapus")
-    document.location="' . base_url('user') . '";
+    document.location="' . base_url('user.php') . '";
 </script>';
 exit();
