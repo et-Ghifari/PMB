@@ -37,7 +37,7 @@ if (!isset($_SESSION['useremail']))
                                     <div class="form-group">
                                         <div align="right">
                                             <a type="button" href="<?= base_url('../user') ?>" class="btn btn-default waves-effect" data-toggle="tooltip" data-placement="bottom" title="Perbarui"><i class="material-icons">refresh</i></a>
-                                            <a href="addUser.php" class="btn btn-success waves-effect">
+                                            <a href="addUser.php" class="btn bg-green waves-effect">
                                                 <i class="material-icons">add_circle_outline</i>
                                                 <span><strong>TAMBAH</strong></span>
                                             </a>
@@ -65,7 +65,7 @@ if (!isset($_SESSION['useremail']))
                                                 <td><?= $user['usersEmail'] ?></td>
                                                 <td><?= $user['usersUid'] ?></td>
                                                 <td>
-                                                    <a href="editUser.php?id=<?= $user['usersId'] ?>" class="btn btn-primary waves-effect" data-toggle="tooltip" data-placement="left" title="Edit User"><i class="material-icons">edit</i></a>
+                                                    <a href="editUser.php?id=<?= $user['usersId'] ?>" class="btn bg-cyan waves-effect" data-toggle="tooltip" data-placement="left" title="Edit User"><i class="material-icons">edit</i></a>
                                                     <a href="deleteUser.php?id=<?= $user['usersId'] ?>" class="btn btn-danger waves-effect" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="right" title="Hapus User"><i class="material-icons">delete</i></a>
                                                 </td>
                                             </tr>
@@ -136,6 +136,7 @@ if (!isset($_SESSION['useremail']))
         </div>
     </section>
     <?php include_once '../include/script.php'; ?>
+    <script src="<?= base_url('../assets/js/ajax.js') ?>"></script>
 </body>
 
 </html>

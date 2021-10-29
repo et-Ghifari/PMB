@@ -77,11 +77,11 @@ if (!isset($_SESSION['useremail']))
                                 <div class="row clearfix">
                                     <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
                                         <div class="button-demo">
-                                            <button type="submit" class="btn btn-success m-t-15 waves-effect" name="edit">
+                                            <button type="submit" class="btn bg-green m-t-15 waves-effect" name="edit">
                                                 <i class="material-icons">save</i>
                                                 <span><strong>SIMPAN</strong></span>
                                             </button>
-                                            <a type="button" href="<?= base_url('user.php') ?>" class="btn btn-danger m-t-15 waves-effect">
+                                            <a type="button" href="<?= base_url('user.php') ?>" class="btn bg-red m-t-15 waves-effect">
                                                 <i class="material-icons">backspace</i>
                                                 <span><strong>KEMBALI</strong></span></a>
                                         </div>

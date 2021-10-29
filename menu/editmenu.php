@@ -4,8 +4,7 @@ include_once '../config/function.php';
 include_once '../progres/menuProgres.php';
 
 //Kondisi sesi login
-if (!isset($_SESSION['useremail']))
-{
+if (!isset($_SESSION['useremail'])) {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();
 }
@@ -26,27 +25,13 @@ if (!isset($_SESSION['useremail']))
                         </div>
                         <div class="body">
                             <?php
-                            if (isset($_GET['error']))
-                            {
-                                if ($_GET['error'] == 'registed')
-                                {
+                            if (isset($_GET['error'])) {
+                                if ($_GET['error'] == 'registed') {
                                     echo '<div class="alert alert-danger" align="center"><strong>Posisi/Url menu sudah terdaftar!</strong></div>';
                                 }
                             }
                             ?>
                             <form id="sign_up" class="form-horizontal" action="" method="POST">
-                                <div class="row clearfix">
-                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="order">Posisi Menu</label>
-                                    </div>
-                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <input type="number" name="order" class="form-control" value="<?= $value['menusOrder'] ?>" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="name">Nama Menu</label>
@@ -67,6 +52,18 @@ if (!isset($_SESSION['useremail']))
                                         <div class="form-group">
                                             <div class="form-line">
                                                 <input type="text" name="url" class="form-control" value="<?= $value['menusUrl'] ?>" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <label for="url">Action</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group">
+                                            <div class="switch">
+                                                <label>OFF<input type="checkbox" name="act" <?= $value['menusAct'] ?> value="checked"><span class="lever"></span>ON</label>
                                             </div>
                                         </div>
                                     </div>

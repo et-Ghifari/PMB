@@ -46,7 +46,7 @@
                 <li>
                     <a href="<?= base_url('../dashboard') ?>">
                         <i class="material-icons">home</i>
-                        <span>Dhasboard</span>
+                        <span>Dashboard</span>
                     </a>
                 </li>
                 <li>

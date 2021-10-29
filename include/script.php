@@ -5,7 +5,6 @@
 <script src="<?= base_url('../assets/plugins/node-waves/waves.js') ?>"></script>
 <script src="<?= base_url('../assets/plugins/jquery-validation/jquery.validate.js') ?>"></script>
 <script src="<?= base_url('../assets/js/admin.js') ?>"></script>
-<script src="<?= base_url('../assets/js/ajax.js') ?>"></script>
 <script src="<?= base_url('../assets/js/pages/ui/tooltips-popovers.js') ?>"></script>
 <script src="<?= base_url('../assets/js/demo.js') ?>"></script>
 <script src="<?= base_url('../assets/js/pages/examples/sign-up.js') ?>"></script>

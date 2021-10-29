@@ -487,7 +487,7 @@ require_once 'progres/menuProgres.php';
             </div>
         </section>
         <!-- ======= Gallery ======= -->
-        <section id=" galeri" class="gallery">
+        <section id="galeri" class="gallery">
                         <div class="container" data-aos="fade-up">
                             <div class="section-title">
                                 <h2>Galeri</h2><br>
