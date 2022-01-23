@@ -5,8 +5,7 @@ if (isset($_POST['add']))
 {
     $order = trim(mysqli_real_escape_string($conn, $_POST['order']));
     $name  = trim(strtolower(mysqli_real_escape_string($conn, $_POST['name'])));
-    $url   = trim(strtolower(mysqli_real_escape_string($conn, $_POST['url'])));
-    $act   = trim(mysqli_real_escape_string($conn, $_POST['act']));
+    $url   = trim(strtolower(mysqli_real_escape_string($conn, $_POST['url'])));    
 
     $dataselect = 'SELECT `menusOrder`, `menusUrl` FROM `menus` WHERE `menusOrder` = ? OR `menusUrl` = ?';
     $stmtselect = mysqli_stmt_init($conn);
@@ -28,7 +27,7 @@ if (isset($_POST['add']))
         exit();
     }
 
-    $datainsert = 'INSERT INTO `menus` (`menusOrder`, `menusName`, `menusUrl`, `menusAct`) VALUES (?, ?, ?, ?)';
+    $datainsert = 'INSERT INTO `menus` (`menusOrder`, `menusName`, `menusUrl`) VALUES (?, ?, ?)';
     $stmtinsert = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmtinsert, $datainsert))
@@ -37,7 +36,7 @@ if (isset($_POST['add']))
         exit();
     }
 
-    mysqli_stmt_bind_param($stmtinsert, 'ssss', $order, $name, $url, $act);
+    mysqli_stmt_bind_param($stmtinsert, 'sss', $order, $name, $url);
     mysqli_stmt_execute($stmtinsert);
     mysqli_stmt_close($stmtinsert);
 
@@ -58,7 +57,7 @@ if (isset($_GET['id']))
         return false;
     }
 
-    $dataselect = 'SELECT `menusId`, `menusOrder`, `menusName`, `menusUrl`, `menusAct` FROM `menus` WHERE `menusId` = ?';
+    $dataselect = 'SELECT `menusId`, `menusOrder`, `menusName`, `menusUrl` FROM `menus` WHERE `menusId` = ?';
     $stmtselect = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmtselect, $dataselect))
@@ -76,10 +75,9 @@ if (isset($_GET['id']))
     if (isset($_POST['edit']))
     {
         $name  = trim(strtolower(mysqli_real_escape_string($conn, $_POST['name'])));
-        $url   = trim(strtolower(mysqli_real_escape_string($conn, $_POST['url'])));
-        $act   = trim(mysqli_real_escape_string($conn, $_POST['act']));
+        $url   = trim(strtolower(mysqli_real_escape_string($conn, $_POST['url'])));        
 
-        $dataupdate = 'UPDATE `menus` SET `menusName` = ?, `menusUrl` = ?, `menusAct` = ? WHERE `menusId` = ?';
+        $dataupdate = 'UPDATE `menus` SET `menusName` = ?, `menusUrl` = ? WHERE `menusId` = ?';
         $stmtupdate = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmtupdate, $dataupdate))
@@ -88,7 +86,7 @@ if (isset($_GET['id']))
             exit();
         }
 
-        mysqli_stmt_bind_param($stmtupdate, 'ssss', $name, $url, $act, $id);
+        mysqli_stmt_bind_param($stmtupdate, 'sss', $name, $url, $id);
         mysqli_stmt_execute($stmtupdate);
         mysqli_stmt_close($stmtupdate);
 
@@ -102,7 +100,7 @@ if (isset($_GET['id']))
 }
 
 //Read menu
-$dataselect = 'SELECT `menusId`, `menusOrder`, `menusName`, `menusUrl`, `menusAct` FROM `menus` ORDER BY `menusOrder`';
+$dataselect = 'SELECT `menusId`, `menusOrder`, `menusName`, `menusUrl` FROM `menus` ORDER BY `menusOrder`';
 $stmtselect = mysqli_stmt_init($conn);
 
 if (!mysqli_stmt_prepare($stmtselect, $dataselect))

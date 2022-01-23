@@ -17,18 +17,14 @@ require_once '../progres/authProgres.php';
             <div class="body">
                 <form id="sign_up" action="" method="POST">
                     <?php
-                    if (isset($_GET['error']))
-                    {
-                        if ($_GET['error'] == 'invalidemail')
-                        {
+                    if (isset($_GET['error'])) {
+                        if ($_GET['error'] == 'invalidemail') {
                             echo '<div class="alert alert-danger" align="center"><strong>Email tidak sesuai!</strong></div>';
                         }
-                        if ($_GET['error'] == 'invaliduid')
-                        {
+                        if ($_GET['error'] == 'invaliduid') {
                             echo '<div class="alert alert-danger" align="center"><strong>Username tidak sesuai!</strong></div>';
                         }
-                        if ($_GET['error'] == 'registed')
-                        {
+                        if ($_GET['error'] == 'registed') {
                             echo '<div class="alert alert-danger" align="center"><strong>Email/Usernamae sudah terdaftar!</strong></div>';
                         }
                     }
@@ -38,7 +34,7 @@ require_once '../progres/authProgres.php';
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="name" placeholder="Name Surname" required autofocus>
+                            <input type="text" class="form-control" name="name" placeholder="Nama Lengkap" required autofocus>
                         </div>
                     </div>
                     <div class="input-group">

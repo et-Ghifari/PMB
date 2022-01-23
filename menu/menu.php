@@ -7,6 +7,12 @@ if (!isset($_SESSION['useremail'])) {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();
 }
+
+$level = $_SESSION['userlevel'] == 'admin';
+if (!$level)
+{
+    echo '<script>window.location="' . base_url('../dashboard') . '";</script>';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,8 +48,7 @@ if (!isset($_SESSION['useremail'])) {
                                         <tr>
                                             <th class="col-sm-1">POSISI</th>
                                             <th class="col-sm-3">NAMA</th>
-                                            <th class="col-sm-3">KONTEN</th>
-                                            <th class="col-sm-2">AKSI</th>
+                                            <th class="col-sm-3">KONTEN</th>                                            
                                             <th class="col-sm-2"><i class="material-icons">settings</i></th>
                                         </tr>
                                     </thead>
@@ -54,12 +59,7 @@ if (!isset($_SESSION['useremail'])) {
                                             <tr id="<?= $menu['menusId'] ?>">
                                                 <td><?= $menu['menusOrder'] ?></td>
                                                 <td><?= $menu['menusName'] ?></td>
-                                                <td><?= $menu['menusUrl'] ?></td>
-                                                <td>
-                                                    <div class="switch">
-                                                        <label>OFF<input type="checkbox" <?= $menu['menusAct'] ?>><span class="lever switch-col-cyan"></span>ON</label>
-                                                    </div>
-                                                </td>
+                                                <td><?= $menu['menusUrl'] ?></td>                                                
                                                 <td>
                                                     <a href="editMenu.php?id=<?= $menu['menusId'] ?>" class="btn bg-cyan waves-effect" data-toggle="tooltip" data-placement="left" title="Edit Menu"><i class="material-icons">edit</i></a>
                                                     <a href="deleteMenu.php?id=<?= $menu['menusId'] ?>" class="btn bg-red waves-effect" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="right" title="Hapus Menu"><i class="material-icons">delete</i></a>

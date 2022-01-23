@@ -7765,7 +7765,7 @@ fieldset[disabled] .form-control {
 
 /* Login Page ================================== */
 .login-page {
-  background-color: #00BCD4;
+  background-color: #3FBBC0;
   padding-left: 0;
   max-width: 360px;
   margin: 5% auto;
@@ -7777,7 +7777,7 @@ fieldset[disabled] .form-control {
   .login-page .login-box a {
     font-size: 14px;
     text-decoration: none;
-    color: #00BCD4; }
+    color: #3FBBC0; }
   .login-page .login-box .logo {
     margin-bottom: 20px; }
     .login-page .login-box .logo a {
@@ -7795,7 +7795,7 @@ fieldset[disabled] .form-control {
 
 /* Sign Up Page ================================ */
 .signup-page {
-  background-color: #00BCD4;
+  background-color: #3FBBC0;
   padding-left: 0;
   max-width: 360px;
   margin: 5% auto;
@@ -7807,7 +7807,7 @@ fieldset[disabled] .form-control {
   .signup-page .signup-box a {
     font-size: 14px;
     text-decoration: none;
-    color: #00BCD4; }
+    color: #3FBBC0; }
   .signup-page .signup-box .logo {
     margin-bottom: 20px; }
     .signup-page .signup-box .logo a {

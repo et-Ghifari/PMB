@@ -9,6 +9,12 @@ if (!isset($_SESSION['useremail']))
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();
 }
+
+$level = $_SESSION['userlevel'] == 'admin';
+if (!$level)
+{
+    echo '<script>window.location="' . base_url('../dashboard') . '";</script>';
+}
 ?>
 <!DOCTYPE html>
 <html>

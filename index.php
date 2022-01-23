@@ -49,7 +49,7 @@ require_once 'progres/menuProgres.php';
                     foreach ($menus as $menu)
                     {
                         ?>
-                        <li><a href="<?= $menu['menusUrl'] ?>"><?= $menu['menusName'] ?></a></li>
+                        <li><a href="#<?= $menu['menusUrl'] ?>"><?= $menu['menusName'] ?></a></li>
                     <?php
                     }
                         ?>
@@ -109,6 +109,50 @@ require_once 'progres/menuProgres.php';
                             <li>Membangun komunitas yang ikhlas, toleransi, moderat dan religi dalam menjaga Negara Kesatuan Republik Indonesia;</li>
                             <li>Melaksanakan tri dharma peguruan tinggi. </li>
                         </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <!-- ======= Panduan Pendaftaran ======= -->
+         <section id="panduan" class="featured-services">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Panduan Pendaftaran</h2><br>
+                    <p>Pendaftaran mahasiswa baru Politeknik Balekambang Jepara dapat mengikuti alur berikut:</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <img src="<?= base_url('assets/images/panduan/tahap1.png') ?>" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-3 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                            <img src="<?= base_url('assets/images/panduan/tahap2.png') ?>" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                            <img src="<?= base_url('assets/images/panduan/tahap3.png') ?>" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <img src="<?= base_url('assets/images/panduan/tahap4.png') ?>" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-3 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                            <img src="<?= base_url('assets/images/panduan/tahap5.png') ?>" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                            <img src="<?= base_url('assets/images/panduan/tahap6.png') ?>" class="img-fluid" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -201,51 +245,7 @@ require_once 'progres/menuProgres.php';
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- ======= Panduan Pendaftaran ======= -->
-        <section id="panduan" class="featured-services">
-            <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                    <h2>Panduan Pendaftaran</h2><br>
-                    <p>Pendaftaran mahasiswa baru Politeknik Balekambang Jepara dapat mengikuti alur berikut:</p>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <img src="<?= base_url('assets/images/panduan/tahap1.png') ?>" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-3 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                            <img src="<?= base_url('assets/images/panduan/tahap2.png') ?>" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                            <img src="<?= base_url('assets/images/panduan/tahap3.png') ?>" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <img src="<?= base_url('assets/images/panduan/tahap4.png') ?>" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-3 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                            <img src="<?= base_url('assets/images/panduan/tahap5.png') ?>" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                            <img src="<?= base_url('assets/images/panduan/tahap6.png') ?>" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </section>       
         <!-- ======= Program Studi ======= -->
         <section id="prodi" class="departments">
             <div class="container" data-aos="fade-up">
@@ -310,6 +310,71 @@ require_once 'progres/menuProgres.php';
                 <div class="text-center">
                     <h3>Belum Punya Akun?</h3>
                     <a class="cta-btn scrollto" href="<?= base_url('auth/register.php') ?>">Buat Akun</a>
+                </div>
+            </div>
+        </section>
+        <!-- ======= Biaya Perkuliahan ======= -->
+        <section id="biaya" class="pricing">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Biaya Pendaftaran</h2><br>
+                    <p>Tabel biaya registrasi awal setelah calon mahasiswa dinyatakan lulus sesuai jalur yang dipilih</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="box featured" data-aos="fade-up" data-aos-delay="100">
+                            <h3>Kelas Reguler</h3>
+                            <h4><sup>Rp. </sup>4.485.000</h4>
+                            <ul>
+                                <li>Sumbangan Pengembangan Institusi<br>(Rp. 1.500.000)</li>
+                                <li>Biaya Perkuliahan/Semester<br>(Rp. 2.500.000)</li>
+                                <li>Jas Almamater<br>(Rp. 200.000)</li>
+                                <li>Ospek<br>(Rp. 250.000)</li>
+                                <li>Majalah<br>(Rp. 35.000)</li>
+                                <li class="na">Biaya Operasional/Bulan<br>(Rp. 600.000)</li>
+                                <li class="na">Almari (Hak Pakai Selama di Pondok)<br>(Rp. 600.000)</li>
+                            </ul>
+                            <div class="btn-wrap">
+                                <a href="#" class="btn-buy">Registrasi</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="box featured" data-aos="fade-up" data-aos-delay="200">
+                            <h3>Kelas Karyawan</h3>
+                            <h4><sup>Rp. </sup>4.985.000</h4>
+                            <ul>
+                                <li>Sumbangan Pengembangan Institusi<br>(Rp. 1.500.000)</li>
+                                <li>Biaya Perkuliahan/Semester<br>(Rp. 3.000.000)</li>
+                                <li>Jas Almamater<br>(Rp. 200.000)</li>
+                                <li>Ospek<br>(Rp. 250.000)</li>
+                                <li>Majalah<br>(Rp. 35.000)</li>
+                                <li class="na">Biaya Operasional/Bulan<br>(Rp. 600.000)</li>
+                                <li class="na">Almari (Hak Pakai Selama di Pondok)<br>(Rp. 600.000)</li>
+                            </ul>
+                            <div class="btn-wrap">
+                                <a href="#" class="btn-buy">Registrasi</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="box featured" data-aos="fade-up" data-aos-delay="300">
+                            <h3>Kelas Reguler + Mondok</h3>
+                            <h4><sup>Rp. </sup>5.685.000</h4>
+                            <ul>
+                                <li>Sumbangan Pengembangan Institusi<br>(Rp. 1.500.000)</li>
+                                <li>Biaya Perkuliahan/Semester<br>(Rp. 2.500.000)</li>
+                                <li>Jas Almamater<br>(Rp. 200.000)</li>
+                                <li>Ospek<br>(Rp. 250.000)</li>
+                                <li>Majalah<br>(Rp. 35.000)</li>
+                                <li>Biaya Operasional/Bulan<br>(Rp. 600.000)</li>
+                                <li>Almari (Hak Pakai Selama di Pondok)<br>(Rp. 600.000)</li>
+                            </ul>
+                            <div class="btn-wrap">
+                                <a href="#" class="btn-buy">Registrasi</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -390,71 +455,7 @@ require_once 'progres/menuProgres.php';
                 </div>
             </div>
         </section>
-        <!-- ======= Biaya Perkuliahan ======= -->
-        <section id="biaya" class="pricing">
-            <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                    <h2>Biaya Pendaftaran</h2><br>
-                    <p>Tabel biaya registrasi awal setelah calon mahasiswa dinyatakan lulus sesuai jalur yang dipilih</p>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="box featured" data-aos="fade-up" data-aos-delay="100">
-                            <h3>Kelas Reguler</h3>
-                            <h4><sup>Rp. </sup>4.485.000</h4>
-                            <ul>
-                                <li>Sumbangan Pengembangan Institusi<br>(Rp. 1.500.000)</li>
-                                <li>Biaya Perkuliahan/Semester<br>(Rp. 2.500.000)</li>
-                                <li>Jas Almamater<br>(Rp. 200.000)</li>
-                                <li>Ospek<br>(Rp. 250.000)</li>
-                                <li>Majalah<br>(Rp. 35.000)</li>
-                                <li class="na">Biaya Operasional/Bulan<br>(Rp. 600.000)</li>
-                                <li class="na">Almari (Hak Pakai Selama di Pondok)<br>(Rp. 600.000)</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Registrasi</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="box featured" data-aos="fade-up" data-aos-delay="200">
-                            <h3>Kelas Karyawan</h3>
-                            <h4><sup>Rp. </sup>4.985.000</h4>
-                            <ul>
-                                <li>Sumbangan Pengembangan Institusi<br>(Rp. 1.500.000)</li>
-                                <li>Biaya Perkuliahan/Semester<br>(Rp. 3.000.000)</li>
-                                <li>Jas Almamater<br>(Rp. 200.000)</li>
-                                <li>Ospek<br>(Rp. 250.000)</li>
-                                <li>Majalah<br>(Rp. 35.000)</li>
-                                <li class="na">Biaya Operasional/Bulan<br>(Rp. 600.000)</li>
-                                <li class="na">Almari (Hak Pakai Selama di Pondok)<br>(Rp. 600.000)</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Registrasi</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="box featured" data-aos="fade-up" data-aos-delay="300">
-                            <h3>Kelas Reguler + Mondok</h3>
-                            <h4><sup>Rp. </sup>5.685.000</h4>
-                            <ul>
-                                <li>Sumbangan Pengembangan Institusi<br>(Rp. 1.500.000)</li>
-                                <li>Biaya Perkuliahan/Semester<br>(Rp. 2.500.000)</li>
-                                <li>Jas Almamater<br>(Rp. 200.000)</li>
-                                <li>Ospek<br>(Rp. 250.000)</li>
-                                <li>Majalah<br>(Rp. 35.000)</li>
-                                <li>Biaya Operasional/Bulan<br>(Rp. 600.000)</li>
-                                <li>Almari (Hak Pakai Selama di Pondok)<br>(Rp. 600.000)</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Registrasi</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
         <!-- ======= Testimoni ======= -->
         <section id="testimoni" class="testimonials">
             <div class="container" data-aos="fade-up">

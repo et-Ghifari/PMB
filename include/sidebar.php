@@ -26,7 +26,7 @@
                 if (isset($_SESSION['useruid']))
                 {
                     ?>
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['useruid'] ?></div>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username'] ?></div>
                     <div class="email"><?php echo $_SESSION['useremail'] ?></div>
                 <?php
                 }
@@ -49,6 +49,11 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+                <?php
+                $level = $_SESSION['userlevel'] == 'admin';
+                if ($level)
+                {
+                    ?>
                 <li>
                     <a class="menu-toggle">
                         <i class="material-icons">person</i>
@@ -63,10 +68,25 @@
                         </li>
                     </ul>
                 </li>
+                <?php
+                }
+                    ?>
                 <li>
-                    <a href="<?= base_url('../dashboard') ?>">
-                        <i class="material-icons">home</i>
-                        <span>Dhasboard</span>
+                    <a href="<?= base_url('../form') ?>">
+                        <i class="material-icons">assignment</i>
+                        <span>Formulir Pendaftaran</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?= base_url('../file') ?>">
+                        <i class="material-icons">attach_file</i>
+                        <span>Berkas Pendaftran</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?= base_url('../proof') ?>">
+                        <i class="material-icons">check_circle</i>
+                        <span>Bukti Transfer</span>
                     </a>
                 </li>
             </ul>
