@@ -55,6 +55,12 @@ if (isset($_POST['addMandiri']))
     $formOrganisasi  = trim(mysqli_real_escape_string($conn, $_POST['organisasi']));
     $formKeadaan     = trim(mysqli_real_escape_string($conn, $_POST['keadaan']));
 
+    if (empty($formProdi) || empty($formNisn) || empty($formNamaAyah) || empty($formOrganisasi))
+    {
+        echo '<script>document.location="' . base_url('formMandiri.php?error=emptyform') . '";</script>';
+        exit();
+    }
+
     $datamandiri = 'INSERT INTO `mandiris`
                     (`formJalur`,
                     `formProdi`,
@@ -244,6 +250,12 @@ if (isset($_POST['addBeasiswa']))
     $formTahun       = trim(mysqli_real_escape_string($conn, $_POST['tahun']));
     $formOrganisasi  = trim(mysqli_real_escape_string($conn, $_POST['organisasi']));
     $formKeadaan     = trim(mysqli_real_escape_string($conn, $_POST['keadaan']));
+
+    if (empty($formProdi) || empty($formNisn) || empty($formNamaAyah) || empty($formOrganisasi))
+    {
+        echo '<script>window.location="' . base_url('formBeasiswa.php?error=emptyform') . '";</script>';
+        exit();
+    }
 
     $databeasiswa = 'INSERT INTO `beasiswas`
                     (`formBeasiswa`,

@@ -25,7 +25,16 @@ if (!isset($_SESSION['useremail'])) {
                         <div class="row clearfix">
                             <div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
                                 <div class="panel-group" id="accordion_19" role="tablist" aria-multiselectable="true">
-                                    <form id="form_validation" method="POST">                                                                                                                
+                                    <form id="form_validation" method="POST">
+                                        <?php
+                                        if (isset($_GET['error']))
+                                        {
+                                            if ($_GET['error'] == 'emptyform')
+                                            {
+                                                echo '<div class="alert alert-danger" align="center"><strong>Isi Semua Form yang Wajib di Isi!</strong></div>';
+                                            }                                            
+                                        }
+                                            ?>
                                         <div class="panel panel-col-cyan">
                                             <div class="panel-heading" role="tab" id="headingOne_19">
                                                 <h4 class="panel-title">
@@ -39,7 +48,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <label>Jalur Pendaftaran</label>
                                                     <div class="form-group form-float">
                                                         <div class="demo-radio-button">
-                                                            
+
                                                             <input name="jalur" value="Mandiri" type="radio" id="radio_1" checked required />
                                                             <label for="radio_1">Jalur Mandiri</label>
                                                         </div>
@@ -164,9 +173,9 @@ if (!isset($_SESSION['useremail'])) {
                                                     <label>Jenis Kelamin*</label>
                                                     <div class="form-group form-float">
                                                         <div class="demo-radio-button">
-                                                            <input name="jk" value="Laki - Laki" type="radio" id="radio_2" required />
+                                                            <input name="jk" value="L" type="radio" id="radio_2" required />
                                                             <label for="radio_2">Laki - Laki</label>
-                                                            <input name="jk" value="Perempuan" type="radio" id="radio_3" required />
+                                                            <input name="jk" value="P" type="radio" id="radio_3" required />
                                                             <label for="radio_3">Perempuan</label>
                                                         </div>
                                                     </div>
@@ -247,9 +256,9 @@ if (!isset($_SESSION['useremail'])) {
                                                     <label>Jl/No.Rumah/dll*</label>
                                                     <div class="form-group form-float">
                                                         <div class="form-line">
-                                                            <textarea  type="text" name="jalan" class="form-control" placeholder="Jl./No.Rumah/dll" required ></textarea>
+                                                            <textarea type="text" name="jalan" class="form-control" placeholder="Jl./No.Rumah/dll" required></textarea>
                                                         </div>
-                                                    </div>                                                    
+                                                    </div>
                                                     <div class="row clearfix">
                                                         <div class="col-sm-2">
                                                             <div class="form-group form-float">
@@ -291,10 +300,10 @@ if (!isset($_SESSION['useremail'])) {
                                                             <input type="text" name="asalsekolah" class="form-control" placeholder="asal sekolah" required />
                                                         </div>
                                                     </div>
-                                                    <label>No. SKHUN*</label>
+                                                    <label>No. SKHUN</label>
                                                     <div class="form-group form-float">
                                                         <div class="form-line">
-                                                            <input type="text" name="skhun" class="form-control" placeholder="no. skhun" required />
+                                                            <input type="text" name="skhun" class="form-control" placeholder="no. skhun" />
                                                         </div>
                                                     </div>
                                                     <label>Tahun Lulus*</label>
@@ -400,7 +409,8 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group form-float">
                                                         <select name="penghasilan" class="form-control show-tick" required>
                                                             <option value="">-- Pilih --</option>
-                                                            <option value="< 500.000">< 500.000</option>
+                                                            <option value="< 500.000">
+                                                                < 500.000</option>
                                                             <option value="500.000 - 1.000.000">500.000 - 1.000.000</option>
                                                             <option value="1.000.000 - 2.000.000">1.000.000 - 2.000.000</option>
                                                             <option value="2.000.000 - 3.000.000">2.000.000 - 3.000.000</option>
@@ -486,12 +496,12 @@ if (!isset($_SESSION['useremail'])) {
                                                 </div>
                                             </div>
                                         </div>
-                                        <h5><strong>* = WAJIB DIISI!</strong></h5>                                        
+                                        <h5><strong>* = WAJIB DIISI!</strong></h5>
                                         <div class="row clearfix">
-                                            <div class="button-demo" align="center">
+                                            <div class="button-demo align-center">
                                                 <button type="submit" class="btn bg-green m-t-15 waves-effect" name="addMandiri">
                                                     <i class="material-icons">save</i>
-                                                    <span><strong>SIMPAN</strong></span>                                                    
+                                                    <span><strong>SIMPAN</strong></span>
                                                 </button>
                                                 <h5><strong>~ Cek Terlebih Dahulu Formulir Yang Telah Diisi! ~</strong></h5>
                                             </div>

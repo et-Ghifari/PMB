@@ -9,7 +9,8 @@
     <link href="<?= base_url('../assets/plugins/bootstrap/css/bootstrap.css') ?>" rel="stylesheet">
     <link href="<?= base_url('../assets/plugins/node-waves/waves.css') ?>" rel="stylesheet" />
     <link href="<?= base_url('../assets/plugins/animate-css/animate.css') ?>" rel="stylesheet" />
-    <link href="<?= base_url('../assets/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet') ?>" />
+    <link href="<?= base_url('../assets/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('../assets/plugins/bootstrap-select/css/bootstrap-select.css') ?>" rel="stylesheet" />
     <link href="<?= base_url('../assets/css/style.ds.css') ?>" rel="stylesheet">
     <link href="<?= base_url('../assets/css/themes/all-themes.css') ?>" rel="stylesheet" />
 </head>

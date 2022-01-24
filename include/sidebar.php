@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="bars"></a>
-            <b><a class="navbar-brand" href="<?= base_url('../dashboard') ?>">PMB - POLIBANG</a></b>
+            <b><a class="navbar-brand" href="<?= base_url('../dashboard') ?>">PMB - POLIBANG - <?php echo date('Y'); ?></a></b>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse"></div>
     </div>
@@ -13,27 +13,27 @@
         <div class="user-info">
             <div class="image">
                 <?php
-                if (isset($_SESSION['useruid']))
-                {
-                    ?>
-                    <img src="<?= base_url('../assets/images/admin.png') ?>" width="48" height="48" alt="User" />
+                if (isset($_SESSION['useruid'])) {
+                ?>
+                    <img src="<?= !empty($_SESSION['userimage']) ? $_SESSION['userimage'] : base_url('../assets/images/image.png') ?>" width="48" height="48" alt="<?php echo $_SESSION['username'] ?>" />
                 <?php
                 }
-                    ?>
+                ?>
             </div>
             <div class="info-container">
                 <?php
-                if (isset($_SESSION['useruid']))
-                {
-                    ?>
+                if (isset($_SESSION['useruid'])) {
+                ?>
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username'] ?></div>
                     <div class="email"><?php echo $_SESSION['useremail'] ?></div>
                 <?php
                 }
-                    ?>
+                ?>
                 <div class="btn-group user-helper-dropdown">
                     <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                     <ul class="dropdown-menu pull-right">
+                        <li><a href="<?= base_url('../profile') ?>"><i class="material-icons">person</i>Profile</a></li>
+                        <li role="separator" class="divider"></li>
                         <li><a href="<?= base_url('../auth/logout.php') ?>"><i class="material-icons">input</i>Log Out</a></li>
                     </ul>
                 </div>
@@ -51,26 +51,25 @@
                 </li>
                 <?php
                 $level = $_SESSION['userlevel'] == 'admin';
-                if ($level)
-                {
-                    ?>
-                <li>
-                    <a class="menu-toggle">
-                        <i class="material-icons">person</i>
-                        <span>Admin</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="<?= base_url('../user') ?>">User</a>
-                        </li>
-                        <li>
-                            <a href="<?= base_url('../menu') ?>">Menu</a>
-                        </li>
-                    </ul>
-                </li>
+                if ($level) {
+                ?>
+                    <li>
+                        <a class="menu-toggle">
+                            <i class="material-icons">person</i>
+                            <span>Admin</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="<?= base_url('../user') ?>">User</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('../menu') ?>">Menu</a>
+                            </li>
+                        </ul>
+                    </li>
                 <?php
                 }
-                    ?>
+                ?>
                 <li>
                     <a href="<?= base_url('../form') ?>">
                         <i class="material-icons">assignment</i>

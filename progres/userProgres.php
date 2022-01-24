@@ -118,15 +118,8 @@ if (isset($_GET['id']))
     }
 }
 
-//Read user   
-$dataPage = 4;
-$query    = mysqli_query($conn, 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users`');
-$data     = mysqli_num_rows($query);
-$page     = ceil($data / $dataPage);
-$actPage  = (isset($_GET['page'])) ? $_GET['page'] : 1;
-$stData   = ($dataPage * $actPage) - $dataPage;
-
-$dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users` ORDER BY `usersName` LIMIT ?, ?';
+//Read user
+$dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users` ORDER BY `usersName`';
 $stmtselect = mysqli_stmt_init($conn);
 
 if (!mysqli_stmt_prepare($stmtselect, $dataselect))
@@ -135,6 +128,5 @@ if (!mysqli_stmt_prepare($stmtselect, $dataselect))
     exit();
 }
 
-mysqli_stmt_bind_param($stmtselect, 'ss', $stData, $dataPage);
 mysqli_stmt_execute($stmtselect);
 $users = mysqli_stmt_get_result($stmtselect);
