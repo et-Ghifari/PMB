@@ -2,7 +2,7 @@
 require_once '../config/connect.php';
 require_once '../config/function.php';
 
-if (!isset($_SESSION['useremail']))
+if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid']))
 {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();

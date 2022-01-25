@@ -119,7 +119,7 @@ if (isset($_GET['id']))
 }
 
 //Read user
-$dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid` FROM `users` ORDER BY `usersName`';
+$dataselect = 'SELECT `usersId`, `usersName`, `usersEmail`, `usersUid`, `usersImage` FROM `users` ORDER BY `usersName`';
 $stmtselect = mysqli_stmt_init($conn);
 
 if (!mysqli_stmt_prepare($stmtselect, $dataselect))

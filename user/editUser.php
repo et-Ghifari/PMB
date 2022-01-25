@@ -4,7 +4,7 @@ include_once '../config/function.php';
 require_once '../progres/userProgres.php';
 
 //Kondisi sesi login
-if (!isset($_SESSION['useremail']))
+if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid']))
 {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();
@@ -39,7 +39,7 @@ if (!$level)
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line disabled">
-                                                <input type="text" name="name" class="form-control" value="<?= $value['usersName'] ?>" required>
+                                                <input type="text" name="name" class="form-control" value="<?php echo $value['usersName'] ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -51,7 +51,7 @@ if (!$level)
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line disabled">
-                                                <input type="email" name="email" class="form-control" value="<?= $value['usersEmail'] ?>" required>
+                                                <input type="email" name="email" class="form-control" value="<?php echo $value['usersEmail'] ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -63,7 +63,7 @@ if (!$level)
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line disabled">
-                                                <input type="text" name="username" class="form-control" value="<?= $value['usersUid'] ?>" required>
+                                                <input type="text" name="username" class="form-control" value="<?php echo $value['usersUid'] ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -87,7 +87,7 @@ if (!$level)
                                                 <i class="material-icons">save</i>
                                                 <span><strong>SIMPAN</strong></span>
                                             </button>
-                                            <a type="button" href="<?= base_url('user.php') ?>" class="btn bg-red m-t-15 waves-effect">
+                                            <a type="button" href="<?php echo base_url('user.php') ?>" class="btn bg-red m-t-15 waves-effect">
                                                 <i class="material-icons">backspace</i>
                                                 <span><strong>KEMBALI</strong></span></a>
                                         </div>

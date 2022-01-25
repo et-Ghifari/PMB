@@ -70,7 +70,7 @@ if (isset($_POST['login']))
     $uid      = trim(mysqli_real_escape_string($conn, $_POST['uid']));
     $password = trim(mysqli_real_escape_string($conn, $_POST['password']));
 
-    $dataselect = 'SELECT `usersName`, `usersEmail`, `usersUid`, `usersPwd`, `usersLevel` FROM `users` WHERE `usersEmail` = ? OR `usersUid` = ?';
+    $dataselect = 'SELECT `usersName`, `usersEmail`, `usersUid`, `usersPwd`, `usersLevel`, `usersImage` FROM `users` WHERE `usersEmail` = ? OR `usersUid` = ?';
     $stmtselect = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmtselect, $dataselect))
@@ -103,6 +103,7 @@ if (isset($_POST['login']))
         $_SESSION['useremail'] = $data['usersEmail'];
         $_SESSION['userlevel'] = $data['usersLevel'];
         $_SESSION['username']  = $data['usersName'];
+        $_SESSION['userimage']  = $data['usersImage'];
 
         echo
         '<script>

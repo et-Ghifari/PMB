@@ -75,7 +75,7 @@ require_once '../progres/authProgres.php';
                     </div>
                     <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" name="register">BUAT AKUN</button>
                     <div class="m-t-25 m-b--5 align-center">
-                        <a href="<?= base_url('login.php') ?>">Sudah Mempunyai Akun?</a>
+                        <a href="<?php echo base_url('login.php') ?>">Sudah Mempunyai Akun?</a>
                     </div>
                 </form>
             </div>

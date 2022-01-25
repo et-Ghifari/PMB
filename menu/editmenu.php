@@ -4,7 +4,7 @@ include_once '../config/function.php';
 include_once '../progres/menuProgres.php';
 
 //Kondisi sesi login
-if (!isset($_SESSION['useremail'])) {
+if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();
 }
@@ -45,7 +45,7 @@ if (!$level)
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" name="name" class="form-control" value="<?= $value['menusName'] ?>" required>
+                                                <input type="text" name="name" class="form-control" value="<?php echo $value['menusName'] ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -57,7 +57,7 @@ if (!$level)
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" name="url" class="form-control" value="<?= $value['menusUrl'] ?>" required>
+                                                <input type="text" name="url" class="form-control" value="<?php echo $value['menusUrl'] ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -69,7 +69,7 @@ if (!$level)
                                                 <i class="material-icons">save</i>
                                                 <span><strong>SIMPAN</strong></span>
                                             </button>
-                                            <a type="button" href="<?= base_url('menu.php') ?>" class="btn bg-red m-t-15 waves-effect">
+                                            <a type="button" href="<?php echo base_url('menu.php') ?>" class="btn bg-red m-t-15 waves-effect">
                                                 <i class="material-icons">backspace</i>
                                                 <span><strong>KEMBALI</strong></span>
                                             </a>

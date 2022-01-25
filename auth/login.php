@@ -47,13 +47,13 @@ require_once '../progres/authProgres.php';
                     </div>
                     <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit" name="login">MASUK</button>
                     <div class="m-t-25 m-b--5 align-center">
-                        <a href="<?= base_url('register.php') ?>">Buat Akun Sekarang?</a>
+                        <a href="<?php echo base_url('register.php') ?>">Buat Akun Sekarang?</a>
                     </div>
                 </form>
             </div>
         </div>
         <div align="center">
-            <a href="<?= base_url('../') ?>" type="button" class="btn btn-default btn-circle-lg waves-effect waves-circle waves-float"><i class="material-icons">navigate_before</i></a>
+            <a href="<?php echo base_url('../') ?>" type="button" class="btn btn-default btn-circle-lg waves-effect waves-circle waves-float"><i class="material-icons">navigate_before</i></a>
         </div>
     </div>
     <?php include_once '../include/script.php'; ?>

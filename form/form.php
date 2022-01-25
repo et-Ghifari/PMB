@@ -2,7 +2,7 @@
 require_once '../config/connect.php';
 require_once '../config/function.php';
 
-if (!isset($_SESSION['useremail'])) {
+if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();
 }
@@ -27,22 +27,22 @@ if (!isset($_SESSION['useremail'])) {
                                 </div>
                                 <div class="col-sm-3 col-md-4">
                                     <div class="button-demo">
-                                        <img src="<?= base_url('../assets/images/mandiri.png') ?>" width="30%">
+                                        <img src="<?php echo base_url('../assets/images/mandiri.png') ?>" width="30%">
                                         <div class="caption">
                                             <h3>Mandiri</h3>
                                             <p>
-                                                <a href="<?= base_url('formMandiri.php') ?>" class="btn bg-cyan waves-effect" role="button"><strong>DAFTAR</strong></a>
+                                                <a href="<?php echo base_url('formMandiri.php') ?>" class="btn bg-cyan waves-effect" role="button"><strong>DAFTAR</strong></a>
                                             </p>
                                         </div>
                                     </div>
                                 </div>                                
                                 <div class="col-sm-3 col-md-4">
                                     <div class="button-demo">
-                                        <img src="<?= base_url('../assets/images/beasiswa.png') ?>" width="30%">
+                                        <img src="<?php echo base_url('../assets/images/beasiswa.png') ?>" width="30%">
                                         <div class="caption">
                                             <h3>Beasiswa</h3>
                                             <p>
-                                                <a href="<?= base_url('formBeasiswa.php') ?>" class="btn bg-cyan waves-effect" role="button"><strong>DAFTAR</strong></a>
+                                                <a href="<?php echo base_url('formBeasiswa.php') ?>" class="btn bg-cyan waves-effect" role="button"><strong>DAFTAR</strong></a>
                                             </p>
                                         </div>
                                     </div>

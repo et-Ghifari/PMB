@@ -3,7 +3,7 @@ require_once '../config/connect.php';
 require_once '../config/function.php';
 include_once '../progres/formProgres.php';
 
-if (!isset($_SESSION['useremail'])) {
+if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();
 }
@@ -111,7 +111,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <label>Nama Lengkap*</label>
                                                     <div class="form-group form-float">
                                                         <div class="form-line">
-                                                            <input type="text" name="nama" class="form-control" placeholder="nama lengkap" value="<?= $_SESSION['username'] ?>" required />
+                                                            <input type="text" name="nama" class="form-control" placeholder="nama lengkap" value="<?php echo $_SESSION['username'] ?>" required />
                                                         </div>
                                                     </div>
                                                     <label>Tempat Tanggal Lahir*</label>
@@ -291,7 +291,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <label>Alamat Email*</label>
                                                     <div class="form-group form-float">
                                                         <div class="form-line">
-                                                            <input type="text" name="email" class="form-control" value="<?= $_SESSION['useremail'] ?>" required />
+                                                            <input type="text" name="email" class="form-control" value="<?php echo $_SESSION['useremail'] ?>" required />
                                                         </div>
                                                     </div>
                                                     <label>Asal Sekolah*</label>
