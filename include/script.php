@@ -15,3 +15,5 @@
 <script src="<?php echo base_url('../assets/js/pages/examples/sign-in.js') ?>"></script>
 <script src="<?php echo base_url('../assets/js/pages/tables/jquery-datatable.js') ?>"></script>
 <script src="<?php echo base_url('../assets/js/pages/examples/profile.js') ?>"></script>
+<script src="<?php echo base_url('../assets/js/pages/ui/notifications.js') ?>"></script>
+<script src="<?php echo base_url('../assets/plugins/bootstrap-notify/bootstrap-notify.js') ?>"></script>

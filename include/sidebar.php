@@ -1,3 +1,9 @@
+<?php
+if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
+    echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
+    exit();
+}
+?>
 <nav class="navbar">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -12,23 +18,11 @@
         <!-- Informasi User -->
         <div class="user-info">
             <div class="image">
-                <?php
-                if (isset($_SESSION['useruid']) || isset($_SESSION['useremail'])) {
-                ?>
-                    <img src="<?= !empty($_SESSION['userimage']) ? base_url('../assets/images/users/'.$_SESSION['userimage'].'"') : base_url('../assets/images/users/image.png') ?>" width="48" height="48" alt="<?php echo $_SESSION['username'] ?>" />                    
-                <?php
-                }
-                ?>
+                <img src="<?= !empty($_SESSION['userimage']) ? base_url('../assets/images/users/' . $_SESSION['userimage'] . '"') : base_url('../assets/images/users/image.png') ?>" width="48" height="48" alt="<?php echo $_SESSION['username'] ?>" />
             </div>
             <div class="info-container">
-                <?php
-                if (isset($_SESSION['useruid']) || isset($_SESSION['useremail'])) {
-                ?>
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username'] ?></div>
-                    <div class="email"><?php echo $_SESSION['useremail'] ?></div>
-                <?php
-                }
-                ?>
+                <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username'] ?></div>
+                <div class="email"><?php echo $_SESSION['useremail'] ?></div>
                 <div class="btn-group user-helper-dropdown">
                     <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                     <ul class="dropdown-menu pull-right">

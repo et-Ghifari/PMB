@@ -98,18 +98,18 @@ if (isset($_POST['login']))
     {
         echo '<script>window.location="' . base_url('login.php?error=pwdwrong') . '";</script>';
         exit();
-    } elseif ($checkPwd == true) {
-        $_SESSION['useruid']   = $data['usersUid'];
-        $_SESSION['useremail'] = $data['usersEmail'];
-        $_SESSION['userlevel'] = $data['usersLevel'];
-        $_SESSION['username']  = $data['usersName'];
-        $_SESSION['userimage']  = $data['usersImage'];
-
-        echo
-        '<script>
-            alert("Selamat Login Berhasil")
-            document.location="' . base_url('../dashboard') . '";
-        </script>';
-        exit();
     }
+
+    $_SESSION['useruid']   = $data['usersUid'];
+    $_SESSION['useremail'] = $data['usersEmail'];
+    $_SESSION['userlevel'] = $data['usersLevel'];
+    $_SESSION['username']  = $data['usersName'];
+    $_SESSION['userimage']  = $data['usersImage'];
+
+    echo
+    '<script>
+        alert("Selamat Login Berhasil")
+        document.location="' . base_url('../dashboard') . '";
+    </script>';
+    exit();    
 }

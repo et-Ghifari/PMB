@@ -1,5 +1,7 @@
 <?php
 
+$userUid = $_SESSION['useruid'];
+
 if (isset($_POST['editProfil']))
 {
     $image = $_FILES['image'];
@@ -27,53 +29,107 @@ if (isset($_POST['editProfil']))
         exit();
     }    
 
-    if ($imageSize > 2500000)
+    if ($imageSize > 1500000)
     {
         echo '<script>window.location="' . base_url('profile.php?error=bigfile') . '";</script>';
         exit();
     }
 
-    $username = $_SESSION['username'];
-    $imageNameNew = $username.'.'.$imageActExt;
+    $imageNameNew = $userUid.'.'.$imageActExt;
     $imageDesti   = '../assets/images/users/'.$imageNameNew;
     
     move_uploaded_file($imageTmpName, $imageDesti);
     
-    $dataimage = 'UPDATE `users` SET `usersImage` = ? WHERE `usersName` = ?';
-    $stmtimage = mysqli_stmt_init($conn);
+    //Update Image to usres
+    $dataupdate = 'UPDATE `users` SET `usersImage` = ? WHERE `usersUid` = ?';
+    $stmtupdate = mysqli_stmt_init($conn);
 
-    if (!mysqli_stmt_prepare($stmtimage, $dataimage))
+    if (!mysqli_stmt_prepare($stmtupdate, $dataupdate))
     {
-        echo '<script>window.location="' . base_url('editUser.php?error=stmtfailed') . '";</script>';
+        echo '<script>window.location="' . base_url('profile.php?error=stmtfailed') . '";</script>';
         exit();
     }
     
-    mysqli_stmt_bind_param($stmtimage, 'ss', $imageNameNew, $username);
-    mysqli_stmt_execute($stmtimage);
-    mysqli_stmt_close($stmtimage);
-    
-    $dataselect = 'SELECT `usersName`, `usersImage` FROM `users` WHERE `usersName` = ?';
+    mysqli_stmt_bind_param($stmtupdate, 'ss', $imageNameNew, $userUid);
+    mysqli_stmt_execute($stmtupdate);
+
+    //Auto Cange Image After Update
+    $dataselect = 'SELECT `usersImage`, `usersUid` FROM `users` WHERE `usersUid` = ?';
     $stmtselect = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmtselect, $dataselect))
     {
-        echo '<script>window.location="' . base_url('login.php?error=stmtfailed') . '";</script>';
+        echo '<script>window.location="' . base_url('profile.php?error=stmtfailed') . '";</script>';
         exit();
     }
 
-    mysqli_stmt_bind_param($stmtselect, 's', $username);
+    mysqli_stmt_bind_param($stmtselect, 's', $userUid);
+    mysqli_stmt_execute($stmtselect);
+
+    $resultData = mysqli_stmt_get_result($stmtselect);
+    $data = mysqli_fetch_assoc($resultData);    
+    
+    $_SESSION['userimage']  = $data['usersImage'];
+    $_SESSION['useruid']  = $data['usersUid'];
+
+    echo
+    '<script>
+            alert("Perubahan Foto Profil Berhasil")
+            document.location="' . base_url('../profile') . '";
+        </script>';
+    exit();
+}
+
+if (isset($_POST['editPassword']))
+{
+
+    $passwordOld = trim(mysqli_real_escape_string($conn, $_POST['passwordOld']));
+    $password = trim(mysqli_real_escape_string($conn, $_POST['password']));
+    $confirm = trim(mysqli_real_escape_string($conn, $_POST['confirm']));    
+
+    $dataselect = 'SELECT `usersPwd` FROM `users` WHERE `usersUid` = ?';
+    $stmtselect = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmtselect, $dataselect))
+    {
+        echo '<script>window.location="' . base_url('profile.php?error=stmtfailed') . '";</script>';
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmtselect, 's', $userUid);
     mysqli_stmt_execute($stmtselect);
 
     $resultData = mysqli_stmt_get_result($stmtselect);
     $data = mysqli_fetch_assoc($resultData);
+
+    $pwdHashed = $data['usersPwd'];
+    $checkPwd  = password_verify($passwordOld, $pwdHashed);
+
+    if ($checkPwd == false)
+    {
+        echo '<script>window.location="' . base_url('profile.php?error=pwdwrong') . '";</script>';
+        exit();
+    }
+
+    $dataupdate = 'UPDATE `users` SET `usersPwd` = ? WHERE `usersUid` = ?';
+    $stmtupdate = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmtupdate, $dataupdate))
+    {
+        echo '<script>window.location="' . base_url('editUser.php?error=stmtfailed') . '";</script>';
+        exit();
+    }
+
+    $pwdHashed = password_hash($password, PASSWORD_DEFAULT);
+
+    mysqli_stmt_bind_param($stmtupdate, 'ss', $pwdHashed, $userUid);
+    mysqli_stmt_execute($stmtupdate);
     
-    $_SESSION['username']  = $data['usersName'];
-    $_SESSION['userimage']  = $data['usersImage'];
 
     echo
     '<script>
-            alert("Photo profil berhasil di ganti")
-            document.location="' . base_url('../dashboard') . '";
+            alert("Perubahan Password Berhasil")
+            document.location="' . base_url('../profile') . '";
         </script>';
     exit();
 }
