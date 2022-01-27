@@ -17,3 +17,5 @@
 <script src="<?php echo base_url('../assets/js/pages/examples/profile.js') ?>"></script>
 <script src="<?php echo base_url('../assets/js/pages/ui/notifications.js') ?>"></script>
 <script src="<?php echo base_url('../assets/plugins/bootstrap-notify/bootstrap-notify.js') ?>"></script>
+<script src="<?php echo base_url('../assets/plugins/jquery-countto/jquery.countTo.js') ?>"></script>
+<script src="<?php echo base_url('../assets/js/pages/widgets/infobox/infobox-2.js') ?>"></script>

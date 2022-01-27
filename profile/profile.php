@@ -84,7 +84,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <img id="profilDisplay" onclick="triggerClick()" src="<?= !empty($_SESSION['userimage']) ? base_url('../assets/images/users/' . $_SESSION['userimage'] . '"') : base_url('../assets/images/users/image.png') ?>" width="100" height="100" alt="<?php echo $_SESSION['username'] ?>" />
                                                 <input id="profilImage" type="file" name="image" onchange="displayImage(this)" style="display:none">
                                             </div>
-                                            <p>~ foto harus = 1:1 (format : jpg, jpeg, png) max 2.5 Mb ~</p>
+                                            <p>~ foto harus = 1:1 (format : jpg, jpeg, png) max 1.5 Mb ~</p>
                                             <div class="form-group align-center">
                                                 <button type="submit" class="btn bg-green m-t-15 waves-effect" name="editProfil">
                                                     <i class="material-icons">save</i>

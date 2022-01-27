@@ -35,10 +35,35 @@ if (isset($_POST['editProfil']))
         exit();
     }
 
-    $imageNameNew = $userUid.'.'.$imageActExt;
+    $imageNameNew = uniqid().'.'.$imageActExt;
     $imageDesti   = '../assets/images/users/'.$imageNameNew;
     
     move_uploaded_file($imageTmpName, $imageDesti);
+
+    //Compress Image
+    $compressName = 'c'.$imageNameNew;
+    $compressDesti = '../assets/images/users/'.$compressName;
+
+    function compressImage($sourceImage, $compressImage)
+    {
+        $imageInfo = getimagesize($sourceImage);
+        if ($imageInfo['mime'] == 'image/jpeg')
+        {
+            $sourceImage = imagecreatefromjpeg($sourceImage);
+            imagejpeg($sourceImage, $compressImage, 50);
+        }
+
+        if ($imageInfo['mime'] == 'image/png')
+        {
+            $sourceImage = imagecreatefrompng($sourceImage);
+            imagepng($sourceImage, $compressImage, 5);
+        }
+        return $compressImage;
+    }
+
+    $compressImage = compressImage($imageDesti, $compressDesti);
+    
+    unlink($imageDesti);    
     
     //Update Image to usres
     $dataupdate = 'UPDATE `users` SET `usersImage` = ? WHERE `usersUid` = ?';
@@ -50,11 +75,11 @@ if (isset($_POST['editProfil']))
         exit();
     }
     
-    mysqli_stmt_bind_param($stmtupdate, 'ss', $imageNameNew, $userUid);
+    mysqli_stmt_bind_param($stmtupdate, 'ss', $compressName, $userUid);
     mysqli_stmt_execute($stmtupdate);
 
     //Auto Cange Image After Update
-    $dataselect = 'SELECT `usersImage`, `usersUid` FROM `users` WHERE `usersUid` = ?';
+    $dataselect = 'SELECT `usersImage` FROM `users` WHERE `usersUid` = ?';
     $stmtselect = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmtselect, $dataselect))
@@ -70,7 +95,6 @@ if (isset($_POST['editProfil']))
     $data = mysqli_fetch_assoc($resultData);    
     
     $_SESSION['userimage']  = $data['usersImage'];
-    $_SESSION['useruid']  = $data['usersUid'];
 
     echo
     '<script>
@@ -123,8 +147,7 @@ if (isset($_POST['editPassword']))
     $pwdHashed = password_hash($password, PASSWORD_DEFAULT);
 
     mysqli_stmt_bind_param($stmtupdate, 'ss', $pwdHashed, $userUid);
-    mysqli_stmt_execute($stmtupdate);
-    
+    mysqli_stmt_execute($stmtupdate);    
 
     echo
     '<script>

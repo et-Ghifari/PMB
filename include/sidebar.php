@@ -73,13 +73,18 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                 <li>
                     <a href="<?php echo base_url('../file') ?>">
                         <i class="material-icons">attach_file</i>
-                        <span>Berkas Pendaftran</span>
+                        <span>Berkas Pendaftaran</span>
                     </a>
                 </li>
                 <li>
                     <a href="<?php echo base_url('../proof') ?>">
-                        <i class="material-icons">check_circle</i>
+                        <i class="material-icons">attach_money</i>
                         <span>Bukti Transfer</span>
+                    </a>
+                </li><li>
+                    <a href="<?php echo base_url('../status') ?>">
+                        <i class="material-icons">check_circle</i>
+                        <span>Status Pendaftaran</span>
                     </a>
                 </li>
             </ul>

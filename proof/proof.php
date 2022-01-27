@@ -2,8 +2,7 @@
 require_once '../config/connect.php';
 require_once '../config/function.php';
 
-if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid']))
-{
+if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();
 }
@@ -16,7 +15,9 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid']))
     <?php include_once '../include/sidebar.php'; ?>
     <section class="content">
         <div class="container-fluid">
-            Bukti Tranfer Pendaftaran
+            <div class="block-header">
+                <h2>BUKTI TRANFER</h2>
+            </div>            
         </div>
     </section>
     <?php include_once '../include/script.php'; ?>
