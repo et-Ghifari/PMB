@@ -257,11 +257,11 @@ if (isset($_POST['addBeasiswa']))
     $formOrganisasi  = trim(mysqli_real_escape_string($conn, $_POST['organisasi']));
     $formKeadaan     = trim(mysqli_real_escape_string($conn, $_POST['keadaan']));
 
-    /* if (empty($formProdi) || empty($formNisn) || empty($formNamaAyah) || empty($formOrganisasi))
+    if (empty($formProdi) || empty($formNisn) || empty($formNamaAyah) || empty($formOrganisasi))
     {
         echo '<script>window.location="' . base_url('formBeasiswa.php?error=emptyform') . '";</script>';
         exit();
-    } */
+    }
 
     $getMaxId = mysqli_query($conn, 'SELECT MAX(RIGHT(`formNo`, 5)) AS `formId` FROM `beasiswas`');
     $d = mysqli_fetch_object($getMaxId);

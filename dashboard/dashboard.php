@@ -67,6 +67,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
         </div>
     </section>
     <?php include_once '../include/script.php'; ?>
+    <script src="<?php echo base_url('../assets/js/pages/widgets/infobox/infobox-2.js') ?>"></script>
 </body>
 
 </html>

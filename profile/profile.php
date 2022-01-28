@@ -136,7 +136,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
         </div>
     </section>
     <?php include_once '../include/script.php'; ?>
-    <script src="<?php echo base_url('../assets/js/profilImage.js') ?>"></script>
+    <script src="<?php echo base_url('../assets/js/display.js') ?>"></script>
 </body>
 
 </html>

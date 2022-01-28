@@ -24,7 +24,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                         <div class="header">
                             <h2>FORMULIR PENDAFTARAN</h2>
                         </div>
-                        <div class="body" align="center">
+                        <div class="body align-center">
                             <div class="row">
                                 <div class="col-sm-3 col-md-2">
                                 </div>
