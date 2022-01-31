@@ -1,9 +1,15 @@
 <?php
 require_once '../config/connect.php';
 require_once '../config/function.php';
+require_once '../progres/fileProgres.php';
 
 if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
+    exit();
+}
+
+if (isset($_SESSION['useremail']) == $emailFile) {
+    echo '<script>window.location="' . base_url('../dashboard') . '";</script>';
     exit();
 }
 ?>
@@ -26,7 +32,20 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                             <small>Format (jpg, jpeg, png, pdf) dan Maksimal Size 1.5 Mb</small>
                         </div>
                         <div class="body">
-                            <form>
+                            <form id="" action="" method="POST" enctype="multipart/form-data">
+                                <?php
+                                if (isset($_GET['error'])) {
+                                    if ($_GET['error'] == 'error') {
+                                        echo '<div class="alert alert-danger" align="center"><strong>Isi File Terlebih Dahulu!</strong></div>';
+                                    }
+                                    if ($_GET['error'] == 'upload') {
+                                        echo '<div class="alert alert-danger" align="center"><strong>Format File Tidak Sesuai!</strong></div>';
+                                    }
+                                    if ($_GET['error'] == 'bigfile') {
+                                        echo '<div class="alert alert-danger" align="center"><strong>File Terlalu Besar!</strong></div>';
+                                    }
+                                }
+                                ?>
                                 <label>Upload KTP Calon Mahasiswa*</label>
                                 <div class="row clearfix">
                                     <div class="col-sm-6">
@@ -53,7 +72,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                         <div class="form-group">
                                             <iframe id="kkDisplay" onclick="kkClick()" src="<?php echo base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
                                             <p>Format (jpg, jpeg, png, pdf) dan Maksimal Size 1.5 Mb</p>
-                                            <input id="kkFile" type="file" name="akta" onchange="displayKk(this)">
+                                            <input id="kkFile" type="file" name="kk" onchange="displayKk(this)">
                                         </div>
                                     </div>
                                 </div>
@@ -67,23 +86,13 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                         </div>
                                     </div>
                                 </div>
-                                <label>Upload Foto Berwarna 3x4*</label>
+                                <label>Upload Foto Berwarna Terbaru Memakai Seragam*</label>
                                 <div class="row clearfix">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <iframe id="x4Display" onclick="x4Click()" src="<?php echo base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
+                                            <iframe id="fotoDisplay" onclick="fotoClick()" src="<?php echo base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
                                             <p>Format (jpg, jpeg, png, pdf) dan Maksimal Size 1.5 Mb</p>
-                                            <input id="x4File" type="file" name="x4" onchange="displayX4(this)">
-                                        </div>
-                                    </div>
-                                </div>
-                                <label>Upload Foto Berwarna 4x6*</label>
-                                <div class="row clearfix">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <iframe id="x6Display" onclick="x6Click()" src="<?php echo base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
-                                            <p>Format (jpg, jpeg, png, pdf) dan Maksimal Size 1.5 Mb</p>
-                                            <input id="x6File" type="file" name="x6" onchange="displayX6(this)">
+                                            <input id="fotoFile" type="file" name="foto" onchange="displayFoto(this)">
                                         </div>
                                     </div>
                                 </div>
@@ -119,7 +128,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                 </div>
                                 <h5><strong>* = WAJIB DIISI!</strong></h5>
                                 <div class="form-group align-center">
-                                    <button type="submit" class="btn bg-green m-t-15 waves-effect" name="editProfil">
+                                    <button type="submit" class="btn bg-green m-t-15 waves-effect" name="uploadFile">
                                         <i class="material-icons">save</i>
                                         <span><strong>SIMPAN</strong></span>
                                     </button>

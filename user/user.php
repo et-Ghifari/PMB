@@ -9,8 +9,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     exit();
 }
 
-$level = $_SESSION['userlevel'] == 'admin';
-if (!$level) {
+if (!$_SESSION['userlevel'] == 'admin') {
     echo '<script>window.location="' . base_url('../dashboard') . '";</script>';
 }
 ?>
@@ -22,6 +21,9 @@ if (!$level) {
     <?php include_once '../include/sidebar.php'; ?>
     <section class="content">
         <div class="container-fluid">
+            <div class="block-header">
+                <h2>MANAGEMEN USER</h2>
+            </div>
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
@@ -47,9 +49,9 @@ if (!$level) {
                                     <thead>
                                         <tr>
                                             <th class="col-sm-1 align-center">FOTO</th>
-                                            <th class="col-sm-3 align-center">NAMA LENGKAP</th>
-                                            <th class="col-sm-3 align-center">ALAMAT EMAIL</th>
-                                            <th class="col-sm-3 align-center">USERNAME</th>
+                                            <th class="col-sm-3 ">NAMA LENGKAP</th>
+                                            <th class="col-sm-3 ">ALAMAT EMAIL</th>
+                                            <th class="col-sm-3 ">USERNAME</th>
                                             <th class="col-sm-2 align-center"><i class="material-icons">settings</i></th>
                                         </tr>
                                     </thead>

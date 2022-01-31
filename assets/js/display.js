@@ -93,12 +93,12 @@ function displayIjazah(e)
     }
 }
 
-function x4Click()
+function fotoClick()
 {
-    document.querySelector('#x4File').click();
+    document.querySelector('#fotoFile').click();
 }
 
-function displayX4(e)
+function displayFoto(e)
 {
     if (e.files[0])
     {
@@ -106,26 +106,7 @@ function displayX4(e)
 
         reader.onload = function(e)
         {
-            document.querySelector('#x4Display').setAttribute('src', e.target.result);
-        }
-        reader.readAsDataURL(e.files[0]);
-    }
-}
-
-function x6Click()
-{
-    document.querySelector('#x6File').click();
-}
-
-function displayX6(e)
-{
-    if (e.files[0])
-    {
-        var reader = new FileReader();
-
-        reader.onload = function(e)
-        {
-            document.querySelector('#x6Display').setAttribute('src', e.target.result);
+            document.querySelector('#fotoDisplay').setAttribute('src', e.target.result);
         }
         reader.readAsDataURL(e.files[0]);
     }
@@ -183,6 +164,25 @@ function displayKks(e)
         reader.onload = function(e)
         {
             document.querySelector('#kksDisplay').setAttribute('src', e.target.result);
+        }
+        reader.readAsDataURL(e.files[0]);
+    }
+}
+
+function buktiClick()
+{
+    document.querySelector('#buktiFile').click();
+}
+
+function displayBukti(e)
+{
+    if (e.files[0])
+    {
+        var reader = new FileReader();
+
+        reader.onload = function(e)
+        {
+            document.querySelector('#buktiDisplay').setAttribute('src', e.target.result);
         }
         reader.readAsDataURL(e.files[0]);
     }

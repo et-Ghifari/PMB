@@ -44,8 +44,8 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                     </a>
                 </li>
                 <?php
-                $level = $_SESSION['userlevel'] == 'admin';
-                if ($level) {
+                
+                if ($_SESSION['userlevel'] == 'admin') {
                 ?>
                     <li>
                         <a class="menu-toggle">
@@ -58,6 +58,12 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                             </li>
                             <li>
                                 <a href="<?php echo base_url('../menu') ?>">Menu</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url('../registrant') ?>">Pendaftar</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url('../confirm') ?>">Konfirmasi</a>
                             </li>
                         </ul>
                     </li>

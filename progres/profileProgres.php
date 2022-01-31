@@ -4,7 +4,7 @@ $userUid = $_SESSION['useruid'];
 
 if (isset($_POST['editProfil']))
 {
-    $image = $_FILES['image'];
+    /* $image = $_FILES['image']; */
     
     $imageName    = $_FILES['image']['name'];
     $imageType    = $_FILES['image']['type'];    
@@ -148,6 +148,7 @@ if (isset($_POST['editPassword']))
 
     mysqli_stmt_bind_param($stmtupdate, 'ss', $pwdHashed, $userUid);
     mysqli_stmt_execute($stmtupdate);    
+    mysqli_stmt_close($stmtupdate);    
 
     echo
     '<script>

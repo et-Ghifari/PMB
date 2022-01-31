@@ -9,8 +9,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     exit();
 }
 
-$level = $_SESSION['userlevel'] == 'admin';
-if (!$level)
+if (!$_SESSION['userlevel'] == 'admin')
 {
     echo '<script>window.location="' . base_url('../dashboard') . '";</script>';
 }

@@ -1,11 +1,18 @@
 <?php
 require_once '../config/connect.php';
 require_once '../config/function.php';
+require_once '../progres/fileProgres.php';
 
 if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();
 }
+
+if (isset($_SESSION['useremail']) == $emailProof) {
+    echo '<script>window.location="' . base_url('../dashboard') . '";</script>';
+    exit();
+}
+?>
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,20 +33,20 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                             <small>Format (jpg, jpeg, png, pdf) dan Maksimal Size 1.5 Mb</small>
                         </div>
                         <div class="body">
-                            <form>
+                            <form id="" action="" method="POST" enctype="multipart/form-data">
                                 <label>Upload Bukti Transfer*</label>
                                 <div class="row clearfix">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <iframe id="profilDisplay" onclick="triggerClick()" src="<?php echo base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
+                                            <iframe id="buktiDisplay" onclick="buktiClick()" src="<?php echo base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
                                             <p>Format (jpg, jpeg, png, pdf) dan Maksimal Size 1.5 Mb</p>
-                                            <input id="profilImage" type="file" name="tf" onchange="displayImage(this)">
+                                            <input id="buktiFile" type="file" name="bukti" onchange="displayBukti(this)">
                                         </div>
                                     </div>
                                 </div>
                                 <h5><strong>* = WAJIB DIISI!</strong></h5>
                                 <div class="form-group align-center">
-                                    <button type="submit" class="btn bg-green m-t-15 waves-effect" name="editProfil">
+                                    <button type="submit" class="btn bg-green m-t-15 waves-effect" name="uploadBukti">
                                         <i class="material-icons">save</i>
                                         <span><strong>SIMPAN</strong></span>
                                     </button>

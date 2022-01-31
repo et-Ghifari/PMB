@@ -1,9 +1,15 @@
 <?php
 require_once '../config/connect.php';
 require_once '../config/function.php';
+require_once '../progres/selectProgres.php';
 
 if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
+    exit();
+}
+
+if (isset($_SESSION['useremail']) == $emailMandiri || isset($_SESSION['useremail']) == $emailBeasiswa) {
+    echo '<script>window.location="' . base_url('../dashboard') . '";</script>';
     exit();
 }
 ?>

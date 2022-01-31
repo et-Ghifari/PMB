@@ -16,7 +16,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>STATUS PENDAFTRAN</h2>
+                <h2>STATUS PENDAFTARAN</h2>
             </div>
         </div>
     </section>

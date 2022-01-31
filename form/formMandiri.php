@@ -28,13 +28,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                         <div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
                             <div class="panel-group" id="accordion_19" role="tablist" aria-multiselectable="true">
                                 <form id="form_validation" method="POST">
-                                    <?php
-                                    if (isset($_GET['error'])) {
-                                        if ($_GET['error'] == 'emptyform') {
-                                            echo '<div class="alert alert-danger" align="center"><strong>Isi Semua Form yang Wajib di Isi!</strong></div>';
-                                        }
-                                    }
-                                    ?>
+                                    
                                     <div class="panel panel-col-cyan">
                                         <div class="panel-heading" role="tab" id="headingOne_19">
                                             <h4 class="panel-title">
@@ -48,7 +42,6 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Jalur Pendaftaran</label>
                                                 <div class="form-group form-float">
                                                     <div class="demo-radio-button">
-
                                                         <input name="jalur" value="Mandiri" type="radio" id="radio_1" checked required />
                                                         <label for="radio_1">Jalur Mandiri</label>
                                                     </div>
@@ -59,12 +52,12 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                     <div class="panel panel-col-cyan">
                                         <div class="panel-heading" role="tab" id="headingTwo_19">
                                             <h4 class="panel-title">
-                                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapseTwo_19" aria-expanded="false" aria-controls="collapseTwo_19">
+                                                <a role="button" data-toggle="collapse" href="#collapseTwo_19" aria-expanded="true" aria-controls="collapseTwo_19">
                                                     <i class="material-icons">business_center</i> Pilih Program Studi
                                                 </a>
                                             </h4>
                                         </div>
-                                        <div id="collapseTwo_19" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo_19">
+                                        <div id="collapseTwo_19" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo_19">
                                             <div class="panel-body">
                                                 <label>Program Studi*</label>
                                                 <div class="form-group form-float">
@@ -85,16 +78,16 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>                                    
                                     <div class="panel panel-col-cyan">
                                         <div class="panel-heading" role="tab" id="headingThree_19">
                                             <h4 class="panel-title">
-                                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapseThree_19" aria-expanded="false" aria-controls="collapseThree_19">
+                                                <a role="button" data-toggle="collapse" href="#collapseThree_19" aria-expanded="true" aria-controls="collapseThree_19">
                                                     <i class="material-icons">account_box</i> Informasi Data Pribadi
                                                 </a>
                                             </h4>
                                         </div>
-                                        <div id="collapseThree_19" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree_19">
+                                        <div id="collapseThree_19" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree_19">
                                             <div class="panel-body">
                                                 <label>NISN*</label>
                                                 <div class="form-group form-float">
@@ -318,12 +311,12 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                     <div class="panel panel-col-cyan">
                                         <div class="panel-heading" role="tab" id="headingFour_19">
                                             <h4 class="panel-title">
-                                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapseFour_19" aria-expanded="false" aria-controls="collapseFour_19">
+                                                <a role="button" data-toggle="collapse" href="#collapseFour_19" aria-expanded="true" aria-controls="collapseFour_19">
                                                     <i class="material-icons">face</i> Informasi Data Orangtua
                                                 </a>
                                             </h4>
                                         </div>
-                                        <div id="collapseFour_19" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour_19">
+                                        <div id="collapseFour_19" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour_19">
                                             <div class="panel-body">
                                                 <label>Nama Ayah*</label>
                                                 <div class="form-group form-float">
@@ -424,12 +417,12 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                     <div class="panel panel-col-cyan">
                                         <div class="panel-heading" role="tab" id="headingFive_19">
                                             <h4 class="panel-title">
-                                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapseFive_19" aria-expanded="false" aria-controls="collapseFive_19">
+                                                <a role="button" data-toggle="collapse" href="#collapseFive_19" aria-expanded="true" aria-controls="collapseFive_19">
                                                     <i class="material-icons">star</i> Informasi Prestasi
                                                 </a>
                                             </h4>
                                         </div>
-                                        <div id="collapseFive_19" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive_19">
+                                        <div id="collapseFive_19" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive_19">
                                             <div class="panel-body">
                                                 <label>Cabang Lomba</label>
                                                 <div class="form-group form-float">
@@ -470,12 +463,12 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                     <div class="panel panel-col-cyan">
                                         <div class="panel-heading" role="tab" id="headingSix_19">
                                             <h4 class="panel-title">
-                                                <a class="collapsed" role="button" data-toggle="collapse" href="#collapseSix_19" aria-expanded="false" aria-controls="collapseSix_19">
+                                                <a role="button" data-toggle="collapse" href="#collapseSix_19" aria-expanded="true" aria-controls="collapseSix_19">
                                                     <i class="material-icons">receipt</i> Informasi Penunjang
                                                 </a>
                                             </h4>
                                         </div>
-                                        <div id="collapseSix_19" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix_19">
+                                        <div id="collapseSix_19" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingSix_19">
                                             <div class="panel-body">
                                                 <label>Organisasi Masyarakat Orang Tua/Wali*</label>
                                                 <div class="form-group form-float">
