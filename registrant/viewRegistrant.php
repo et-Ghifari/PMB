@@ -7,6 +7,9 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();
 }
+if (!$_SESSION['userlevel'] == 'admin') {
+    echo '<script>window.location="' . base_url('../dashboard') . '";</script>';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,8 +46,8 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Jalur Pendaftaran</label>
                                                 <div class="form-group form-float">
                                                     <div class="demo-radio-button">
-                                                        <input name="jalur" value="Mandiri" type="radio" id="radio_1" checked required />
-                                                        <label for="radio_1">Jalur Mandiri</label>
+                                                        <input name="jalur" value="<?php echo '' ?>" type="radio" id="radio_1" checked required />
+                                                        <label for="radio_1"><?php echo '' ?></label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -63,7 +66,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Program Studi*</label>
                                                 <div class="form-group form-float">
                                                     <select name="prodi" class="form-control show-tick" required>
-                                                        <option value="">-- Pilih Program Studi --</option>
+                                                        <option value="<?php echo '' ?>"><?php echo '' ?></option>
                                                         <option value="RPL">D4-Rekayasa Perangkat Lunak</option>
                                                         <option value="ABI">D4-Administrasi Bisnis Internasional</option>
                                                         <option value="AKP">D4-Akutansi Keuangan Publik</option>
@@ -72,7 +75,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Pilih Kelas*</label>
                                                 <div class="form-group form-float">
                                                     <select name="kelas" class="form-control show-tick" required>
-                                                        <option value="">-- Pilih Kelas --</option>
+                                                        <option value="<?php echo '' ?>"><?php echo '' ?></option>
                                                         <option value="Reguler">Reguler</option>
                                                         <option value="Karyawan">Karyawan</option>
                                                     </select>
@@ -90,22 +93,28 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                         </div>
                                         <div id="collapseThree_19" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree_19">
                                             <div class="panel-body">
+                                                <label>Nomor Pendaftaran*</label>
+                                                <div class="form-group form-float">
+                                                    <div class="form-line">
+                                                        <input type="text" name="no" class="form-control" placeholder="nomor pendaftaran" value="<?php echo $_SESSION['username'] ?>" required value="<?php echo '' ?>" />
+                                                    </div>
+                                                </div>
                                                 <label>NISN*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="number" class="form-control" name="nisn" placeholder="nisn" maxlength="10" minlength="10" required>
+                                                        <input type="number" class="form-control" name="nisn" placeholder="nisn" maxlength="10" minlength="10" required value="<?php echo '' ?>">
                                                     </div>
                                                 </div>
                                                 <label>NIK*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="number" name="nik" class="form-control" placeholder="nik" maxlength="16" minlength="16" required />
+                                                        <input type="number" name="nik" class="form-control" placeholder="nik" maxlength="16" minlength="16" required value="<?php echo '' ?>" />
                                                     </div>
                                                 </div>
                                                 <label>Nama Lengkap*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="text" name="nama" class="form-control" placeholder="nama lengkap" value="<?php echo $_SESSION['username'] ?>" required />
+                                                        <input type="text" name="nama" class="form-control" placeholder="nama lengkap" value="<?php echo $_SESSION['username'] ?>" required value="<?php echo '' ?>" />
                                                     </div>
                                                 </div>
                                                 <label>Tempat Tanggal Lahir*</label>
@@ -113,14 +122,14 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                     <div class="col-sm-2">
                                                         <div class="form-group form-float">
                                                             <div class="form-line">
-                                                                <input type="text" name="tempat" class="form-control" placeholder="tempat" required />
+                                                                <input type="text" name="tempat" class="form-control" placeholder="tempat" required value="<?php echo '' ?>" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <div class="form-group form-float">
                                                             <select name="tgl" class="form-control show-tick" required>
-                                                                <option value="">-- Pilih Tangal --</option>
+                                                                <option value="<?php echo '' ?>"><?php echo '' ?></option>
                                                                 <?php for ($a = 1; $a < 32; $a++) {
                                                                 ?>
                                                                     <option value="<?php echo $a; ?>"><?php echo $a; ?></option>
@@ -133,7 +142,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                     <div class="col-sm-3">
                                                         <div class="form-group form-float">
                                                             <select name="bln" class="form-control show-tick" required>
-                                                                <option value="">-- Pilih Bulan --</option>
+                                                                <option value="<?php echo '' ?>"><?php echo '' ?></option>
                                                                 <option value="Januari">Januari</option>
                                                                 <option value="Februari">Februari</option>
                                                                 <option value="Maret">Maret</option>
@@ -152,7 +161,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                     <div class="col-sm-3">
                                                         <div class="form-group form-float">
                                                             <select name="thn" class="form-control show-tick" required>
-                                                                <option value="">-- Pilih Tahun --</option>
+                                                                <option value="<?php echo '' ?>"><?php echo '' ?></option>
                                                                 <?php $th = date('Y') - 30; ?>
                                                                 <?php for ($th; $th <= date('Y'); $th++) {
                                                                 ?>
@@ -167,34 +176,34 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Jenis Kelamin*</label>
                                                 <div class="form-group form-float">
                                                     <div class="demo-radio-button">
-                                                        <input name="jk" value="L" type="radio" id="radio_2" required />
+                                                        <input name="jk" value="L" type="radio" id="radio_2" required <?php echo '' ?> />
                                                         <label for="radio_2">Laki - Laki</label>
-                                                        <input name="jk" value="P" type="radio" id="radio_3" required />
+                                                        <input name="jk" value="P" type="radio" id="radio_3" required <?php echo '' ?> />
                                                         <label for="radio_3">Perempuan</label>
                                                     </div>
                                                 </div>
                                                 <label>Hobi</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="text" name="hobi" class="form-control" placeholder="hobi" />
+                                                        <input type="text" name="hobi" class="form-control" placeholder="hobi" value="<?php echo '' ?>" />
                                                     </div>
                                                 </div>
                                                 <label>Cita - Cita</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="text" name="cita" class="form-control" placeholder="cita - cita" />
+                                                        <input type="text" name="cita" class="form-control" placeholder="cita - cita" value="<?php echo '' ?>" />
                                                     </div>
                                                 </div>
                                                 <label>Anak ke</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="number" name="anakke" class="form-control" placeholder="isi angka" />
+                                                        <input type="number" name="anakke" class="form-control" placeholder="isi angka" value="<?php echo '' ?>" />
                                                     </div>
                                                 </div>
                                                 <label>Jumlah Saudara</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="number" name="saudara" class="form-control" placeholder="isi angka" />
+                                                        <input type="number" name="saudara" class="form-control" placeholder="isi angka" value="<?php echo '' ?>" />
                                                     </div>
                                                 </div>
                                                 <label>Berat Badan</label>
@@ -202,7 +211,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                     <div class="col-sm-2">
                                                         <div class="input-group">
                                                             <div class="form-line">
-                                                                <input type="number" name="berat" class="form-control" placeholder="isi angka" />
+                                                                <input type="number" name="berat" class="form-control" placeholder="isi angka" value="<?php echo '' ?>" />
                                                             </div>
                                                             <span class="input-group-addon">
                                                                 <label>Kg</label>
@@ -215,7 +224,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                     <div class="col-sm-2">
                                                         <div class="input-group">
                                                             <div class="form-line">
-                                                                <input type="number" name="tinggi" class="form-control" placeholder="isi angka" />
+                                                                <input type="number" name="tinggi" class="form-control" placeholder="isi angka"  value="<?php echo '' ?>"/>
                                                             </div>
                                                             <span class="input-group-addon">
                                                                 <label>Cm</label>
@@ -226,52 +235,52 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Provinsi*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="text" name="provinsi" class="form-control" placeholder="provinsi" required />
+                                                        <input type="text" name="provinsi" class="form-control" placeholder="provinsi" required value="<?php echo '' ?>"/>
                                                     </div>
                                                 </div>
                                                 <label>Kabupaten*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="text" name="kabupaten" class="form-control" placeholder="kabupaten" required />
+                                                        <input type="text" name="kabupaten" class="form-control" placeholder="kabupaten" required value="<?php echo '' ?>"/>
                                                     </div>
                                                 </div>
                                                 <label>Kecamatan*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="text" name="kecamatan" class="form-control" placeholder="kecamatan" required />
+                                                        <input type="text" name="kecamatan" class="form-control" placeholder="kecamatan" required v<?php echo '' ?>/>
                                                     </div>
                                                 </div>
                                                 <label>Desa*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="text" name="desa" class="form-control" placeholder="desa" required />
+                                                        <input type="text" name="desa" class="form-control" placeholder="desa" required v<?php echo '' ?>/>
                                                     </div>
                                                 </div>
                                                 <label>Jl/No.Rumah/dll*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <textarea type="text" name="jalan" class="form-control" placeholder="Jl./No.Rumah/dll" required></textarea>
+                                                        <textarea type="text" name="jalan" class="form-control" placeholder="Jl./No.Rumah/dll" required value="<?php echo '' ?>"></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="row clearfix">
                                                     <div class="col-sm-2">
                                                         <div class="form-group form-float">
                                                             <div class="form-line">
-                                                                <input type="number" name="rt" class="form-control" placeholder="RT" required />
+                                                                <input type="number" name="rt" class="form-control" placeholder="RT" required value="<?php echo '' ?>"/>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group form-float">
                                                             <div class="form-line">
-                                                                <input type="number" name="rw" class="form-control" placeholder="RW" required />
+                                                                <input type="number" name="rw" class="form-control" placeholder="RW" required value="<?php echo '' ?>"/>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group form-float">
                                                             <div class="form-line">
-                                                                <input type="number" name="kodepos" class="form-control" placeholder="Kode Pos" maxlength="5" minlength="5" required />
+                                                                <input type="number" name="kodepos" class="form-control" placeholder="Kode Pos" maxlength="5" minlength="5" required value="<?php echo '' ?>"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -279,31 +288,31 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Handphone/WA*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="text" name="hp" class="form-control" placeholder="handphone/wa" required />
+                                                        <input type="text" name="hp" class="form-control" placeholder="handphone/wa" required value="<?php echo '' ?>"/>
                                                     </div>
                                                 </div>
                                                 <label>Alamat Email*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="text" name="email" class="form-control" value="<?php echo $_SESSION['useremail'] ?>" required />
+                                                        <input type="text" name="email" class="form-control" value="<?php echo '' ?>" required />
                                                     </div>
                                                 </div>
                                                 <label>Asal Sekolah*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="text" name="asalsekolah" class="form-control" placeholder="asal sekolah" required />
+                                                        <input type="text" name="asalsekolah" class="form-control" placeholder="asal sekolah" required value="<?php echo '' ?>"/>
                                                     </div>
                                                 </div>
                                                 <label>No. SKHUN</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="text" name="skhun" class="form-control" placeholder="no. skhun" />
+                                                        <input type="text" name="skhun" class="form-control" placeholder="no. skhun" value="<?php echo '' ?>"/>
                                                     </div>
                                                 </div>
                                                 <label>Tahun Lulus*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="number" name="tahunlulus" class="form-control" placeholder="tahun lulus" required />
+                                                        <input type="number" name="tahunlulus" class="form-control" placeholder="tahun lulus" required value="<?php echo '' ?>"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -322,26 +331,26 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Nomor KK*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="number" name="kk" class="form-control" placeholder="nomor kk" maxlength="16" minlength="16" required />
+                                                        <input type="number" name="kk" class="form-control" placeholder="nomor kk" maxlength="16" minlength="16" required value="<?php echo '' ?>"/>
                                                     </div>
                                                 </div>
                                                 <br></br>
                                                 <label>NIK Ayah*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="number" name="nikAyah" class="form-control" placeholder="nik ayah" maxlength="16" minlength="16" required />
+                                                        <input type="number" name="nikAyah" class="form-control" placeholder="nik ayah" maxlength="16" minlength="16" required value="<?php echo '' ?>"/>
                                                     </div>
                                                 </div>
                                                 <label>Nama Ayah*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="text" name="ayah" class="form-control" placeholder="nama ayah" required />
+                                                        <input type="text" name="ayah" class="form-control" placeholder="nama ayah" required value="<?php echo '' ?>"/>
                                                     </div>
                                                 </div>
                                                 <label>Pekerjaan Ayah*</label>
                                                 <div class="form-group form-float">
                                                     <select name="pekerjaanAyah" class="form-control show-tick" required>
-                                                        <option value="">-- Pilih --</option>
+                                                        <option value="<?php echo '' ?>"><?php echo '' ?></option>
                                                         <option value="Buruh">Buruh</option>
                                                         <option value="Dosen">Dosen</option>
                                                         <option value="Guru">Guru</option>
@@ -358,7 +367,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Pendidikan Ayah*</label>
                                                 <div class="form-group form-float">
                                                     <select name="pendidikanAyah" class="form-control show-tick" required>
-                                                        <option value="">-- Pilih --</option>
+                                                        <option value="<?php echo '' ?>"><?php echo '' ?></option>
                                                         <option value="SD/MI">SD/MI</option>
                                                         <option value="SMP/MTs">SMP/MTs</option>
                                                         <option value="SMA/SMK/MA">SMA/SMK/MA</option>
@@ -375,19 +384,19 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>NIK Ibu*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="number" name="nikIbu" class="form-control" placeholder="nik ibu" maxlength="16" minlength="16" required />
+                                                        <input type="number" name="nikIbu" class="form-control" placeholder="nik ibu" maxlength="16" minlength="16" required value="<?php echo '' ?>"/>
                                                     </div>
                                                 </div>
                                                 <label>Nama Ibu*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="text" name="ibu" class="form-control" placeholder="nama ibu" required />
+                                                        <input type="text" name="ibu" class="form-control" placeholder="nama ibu" required value="<?php echo '' ?>"/>
                                                     </div>
                                                 </div>
                                                 <label>Pekerjaan Ibu*</label>
                                                 <div class="form-group form-float">
                                                     <select name="pekerjaanIbu" class="form-control show-tick" required>
-                                                        <option value="">-- Pilih --</option>
+                                                        <option value="<?php echo '' ?>"><?php echo '' ?></option>
                                                         <option value="Buruh">Buruh</option>
                                                         <option value="Dosen">Dosen</option>
                                                         <option value="Guru">Guru</option>
@@ -404,7 +413,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Pendidikan Ibu*</label>
                                                 <div class="form-group form-float">
                                                     <select name="pendidikanIbu" class="form-control show-tick" required>
-                                                        <option value="">-- Pilih --</option>
+                                                        <option value="<?php echo '' ?>"><?php echo '' ?></option>
                                                         <option value="SD/MI">SD/MI</option>
                                                         <option value="SMP/MTs">SMP/MTs</option>
                                                         <option value="SMA/SMK/MA">SMA/SMK/MA</option>
@@ -421,9 +430,8 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Rata - Rata Penghasilan Orang Tua*</label>
                                                 <div class="form-group form-float">
                                                     <select name="penghasilan" class="form-control show-tick" required>
-                                                        <option value="">-- Pilih --</option>
-                                                        <option value="< 500.000">
-                                                            < 500.000</option>
+                                                        <option value="<?php echo '' ?>"><?php echo '' ?></option>
+                                                        <option value="< 500.000">< 500.000</option>
                                                         <option value="500.000 - 1.000.000">500.000 - 1.000.000</option>
                                                         <option value="1.000.000 - 2.000.000">1.000.000 - 2.000.000</option>
                                                         <option value="2.000.000 - 3.000.000">2.000.000 - 3.000.000</option>
@@ -447,13 +455,13 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Cabang Lomba</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="text" name="lomba" class="form-control" placeholder="cabang lomba" />
+                                                        <input type="text" name="lomba" class="form-control" placeholder="cabang lomba" value="<?php echo '' ?>"/>
                                                     </div>
                                                 </div>
                                                 <label>Tingkat Lomba</label>
                                                 <div class="form-group form-float">
                                                     <select name="tingkat" class="form-control show-tick">
-                                                        <option value="">-- Pilih --</option>
+                                                        <option value="<?php echo '' ?>"><?php echo '' ?></option>
                                                         <option value="Kecamatan">Kecamatan</option>
                                                         <option value="Kabupaten">Kabupaten</option>
                                                         <option value="Provinsi">Provinsi</option>
@@ -464,7 +472,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Peringkat Lomba</label>
                                                 <div class="form-group form-float">
                                                     <select name="peringkat" class="form-control show-tick">
-                                                        <option value="">-- Pilih --</option>
+                                                        <option value="<?php echo '' ?>"><?php echo '' ?></option>
                                                         <option value="Juara I">Juara I</option>
                                                         <option value="Juara II">Juara II</option>
                                                         <option value="Juara III">Juara III</option>
@@ -474,7 +482,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Tahun Lomba</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="number" name="tahun" class="form-control" placeholder="tahun lomba" />
+                                                        <input type="number" name="tahun" class="form-control" placeholder="tahun lomba" value="<?php echo '' ?>"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -493,13 +501,13 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Organisasi Masyarakat Orang Tua/Wali*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="text" name="organisasi" class="form-control" placeholder="NU/Muhammadiyah/PERSIS dll" required />
+                                                        <input type="text" name="organisasi" class="form-control" placeholder="NU/Muhammadiyah/PERSIS dll" required value="<?php echo '' ?>"/>
                                                     </div>
                                                 </div>
                                                 <label>Keadaan Calon Mahasiswa*</label>
                                                 <div class="form-group form-float">
                                                     <select name="keadaan" class="form-control show-tick" required>
-                                                        <option value="">-- Pilih --</option>
+                                                        <option value="<?php echo '' ?>"><?php echo '' ?></option>
                                                         <option value="Lengkap">Lengkap</option>
                                                         <option value="Yatim">Yatim</option>
                                                         <option value="Piatu">Piatu</option>

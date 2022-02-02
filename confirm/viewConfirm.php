@@ -1,7 +1,7 @@
 <?php
 require_once '../config/connect.php';
 require_once '../config/function.php';
-require_once '../progres/fileProgres.php';
+require_once '../progres/proofProgres.php';
 
 if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
@@ -70,7 +70,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="demo-switch">
                                             <div class="switch">
-                                                <label>BELUM<input type="checkbox" value="SELESAI"><span class="lever"></span>SELESAI</label>
+                                                <label>BELUM<input type="checkbox" value="SELESAI" name="status" <?= $value['proofsStatus'] == 'SELESAI' ? 'checked' : '' ?>><span class="lever"></span>SELESAI</label>
                                             </div>
                                         </div>
                                     </div>
@@ -78,7 +78,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                 <div class="row clearfix">
                                     <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5">
                                         <div class="button-demo">
-                                            <button type="submit" class="btn bg-green m-t-15 waves-effect" name="edit">
+                                            <button type="submit" class="btn bg-green m-t-15 waves-effect" name="confirm">
                                                 <i class="material-icons">save</i>
                                                 <span><strong>SIMPAN</strong></span>
                                             </button>

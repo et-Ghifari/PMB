@@ -1,7 +1,7 @@
 <?php
 require_once '../config/connect.php';
 require_once '../config/function.php';
-require_once '../progres/fileProgres.php';
+require_once '../progres/proofProgres.php';
 
 if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
@@ -49,11 +49,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                                 <td><?php echo $proof['proofsNama'] ?></td>
                                                 <td><?php echo $proof['proofsEmail'] ?></td>
                                                 <td class="align-center"><img src="<?php echo base_url('../assets/files/bukti/' . $proof['proofsImage'] . '"') ?>" width="40" height="40" alt="<?php echo $proof['proofsNama'] ?>"></td>
-                                                <td>
-                                                    <!-- <div class="demo-checkbox">
-                                                        <input type="checkbox" id="basic_checkbox" class="filled-in" <?= $proof['proofsStatus'] == 'SELESAI' ? 'checked' : '' ?> />
-                                                        <label for="basic_checkbox"><strong><?php echo $proof['proofsStatus'] ?></strong></label>
-                                                    </div> -->
+                                                <td>                                                    
                                                     <div class="demo-switch">
                                                         <div class="switch">
                                                             <label>BELUM<input type="checkbox" <?= $proof['proofsStatus'] == 'SELESAI' ? 'checked' : '' ?>><span class="lever" ></span>SELESAI</label>

@@ -22,6 +22,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
             <div class="card">
                 <div class="header">
                     <h2>FORMULIR PENDAFTARAN BEASISWA</h2>
+                    <small>Jika ada pertanyaan/masalah dalam pendaftaran bisa menghubungi petugas administrasi</small>
                 </div>
                 <div class="body">
                     <div class="row clearfix">
@@ -82,9 +83,9 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <div class="form-group form-float">
                                                     <select name="prodi" class="form-control show-tick" required>
                                                         <option value="">-- Pilih Program Studi --</option>
-                                                        <option value="RPL">Rekayasa Perangkat Lunak</option>
-                                                        <option value="ABI">Administrasi Bisnis Internasional</option>
-                                                        <option value="AKP">Akutansi Keuangan Publik</option>
+                                                        <option value="RPL">D4-Rekayasa Perangkat Lunak</option>
+                                                        <option value="ABI">D4-Administrasi Bisnis Internasional</option>
+                                                        <option value="AKP">D4-Akutansi Keuangan Publik</option>
                                                     </select>
                                                 </div>
                                                 <label>Pilih Kelas*</label>
@@ -92,7 +93,6 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                     <select name="kelas" class="form-control show-tick" required>
                                                         <option value="">-- Pilih Kelas --</option>
                                                         <option value="Reguler">Reguler</option>
-                                                        <option value="Karyawan">Karyawan</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -337,6 +337,19 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                         </div>
                                         <div id="collapseFour_19" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour_19">
                                             <div class="panel-body">
+                                                <label>Nomor KK*</label>
+                                                <div class="form-group form-float">
+                                                    <div class="form-line">
+                                                        <input type="number" name="kk" class="form-control" placeholder="nomor kk" maxlength="16" minlength="16" required />
+                                                    </div>
+                                                </div>
+                                                <br></br>
+                                                <label>NIK Ayah*</label>
+                                                <div class="form-group form-float">
+                                                    <div class="form-line">
+                                                        <input type="number" name="nikAyah" class="form-control" placeholder="nik ayah" maxlength="16" minlength="16" required />
+                                                    </div>
+                                                </div>
                                                 <label>Nama Ayah*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
@@ -377,6 +390,12 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                     </select>
                                                 </div>
                                                 <br></br>
+                                                <label>NIK Ibu*</label>
+                                                <div class="form-group form-float">
+                                                    <div class="form-line">
+                                                        <input type="number" name="nikIbu" class="form-control" placeholder="nik ibu" maxlength="16" minlength="16" required />
+                                                    </div>
+                                                </div>
                                                 <label>Nama Ibu*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">

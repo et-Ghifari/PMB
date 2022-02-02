@@ -1,7 +1,7 @@
 <?php
 require_once '../config/connect.php';
 require_once '../config/function.php';
-require_once '../progres/fileProgres.php';
+require_once '../progres/proofProgres.php';
 
 if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
@@ -9,10 +9,9 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
 }
 
 if (isset($_SESSION['useremail']) == $emailProof) {
-    echo '<script>window.location="' . base_url('../dashboard') . '";</script>';
+    echo '<script>window.location="' . base_url('statusProof.php') . '";</script>';
     exit();
 }
-?>
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,18 +22,34 @@ if (isset($_SESSION['useremail']) == $emailProof) {
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>BUKTI TRANFER</h2>
+                <h2>BUKTI PEMBAYARAN</h2>
             </div>
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>BUKTI TRANFER PEMBAYARAN PENDAFTARAN</h2>
-                            <small>Format (jpg, jpeg, png, pdf) dan Maksimal Size 1.5 Mb</small>
+                            <h2>BUKTI PEMBAYARAN PENDAFTARAN</h2>
+                            <small>Jika ada pertanyaan/masalah dalam pendaftaran bisa menghubungi petugas administrasi</small>
                         </div>
                         <div class="body">
                             <form id="" action="" method="POST" enctype="multipart/form-data">
-                                <label>Upload Bukti Transfer*</label>
+                                <?php
+                                if (isset($_GET['error'])) {
+                                    if ($_GET['error'] == 'error') {
+                                        echo '<div class="alert alert-danger" align="center"><strong>Isi File Terlebih Dahulu!</strong></div>';
+                                    }
+                                    if ($_GET['error'] == 'upload') {
+                                        echo '<div class="alert alert-danger" align="center"><strong>Format File Tidak Sesuai!</strong></div>';
+                                    }
+                                    if ($_GET['error'] == 'bigfile') {
+                                        echo '<div class="alert alert-danger" align="center"><strong>File Terlalu Besar!</strong></div>';
+                                    }
+                                    if ($_GET['error'] == 'form') {
+                                        echo '<div class="alert alert-danger" align="center"><strong>Silahakan Lengkapi Form Pendaftaran Terlabih Dahulu!</strong></div>';
+                                    }
+                                }
+                                ?>
+                                <label>Upload Bukti Pembayaran*</label>
                                 <div class="row clearfix">
                                     <div class="col-sm-6">
                                         <div class="form-group">
@@ -50,7 +65,7 @@ if (isset($_SESSION['useremail']) == $emailProof) {
                                         <i class="material-icons">save</i>
                                         <span><strong>SIMPAN</strong></span>
                                     </button>
-                                    <h5><strong>~ Cek Terlebih Dahulu File Yang Telah Di Upload! ~</strong></h5>
+                                    <h5><strong>~ Cek Terlebih Dahulu File Yang Akan Di Upload! ~</strong></h5>
                                 </div>
                             </form>
                         </div>

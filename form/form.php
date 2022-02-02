@@ -9,7 +9,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
 }
 
 if (isset($_SESSION['useremail']) == $emailMandiri || isset($_SESSION['useremail']) == $emailBeasiswa) {
-    echo '<script>window.location="' . base_url('../dashboard') . '";</script>';
+    echo '<script>window.location="' . base_url('statusForm.php') . '";</script>';
     exit();
 }
 ?>
@@ -29,6 +29,7 @@ if (isset($_SESSION['useremail']) == $emailMandiri || isset($_SESSION['useremail
                     <div class="card">
                         <div class="header">
                             <h2>FORMULIR PENDAFTARAN</h2>
+                            <small>Jika ada pertanyaan/masalah dalam pendaftaran bisa menghubungi petugas administrasi</small>
                         </div>
                         <div class="body align-center">
                             <div class="row">

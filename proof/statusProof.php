@@ -1,17 +1,11 @@
 <?php
 require_once '../config/connect.php';
 require_once '../config/function.php';
-require_once '../progres/proofProgres.php';
-require_once '../progres/selectProgres.php';
 
 if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();
 }
-
-/* var_dump($status);
-exit(); */
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,21 +27,14 @@ exit(); */
                         </div>
                         <div class="body">
                             <blockquote class="m-b-25">
-                                <?php
-                                
-                                if ($status['proofsStatus'] == 'SELESAI') {
-                                    echo '<p class="col-green">Pendaftaran Selesai</p><footer></footer>';
-                                } else {
-                                    echo '<p class="col-red">Pendaftaran Belum Selelsai<footer>Silahkan konfirmasi pada administrasi pendaftaran</footer></p>';
-                                }
-                                ?>
+                                <p>Anda Sudah Melakukan Upload Bukti Pembayan Pendaftaran</p>
                             </blockquote>
-                            <blockquote class="m-b-25">
-                                <footer>Cek Semua Menu Apakah Sudah di Isi Semua</footer>
+                            <blockquote>
+                                <p>Untuk Langkah Selanjutnya Silahakan Cek Status Pendaftaran Anda</p>
+                                <footer>Silahkan menuju halaman pada <cite title="Source Title" class="col-cyan">Menu Status Pendaftaran</cite></footer>
                             </blockquote>
                             <blockquote class="blockquote-reverse">
-                                <p>Terimakasih Telah Mendaftar di </p>
-                                <p class="col-green">POLITEKNIK BALEKAMBANG JEPARA</p>
+                                <p>Terimakasih Telah Mendaftar di </p><p class="col-green">POLITEKNIK BALEKAMBANG JEPARA</p>
                                 <footer><cite title="Source Title" class="col-red">Excellent and Character Building</cite></footer>
                             </blockquote>
                         </div>

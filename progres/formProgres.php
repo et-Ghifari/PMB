@@ -39,23 +39,27 @@ if (isset($_POST['addMandiri']))
     $formSkhun       = trim(mysqli_real_escape_string($conn, $_POST['skhun']));
 
     $formTahunLulus  = trim(mysqli_real_escape_string($conn, $_POST['tahunlulus']));
+    $formKk          = trim(mysqli_real_escape_string($conn, $_POST['kk']));
+    $formNikAyah     = trim(mysqli_real_escape_string($conn, $_POST['nikAyah']));
     $formNamaAyah    = trim(mysqli_real_escape_string($conn, $_POST['ayah']));
     $formPekerjaanA  = trim(mysqli_real_escape_string($conn, $_POST['pekerjaanAyah']));
-    $formPendidikanA = trim(mysqli_real_escape_string($conn, $_POST['pendidikanAyah']));
-    $formNamaIbu     = trim(mysqli_real_escape_string($conn, $_POST['ibu']));
 
+    $formPendidikanA = trim(mysqli_real_escape_string($conn, $_POST['pendidikanAyah']));
+    $formNikIbu      = trim(mysqli_real_escape_string($conn, $_POST['nikIbu']));
+    $formNamaIbu     = trim(mysqli_real_escape_string($conn, $_POST['ibu']));
     $formPekerjaanI  = trim(mysqli_real_escape_string($conn, $_POST['pekerjaanIbu']));
     $formPendidikanI = trim(mysqli_real_escape_string($conn, $_POST['pendidikanIbu']));
+
     $formPenghasilan = trim(mysqli_real_escape_string($conn, $_POST['penghasilan']));
     $formLomba       = trim(mysqli_real_escape_string($conn, $_POST['lomba']));
     $formTingkat     = trim(mysqli_real_escape_string($conn, $_POST['tingkat']));
-
     $formPeringkat   = trim(mysqli_real_escape_string($conn, $_POST['peringkat']));
     $formTahun       = trim(mysqli_real_escape_string($conn, $_POST['tahun']));
+
     $formOrganisasi  = trim(mysqli_real_escape_string($conn, $_POST['organisasi']));
     $formKeadaan     = trim(mysqli_real_escape_string($conn, $_POST['keadaan']));   
     
-    if (empty($formProdi) || empty($formNisn) || empty($formNamaAyah) || empty($formOrganisasi))
+    if (empty($formProdi) || empty($formNisn) || empty($formKk) || empty($formOrganisasi))
     {
         echo '<script>document.location="' . base_url('formMandiri.php?error=emptyform') . '";</script>';
         exit();
@@ -103,19 +107,23 @@ if (isset($_POST['addMandiri']))
                     `formSkhun`,
 
                     `formTahunLulus`,
+                    `formKk`,
+                    `formNikAyah`,
                     `formNamaAyah`,                    
                     `formPekerjaanA`,
-                    `formPendidikanA`,
-                    `formNamaIbu`,
 
+                    `formPendidikanA`,
+                    `formNikIbu`,
+                    `formNamaIbu`,
                     `formPekerjaanI`,
                     `formPendidikanI`,
+
                     `formPenghasilan`,
                     `formLomba`,
                     `formTingkat`,
-
                     `formPeringkat`,
                     `formTahun`,
+
                     `formOrganisasi`,
                     `formKeadaan`)
                     VALUES
@@ -127,7 +135,8 @@ if (isset($_POST['addMandiri']))
                     ?, ?, ?, ?, ?,
                     ?, ?, ?, ?, ?,
                     ?, ?, ?, ?, ?,
-                    ?, ?, ?, ?)';
+                    ?, ?, ?, ?, ?,
+                    ?, ?)';
                     
     $stmtmandiri = mysqli_stmt_init($conn);
 
@@ -137,7 +146,7 @@ if (isset($_POST['addMandiri']))
         exit();
     }
 
-    mysqli_stmt_bind_param($stmtmandiri, 'ssssssssssssssssssssssssssssssssssssssssssss',
+    mysqli_stmt_bind_param($stmtmandiri, 'sssssssssssssssssssssssssssssssssssssssssssssss',
                             $formNo,
                             $formJalur,
                             $formProdi,
@@ -175,19 +184,23 @@ if (isset($_POST['addMandiri']))
                             $formSkhun,
 
                             $formTahunLulus,
+                            $formKk,
+                            $formNikAyah,
                             $formNamaAyah,
                             $formPekerjaanA,
-                            $formPendidikanA,
-                            $formNamaIbu,
 
+                            $formPendidikanA,
+                            $formNikIbu,
+                            $formNamaIbu,
                             $formPekerjaanI,
                             $formPendidikanI,
+
                             $formPenghasilan,
                             $formLomba,
                             $formTingkat,
-
                             $formPeringkat,
                             $formTahun,
+
                             $formOrganisasi,
                             $formKeadaan);
 
@@ -241,23 +254,27 @@ if (isset($_POST['addBeasiswa']))
 
     $formSkhun       = trim(mysqli_real_escape_string($conn, $_POST['skhun']));
     $formTahunLulus  = trim(mysqli_real_escape_string($conn, $_POST['tahunlulus']));
+    $formKk          = trim(mysqli_real_escape_string($conn, $_POST['kk']));
+    $formNikAyah     = trim(mysqli_real_escape_string($conn, $_POST['nikAyah']));
     $formNamaAyah    = trim(mysqli_real_escape_string($conn, $_POST['ayah']));
+
     $formPekerjaanA  = trim(mysqli_real_escape_string($conn, $_POST['pekerjaanAyah']));
     $formPendidikanA = trim(mysqli_real_escape_string($conn, $_POST['pendidikanAyah']));
-
+    $formNikIbu      = trim(mysqli_real_escape_string($conn, $_POST['nikIbu']));
     $formNamaIbu     = trim(mysqli_real_escape_string($conn, $_POST['ibu']));
     $formPekerjaanI  = trim(mysqli_real_escape_string($conn, $_POST['pekerjaanIbu']));
+
     $formPendidikanI = trim(mysqli_real_escape_string($conn, $_POST['pendidikanIbu']));
     $formPenghasilan = trim(mysqli_real_escape_string($conn, $_POST['penghasilan']));
     $formLomba       = trim(mysqli_real_escape_string($conn, $_POST['lomba']));
-
     $formTingkat     = trim(mysqli_real_escape_string($conn, $_POST['tingkat']));
     $formPeringkat   = trim(mysqli_real_escape_string($conn, $_POST['peringkat']));
+
     $formTahun       = trim(mysqli_real_escape_string($conn, $_POST['tahun']));
     $formOrganisasi  = trim(mysqli_real_escape_string($conn, $_POST['organisasi']));
     $formKeadaan     = trim(mysqli_real_escape_string($conn, $_POST['keadaan']));
 
-    if (empty($formProdi) || empty($formNisn) || empty($formNamaAyah) || empty($formOrganisasi))
+    if (empty($formProdi) || empty($formNisn) || empty($formKk) || empty($formOrganisasi))
     {
         echo '<script>window.location="' . base_url('formBeasiswa.php?error=emptyform') . '";</script>';
         exit();
@@ -306,18 +323,22 @@ if (isset($_POST['addBeasiswa']))
 
                     `formSkhun`,
                     `formTahunLulus`,
+                    `formKk`,
+                    `formNikAyah`,
                     `formNamaAyah`,
+
                     `formPekerjaanA`,
                     `formPendidikanA`,
-
+                    `formNikIbu`,
                     `formNamaIbu`,
                     `formPekerjaanI`,
+
                     `formPendidikanI`,
                     `formPenghasilan`,
                     `formLomba`,
-
                     `formTingkat`,
                     `formPeringkat`,
+
                     `formTahun`,
                     `formOrganisasi`,
                     `formKeadaan`)
@@ -330,7 +351,8 @@ if (isset($_POST['addBeasiswa']))
                     ?, ?, ?, ?, ?,
                     ?, ?, ?, ?, ?,
                     ?, ?, ?, ?, ?,
-                    ?, ?, ?, ?, ?)';
+                    ?, ?, ?, ?, ?,
+                    ?, ?, ?)';
 
     $stmtbeasiswa = mysqli_stmt_init($conn);
 
@@ -340,7 +362,7 @@ if (isset($_POST['addBeasiswa']))
         exit();
     }
 
-    mysqli_stmt_bind_param($stmtbeasiswa,'sssssssssssssssssssssssssssssssssssssssssssss',
+    mysqli_stmt_bind_param($stmtbeasiswa,'ssssssssssssssssssssssssssssssssssssssssssssssss',
                             $formNo,                                
                             $formJalur,
                             $formBeasiswa,
@@ -379,18 +401,22 @@ if (isset($_POST['addBeasiswa']))
 
                             $formSkhun,
                             $formTahunLulus,
+                            $formKk,
+                            $formNikAyah,
                             $formNamaAyah,
+
                             $formPekerjaanA,
                             $formPendidikanA,
-
+                            $formNikIbu,
                             $formNamaIbu,
                             $formPekerjaanI,
+
                             $formPendidikanI,
                             $formPenghasilan,
-                            $formLomba,
-                            
+                            $formLomba,                            
                             $formTingkat,
                             $formPeringkat,
+
                             $formTahun,
                             $formOrganisasi,
                             $formKeadaan);
@@ -407,4 +433,88 @@ if (isset($_POST['addBeasiswa']))
 }
 
 
+if (isset($_GET['id']))
+{
+    $id = !empty($_GET['id']) ? intval($_GET['id']) : 0;
+    if (empty($id))
+    {
+        return false;
+    }    
+
+    $dataselect = 'SELECT
+                    `formId`, `formNama`, `formEmail`, `proofsImage`, `proofStatus`,
+                    `formId`, `formNama`, `formEmail`, `proofsImage`, `proofStatus`,
+                    `formId`, `formNama`, `formEmail`, `proofsImage`, `proofStatus`,
+                    `formId`, `formNama`, `formEmail`, `proofsImage`, `proofStatus`,
+                    `formId`, `formNama`, `formEmail`, `proofsImage`, `proofStatus`,
+                    `formId`, `formNama`, `formEmail`, `proofsImage`, `proofStatus`,
+                    `formId`, `formNama`, `formEmail`, `proofsImage`, `proofStatus`,
+                    `formId`, `formNama`, `formEmail`, `proofsImage`, `proofStatus`,
+                    `formId`, `formNama`, `formEmail`, `proofsImage`, `proofStatus`,
+                    `formId`, `formNama`
+                    FROM `proofs` WHERE `formfsId` = ?';
+    $stmtselect = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmtselect, $dataselect))
+    {
+        echo '<script>window.location="' . base_url('confirm.php?error=stmtfailed') . '";</script>';
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmtselect, 's', $id);
+    mysqli_stmt_execute($stmtselect);
+    $resultData = mysqli_stmt_get_result($stmtselect);
+    $value  = mysqli_fetch_assoc($resultData);
+
+    //Update user
+    if (isset($_POST['confirm']))
+    {                
+        $status   = trim(mysqli_real_escape_string($conn, $_POST['status']));
+
+        $dataupdate = 'UPDATE `proofs` SET `proofsStatus` = ? WHERE `proofsId` = ?';
+        $stmtupdate = mysqli_stmt_init($conn);
+
+        if (!mysqli_stmt_prepare($stmtupdate, $dataupdate))
+        {
+            echo '<script>window.location="' . base_url('confirm.php?error=stmtfailed') . '";</script>';
+            exit();
+        }
+
+        $pwdHashed = password_hash($password, PASSWORD_DEFAULT);
+        mysqli_stmt_bind_param($stmtupdate, 'ss', $status, $id);
+        mysqli_stmt_execute($stmtupdate);
+        mysqli_stmt_close($stmtupdate);
+
+        echo
+        '<script>
+            alert("Perubahan Akun Berhasil")
+            document.location="' . base_url('../confirm') . '";
+        </script>';
+        exit();
+    }
+}
+
+
+$dataMselect = 'SELECT `formId`, `formNo`,`formNama`, `formEmail`, `formHp` FROM `mandiris` ORDER BY `formNo`';
+$stmtMselect = mysqli_stmt_init($conn);
+
+if (!mysqli_stmt_prepare($stmtMselect, $dataMselect)) {
+    echo '<script>window.location="' . base_url('confirm.php?error=stmtselect') . '";</script>';
+    exit();
+}
+
+mysqli_stmt_execute($stmtMselect);
+$mandiris = mysqli_stmt_get_result($stmtMselect);
+
+
+$dataBselect = 'SELECT `formId`, `formNo`,`formNama`, `formEmail`, `formHp` FROM `beasiswas` ORDER BY `formNo`';
+$stmtBselect = mysqli_stmt_init($conn);
+
+if (!mysqli_stmt_prepare($stmtBselect, $dataBselect)) {
+    echo '<script>window.location="' . base_url('confirm.php?error=stmtselect') . '";</script>';
+    exit();
+}
+
+mysqli_stmt_execute($stmtBselect);
+$beasiswas = mysqli_stmt_get_result($stmtBselect);
 

@@ -1,14 +1,14 @@
 <?php
 require_once '../config/connect.php';
 require_once '../config/function.php';
+require_once '../progres/formProgres.php';
 
 if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();
 }
 
-if (!$_SESSION['userlevel'] == 'admin')
-{
+if (!$_SESSION['userlevel'] == 'admin') {
     echo '<script>window.location="' . base_url('../dashboard') . '";</script>';
 }
 ?>
@@ -45,21 +45,29 @@ if (!$_SESSION['userlevel'] == 'admin')
                                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                                     <thead>
                                                         <tr>
-                                                            <th class="col-sm-3 align-center">NAMA LENGKAP</th>
-                                                            <th class="col-sm-3 align-center">ALAMAT EMAIL</th>
-                                                            <th class="col-sm-3 align-center">No.TELP/WA</th>                                                            
+                                                            <th>NO.</th>
+                                                            <th>NAMA LENGKAP</th>
+                                                            <th>ALAMAT EMAIL</th>
+                                                            <th>No.TELP/WA</th>
                                                             <th class="col-sm-1 align-center"><i class="material-icons">settings</i></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td class="align-center"><img src=""></td>
-                                                            <td></td>                                                            
-                                                            <td></td>
-                                                            <td class="align-center">
-                                                                <a href="" class="btn bg-cyan waves-effect" data-toggle="tooltip" data-placement="left" title="Review"><i class="material-icons">visibility</i></a>
-                                                            </td>
-                                                        </tr>
+                                                        <?php
+                                                        foreach ($mandiris as $mandiri) {
+                                                        ?>
+                                                            <tr>
+                                                                <td><?php echo $mandiri['formNo'] ?></td>
+                                                                <td><?php echo $mandiri['formNama'] ?></td>
+                                                                <td><?php echo $mandiri['formEmail'] ?></td>
+                                                                <td><?php echo $mandiri['formHp'] ?></td>
+                                                                <td class="align-center">
+                                                                    <a href="" class="btn bg-cyan waves-effect" data-toggle="tooltip" data-placement="left" title="Review"><i class="material-icons">visibility</i></a>
+                                                                </td>
+                                                            </tr>
+                                                        <?php
+                                                        }
+                                                        ?>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -78,21 +86,29 @@ if (!$_SESSION['userlevel'] == 'admin')
                                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                                     <thead>
                                                         <tr>
-                                                            <th class="col-sm-3 align-center">NAMA LENGKAP</th>
-                                                            <th class="col-sm-3 align-center">ALAMAT EMAIL</th>
-                                                            <th class="col-sm-3 align-center">No.TELP/WA</th>                                                            
+                                                            <th>NO.</th>
+                                                            <th>NAMA LENGKAP</th>
+                                                            <th>ALAMAT EMAIL</th>
+                                                            <th>No.TELP/WA</th>
                                                             <th class="col-sm-1 align-center"><i class="material-icons">settings</i></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td class="align-center"><img src=""></td>
-                                                            <td></td>                                                            
-                                                            <td></td>
-                                                            <td class="align-center">
-                                                                <a href="" class="btn bg-cyan waves-effect" data-toggle="tooltip" data-placement="left" title="Review"><i class="material-icons">visibility</i></a>
-                                                            </td>
-                                                        </tr>
+                                                        <?php
+                                                        foreach ($beasiswas as $beasiswa) {
+                                                        ?>
+                                                            <tr>
+                                                                <td class="align-center"><?php echo $beasiswa['formNo'] ?></td>
+                                                                <td><?php echo $beasiswa['formNama'] ?></td>
+                                                                <td><?php echo $beasiswa['formEmail'] ?></td>
+                                                                <td><?php echo $beasiswa['formHp'] ?></td>
+                                                                <td class="align-center">
+                                                                    <a href="" class="btn bg-cyan waves-effect" data-toggle="tooltip" data-placement="left" title="Review"><i class="material-icons">visibility</i></a>
+                                                                </td>
+                                                            </tr>
+                                                        <?php
+                                                        }
+                                                        ?>
                                                     </tbody>
                                                 </table>
                                             </div>

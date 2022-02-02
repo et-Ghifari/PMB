@@ -43,56 +43,62 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <?php
-                
+                <?php                
                 if ($_SESSION['userlevel'] == 'admin') {
-                ?>
+                    ?>
                     <li>
-                        <a class="menu-toggle">
+                        <a href="<?php echo base_url('../user') ?>">
                             <i class="material-icons">person</i>
-                            <span>Admin</span>
+                            <span>User</span>
                         </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="<?php echo base_url('../user') ?>">User</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url('../menu') ?>">Menu</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url('../registrant') ?>">Pendaftar</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url('../confirm') ?>">Konfirmasi</a>
-                            </li>
-                        </ul>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('../menu') ?>">
+                            <i class="material-icons">apps</i>
+                            <span>Menu</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('../registrant') ?>">
+                            <i class="material-icons">supervisor_account</i>
+                            <span>Pendaftar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('../confirm') ?>">
+                            <i class="material-icons">check_circle</i>
+                            <span>Konfirmasi</span>
+                        </a>
+                    </li>
+                <?php
+                } else {
+                    ?>
+                    <li>
+                        <a href="<?php echo base_url('../form') ?>">
+                            <i class="material-icons">assignment</i>
+                            <span>Formulir Pendaftaran</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('../file') ?>">
+                            <i class="material-icons">attach_file</i>
+                            <span>Berkas Pendaftaran</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('../proof') ?>">
+                            <i class="material-icons">attach_money</i>
+                            <span>Bukti Pembayaran</span>
+                        </a>
+                    </li><li>
+                        <a href="<?php echo base_url('../status') ?>">
+                            <i class="material-icons">check_circle</i>
+                            <span>Status Pendaftaran</span>
+                        </a>
                     </li>
                 <?php
                 }
-                ?>
-                <li>
-                    <a href="<?php echo base_url('../form') ?>">
-                        <i class="material-icons">assignment</i>
-                        <span>Formulir Pendaftaran</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url('../file') ?>">
-                        <i class="material-icons">attach_file</i>
-                        <span>Berkas Pendaftaran</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url('../proof') ?>">
-                        <i class="material-icons">attach_money</i>
-                        <span>Bukti Transfer</span>
-                    </a>
-                </li><li>
-                    <a href="<?php echo base_url('../status') ?>">
-                        <i class="material-icons">check_circle</i>
-                        <span>Status Pendaftaran</span>
-                    </a>
-                </li>
+                    ?>
             </ul>
         </div>
         <!-- Footer -->

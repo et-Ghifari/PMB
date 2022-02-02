@@ -9,7 +9,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
 }
 
 if (isset($_SESSION['useremail']) == $emailFile) {
-    echo '<script>window.location="' . base_url('../dashboard') . '";</script>';
+    echo '<script>window.location="' . base_url('statusFile.php') . '";</script>';
     exit();
 }
 ?>
@@ -29,7 +29,7 @@ if (isset($_SESSION['useremail']) == $emailFile) {
                     <div class="card">
                         <div class="header">
                             <h2>BERKAS PENDAFTARAN</h2>
-                            <small>Format (jpg, jpeg, png, pdf) dan Maksimal Size 1.5 Mb</small>
+                            <small>Jika ada pertanyaan/masalah dalam pendaftaran bisa menghubungi petugas administrasi</small>
                         </div>
                         <div class="body">
                             <form id="" action="" method="POST" enctype="multipart/form-data">
@@ -43,6 +43,9 @@ if (isset($_SESSION['useremail']) == $emailFile) {
                                     }
                                     if ($_GET['error'] == 'bigfile') {
                                         echo '<div class="alert alert-danger" align="center"><strong>File Terlalu Besar!</strong></div>';
+                                    }
+                                    if ($_GET['error'] == 'form') {
+                                        echo '<div class="alert alert-danger" align="center"><strong>Silahakan Lengkapi Formulir Pendaftaran Terlabih Dahulu!</strong></div>';
                                     }
                                 }
                                 ?>
@@ -132,7 +135,7 @@ if (isset($_SESSION['useremail']) == $emailFile) {
                                         <i class="material-icons">save</i>
                                         <span><strong>SIMPAN</strong></span>
                                     </button>
-                                    <h5><strong>~ Cek Terlebih Dahulu File Yang Telah Di Upload! ~</strong></h5>
+                                    <h5><strong>~ Cek Terlebih Dahulu File Yang Akan Di Upload! ~</strong></h5>
                                 </div>
                             </form>
                         </div>
