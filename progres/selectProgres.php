@@ -3,33 +3,18 @@
 $userName    = $_SESSION['username'];
 $userEmail   = $_SESSION['useremail'];
 
-$dataMemail = 'SELECT `formEmail` FROM `mandiris` WHERE `formEmail` = ?';
-$stmtMemail = mysqli_stmt_init($conn);
+$dataemail = 'SELECT `formEmail` FROM `mahasiswas` WHERE `formEmail` = ?';
+$stmtemail = mysqli_stmt_init($conn);
 
-if (!mysqli_stmt_prepare($stmtMemail, $dataMemail)) {
+if (!mysqli_stmt_prepare($stmtemail, $dataemail)) {
     echo '<script>window.location="' . base_url('file.php?error=stmtMemail') . '";</script>';
     exit();
 }
 
-mysqli_stmt_bind_param($stmtMemail, 's', $userEmail);
-mysqli_stmt_execute($stmtMemail);
-$resultMemail = mysqli_stmt_get_result($stmtMemail);
-$emailMandiri = mysqli_fetch_assoc($resultMemail);
-
-
-$dataBemail = 'SELECT `formEmail` FROM `beasiswas` WHERE `formEmail` = ?';
-$stmtBemail = mysqli_stmt_init($conn);
-
-if (!mysqli_stmt_prepare($stmtBemail, $dataBemail)) {
-    echo '<script>window.location="' . base_url('file.php?error=stmtBemail') . '";</script>';
-    exit();
-}
-
-mysqli_stmt_bind_param($stmtBemail, 's', $userEmail);
-mysqli_stmt_execute($stmtBemail);
-$resultBemail  = mysqli_stmt_get_result($stmtBemail);
-$emailBeasiswa = mysqli_fetch_assoc($resultBemail);
-
+mysqli_stmt_bind_param($stmtemail, 's', $userEmail);
+mysqli_stmt_execute($stmtemail);
+$resultEmail = mysqli_stmt_get_result($stmtemail);
+$email = mysqli_fetch_assoc($resultEmail);
 
 $dataFemail = 'SELECT `filesEmail` FROM `files` WHERE `filesEmail` = ?';
 $stmtFemail = mysqli_stmt_init($conn);

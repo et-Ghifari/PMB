@@ -171,7 +171,7 @@ if (isset($_GET['id']))
     }
 }
 
-$dataselect = 'SELECT `proofsId`, `proofsNama`, `proofsEmail`, `proofsImage`, `proofsStatus` FROM `proofs` ORDER BY `proofsNama`';
+$dataselect = 'SELECT `proofsId`, `proofsNama`, `proofsJalur`, `proofsEmail`, `proofsImage`, `proofsStatus` FROM `proofs` ORDER BY `proofsNama`';
 $stmtselect = mysqli_stmt_init($conn);
 
 if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {

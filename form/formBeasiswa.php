@@ -309,7 +309,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Asal Sekolah*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="text" name="asalsekolah" class="form-control" placeholder="asal sekolah" required />
+                                                        <input type="text" name="asalSekolah" class="form-control" placeholder="asal sekolah" required />
                                                     </div>
                                                 </div>
                                                 <label>No. SKHUN*</label>
@@ -319,9 +319,20 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                     </div>
                                                 </div>
                                                 <label>Tahun Lulus*</label>
-                                                <div class="form-group form-float">
-                                                    <div class="form-line">
-                                                        <input type="number" name="tahunlulus" class="form-control" placeholder="tahun lulus" required />
+                                                <div class="row clearfix">                                                    
+                                                    <div class="col-sm-3">
+                                                        <div class="form-group form-float">
+                                                            <select name="tahunLulus" class="form-control show-tick" required>
+                                                                <option value="">-- Pilih Tahun --</option>
+                                                                <?php $th = date('Y') - 5; ?>
+                                                                <?php for ($th; $th <= date('Y'); $th++) {
+                                                                ?>
+                                                                    <option value="<?php echo $th; ?>"><?php echo $th; ?></option>
+                                                                <?php
+                                                                }
+                                                                ?>
+                                                            </select>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -440,8 +451,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <div class="form-group form-float">
                                                     <select name="penghasilan" class="form-control show-tick" required>
                                                         <option value="">-- Pilih --</option>
-                                                        <option value="< 500.000">
-                                                            < 500.000</option>
+                                                        <option value="< 500.000">< 500.000</option>
                                                         <option value="500.000 - 1.000.000">500.000 - 1.000.000</option>
                                                         <option value="1.000.000 - 2.000.000">1.000.000 - 2.000.000</option>
                                                         <option value="2.000.000 - 3.000.000">2.000.000 - 3.000.000</option>

@@ -53,12 +53,6 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('../menu') ?>">
-                            <i class="material-icons">apps</i>
-                            <span>Menu</span>
-                        </a>
-                    </li>
-                    <li>
                         <a href="<?php echo base_url('../registrant') ?>">
                             <i class="material-icons">supervisor_account</i>
                             <span>Pendaftar</span>

@@ -35,10 +35,11 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                     <thead>
                                         <tr>
                                             <th class="col-sm-3 ">NAMA LENGKAP</th>
+                                            <th class="col-sm-1 ">JALUR</th>
                                             <th class="col-sm-3 ">ALAMAT EMAIL</th>
                                             <th class="col-sm-3 align-center">BUKTI TRANFER</th>
                                             <th class="col-sm-1 align-center">STATUS</th>
-                                            <th class="col-sm-2 align-center"><i class="material-icons">settings</i></th>
+                                            <th class="col-sm-1 align-center"><i class="material-icons">settings</i></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -47,6 +48,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                         ?>
                                             <tr>
                                                 <td><?php echo $proof['proofsNama'] ?></td>
+                                                <td><?php echo $proof['proofsJalur'] ?></td>
                                                 <td><?php echo $proof['proofsEmail'] ?></td>
                                                 <td class="align-center"><img src="<?php echo base_url('../assets/files/bukti/' . $proof['proofsImage'] . '"') ?>" width="40" height="40" alt="<?php echo $proof['proofsNama'] ?>"></td>
                                                 <td>                                                    

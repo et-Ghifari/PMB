@@ -1,11 +1,13 @@
 <?php
 require_once '../config/connect.php';
 require_once '../config/function.php';
+require_once '../progres/formProgres.php';
 
 if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +36,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                         </div>
                                         <div class="content">
                                             <div class="text">TOTAL PENDAFTAR</div>
-                                            <div class="number count-to" data-from="0" data-to="100" data-speed="1000" data-fresh-interval="20"></div>
+                                            <div class="number count-to" data-from="0" data-to="<?php echo $total ?>" data-speed="1000" data-fresh-interval="20"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -45,7 +47,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                         </div>
                                         <div class="content">
                                             <div class="text">RPL</div>
-                                            <div class="number count-to" data-from="0" data-to="30" data-speed="1000" data-fresh-interval="20"></div>
+                                            <div class="number count-to" data-from="0" data-to="<?php echo $rpl ?>" data-speed="1000" data-fresh-interval="20"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -56,7 +58,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                         </div>
                                         <div class="content">
                                             <div class="text">ABI</div>
-                                            <div class="number count-to" data-from="0" data-to="50" data-speed="1000" data-fresh-interval="20"></div>
+                                            <div class="number count-to" data-from="0" data-to="<?php echo $abi ?>" data-speed="1000" data-fresh-interval="20"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -67,7 +69,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                         </div>
                                         <div class="content">
                                             <div class="text">AKP</div>
-                                            <div class="number count-to" data-from="0" data-to="20" data-speed="1000" data-fresh-interval="20"></div>
+                                            <div class="number count-to" data-from="0" data-to="<?php echo $akp ?>" data-speed="1000" data-fresh-interval="20"></div>
                                         </div>
                                     </div>
                                 </div>

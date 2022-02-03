@@ -60,7 +60,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                         foreach ($users as $user) {
                                         ?>
                                             <tr>
-                                                <td class="align-center"><img src="<?php echo base_url('../assets/images/users/' . $user['usersImage'] . '"') ?>" width="40" height="40" alt="<?php echo $user['usersName'] ?>"></td>
+                                                <td class="align-center"><img src="<?= !empty($user['usersImage']) ? base_url('../assets/images/users/' . $user['usersImage'] . '"') : base_url('../assets/images/users/image.png') ?>" width="40" height="40" alt="<?php echo $user['usersName'] ?>"></td>
                                                 <td><?php echo $user['usersName'] ?></td>
                                                 <td><?php echo $user['usersEmail'] ?></td>
                                                 <td><?php echo $user['usersUid'] ?></td>

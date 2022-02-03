@@ -30,91 +30,105 @@ if (!$_SESSION['userlevel'] == 'admin') {
                             <h2>Calon Mahasiswa</h2>
                         </div>
                         <div class="body">
-                            <div class="panel-group" id="accordion_19" role="tablist" aria-multiselectable="true">
-                                <div class="panel panel-col-cyan">
-                                    <div class="panel-heading" role="tab" id="headingOne_19">
-                                        <h4 class="panel-title">
-                                            <a role="button" data-toggle="collapse" href="#collapseOne_19" aria-expanded="true" aria-controls="collapseOne_19">
-                                                <i class="material-icons">local_library</i>Jalur Mandiri
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseOne_19" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_19">
-                                        <div class="panel-body">
-                                            <div id="" class="table-responsive">
-                                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>NO.</th>
-                                                            <th>NAMA LENGKAP</th>
-                                                            <th>ALAMAT EMAIL</th>
-                                                            <th>No.TELP/WA</th>
-                                                            <th class="col-sm-1 align-center"><i class="material-icons">settings</i></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <?php
-                                                        foreach ($mandiris as $mandiri) {
-                                                        ?>
-                                                            <tr>
-                                                                <td><?php echo $mandiri['formNo'] ?></td>
-                                                                <td><?php echo $mandiri['formNama'] ?></td>
-                                                                <td><?php echo $mandiri['formEmail'] ?></td>
-                                                                <td><?php echo $mandiri['formHp'] ?></td>
-                                                                <td class="align-center">
-                                                                    <a href="" class="btn bg-cyan waves-effect" data-toggle="tooltip" data-placement="left" title="Review"><i class="material-icons">visibility</i></a>
-                                                                </td>
-                                                            </tr>
-                                                        <?php
-                                                        }
-                                                        ?>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="info-box bg-cyan">
+                                        <div class="icon">
+                                            <i class="material-icons">people</i>
                                         </div>
-                                    </div>
-                                    <div class="panel-heading" role="tab" id="headingTwo_19">
-                                        <h4 class="panel-title">
-                                            <a role="button" data-toggle="collapse" href="#collapseTwo_19" aria-expanded="true" aria-controls="collapseTwo_19">
-                                                <i class="material-icons">school</i>Jalur Beasiswa
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseTwo_19" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo_19">
-                                        <div class="panel-body">
-                                            <div id="" class="table-responsive">
-                                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>NO.</th>
-                                                            <th>NAMA LENGKAP</th>
-                                                            <th>ALAMAT EMAIL</th>
-                                                            <th>No.TELP/WA</th>
-                                                            <th class="col-sm-1 align-center"><i class="material-icons">settings</i></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <?php
-                                                        foreach ($beasiswas as $beasiswa) {
-                                                        ?>
-                                                            <tr>
-                                                                <td class="align-center"><?php echo $beasiswa['formNo'] ?></td>
-                                                                <td><?php echo $beasiswa['formNama'] ?></td>
-                                                                <td><?php echo $beasiswa['formEmail'] ?></td>
-                                                                <td><?php echo $beasiswa['formHp'] ?></td>
-                                                                <td class="align-center">
-                                                                    <a href="" class="btn bg-cyan waves-effect" data-toggle="tooltip" data-placement="left" title="Review"><i class="material-icons">visibility</i></a>
-                                                                </td>
-                                                            </tr>
-                                                        <?php
-                                                        }
-                                                        ?>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                        <div class="content">
+                                            <div class="text">TOTAL</div>
+                                            <div class="number count-to" data-from="0" data-to="<?php echo $total ?>" data-speed="1000" data-fresh-interval="20"></div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="info-box bg-blue">
+                                        <div class="icon">
+                                            <i class="material-icons">code</i>
+                                        </div>
+                                        <div class="content">
+                                            <div class="text">RPL</div>
+                                            <div class="number count-to" data-from="0" data-to="<?php echo $rpl ?>" data-speed="1000" data-fresh-interval="20"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="info-box bg-red">
+                                        <div class="icon">
+                                            <i class="material-icons">computer</i>
+                                        </div>
+                                        <div class="content">
+                                            <div class="text">ABI</div>
+                                            <div class="number count-to" data-from="0" data-to="<?php echo $abi ?>" data-speed="1000" data-fresh-interval="20"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="info-box bg-green">
+                                        <div class="icon">
+                                            <i class="material-icons">monetization_on</i>
+                                        </div>
+                                        <div class="content">
+                                            <div class="text">AKP</div>
+                                            <div class="number count-to" data-from="0" data-to="<?php echo $akp ?>" data-speed="1000" data-fresh-interval="20"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="info-box bg-teal">
+                                        <div class="icon">
+                                            <i class="material-icons">import_contacts</i>
+                                        </div>
+                                        <div class="content">
+                                            <div class="text">Jalur Mandiri</div>
+                                            <div class="number count-to" data-from="0" data-to="<?php echo $mandiri ?>" data-speed="1000" data-fresh-interval="20"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="info-box bg-lime">
+                                        <div class="icon">
+                                            <i class="material-icons">school</i>
+                                        </div>
+                                        <div class="content">
+                                            <div class="text">Jalur Beasiswa</div>
+                                            <div class="number count-to" data-from="0" data-to="<?php echo $beasiswa ?>" data-speed="1000" data-fresh-interval="20"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="" class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th class="col-sm-1">NO.</th>
+                                            <th class="col-sm-1">JALUR</th>
+                                            <th class="col-sm-3">NAMA LENGKAP</th>
+                                            <th class="col-sm-3">ALAMAT EMAIL</th>
+                                            <th class="col-sm-2">No.TELP/WA</th>
+                                            <th class="col-sm-1 align-center"><i class="material-icons">settings</i></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        foreach ($mahasiswas as $mahasiswa) {
+                                        ?>
+                                            <tr>
+                                                <td><?php echo $mahasiswa['formNo'] ?></td>
+                                                <td><?php echo $mahasiswa['formJalur'] ?></td>
+                                                <td><?php echo $mahasiswa['formNama'] ?></td>
+                                                <td><?php echo $mahasiswa['formEmail'] ?></td>
+                                                <td><?php echo $mahasiswa['formHp'] ?></td>
+                                                <td class="align-center">
+                                                    <a href="viewRegistrant.php?id=<?php echo $mahasiswa['formId'] ?>" class="btn bg-cyan waves-effect" data-toggle="tooltip" data-placement="left" title="Review"><i class="material-icons">visibility</i></a>
+                                                </td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -122,6 +136,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
             </div>
     </section>
     <?php include_once '../include/script.php'; ?>
+    <script src="<?php echo base_url('../assets/js/pages/widgets/infobox/infobox-2.js') ?>"></script>
 </body>
 
 </html>
