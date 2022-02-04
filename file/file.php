@@ -1,14 +1,14 @@
 <?php
 require_once '../config/connect.php';
 require_once '../config/function.php';
-require_once '../progres/fileProgres.php';
+require_once '../progres/formProgres.php';
 
 if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     echo '<script>window.location="' . base_url('../auth/login.php') . '";</script>';
     exit();
 }
 
-if (isset($_SESSION['useremail']) == $emailFile) {
+if (!empty($ktp['formKtp'])) {
     echo '<script>window.location="' . base_url('statusFile.php') . '";</script>';
     exit();
 }

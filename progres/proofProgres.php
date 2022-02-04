@@ -4,7 +4,7 @@ require_once 'selectProgres.php';
 
 if (isset($_POST['uploadBukti'])) {
 
-    if (isset($_SESSION['useremail']) == $emailMandiri) {
+    if (!empty($ktp['formKtp'])) {
        
         $buktiName    = $_FILES['bukti']['name'];
         $buktiType    = $_FILES['bukti']['type'];
@@ -36,78 +36,18 @@ if (isset($_POST['uploadBukti'])) {
         $buktiDesti      = '../assets/files/bukti/' . $buktiNameNew;
         
         move_uploaded_file($buktiTmpName, $buktiDesti);
-
-        $fileJalur = 'Mandiri';
-
-        $datainsert = 'INSERT INTO `proofs` (`proofsJalur`, `proofsNama`, `proofsEmail`, `proofsImage`) VALUE (?, ?, ?, ?)';
-        $stmtinsert = mysqli_stmt_init($conn);
-
-        if (!mysqli_stmt_prepare($stmtinsert, $datainsert)) {
-            echo '<script>window.location="' . base_url('proof.php?error=stmtinsertm') . '";</script>';
-            exit();
-        }
-
-        mysqli_stmt_bind_param($stmtinsert, 'ssss', $fileJalur, $userName, $userEmail, $buktiNameNew);
-        mysqli_stmt_execute($stmtinsert);
-        mysqli_stmt_close($stmtinsert);
-
-        echo
-        '<script>
-                alert("Upload Tanda Bukti Berhasil")
-                document.location="' . base_url('../proof') . '";
-            </script>';
-        exit();
-    } else {
-        echo '<script>window.location="' . base_url('proof.php?error=form') . '";</script>';
-        exit();
-    }
-
-    if (isset($_SESSION['useremail']) == $emailBeasiswa) {
-
-        $buktiName    = $_FILES['bukti']['name'];
-        $buktiType    = $_FILES['bukti']['type'];
-        $buktiSize    = $_FILES['bukti']['size'];
-        $buktiError   = $_FILES['bukti']['error'];
-        $buktiTmpName = $_FILES['bukti']['tmp_name'];
-
-        $allowed      = array('jpg', 'jpeg', 'png', 'pdf');
-
-        $buktiExt     = explode('.', $buktiName);
-        $buktiActExt  = strtolower(end($buktiExt));
-
-        if (!$buktiError == 0) {
-            echo '<script>window.location="' . base_url('proof.php?error=error') . '";</script>';
-            exit();
-        }
-
-        if (!in_array($buktiActExt, $allowed)) {
-            echo '<script>window.location="' . base_url('proof.php?error=upload') . '";</script>';
-            exit();
-        }
-
-        if ($buktiSize >= 1500000) {
-            echo '<script>window.location="' . base_url('proof.php?error=bigfile') . '";</script>';
-            exit();
-        }
-
-        $buktiNameNew    = $userName . '.' . $buktiActExt;
-        $buktiDesti      = '../assets/files/bukti/' . $buktiNameNew;
         
-        move_uploaded_file($buktiTmpName, $buktiDesti);
+        $dataupdate = 'UPDATE `mahasiswas` SET `formBukti` = ? WHERE `formEmail` = ?';
+        $stmtupdate = mysqli_stmt_init($conn);
 
-        $fileJalur = 'Mandiri';
-
-        $datainsert = 'INSERT INTO `proofs` (`proofsJalur`, `proofsNama`, `proofsEmail`, `proofsImage`) VALUE (?, ?, ?, ?)';
-        $stmtinsert = mysqli_stmt_init($conn);
-
-        if (!mysqli_stmt_prepare($stmtinsert, $datainsert)) {
-            echo '<script>window.location="' . base_url('proof.php?error=stmtinsertb') . '";</script>';
+        if (!mysqli_stmt_prepare($stmtupdate, $dataupdate)) {
+            echo '<script>window.location="' . base_url('file.php?error=stmtupdate') . '";</script>';
             exit();
-        }
+        }        
 
-        mysqli_stmt_bind_param($stmtinsert, 'ssss', $fileJalur, $userName, $userEmail, $buktiNameNew);
-        mysqli_stmt_execute($stmtinsert);
-        mysqli_stmt_close($stmtinsert);
+        mysqli_stmt_bind_param($stmtupdate, 'ss', $buktiNameNew, $userEmail);
+        mysqli_stmt_execute($stmtupdate);
+        mysqli_stmt_close($stmtupdate);
 
         echo
         '<script>
@@ -118,7 +58,7 @@ if (isset($_POST['uploadBukti'])) {
     } else {
         echo '<script>window.location="' . base_url('proof.php?error=form') . '";</script>';
         exit();
-    }
+    }    
 }
 
 if (isset($_GET['id']))
@@ -129,7 +69,7 @@ if (isset($_GET['id']))
         return false;
     }
 
-    $dataselect = 'SELECT `proofsId`, `proofsNama`, `proofsEmail`, `proofsImage`, `proofsStatus` FROM `proofs` WHERE `proofsId` = ?';
+    $dataselect = 'SELECT `formId`, `formNama`, `formEmail`, `formBukti`, `formStatus` FROM `mahasiswas` WHERE `formId` = ?';
     $stmtselect = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmtselect, $dataselect))
@@ -148,7 +88,7 @@ if (isset($_GET['id']))
     {                
         $status   = trim(mysqli_real_escape_string($conn, $_POST['status']));
 
-        $dataupdate = 'UPDATE `proofs` SET `proofsStatus` = ? WHERE `proofsId` = ?';
+        $dataupdate = 'UPDATE `mahasiswas` SET `formStatus` = ? WHERE `formId` = ?';
         $stmtupdate = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmtupdate, $dataupdate))
@@ -171,7 +111,7 @@ if (isset($_GET['id']))
     }
 }
 
-$dataselect = 'SELECT `proofsId`, `proofsNama`, `proofsJalur`, `proofsEmail`, `proofsImage`, `proofsStatus` FROM `proofs` ORDER BY `proofsNama`';
+$dataselect = 'SELECT `formId`, `formNo`, `formNama`, `formJalur`, `formEmail`, `formBukti`, `formStatus` FROM `mahasiswas` ORDER BY `formNama`';
 $stmtselect = mysqli_stmt_init($conn);
 
 if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {

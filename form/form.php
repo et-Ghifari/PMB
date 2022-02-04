@@ -8,7 +8,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     exit();
 }
 
-if (isset($_SESSION['useremail']) == $email) {
+if (!empty($email['formEmail'])) {
     echo '<script>window.location="' . base_url('statusForm.php') . '";</script>';
     exit();
 }

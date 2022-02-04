@@ -46,27 +46,25 @@ require_once 'progres/menuProgres.php';
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
                     <?php
-                    foreach ($menus as $menu)
-                    {
-                        ?>
+                    foreach ($menus as $menu) {
+                    ?>
                         <li><a href="#<?php echo $menu['menusUrl'] ?>"><?php echo $menu['menusName'] ?></a></li>
                     <?php
                     }
-                        ?>
+                    ?>
                 </ul>
             </nav>
             <?php
-            if (isset($_SESSION['useremail']) || isset($_SESSION['useruid']))
-            {
-                ?>
+            if (isset($_SESSION['useremail']) || isset($_SESSION['useruid'])) {
+            ?>
                 <a class="appointment-btn scrollto" href="<?php echo base_url('dashboard') ?>"><b>HOME</b></a>
             <?php
             } else {
-                ?>
+            ?>
                 <a class="appointment-btn scrollto" href="<?php echo base_url('auth') ?>"><b>LOGIN</b></a>
             <?php
             }
-                ?>
+            ?>
         </div>
     </header>
     <!-- ======= Gambabar Sliding Fakultas ======= -->
@@ -113,8 +111,8 @@ require_once 'progres/menuProgres.php';
                 </div>
             </div>
         </section>
-         <!-- ======= Panduan Pendaftaran ======= -->
-         <section id="panduan" class="featured-services">
+        <!-- ======= Panduan Pendaftaran ======= -->
+        <section id="panduan" class="featured-services">
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
                     <h2>Panduan Pendaftaran</h2><br>
@@ -245,7 +243,7 @@ require_once 'progres/menuProgres.php';
                     </div>
                 </div>
             </div>
-        </section>       
+        </section>
         <!-- ======= Program Studi ======= -->
         <section id="prodi" class="departments">
             <div class="container" data-aos="fade-up">
@@ -335,7 +333,7 @@ require_once 'progres/menuProgres.php';
                                 <li class="na">Almari (Hak Pakai Selama di Pondok)<br>(Rp. 600.000)</li>
                             </ul>
                             <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Registrasi</a>
+                                <a href="<?php echo base_url('proof') ?>" class="btn-buy">Registrasi</a>
                             </div>
                         </div>
                     </div>
@@ -353,7 +351,7 @@ require_once 'progres/menuProgres.php';
                                 <li class="na">Almari (Hak Pakai Selama di Pondok)<br>(Rp. 600.000)</li>
                             </ul>
                             <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Registrasi</a>
+                                <a href="<?php echo base_url('proof') ?>" class="btn-buy">Registrasi</a>
                             </div>
                         </div>
                     </div>
@@ -371,7 +369,7 @@ require_once 'progres/menuProgres.php';
                                 <li>Almari (Hak Pakai Selama di Pondok)<br>(Rp. 600.000)</li>
                             </ul>
                             <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Registrasi</a>
+                                <a href="<?php echo base_url('proof') ?>" class="btn-buy">Registrasi</a>
                             </div>
                         </div>
                     </div>
@@ -455,7 +453,7 @@ require_once 'progres/menuProgres.php';
                 </div>
             </div>
         </section>
-        
+
         <!-- ======= Testimoni ======= -->
         <section id="testimoni" class="testimonials">
             <div class="container" data-aos="fade-up">
@@ -488,7 +486,7 @@ require_once 'progres/menuProgres.php';
             </div>
         </section>
         <!-- ======= Gallery ======= -->
-        <section id="galeri" class="gallery">
+        <section id=" galeri" class="gallery">
                         <div class="container" data-aos="fade-up">
                             <div class="section-title">
                                 <h2>Galeri</h2><br>
@@ -531,24 +529,38 @@ require_once 'progres/menuProgres.php';
                             <p>Balekambang, Gemiring Lor, Nalumsari, Jepara Regency, Central Java 59466</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <div class="info-box mt-4">
+                            <a href="https://www.polibang.ac.id/" class="youtube"><i class="bx bx-world"></i></a>
+                            <h3>Website</h3>
+                            <strong><p>Politeknik Balekambang Jepara</p></strong>                            
+                        </div>
+                    </div>
+                    <div class="col-md-4">
                         <div class="info-box mt-4">
                             <i class="bx bx-envelope"></i>
                             <h3>Email</h3>
-                            <p>pmb@polibang.ac.id<br><br>
-                                <a href="https://www.youtube.com/channel/UCpqNI0TmjPTDbIg9H83d99g" class="youtube"><i class="bx bxl-youtube"></i></a>
-                                <a href="https://www.facebook.com/politbang/" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                <a href="https://www.instagram.com/politeknikbalekambang/" class="instagram"><i class="bx bxl-instagram"></i></a>
-                            </p>
+                            <strong><p>pmb@polibang.ac.id</p></strong>                            
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <div class="info-box mt-4">
+                            <a href="https://www.youtube.com/channel/UCpqNI0TmjPTDbIg9H83d99g" class="youtube"><i class="bx bxl-youtube"></i></a>                            
+                            <a href="https://www.facebook.com/politbang/" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://www.instagram.com/politeknikbalekambang/" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@polibangjepara" class="instagram"><i class="bx bxs-music"></i></a>
+                            <h3>Sosial Media</h3>
+                            <strong><p>Politeknik Balekambang Jepara</p></strong>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
                         <div class="info-box mt-4">
                             <i class="bx bx-phone-call"></i>
                             <h3>Kontak Kami</h3><br>
-                            <p>+1 5589 55488 55 (Kang Beken)</p>
-                            <p>+1 5589 55488 55 (Kang Beken)</p>
-                            <p>+1 5589 55488 55 (Kang Beken)</p>
+                            <strong>
+                                <p>+62 856-4111-1267 (Ahmad Subkhan)</p>
+                                <p>+62 857-4252-9468 (Ahmad Mubais)</p>
+                            </strong>
                         </div>
                     </div>
                 </div>

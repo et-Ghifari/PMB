@@ -4,11 +4,28 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     exit();
 }
 ?>
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="preloader">
+            <div class="spinner-layer pl-cyan">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <p>Please wait...</p>
+    </div>
+</div>
+<!-- #END# Page Loader -->
 <nav class="navbar">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="bars"></a>
-            <b><a class="navbar-brand" href="<?php echo base_url('../dashboard') ?>">PMB - POLIBANG - <?php echo date('Y'); ?></a></b>
+            <b><a class="navbar-brand" href="<?php echo base_url('../') ?>">PMB - POLIBANG - <?php echo date('Y'); ?></a></b>
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse"></div>
     </div>
@@ -43,9 +60,9 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <?php                
+                <?php
                 if ($_SESSION['userlevel'] == 'admin') {
-                    ?>
+                ?>
                     <li>
                         <a href="<?php echo base_url('../user') ?>">
                             <i class="material-icons">person</i>
@@ -66,7 +83,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                     </li>
                 <?php
                 } else {
-                    ?>
+                ?>
                     <li>
                         <a href="<?php echo base_url('../form') ?>">
                             <i class="material-icons">assignment</i>
@@ -84,7 +101,8 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                             <i class="material-icons">attach_money</i>
                             <span>Bukti Pembayaran</span>
                         </a>
-                    </li><li>
+                    </li>
+                    <li>
                         <a href="<?php echo base_url('../status') ?>">
                             <i class="material-icons">check_circle</i>
                             <span>Status Pendaftaran</span>
@@ -92,7 +110,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                     </li>
                 <?php
                 }
-                    ?>
+                ?>
             </ul>
         </div>
         <!-- Footer -->

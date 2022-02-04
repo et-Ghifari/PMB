@@ -8,7 +8,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     exit();
 }
 
-if (isset($_SESSION['useremail']) == $emailProof) {
+if (!empty($bukti['formBukti'])) {
     echo '<script>window.location="' . base_url('statusProof.php') . '";</script>';
     exit();
 }
@@ -45,7 +45,7 @@ if (isset($_SESSION['useremail']) == $emailProof) {
                                         echo '<div class="alert alert-danger" align="center"><strong>File Terlalu Besar!</strong></div>';
                                     }
                                     if ($_GET['error'] == 'form') {
-                                        echo '<div class="alert alert-danger" align="center"><strong>Silahakan Lengkapi Formulir Pendaftaran Terlabih Dahulu!</strong></div>';
+                                        echo '<div class="alert alert-danger" align="center"><strong>Silahakan Upload Berkas Pendaftaran Terlabih Dahulu!</strong></div>';
                                     }
                                 }
                                 ?>

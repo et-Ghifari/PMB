@@ -16,13 +16,13 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>INFORMASI PENDAFTARAN</h2>
+                <h2>BERKAS PENDAFTARAN</h2>
             </div>
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>INFORMASI PENDAFTARAN</h2>
+                            <h2>BERKAS PENDAFTARAN</h2>
                             <small>Jika ada pertanyaan/masalah dalam pendaftaran bisa menghubungi petugas administrasi</small>
                         </div>
                         <div class="body">

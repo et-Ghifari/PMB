@@ -16,35 +16,36 @@ mysqli_stmt_execute($stmtemail);
 $resultEmail = mysqli_stmt_get_result($stmtemail);
 $email = mysqli_fetch_assoc($resultEmail);
 
-$dataFemail = 'SELECT `filesEmail` FROM `files` WHERE `filesEmail` = ?';
-$stmtFemail = mysqli_stmt_init($conn);
 
-if (!mysqli_stmt_prepare($stmtFemail, $dataFemail)) {
+$dataktp = 'SELECT `formKtp` FROM `mahasiswas` WHERE `formEmail` = ?';
+$stmtktp = mysqli_stmt_init($conn);
+
+if (!mysqli_stmt_prepare($stmtktp, $dataktp)) {
     echo '<script>window.location="' . base_url('file.php?error=stmtFemail') . '";</script>';
     exit();
 }
 
-mysqli_stmt_bind_param($stmtFemail, 's', $userEmail);
-mysqli_stmt_execute($stmtFemail);
-$resultFemail = mysqli_stmt_get_result($stmtFemail);
-$emailFile    = mysqli_fetch_assoc($resultFemail);
+mysqli_stmt_bind_param($stmtktp, 's', $userEmail);
+mysqli_stmt_execute($stmtktp);
+$resultKtp = mysqli_stmt_get_result($stmtktp);
+$ktp    = mysqli_fetch_assoc($resultKtp);
 
 
-$dataPemail = 'SELECT `proofsEmail` FROM `proofs` WHERE `proofsEmail` = ?';
-$stmtPemail = mysqli_stmt_init($conn);
+$databukti = 'SELECT `formBukti` FROM `mahasiswas` WHERE `formEmail` = ?';
+$stmtbukti = mysqli_stmt_init($conn);
 
-if (!mysqli_stmt_prepare($stmtPemail, $dataPemail)) {
+if (!mysqli_stmt_prepare($stmtbukti, $databukti)) {
     echo '<script>window.location="' . base_url('file.php?error=stmtFemail') . '";</script>';
     exit();
 }
 
-mysqli_stmt_bind_param($stmtPemail, 's', $userEmail);
-mysqli_stmt_execute($stmtPemail);
-$resultPemail = mysqli_stmt_get_result($stmtPemail);
-$emailProof   = mysqli_fetch_assoc($resultPemail);
+mysqli_stmt_bind_param($stmtbukti, 's', $userEmail);
+mysqli_stmt_execute($stmtbukti);
+$resultBukti= mysqli_stmt_get_result($stmtbukti);
+$bukti    = mysqli_fetch_assoc($resultBukti);
 
 
-$datastatus = 'SELECT `proofsStatus` FROM `proofs` WHERE `proofsEmail` = ?';
+$datastatus = 'SELECT `formStatus` FROM `mahasiswas` WHERE `formEmail` = ?';
 $stmtstatus = mysqli_stmt_init($conn);
 
 if (!mysqli_stmt_prepare($stmtstatus, $datastatus)) {

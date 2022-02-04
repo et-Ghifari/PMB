@@ -38,7 +38,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line disabled">
-                                                <input type="text" name="nama" class="form-control" value="<?php echo $value['proofsNama'] ?>" required>
+                                                <input type="text" name="nama" class="form-control" value="<?php echo $value['formNama'] ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -50,7 +50,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line disabled">
-                                                <input type="email" name="email" class="form-control" value="<?php echo $value['proofsEmail'] ?>" required>
+                                                <input type="email" name="email" class="form-control" value="<?php echo $value['formEmail'] ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -60,7 +60,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                         <label for="username">Bukti Transfer</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                    <iframe id="aktaDisplay" onclick="aktaClick()" src="<?php echo base_url('../assets/files/bukti/' . $value['proofsImage'] . '"') ?>" width="50%"></iframe>
+                                    <iframe id="aktaDisplay" onclick="aktaClick()" src="<?php echo base_url('../assets/files/bukti/' . $value['formBukti'] . '"') ?>" width="50%"></iframe>
                                     </div>
                                 </div>
                                 <div class="row clearfix">
@@ -70,7 +70,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="demo-switch">
                                             <div class="switch">
-                                                <label>BELUM<input type="checkbox" value="SELESAI" name="status" <?= $value['proofsStatus'] == 'SELESAI' ? 'checked' : '' ?>><span class="lever"></span>SELESAI</label>
+                                                <label>BELUM<input type="checkbox" value="SELESAI" name="status" <?= $value['formStatus'] == 'SELESAI' ? 'checked' : '' ?>><span class="lever"></span>SELESAI</label>
                                             </div>
                                         </div>
                                     </div>

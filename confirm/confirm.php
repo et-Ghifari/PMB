@@ -34,10 +34,11 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
+                                            <th class="col-sm-1 ">NO.</th>
                                             <th class="col-sm-3 ">NAMA LENGKAP</th>
                                             <th class="col-sm-1 ">JALUR</th>
                                             <th class="col-sm-3 ">ALAMAT EMAIL</th>
-                                            <th class="col-sm-3 align-center">BUKTI TRANFER</th>
+                                            <th class="col-sm-2 align-center">BUKTI TRANFER</th>
                                             <th class="col-sm-1 align-center">STATUS</th>
                                             <th class="col-sm-1 align-center"><i class="material-icons">settings</i></th>
                                         </tr>
@@ -47,19 +48,20 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                         foreach ($proofs as $proof) {
                                         ?>
                                             <tr>
-                                                <td><?php echo $proof['proofsNama'] ?></td>
-                                                <td><?php echo $proof['proofsJalur'] ?></td>
-                                                <td><?php echo $proof['proofsEmail'] ?></td>
-                                                <td class="align-center"><img src="<?php echo base_url('../assets/files/bukti/' . $proof['proofsImage'] . '"') ?>" width="40" height="40" alt="<?php echo $proof['proofsNama'] ?>"></td>
+                                                <td><?php echo $proof['formNo'] ?></td>
+                                                <td><?php echo $proof['formNama'] ?></td>
+                                                <td><?php echo $proof['formJalur'] ?></td>
+                                                <td><?php echo $proof['formEmail'] ?></td>
+                                                <td class="align-center"><img src="<?php echo base_url('../assets/files/bukti/' . $proof['formBukti'] . '"') ?>" width="40" height="40" alt="<?php echo $proof['formNama'] ?>"></td>
                                                 <td>                                                    
                                                     <div class="demo-switch">
                                                         <div class="switch">
-                                                            <label>BELUM<input type="checkbox" <?= $proof['proofsStatus'] == 'SELESAI' ? 'checked' : '' ?>><span class="lever" ></span>SELESAI</label>
+                                                            <label>BELUM<input type="checkbox" <?= $proof['formStatus'] == 'SELESAI' ? 'checked' : '' ?>><span class="lever" ></span>SELESAI</label>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td class="align-center">
-                                                    <a href="viewConfirm.php?id=<?php echo $proof['proofsId'] ?>" class="btn bg-cyan waves-effect" data-toggle="tooltip" data-placement="left" title="Review"><i class="material-icons">visibility</i></a>
+                                                    <a href="viewConfirm.php?id=<?php echo $proof['formId'] ?>" class="btn bg-cyan waves-effect" data-toggle="tooltip" data-placement="left" title="Review"><i class="material-icons">visibility</i></a>
                                                 </td>
                                             </tr>
                                         <?php

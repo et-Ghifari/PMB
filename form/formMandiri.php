@@ -29,7 +29,13 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                         <div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
                             <div class="panel-group" id="accordion_19" role="tablist" aria-multiselectable="true">
                                 <form id="form_validation" method="POST">
-
+                                    <?php
+                                    if (isset($_GET['error'])) {
+                                        if ($_GET['error'] == 'emptyform') {
+                                            echo '<div class="alert alert-danger" align="center"><strong>Isi Semua Form yang Wajib di Isi!</strong></div>';
+                                        }
+                                    }
+                                    ?>
                                     <div class="panel panel-col-cyan">
                                         <div class="panel-heading" role="tab" id="headingOne_19">
                                             <h4 class="panel-title">
@@ -301,7 +307,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                     </div>
                                                 </div>
                                                 <label>Tahun Lulus*</label>
-                                                <div class="row clearfix">                                                    
+                                                <div class="row clearfix">
                                                     <div class="col-sm-3">
                                                         <div class="form-group form-float">
                                                             <select name="tahunLulus" class="form-control show-tick" required>
