@@ -3,7 +3,7 @@
 //Register user
 if (isset($_POST['register']))
 {
-    $name     = trim(mysqli_real_escape_string($conn, $_POST['name']));
+    $name     = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['name'])));
     $email    = trim(mysqli_real_escape_string($conn, $_POST['email']));
     $username = trim(mysqli_real_escape_string($conn, $_POST['username']));
     $password = trim(mysqli_real_escape_string($conn, $_POST['password']));

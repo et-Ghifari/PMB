@@ -29,7 +29,7 @@ if (!empty($email['formEmail'])) {
                     <div class="card">
                         <div class="header">
                             <h2>FORMULIR PENDAFTARAN</h2>
-                            <small>Jika ada pertanyaan/masalah dalam pendaftaran bisa menghubungi petugas administrasi</small>
+                            <small>Jika ada pertanyaan/masalah dalam pendaftaran bisa menghubungi panitia pendaftaran</small>
                         </div>
                         <div class="body align-center">
                             <div class="row">

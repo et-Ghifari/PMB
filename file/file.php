@@ -29,7 +29,7 @@ if (!empty($ktp['formKtp'])) {
                     <div class="card">
                         <div class="header">
                             <h2>BERKAS PENDAFTARAN</h2>
-                            <small>Jika ada pertanyaan/masalah dalam pendaftaran bisa menghubungi petugas administrasi</small>
+                            <small>Jika ada pertanyaan/masalah dalam pendaftaran bisa menghubungi panitia pendaftaran</small>
                         </div>
                         <div class="body">
                             <form id="" action="" method="POST" enctype="multipart/form-data">
@@ -96,6 +96,16 @@ if (!empty($ktp['formKtp'])) {
                                             <iframe id="fotoDisplay" onclick="fotoClick()" src="<?php echo base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
                                             <p>Format (jpg, jpeg, png, pdf) dan Maksimal Size 1.5 Mb</p>
                                             <input id="fotoFile" type="file" name="foto" onchange="displayFoto(this)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <label>Upload SKTM</label>
+                                <div class="row clearfix">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <iframe id="sktmDisplay" onclick="sktmClick()" src="<?php echo base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
+                                            <p>Format (jpg, jpeg, png, pdf) dan Maksimal Size 1.5 Mb</p>
+                                            <input id="sktmFile" type="file" name="sktm" onchange="displaySktm(this)">
                                         </div>
                                     </div>
                                 </div>

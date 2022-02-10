@@ -28,14 +28,14 @@ exit(); */
                     <div class="card">
                         <div class="header">
                             <h2>STATUS PENDAFTARAN</h2>
-                            <small>Jika ada pertanyaan/masalah dalam pendaftaran bisa menghubungi petugas administrasi</small>
+                            <small>Jika ada pertanyaan/masalah dalam pendaftaran bisa menghubungi panitia pendaftaran</small>
                         </div>
                         <div class="body">
                             <blockquote class="m-b-25">
                                 <?php
                                 
                                 if ($status['formStatus'] == 'SELESAI') {
-                                    echo '<p class="col-green">Pendaftaran Selesai</p><footer></footer>';
+                                    echo '<p class="col-green">Pendaftaran Selesai</p><footer>Langkah selanjutnya hubungi Panitia Pendaftaran untuk melaksanakan Tes Potensi Akademik</footer>';
                                 } else {
                                     echo '<p class="col-red">Pendaftaran Belum Selelsai<footer>Silahkan konfirmasi pada administrasi pendaftaran</footer></p>';
                                 }

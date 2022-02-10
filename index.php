@@ -74,7 +74,7 @@ require_once 'progres/menuProgres.php';
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active" style="background-image: url(<?php echo base_url('assets/images/slide/slide-1.jpg') ?>)"></div>
                 <div class="carousel-item" style="background-image: url(<?php echo base_url('assets/images/slide/slide-2.jpg') ?>)"></div>
-                <div class="carousel-item" style="background-image: url(<?php echo base_url('assets/images/slide/slide-3.jpg') ?>)"></div>
+                <div class="carousel-item" style="background-image: url(<?php echo base_url('assets/images/slide/slide-3.png') ?>)"></div>
             </div>
             <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon icofont-simple-left" aria-hidden="true"></span>
@@ -95,7 +95,7 @@ require_once 'progres/menuProgres.php';
                 </div>
                 <div class="row">
                     <div class="col-lg-6" data-aos="fade-right">
-                        <img src="<?php echo base_url('assets/images/about.png') ?>" class="img-fluid">
+                        <img src="<?php echo base_url('assets/images/visi/about.png') ?>" class="img-fluid">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
                         <h3>Visi</h3>
@@ -160,9 +160,11 @@ require_once 'progres/menuProgres.php';
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
                     <h2>Beasiswa Kuliah</h2><br>
-                    <p>Bagi Lulusan SMA/MA/SMK yang masih pusing cari kuliah/kerja? Yuk gabung bersama kami di POLIBANG JEPARA <b>
+                    <p>Bagi Lulusan SMA/MA/SMK yang masih pusing cari kuliah/kerja? Yuk gabung bersama kami di POLIBANG JEPARA
+                        <b>
                             <h6>buruan ambil <u>KESEMPATAN EMAS</u> ini</h6>
-                        </b></p>
+                        </b>
+                    </p>
                 </div>
                 <div class="row no-gutters">
                     <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch">
@@ -244,6 +246,14 @@ require_once 'progres/menuProgres.php';
                 </div>
             </div>
         </section>
+        <section class="cta">
+            <div class="buat_akun" data-aos="zoom-in">
+                <div class="text-center">
+                    <h3>Tersedia juga beasiswa KIP - Kuliah</h3>
+                    <a class="cta-btn scrollto" href="https://kip-kuliah.kemdikbud.go.id/">KIP - Kuliah</a>
+                </div>
+            </div>
+        </section>
         <!-- ======= Program Studi ======= -->
         <section id="prodi" class="departments">
             <div class="container" data-aos="fade-up">
@@ -279,23 +289,91 @@ require_once 'progres/menuProgres.php';
                             <div class="tab-pane active show" id="tab-1">
                                 <h3>Rekayasa Perangkat Lunak</h3>
                                 <p class="font-italic">Menjadi Program Studi Vokasi dibidang Rekayasa Perangkat Lunak yang Berdaya Saing Global, Profesional, Religius dan berjiwa Technopreunership</p>
-                                <img src="<?php echo base_url('assets/images/rpl.jpg') ?>" alt="" class="img-fluid">
+                                <img src="<?php echo base_url('assets/images/prodi/rpl.jpg') ?>" alt="" class="img-fluid">
                                 <p>RPL merupakan domain Bidang Ilmu Informatika & Komputer dalam aspek pengembangan software mulai dari tahap awal spesifikasi, desain, konstruksi, testing sampai pemeliharaan</p>
                                 <p>Profesi-profesi lulusan RPL antara lain Programmer, System Analyst, Software Quality Assurance Engineer (SQAE), Database Administrator, Software Architect, Software Support, Konsultan IT, Web Designer.</p>
                             </div>
                             <div class="tab-pane" id="tab-2">
                                 <h3>Administrasi Bisnis Internasional</h3>
                                 <p class="font-italic">Menjadi program studi vokasi bidang Administrasi bisnis internasional yang berdaya saing global, profesional, dan religius berdasar aqidah Ahlus Sunnah Wal Jama’ah</p>
-                                <img src="<?php echo base_url('assets/images/administrasi.jpg') ?>" alt="" class="img-fluid">
+                                <img src="<?php echo base_url('assets/images/prodi/administrasi.jpg') ?>" alt="" class="img-fluid">
                                 <p>Merupakan program studi yang fokus pada tantangan yang dihadapi oleh dunia bisnis di pasar internasional. Mahasiswa akan mempelajari etika dan hukum bisnis dalam skala internasional</p>
                                 <p>Selain itu, akan dilatih untuk berpikir secara global dalam menciptakan ide dan solusi dalam permasalahan ekonomi dan bisnis di lingkup internasional</p>
                             </div>
                             <div class="tab-pane" id="tab-3">
                                 <h3>Akuntansi Keuangan Publik</h3>
                                 <p class="font-italic">Menjadi rujukan pendidikan vokasi bidang Akuntansi Keuangan Publik yang unggul berdasar aqidah Ahlus Sunnah Wal Jama’ah</p>
-                                <img src="<?php echo base_url('assets/images/akuntansi.jpg') ?>" alt="" class="img-fluid">
+                                <img src="<?php echo base_url('assets/images/prodi/akuntansi.jpg') ?>" alt="" class="img-fluid">
                                 <p>Program Studi Akuntansi Keuangan Publik Mengajarkan ilmu akuntansi dalam ruang lingkup organisasi sektor publik</p>
                                 <p>Sektor publik tersebut antara lain seperti organisasi pemerintahan pusat dan daerah, Lembaga Swadaya Masyarakat (LSM), Rumah Sakit, dan Pendidikan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======= Biaya Perkuliahan ======= -->
+        <section id="biaya" class="pricing">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Biaya Pendaftaran</h2><br>
+                    <p>Tabel biaya registrasi awal setelah calon mahasiswa dinyatakan lulus sesuai jalur yang dipilih</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="box featured" data-aos="fade-up" data-aos-delay="100">
+                            <h3>Kelas Reguler</h3>
+                            <h4><sup>Rp. </sup>4.550.000</h4>
+                            <ul>
+                                <li>Sumbangan Pengembangan Institusi<br>(Rp. 1.500.000)</li>
+                                <li>Biaya Perkuliahan/Semester<br>(Rp. 2.500.000)</li>
+                                <li>Jas Almamater<br>(Rp. 200.000)</li>
+                                <li>Ospek<br>(Rp. 250.000)</li>
+                                <li>Kaos Angkatan<br>(Rp. 100.000)</li>
+                                <li class="na">Biaya Operasional/Bulan<br>(Rp. 600.000)</li>
+                                <li class="na">Almari (Hak Pakai Selama di Pondok)<br>(Rp. 600.000)</li>
+                                <li class="na">Loundry/Bulan<br>(Rp. 600.000)</li>
+                            </ul>
+                            <div class="btn-wrap">
+                                <a href="<?php echo base_url('proof') ?>" class="btn-buy">Registrasi</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="box featured" data-aos="fade-up" data-aos-delay="200">
+                            <h3>Kelas Karyawan</h3>
+                            <h4><sup>Rp. </sup>5.050.000</h4>
+                            <ul>
+                                <li>Sumbangan Pengembangan Institusi<br>(Rp. 1.500.000)</li>
+                                <li>Biaya Perkuliahan/Semester<br>(Rp. 3.000.000)</li>
+                                <li>Jas Almamater<br>(Rp. 200.000)</li>
+                                <li>Ospek<br>(Rp. 250.000)</li>
+                                <li>Kaos Angkatan<br>(Rp. 100.000)</li>
+                                <li class="na">Biaya Operasional/Bulan<br>(Rp. 600.000)</li>
+                                <li class="na">Almari (Hak Pakai Selama di Pondok)<br>(Rp. 600.000)</li>
+                                <li class="na">Loundry/Bulan<br>(Rp. 600.000)</li>
+                            </ul>
+                            <div class="btn-wrap">
+                                <a href="<?php echo base_url('proof') ?>" class="btn-buy">Registrasi</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="box featured" data-aos="fade-up" data-aos-delay="300">
+                            <h3>Kelas Reguler + Mondok</h3>
+                            <h4><sup>Rp. </sup>5.870.000</h4>
+                            <ul>
+                                <li>Sumbangan Pengembangan Institusi<br>(Rp. 1.500.000)</li>
+                                <li>Biaya Perkuliahan/Semester<br>(Rp. 2.500.000)</li>
+                                <li>Jas Almamater<br>(Rp. 200.000)</li>
+                                <li>Ospek<br>(Rp. 250.000)</li>
+                                <li>Kaos Angkatan<br>(Rp. 100.000)</li>
+                                <li>Biaya Operasional/Bulan<br>(Rp. 600.000)</li>
+                                <li>Almari (Hak Pakai Selama di Pondok)<br>(Rp. 600.000)</li>
+                                <li>Loundry/Bulan<br>(Rp. 600.000)</li>
+                            </ul>
+                            <div class="btn-wrap">
+                                <a href="<?php echo base_url('proof') ?>" class="btn-buy">Registrasi</a>
                             </div>
                         </div>
                     </div>
@@ -311,71 +389,6 @@ require_once 'progres/menuProgres.php';
                 </div>
             </div>
         </section>
-        <!-- ======= Biaya Perkuliahan ======= -->
-        <section id="biaya" class="pricing">
-            <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                    <h2>Biaya Pendaftaran</h2><br>
-                    <p>Tabel biaya registrasi awal setelah calon mahasiswa dinyatakan lulus sesuai jalur yang dipilih</p>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="box featured" data-aos="fade-up" data-aos-delay="100">
-                            <h3>Kelas Reguler</h3>
-                            <h4><sup>Rp. </sup>4.485.000</h4>
-                            <ul>
-                                <li>Sumbangan Pengembangan Institusi<br>(Rp. 1.500.000)</li>
-                                <li>Biaya Perkuliahan/Semester<br>(Rp. 2.500.000)</li>
-                                <li>Jas Almamater<br>(Rp. 200.000)</li>
-                                <li>Ospek<br>(Rp. 250.000)</li>
-                                <li>Majalah<br>(Rp. 35.000)</li>
-                                <li class="na">Biaya Operasional/Bulan<br>(Rp. 600.000)</li>
-                                <li class="na">Almari (Hak Pakai Selama di Pondok)<br>(Rp. 600.000)</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="<?php echo base_url('proof') ?>" class="btn-buy">Registrasi</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="box featured" data-aos="fade-up" data-aos-delay="200">
-                            <h3>Kelas Karyawan</h3>
-                            <h4><sup>Rp. </sup>4.985.000</h4>
-                            <ul>
-                                <li>Sumbangan Pengembangan Institusi<br>(Rp. 1.500.000)</li>
-                                <li>Biaya Perkuliahan/Semester<br>(Rp. 3.000.000)</li>
-                                <li>Jas Almamater<br>(Rp. 200.000)</li>
-                                <li>Ospek<br>(Rp. 250.000)</li>
-                                <li>Majalah<br>(Rp. 35.000)</li>
-                                <li class="na">Biaya Operasional/Bulan<br>(Rp. 600.000)</li>
-                                <li class="na">Almari (Hak Pakai Selama di Pondok)<br>(Rp. 600.000)</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="<?php echo base_url('proof') ?>" class="btn-buy">Registrasi</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="box featured" data-aos="fade-up" data-aos-delay="300">
-                            <h3>Kelas Reguler + Mondok</h3>
-                            <h4><sup>Rp. </sup>5.685.000</h4>
-                            <ul>
-                                <li>Sumbangan Pengembangan Institusi<br>(Rp. 1.500.000)</li>
-                                <li>Biaya Perkuliahan/Semester<br>(Rp. 2.500.000)</li>
-                                <li>Jas Almamater<br>(Rp. 200.000)</li>
-                                <li>Ospek<br>(Rp. 250.000)</li>
-                                <li>Majalah<br>(Rp. 35.000)</li>
-                                <li>Biaya Operasional/Bulan<br>(Rp. 600.000)</li>
-                                <li>Almari (Hak Pakai Selama di Pondok)<br>(Rp. 600.000)</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="<?php echo base_url('proof') ?>" class="btn-buy">Registrasi</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <!-- ======= Fasilitas ======= -->
         <section id="fasilitas" class="doctors section-bg">
             <div class="container" data-aos="fade-up">
@@ -387,7 +400,7 @@ require_once 'progres/menuProgres.php';
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="100">
                             <div class="member-img">
-                                <img src="<?php echo base_url('assets/images/slide/slide-1.jpg') ?>" class="img-fluid">
+                                <img src="<?php echo base_url('assets/images/fasilitas/gedung.jpg') ?>" class="img-fluid">
                             </div>
                             <div class="member-info">
                                 <h4>Gedung Utama</h4>
@@ -398,29 +411,29 @@ require_once 'progres/menuProgres.php';
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="200">
                             <div class="member-img">
-                                <img src="<?php echo base_url('assets/images/slide/slide-8.jpg') ?>" class="img-fluid">
+                                <img src="<?php echo base_url('assets/images/fasilitas/aula.jpg') ?>" class="img-fluid">
                             </div>
                             <div class="member-info">
                                 <h4>Aula</h4>
-                                <span></span>
+                                <span>Gedung Serba Guna</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="300">
                             <div class="member-img">
-                                <img src="<?php echo base_url('assets/images/slide/slide-5.jpg') ?>" class="img-fluid">
+                                <img src="<?php echo base_url('assets/images/fasilitas/bisnis.jpg') ?>" class="img-fluid">
                             </div>
                             <div class="member-info">
                                 <h4>Unit Bisnis</h4>
-                                <span>Cardiology</span>
+                                <span>Gedung </span>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="400">
                             <div class="member-img">
-                                <img src="<?php echo base_url('assets/images/slide/slide-6.jpg') ?>" class="img-fluid">
+                                <img src="<?php echo base_url('assets/images/fasilitas/image.jpg') ?>" class="img-fluid">
                             </div>
                             <div class="member-info">
                                 <h4>Lab Programmer</h4>
@@ -431,7 +444,7 @@ require_once 'progres/menuProgres.php';
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="500">
                             <div class="member-img">
-                                <img src="<?php echo base_url('assets/images/slide/slide-7.jpg') ?>" class="img-fluid">
+                                <img src="<?php echo base_url('assets/images/fasilitas/lab2.jpeg') ?>" class="img-fluid">
                             </div>
                             <div class="member-info">
                                 <h4>Lab Bisnis</h4>
@@ -442,10 +455,43 @@ require_once 'progres/menuProgres.php';
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="600">
                             <div class="member-img">
-                                <img src="<?php echo base_url('assets/images/slide/slide-4.jpg') ?>" class="img-fluid">
+                                <img src="<?php echo base_url('assets/images/fasilitas/homestay.jpg') ?>" class="img-fluid">
                             </div>
                             <div class="member-info">
                                 <h4>Homestay</h4>
+                                <span>Anesthesiologist</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member" data-aos="fade-up" data-aos-delay="600">
+                            <div class="member-img">
+                                <img src="<?php echo base_url('assets/images/fasilitas/kelas.jpeg') ?>" class="img-fluid">
+                            </div>
+                            <div class="member-info">
+                                <h4>Ruang Perkuliahan</h4>
+                                <span>Ruangan Belajar Mengajar</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member" data-aos="fade-up" data-aos-delay="600">
+                            <div class="member-img">
+                                <img src="<?php echo base_url('assets/images/fasilitas/image.jpg') ?>" class="img-fluid">
+                            </div>
+                            <div class="member-info">
+                                <h4>Ruang Perpustakaan</h4>
+                                <span>Anesthesiologist</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member" data-aos="fade-up" data-aos-delay="600">
+                            <div class="member-img">
+                                <img src="<?php echo base_url('assets/images/fasilitas/image.jpg') ?>" class="img-fluid">
+                            </div>
+                            <div class="member-info">
+                                <h4>.....</h4>
                                 <span>Anesthesiologist</span>
                             </div>
                         </div>
@@ -487,27 +533,27 @@ require_once 'progres/menuProgres.php';
         </section>
         <!-- ======= Gallery ======= -->
         <section id=" galeri" class="gallery">
-                        <div class="container" data-aos="fade-up">
-                            <div class="section-title">
-                                <h2>Galeri</h2><br>
-                                <p>Beberapa kegiatan Politeknik Balekambang Jepara</p>
-                            </div>
-                            <div class="owl-carousel gallery-carousel" data-aos="fade-up" data-aos-delay="100">
-                                <a href="<?php echo base_url('assets/images/gallery/gallery-1.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-1.jpg') ?>" alt=""></a>
-                                <a href="<?php echo base_url('assets/images/gallery/gallery-2.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-2.jpg') ?>" alt=""></a>
-                                <a href="<?php echo base_url('assets/images/gallery/gallery-3.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-3.jpg') ?>" alt=""></a>
-                                <a href="<?php echo base_url('assets/images/gallery/gallery-4.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-4.jpg') ?>" alt=""></a>
-                                <a href="<?php echo base_url('assets/images/gallery/gallery-5.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-5.jpg') ?>" alt=""></a>
-                                <a href="<?php echo base_url('assets/images/gallery/gallery-6.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-6.jpg') ?>" alt=""></a>
-                                <a href="<?php echo base_url('assets/images/gallery/gallery-7.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-7.jpg') ?>" alt=""></a>
-                                <a href="<?php echo base_url('assets/images/gallery/gallery-8.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-8.jpg') ?>" alt=""></a>
-                                <a href="<?php echo base_url('assets/images/gallery/gallery-9.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-9.jpg') ?>" alt=""></a>
-                                <a href="<?php echo base_url('assets/images/gallery/gallery-10.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-10.jpg') ?>" alt=""></a>
-                            </div>
-                        </div>
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Galeri</h2><br>
+                    <p>Beberapa kegiatan Politeknik Balekambang Jepara</p>
+                </div>
+                <div class="owl-carousel gallery-carousel" data-aos="fade-up" data-aos-delay="100">
+                    <a href="<?php echo base_url('assets/images/gallery/gallery-1.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-1.jpg') ?>" alt=""></a>
+                    <a href="<?php echo base_url('assets/images/gallery/gallery-2.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-2.jpg') ?>" alt=""></a>
+                    <a href="<?php echo base_url('assets/images/gallery/gallery-3.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-3.jpg') ?>" alt=""></a>
+                    <a href="<?php echo base_url('assets/images/gallery/gallery-4.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-4.jpg') ?>" alt=""></a>
+                    <a href="<?php echo base_url('assets/images/gallery/gallery-5.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-5.jpg') ?>" alt=""></a>
+                    <a href="<?php echo base_url('assets/images/gallery/gallery-6.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-6.jpg') ?>" alt=""></a>
+                    <a href="<?php echo base_url('assets/images/gallery/gallery-7.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-7.jpg') ?>" alt=""></a>
+                    <a href="<?php echo base_url('assets/images/gallery/gallery-8.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-8.jpg') ?>" alt=""></a>
+                    <a href="<?php echo base_url('assets/images/gallery/gallery-9.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-9.jpg') ?>" alt=""></a>
+                    <a href="<?php echo base_url('assets/images/gallery/gallery-10.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-10.jpg') ?>" alt=""></a>
+                </div>
+            </div>
         </section>
-        <!-- ======= Kontak ======= -->
-        <section id="kontak" class="contact">
+        <!-- ======= info ======= -->
+        <section id="info" class="contact">
             <div class="container">
                 <div class="section-title">
                     <h2>Kontak</h2><br>
@@ -533,32 +579,38 @@ require_once 'progres/menuProgres.php';
                         <div class="info-box mt-4">
                             <a href="https://www.polibang.ac.id/" class="youtube"><i class="bx bx-world"></i></a>
                             <h3>Website</h3>
-                            <strong><p>Politeknik Balekambang Jepara</p></strong>                            
+                            <strong>
+                                <p><a href="https://www.polibang.ac.id/">www.polibang.ac.id</a></p>
+                            </strong>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="info-box mt-4">
                             <i class="bx bx-envelope"></i>
                             <h3>Email</h3>
-                            <strong><p>pmb@polibang.ac.id</p></strong>                            
+                            <strong>
+                                <p>pmb@polibang.ac.id</p>
+                            </strong>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="info-box mt-4">
-                            <a href="https://www.youtube.com/channel/UCpqNI0TmjPTDbIg9H83d99g" class="youtube"><i class="bx bxl-youtube"></i></a>                            
+                            <a href="https://www.youtube.com/channel/UCpqNI0TmjPTDbIg9H83d99g" class="youtube"><i class="bx bxl-youtube"></i></a>
                             <a href="https://www.facebook.com/politbang/" class="facebook"><i class="bx bxl-facebook"></i></a>
                             <a href="https://www.instagram.com/politeknikbalekambang/" class="instagram"><i class="bx bxl-instagram"></i></a>
                             <a href="https://www.tiktok.com/@polibangjepara" class="instagram"><i class="bx bxs-music"></i></a>
                             <h3>Sosial Media</h3>
-                            <strong><p>Politeknik Balekambang Jepara</p></strong>
+                            <strong>
+                                <p>Politeknik Balekambang Jepara</p>
+                            </strong>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="info-box mt-4">
                             <i class="bx bx-phone-call"></i>
-                            <h3>Kontak Kami</h3><br>
+                            <h3>Kontak Kami</h3>
                             <strong>
-                                <p>+62 856-4111-1267 (Ahmad Subkhan)</p>
+                                <p>+62 856-4111-1267 (M. Ali Subkan)</p>
                                 <p>+62 857-4252-9468 (Ahmad Mubais)</p>
                             </strong>
                         </div>

@@ -29,7 +29,7 @@ if (!empty($bukti['formBukti'])) {
                     <div class="card">
                         <div class="header">
                             <h2>BUKTI PEMBAYARAN PENDAFTARAN</h2>
-                            <small>Jika ada pertanyaan/masalah dalam pendaftaran bisa menghubungi petugas administrasi</small>
+                            <small>Jika ada pertanyaan/masalah dalam pendaftaran bisa menghubungi panitia pendaftaran</small>
                         </div>
                         <div class="body">
                             <form id="" action="" method="POST" enctype="multipart/form-data">

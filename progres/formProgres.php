@@ -14,81 +14,100 @@ $abi     = mysqli_num_rows($dataAbi);
 $dataAkp = mysqli_query($conn, 'SELECT `formProdi` FROM `mahasiswas` WHERE `formProdi` = "AKP"');
 $akp     = mysqli_num_rows($dataAkp);
 
-$dataRpl = mysqli_query($conn, 'SELECT `formJalur` FROM `mahasiswas` WHERE `formJalur` = "Mandiri"');
+$dataRpl = mysqli_query($conn, 'SELECT `formJalur` FROM `mahasiswas` WHERE `formJalur` = "MANDIRI"');
 $mandiri = mysqli_num_rows($dataRpl);
 
-$dataRpl  = mysqli_query($conn, 'SELECT `formJalur` FROM `mahasiswas` WHERE `formJalur` = "Beasiswa"');
+$dataRpl  = mysqli_query($conn, 'SELECT `formJalur` FROM `mahasiswas` WHERE `formJalur` = "BEASISWA"');
 $beasiswa = mysqli_num_rows($dataRpl);
 
 
-if (isset($_POST['addMandiri']))
-{
-    
-    $formJalur       = trim(mysqli_real_escape_string($conn, $_POST['jalur']));
-    $formProdi       = trim(mysqli_real_escape_string($conn, $_POST['prodi']));
-    $formKelas       = trim(mysqli_real_escape_string($conn, $_POST['kelas']));
+if (isset($_POST['addMandiri'])) {
+
+    $formJalur       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['jalur'])));
+    $formProdi       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['prodi'])));
+    $formKelas       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['kelas'])));
     $formNisn        = trim(mysqli_real_escape_string($conn, $_POST['nisn']));
 
     $formNik         = trim(mysqli_real_escape_string($conn, $_POST['nik']));
-    $formNama        = trim(mysqli_real_escape_string($conn, $_POST['nama']));
-    $formTptLahir    = trim(mysqli_real_escape_string($conn, $_POST['tempat']));
+    $formNama        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['nama'])));
+    $formTptLahir    = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['tempat'])));
     $formTglLahir    = trim(mysqli_real_escape_string($conn, $_POST['tgl']));
-    $formBlnLahir    = trim(mysqli_real_escape_string($conn, $_POST['bln']));
+    $formBlnLahir    = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['bln'])));
 
     $formThnLahir    = trim(mysqli_real_escape_string($conn, $_POST['thn']));
     $formJk          = trim(mysqli_real_escape_string($conn, $_POST['jk']));
-    $formHobi        = trim(mysqli_real_escape_string($conn, $_POST['hobi']));
-    $formCita        = trim(mysqli_real_escape_string($conn, $_POST['cita']));
+    $formHobi        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['hobi'])));
+    $formCita        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['cita'])));
     $formAnakke      = trim(mysqli_real_escape_string($conn, $_POST['anakke']));
 
     $formSaudara     = trim(mysqli_real_escape_string($conn, $_POST['saudara']));
     $formBerat       = trim(mysqli_real_escape_string($conn, $_POST['berat']));
     $formTinggi      = trim(mysqli_real_escape_string($conn, $_POST['tinggi']));
-    $formJalan       = trim(mysqli_real_escape_string($conn, $_POST['jalan']));
+    $formJalan       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['jalan'])));
     $formRt          = trim(mysqli_real_escape_string($conn, $_POST['rt']));
 
     $formRw          = trim(mysqli_real_escape_string($conn, $_POST['rw']));
-    $formDesa        = trim(mysqli_real_escape_string($conn, $_POST['desa']));
-    $formKec         = trim(mysqli_real_escape_string($conn, $_POST['kecamatan']));
-    $formKab         = trim(mysqli_real_escape_string($conn, $_POST['kabupaten']));
-    $formProv        = trim(mysqli_real_escape_string($conn, $_POST['provinsi']));
+    $formDesa        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['desa'])));
+    $formKec         = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['kecamatan'])));
+    $formKab         = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['kabupaten'])));
+    $formProv        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['provinsi'])));
 
     $formKodepos     = trim(mysqli_real_escape_string($conn, $_POST['kodepos']));
     $formHp          = trim(mysqli_real_escape_string($conn, $_POST['hp']));
     $formEmail       = trim(mysqli_real_escape_string($conn, $_POST['email']));
-    $formAsalSekolah = trim(mysqli_real_escape_string($conn, $_POST['asalSekolah']));
+    $formAsalSekolah = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['asalSekolah'])));
     $formSkhun       = trim(mysqli_real_escape_string($conn, $_POST['skhun']));
 
     $formTahunLulus  = trim(mysqli_real_escape_string($conn, $_POST['tahunLulus']));
-    $formKkAyah          = trim(mysqli_real_escape_string($conn, $_POST['kk']));
+    $formKkAyah      = trim(mysqli_real_escape_string($conn, $_POST['kk']));
     $formNikAyah     = trim(mysqli_real_escape_string($conn, $_POST['nikAyah']));
-    $formNamaAyah    = trim(mysqli_real_escape_string($conn, $_POST['ayah']));
-    $formPekerjaanA  = trim(mysqli_real_escape_string($conn, $_POST['pekerjaanAyah']));
+    $formNamaAyah    = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['ayah'])));
+    $formPekerjaanA  = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['pekerjaanAyah'])));
 
-    $formPendidikanA = trim(mysqli_real_escape_string($conn, $_POST['pendidikanAyah']));
+    $formPendidikanA = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['pendidikanAyah'])));
     $formNikIbu      = trim(mysqli_real_escape_string($conn, $_POST['nikIbu']));
-    $formNamaIbu     = trim(mysqli_real_escape_string($conn, $_POST['ibu']));
-    $formPekerjaanI  = trim(mysqli_real_escape_string($conn, $_POST['pekerjaanIbu']));
-    $formPendidikanI = trim(mysqli_real_escape_string($conn, $_POST['pendidikanIbu']));
+    $formNamaIbu     = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['ibu'])));
+    $formPekerjaanI  = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['pekerjaanIbu'])));
+    $formPendidikanI = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['pendidikanIbu'])));
 
     $formPenghasilan = trim(mysqli_real_escape_string($conn, $_POST['penghasilan']));
-    $formLomba       = trim(mysqli_real_escape_string($conn, $_POST['lomba']));
-    $formTingkat     = trim(mysqli_real_escape_string($conn, $_POST['tingkat']));
-    $formPeringkat   = trim(mysqli_real_escape_string($conn, $_POST['peringkat']));
+    $formLomba       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['lomba'])));
+    $formTingkat     = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['tingkat'])));
+    $formPeringkat   = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['peringkat'])));
     $formTahun       = trim(mysqli_real_escape_string($conn, $_POST['tahun']));
 
-    $formOrganisasi  = trim(mysqli_real_escape_string($conn, $_POST['organisasi']));
-    $formKeadaan     = trim(mysqli_real_escape_string($conn, $_POST['keadaan']));   
-    
+    $formOrganisasi  = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['organisasi'])));
+    $formKeadaan     = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['keadaan'])));
+
     /* if (empty($formProdi) || empty($formNisn) || empty($formKkAyah) || empty($formOrganisasi))
     {
         echo '<script>document.location="' . base_url('formMandiri.php?error=emptyform') . '";</script>';
         exit();
+    }  */   
+
+    $dataselect = 'SELECT `formNik` FROM `mahasiswas` WHERE `formNik` = ?';
+    $stmtselect = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmtselect, $dataselect))
+    {
+        echo '<script>window.location="' . base_url('formMandiri.php?error=stmtfailed') . '";</script>';
+        exit();
     }
- */
+
+    mysqli_stmt_bind_param($stmtselect, 's', $formNik);
+    mysqli_stmt_execute($stmtselect);
+
+    $resultData = mysqli_stmt_get_result($stmtselect);
+
+    if ($row = mysqli_fetch_assoc($resultData))
+    {
+        echo '<script>window.location="' . base_url('formMandiri.php?error=registed') . '";</script>';
+        exit();
+    }
+
     $getMaxId = mysqli_query($conn, 'SELECT MAX(RIGHT(`formNo`, 5)) AS `formId` FROM `mahasiswas`');
     $d = mysqli_fetch_object($getMaxId);
-    $formNo = 'PMB'.date('Y').sprintf('%05s', $d->formId + 1);
+    $formNo = 'PMB' . date('Y') . sprintf('%05s', $d->formId + 1);
 
     $datainsert = 'INSERT INTO `mahasiswas`
                     (`formNo`,
@@ -158,72 +177,74 @@ if (isset($_POST['addMandiri']))
                     ?, ?, ?, ?, ?,
                     ?, ?, ?, ?, ?,
                     ?, ?)';
-                    
+
     $stmtinsert = mysqli_stmt_init($conn);
 
-    if (!mysqli_stmt_prepare($stmtinsert, $datainsert))
-    {
+    if (!mysqli_stmt_prepare($stmtinsert, $datainsert)) {
         echo '<script>window.location="' . base_url('formMandiri.php?error=stmtmandiri') . '";</script>';
         exit();
     }
 
-    mysqli_stmt_bind_param($stmtinsert, 'sssssssssssssssssssssssssssssssssssssssssssssss',
-                            $formNo,
-                            $formJalur,
-                            $formProdi,
-                            $formKelas,
-                            $formNisn,
+    mysqli_stmt_bind_param(
+        $stmtinsert,
+        'sssssssssssssssssssssssssssssssssssssssssssssss',
+        $formNo,
+        $formJalur,
+        $formProdi,
+        $formKelas,
+        $formNisn,
 
-                            $formNik,
-                            $formNama,
-                            $formTptLahir,
-                            $formTglLahir,
-                            $formBlnLahir,
+        $formNik,
+        $formNama,
+        $formTptLahir,
+        $formTglLahir,
+        $formBlnLahir,
 
-                            $formThnLahir,
-                            $formJk,
-                            $formHobi,
-                            $formCita,
-                            $formAnakke,
+        $formThnLahir,
+        $formJk,
+        $formHobi,
+        $formCita,
+        $formAnakke,
 
-                            $formSaudara,
-                            $formBerat,
-                            $formTinggi,
-                            $formJalan,
-                            $formRt,
-                            
-                            $formRw,
-                            $formDesa,
-                            $formKec,
-                            $formKab,
-                            $formProv,
+        $formSaudara,
+        $formBerat,
+        $formTinggi,
+        $formJalan,
+        $formRt,
 
-                            $formKodepos,
-                            $formHp,
-                            $formEmail,
-                            $formAsalSekolah,
-                            $formSkhun,
+        $formRw,
+        $formDesa,
+        $formKec,
+        $formKab,
+        $formProv,
 
-                            $formTahunLulus,
-                            $formKkAyah,
-                            $formNikAyah,
-                            $formNamaAyah,
-                            $formPekerjaanA,
+        $formKodepos,
+        $formHp,
+        $formEmail,
+        $formAsalSekolah,
+        $formSkhun,
 
-                            $formPendidikanA,
-                            $formNikIbu,
-                            $formNamaIbu,
-                            $formPekerjaanI,
-                            $formPendidikanI,
+        $formTahunLulus,
+        $formKkAyah,
+        $formNikAyah,
+        $formNamaAyah,
+        $formPekerjaanA,
 
-                            $formPenghasilan,
-                            $formLomba,
-                            $formTingkat,
-                            $formPeringkat,
-                            $formTahun,
+        $formPendidikanA,
+        $formNikIbu,
+        $formNamaIbu,
+        $formPekerjaanI,
+        $formPendidikanI,
 
-                            $formOrganisasi,
-                            $formKeadaan);
+        $formPenghasilan,
+        $formLomba,
+        $formTingkat,
+        $formPeringkat,
+        $formTahun,
+
+        $formOrganisasi,
+        $formKeadaan
+    );
 
     mysqli_stmt_execute($stmtinsert);
     mysqli_stmt_close($stmtinsert);
@@ -236,74 +257,92 @@ if (isset($_POST['addMandiri']))
     exit();
 }
 
-if (isset($_POST['addBeasiswa']))
-{       
-    $formBeasiswa    = trim(mysqli_real_escape_string($conn, $_POST['beasiswa']));    
-    $formJalur       = trim(mysqli_real_escape_string($conn, $_POST['jalur']));
-    $formProdi       = trim(mysqli_real_escape_string($conn, $_POST['prodi']));
-    $formKelas       = trim(mysqli_real_escape_string($conn, $_POST['kelas']));
+if (isset($_POST['addBeasiswa'])) {
+    $formBeasiswa    = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['beasiswa'])));
+    $formJalur       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['jalur'])));
+    $formProdi       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['prodi'])));
+    $formKelas       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['kelas'])));
 
     $formNisn        = trim(mysqli_real_escape_string($conn, $_POST['nisn']));
     $formNik         = trim(mysqli_real_escape_string($conn, $_POST['nik']));
-    $formNama        = trim(mysqli_real_escape_string($conn, $_POST['nama']));
-    $formTptLahir    = trim(mysqli_real_escape_string($conn, $_POST['tempat']));
+    $formNama        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['nama'])));
+    $formTptLahir    = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['tempat'])));
     $formTglLahir    = trim(mysqli_real_escape_string($conn, $_POST['tgl']));
 
-    $formBlnLahir    = trim(mysqli_real_escape_string($conn, $_POST['bln']));
-    $formThnLahir    = trim(mysqli_real_escape_string($conn, $_POST['thn']));    
+    $formBlnLahir    = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['bln'])));
+    $formThnLahir    = trim(mysqli_real_escape_string($conn, $_POST['thn']));
     $formJk          = trim(mysqli_real_escape_string($conn, $_POST['jk']));
-    $formHobi        = trim(mysqli_real_escape_string($conn, $_POST['hobi']));
-    $formCita        = trim(mysqli_real_escape_string($conn, $_POST['cita']));
+    $formHobi        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['hobi'])));
+    $formCita        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['cita'])));
 
     $formAnakke      = trim(mysqli_real_escape_string($conn, $_POST['anakke']));
     $formSaudara     = trim(mysqli_real_escape_string($conn, $_POST['saudara']));
     $formBerat       = trim(mysqli_real_escape_string($conn, $_POST['berat']));
     $formTinggi      = trim(mysqli_real_escape_string($conn, $_POST['tinggi']));
-    $formJalan       = trim(mysqli_real_escape_string($conn, $_POST['jalan']));
+    $formJalan       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['jalan'])));
 
     $formRt          = trim(mysqli_real_escape_string($conn, $_POST['rt']));
     $formRw          = trim(mysqli_real_escape_string($conn, $_POST['rw']));
-    $formDesa        = trim(mysqli_real_escape_string($conn, $_POST['desa']));
-    $formKec         = trim(mysqli_real_escape_string($conn, $_POST['kecamatan']));
-    $formKab         = trim(mysqli_real_escape_string($conn, $_POST['kabupaten']));
+    $formDesa        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['desa'])));
+    $formKec         = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['kecamatan'])));
+    $formKab         = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['kabupaten'])));
 
-    $formProv        = trim(mysqli_real_escape_string($conn, $_POST['provinsi']));
+    $formProv        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['provinsi'])));
     $formKodepos     = trim(mysqli_real_escape_string($conn, $_POST['kodepos']));
     $formHp          = trim(mysqli_real_escape_string($conn, $_POST['hp']));
     $formEmail       = trim(mysqli_real_escape_string($conn, $_POST['email']));
-    $formAsalSekolah = trim(mysqli_real_escape_string($conn, $_POST['asalSekolah']));
+    $formAsalSekolah = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['asalSekolah'])));
 
     $formSkhun       = trim(mysqli_real_escape_string($conn, $_POST['skhun']));
     $formTahunLulus  = trim(mysqli_real_escape_string($conn, $_POST['tahunLulus']));
-    $formKkAyah          = trim(mysqli_real_escape_string($conn, $_POST['kk']));
+    $formKkAyah      = trim(mysqli_real_escape_string($conn, $_POST['kk']));
     $formNikAyah     = trim(mysqli_real_escape_string($conn, $_POST['nikAyah']));
-    $formNamaAyah    = trim(mysqli_real_escape_string($conn, $_POST['ayah']));
+    $formNamaAyah    = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['ayah'])));
 
-    $formPekerjaanA  = trim(mysqli_real_escape_string($conn, $_POST['pekerjaanAyah']));
-    $formPendidikanA = trim(mysqli_real_escape_string($conn, $_POST['pendidikanAyah']));
+    $formPekerjaanA  = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['pekerjaanAyah'])));
+    $formPendidikanA = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['pendidikanAyah'])));
     $formNikIbu      = trim(mysqli_real_escape_string($conn, $_POST['nikIbu']));
-    $formNamaIbu     = trim(mysqli_real_escape_string($conn, $_POST['ibu']));
-    $formPekerjaanI  = trim(mysqli_real_escape_string($conn, $_POST['pekerjaanIbu']));
+    $formNamaIbu     = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['ibu'])));
+    $formPekerjaanI  = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['pekerjaanIbu'])));
 
-    $formPendidikanI = trim(mysqli_real_escape_string($conn, $_POST['pendidikanIbu']));
+    $formPendidikanI = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['pendidikanIbu'])));
     $formPenghasilan = trim(mysqli_real_escape_string($conn, $_POST['penghasilan']));
-    $formLomba       = trim(mysqli_real_escape_string($conn, $_POST['lomba']));
-    $formTingkat     = trim(mysqli_real_escape_string($conn, $_POST['tingkat']));
-    $formPeringkat   = trim(mysqli_real_escape_string($conn, $_POST['peringkat']));
+    $formLomba       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['lomba'])));
+    $formTingkat     = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['tingkat'])));
+    $formPeringkat   = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['peringkat'])));
 
     $formTahun       = trim(mysqli_real_escape_string($conn, $_POST['tahun']));
-    $formOrganisasi  = trim(mysqli_real_escape_string($conn, $_POST['organisasi']));
-    $formKeadaan     = trim(mysqli_real_escape_string($conn, $_POST['keadaan']));
+    $formOrganisasi  = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['organisasi'])));
+    $formKeadaan     = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['keadaan'])));
 
-    /* if (empty($formProdi) || empty($formNisn) || empty($formKkAyah) || empty($formOrganisasi))
-    {
+    /* if (empty($formProdi) || empty($formNisn) || empty($formKkAyah) || empty($formOrganisasi)) {
         echo '<script>window.location="' . base_url('formBeasiswa.php?error=emptyform') . '";</script>';
         exit();
     } */
 
+    $dataselect = 'SELECT `formNik` FROM `mahasiswas` WHERE `formNik` = ?';
+    $stmtselect = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmtselect, $dataselect))
+    {
+        echo '<script>window.location="' . base_url('formBeasiswa.php?error=stmtfailed') . '";</script>';
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmtselect, 's', $formNik);
+    mysqli_stmt_execute($stmtselect);
+
+    $resultData = mysqli_stmt_get_result($stmtselect);
+
+    if ($row = mysqli_fetch_assoc($resultData))
+    {
+        echo '<script>window.location="' . base_url('formBeasiswa.php?error=registed') . '";</script>';
+        exit();
+    }
+
     $getMaxId = mysqli_query($conn, 'SELECT MAX(RIGHT(`formNo`, 5)) AS `formId` FROM `mahasiswas`');
     $d = mysqli_fetch_object($getMaxId);
-    $formNo = 'PMB'.date('Y').sprintf('%05s', $d->formId + 1);
+    $formNo = 'PMB' . date('Y') . sprintf('%05s', $d->formId + 1);
 
     $datainsert = 'INSERT INTO `mahasiswas`
                     (`formNo`,                    
@@ -377,70 +416,72 @@ if (isset($_POST['addBeasiswa']))
 
     $stmtinsert = mysqli_stmt_init($conn);
 
-    if (!mysqli_stmt_prepare($stmtinsert, $datainsert))
-    {
+    if (!mysqli_stmt_prepare($stmtinsert, $datainsert)) {
         echo '<script>window.location="' . base_url('formBeasiswa.php?error=stmtfailed') . '";</script>';
         exit();
     }
 
-    mysqli_stmt_bind_param($stmtinsert,'ssssssssssssssssssssssssssssssssssssssssssssssss',
-                            $formNo,                                
-                            $formJalur,
-                            $formBeasiswa,
-                            $formProdi,
-                            $formKelas,
-                            
-                            $formNisn,
-                            $formNik,
-                            $formNama,
-                            $formTptLahir,
-                            $formTglLahir,
-                            
-                            $formBlnLahir,
-                            $formThnLahir,
-                            $formJk,
-                            $formHobi,
-                            $formCita,
+    mysqli_stmt_bind_param(
+        $stmtinsert,
+        'ssssssssssssssssssssssssssssssssssssssssssssssss',
+        $formNo,
+        $formJalur,
+        $formBeasiswa,
+        $formProdi,
+        $formKelas,
 
-                            $formAnakke,
-                            $formSaudara,
-                            $formBerat,
-                            $formTinggi,
-                            $formJalan,
+        $formNisn,
+        $formNik,
+        $formNama,
+        $formTptLahir,
+        $formTglLahir,
 
-                            $formRt,
-                            $formRw,
-                            $formDesa,
-                            $formKec,
-                            $formKab,
-                            
-                            $formProv,
-                            $formKodepos,
-                            $formHp,
-                            $formEmail,
-                            $formAsalSekolah,
+        $formBlnLahir,
+        $formThnLahir,
+        $formJk,
+        $formHobi,
+        $formCita,
 
-                            $formSkhun,
-                            $formTahunLulus,
-                            $formKkAyah,
-                            $formNikAyah,
-                            $formNamaAyah,
+        $formAnakke,
+        $formSaudara,
+        $formBerat,
+        $formTinggi,
+        $formJalan,
 
-                            $formPekerjaanA,
-                            $formPendidikanA,
-                            $formNikIbu,
-                            $formNamaIbu,
-                            $formPekerjaanI,
+        $formRt,
+        $formRw,
+        $formDesa,
+        $formKec,
+        $formKab,
 
-                            $formPendidikanI,
-                            $formPenghasilan,
-                            $formLomba,                            
-                            $formTingkat,
-                            $formPeringkat,
+        $formProv,
+        $formKodepos,
+        $formHp,
+        $formEmail,
+        $formAsalSekolah,
 
-                            $formTahun,
-                            $formOrganisasi,
-                            $formKeadaan);
+        $formSkhun,
+        $formTahunLulus,
+        $formKkAyah,
+        $formNikAyah,
+        $formNamaAyah,
+
+        $formPekerjaanA,
+        $formPendidikanA,
+        $formNikIbu,
+        $formNamaIbu,
+        $formPekerjaanI,
+
+        $formPendidikanI,
+        $formPenghasilan,
+        $formLomba,
+        $formTingkat,
+        $formPeringkat,
+
+        $formTahun,
+        $formOrganisasi,
+        $formKeadaan
+    );
 
     mysqli_stmt_execute($stmtinsert);
     mysqli_stmt_close($stmtinsert);
@@ -454,19 +495,16 @@ if (isset($_POST['addBeasiswa']))
 }
 
 
-if (isset($_GET['id']))
-{
+if (isset($_GET['id'])) {
     $id = !empty($_GET['id']) ? intval($_GET['id']) : 0;
-    if (empty($id))
-    {
+    if (empty($id)) {
         return false;
-    }    
+    }
 
     $dataselect = 'SELECT * FROM `mahasiswas` WHERE `formId` = ?';
     $stmtselect = mysqli_stmt_init($conn);
 
-    if (!mysqli_stmt_prepare($stmtselect, $dataselect))
-    {
+    if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {
         echo '<script>window.location="' . base_url('confirm.php?error=stmtfailed') . '";</script>';
         exit();
     }
@@ -477,15 +515,13 @@ if (isset($_GET['id']))
     $value  = mysqli_fetch_assoc($resultData);
 
     //Update user
-    if (isset($_POST['confirm']))
-    {                
+    if (isset($_POST['confirm'])) {
         $status   = trim(mysqli_real_escape_string($conn, $_POST['status']));
 
         $dataupdate = 'UPDATE `proofs` SET `proofsStatus` = ? WHERE `proofsId` = ?';
         $stmtupdate = mysqli_stmt_init($conn);
 
-        if (!mysqli_stmt_prepare($stmtupdate, $dataupdate))
-        {
+        if (!mysqli_stmt_prepare($stmtupdate, $dataupdate)) {
             echo '<script>window.location="' . base_url('confirm.php?error=stmtfailed') . '";</script>';
             exit();
         }
@@ -538,6 +574,12 @@ if (isset($_POST['uploadFile'])) {
         $fotoError     = $_FILES['foto']['error'];
         $fotoTmpName   = $_FILES['foto']['tmp_name'];
 
+        $sktmName       = $_FILES['sktm']['name'];
+        $sktmType       = $_FILES['sktm']['type'];
+        $sktmSize       = $_FILES['sktm']['size'];
+        $sktmError      = $_FILES['sktm']['error'];
+        $sktmTmpName    = $_FILES['sktm']['tmp_name'];
+
         $kipName       = $_FILES['kip']['name'];
         $kipType       = $_FILES['kip']['type'];
         $kipSize       = $_FILES['kip']['size'];
@@ -575,6 +617,9 @@ if (isset($_POST['uploadFile'])) {
         $fotoExt      = explode('.', $fotoName);
         $fotoActExt   = strtolower(end($fotoExt));
 
+        $sktmExt       = explode('.', $sktmName);
+        $sktmActExt    = strtolower(end($sktmExt));
+
         $kipExt       = explode('.', $kipName);
         $kipActExt    = strtolower(end($kipExt));
 
@@ -584,72 +629,290 @@ if (isset($_POST['uploadFile'])) {
         $kksExt       = explode('.', $kksName);
         $kksActExt    = strtolower(end($kksExt));
 
-        if (!$ktpError == 0 || !$aktaError == 0 || !$kkError == 0 || !$ijazahError == 0 || !$fotoError == 0 || !$kipError == 0 || !$pkhError == 0 || !$kksError == 0) {
-            echo '<script>window.location="' . base_url('file.php?error=error') . '";</script>';
-            exit();
+        if ($ktpError == 0 && $aktaError == 0 && $kkError == 0 && $ijazahError == 0 && $fotoError == 0 && $kksError == 0) {
+            if (in_array($ktpActExt, $allowed) && in_array($aktaActExt, $allowed) && in_array($kkActExt, $allowed) && in_array($ijazahActExt, $allowed) && in_array($fotoActExt, $allowed) && in_array($kksActExt, $allowed)) {
+                if ($ktpSize <= 1500000 && $aktaSize <= 1500000 && $kkSize <= 1500000 && $ijazahSize <= 1500000 && $fotoSize <= 1500000 && $kksSize <= 1500000) {
+
+                    $ktpNameNew    = $userName . '.' . $ktpActExt;
+                    $ktpDesti      = '../assets/files/ktp/' . $ktpNameNew;
+
+                    $aktaNameNew   = $userName . '.' . $aktaActExt;
+                    $aktaDesti     = '../assets/files/akta/' . $aktaNameNew;
+
+                    $kkNameNew     = $userName . '.' . $kkActExt;
+                    $kkDesti       = '../assets/files/kk/' . $kkNameNew;
+
+                    $ijazahNameNew = $userName . '.' . $ijazahActExt;
+                    $ijazahDesti   = '../assets/files/ijazah/' . $ijazahNameNew;
+
+                    $fotoNameNew   = $userName . '.' . $fotoActExt;
+                    $fotoDesti     = '../assets/files/foto/' . $fotoNameNew;
+
+                    $kksNameNew    = $userName . '.' . $kksActExt;
+                    $kksDesti      = '../assets/files/kks/' . $kksNameNew;
+
+                    move_uploaded_file($ktpTmpName, $ktpDesti);
+                    move_uploaded_file($aktaTmpName, $aktaDesti);
+                    move_uploaded_file($kkTmpName, $kkDesti);
+                    move_uploaded_file($ijazahTmpName, $ijazahDesti);
+                    move_uploaded_file($fotoTmpName, $fotoDesti);                    
+                    move_uploaded_file($kksTmpName, $kksDesti);
+
+                    $dataupdate = 'UPDATE `mahasiswas` SET `formKtp` = ?, `formAkta` = ?, `formKk` = ?, `formIjazah` = ?, `formFoto` = ?, `formKks` = ? WHERE `formEmail` = ?';
+                    $stmtupdate = mysqli_stmt_init($conn);
+
+                    if (!mysqli_stmt_prepare($stmtupdate, $dataupdate)) {
+                        echo '<script>window.location="' . base_url('file.php?error=stmtupdate') . '";</script>';
+                        exit();
+                    }
+
+                    mysqli_stmt_bind_param($stmtupdate, 'sssssss', $ktpNameNew, $aktaNameNew, $kkNameNew, $ijazahNameNew, $fotoNameNew, $kksNameNew, $userEmail);
+                    mysqli_stmt_execute($stmtupdate);
+                    mysqli_stmt_close($stmtupdate);
+
+                    echo
+                    '<script>
+                        alert("Upload Berkas Pendaftaran Berhasil")
+                        document.location="' . base_url('../file') . '";
+                    </script>';
+                    exit();
+                } else {
+                    echo '<script>window.location="' . base_url('file.php?error=bigfile') . '";</script>';
+                    exit();
+                }
+            } else {
+                echo '<script>window.location="' . base_url('file.php?error=upload') . '";</script>';
+                exit();
+            }
         }
 
-        if (!in_array($ktpActExt, $allowed) || !in_array($aktaActExt, $allowed) || !in_array($kkActExt, $allowed) || !in_array($ijazahActExt, $allowed) || !in_array($fotoActExt, $allowed) || !in_array($kipActExt, $allowed) || !in_array($pkhActExt, $allowed) || !in_array($kksActExt, $allowed)) {
-            echo '<script>window.location="' . base_url('file.php?error=upload') . '";</script>';
-            exit();
+        if ($ktpError == 0 && $aktaError == 0 && $kkError == 0 && $ijazahError == 0 && $fotoError == 0 && $pkhError == 0) {
+            if (in_array($ktpActExt, $allowed) && in_array($aktaActExt, $allowed) && in_array($kkActExt, $allowed) && in_array($ijazahActExt, $allowed) && in_array($fotoActExt, $allowed) && in_array($pkhActExt, $allowed)) {
+                if ($ktpSize <= 1500000 && $aktaSize <= 1500000 && $kkSize <= 1500000 && $ijazahSize <= 1500000 && $fotoSize <= 1500000 && $pkhSize <= 1500000) {
+
+                    $ktpNameNew    = $userName . '.' . $ktpActExt;
+                    $ktpDesti      = '../assets/files/ktp/' . $ktpNameNew;
+
+                    $aktaNameNew   = $userName . '.' . $aktaActExt;
+                    $aktaDesti     = '../assets/files/akta/' . $aktaNameNew;
+
+                    $kkNameNew     = $userName . '.' . $kkActExt;
+                    $kkDesti       = '../assets/files/kk/' . $kkNameNew;
+
+                    $ijazahNameNew = $userName . '.' . $ijazahActExt;
+                    $ijazahDesti   = '../assets/files/ijazah/' . $ijazahNameNew;
+
+                    $fotoNameNew   = $userName . '.' . $fotoActExt;
+                    $fotoDesti     = '../assets/files/foto/' . $fotoNameNew;                    
+
+                    $pkhNameNew    = $userName . '.' . $pkhActExt;
+                    $pkhDesti      = '../assets/files/pkh/' . $pkhNameNew;
+
+                    move_uploaded_file($ktpTmpName, $ktpDesti);
+                    move_uploaded_file($aktaTmpName, $aktaDesti);
+                    move_uploaded_file($kkTmpName, $kkDesti);
+                    move_uploaded_file($ijazahTmpName, $ijazahDesti);
+                    move_uploaded_file($fotoTmpName, $fotoDesti);                   
+                    move_uploaded_file($pkhTmpName, $pkhDesti);
+
+                    $dataupdate = 'UPDATE `mahasiswas` SET `formKtp` = ?, `formAkta` = ?, `formKk` = ?, `formIjazah` = ?, `formFoto` = ?, `formPkh` = ? WHERE `formEmail` = ?';
+                    $stmtupdate = mysqli_stmt_init($conn);
+
+                    if (!mysqli_stmt_prepare($stmtupdate, $dataupdate)) {
+                        echo '<script>window.location="' . base_url('file.php?error=stmtupdate') . '";</script>';
+                        exit();
+                    }
+
+                    mysqli_stmt_bind_param($stmtupdate, 'sssssss', $ktpNameNew, $aktaNameNew, $kkNameNew, $ijazahNameNew, $fotoNameNew, $pkhNameNew, $userEmail);
+                    mysqli_stmt_execute($stmtupdate);
+                    mysqli_stmt_close($stmtupdate);
+
+                    echo
+                    '<script>
+                        alert("Upload Berkas Pendaftaran Berhasil")
+                        document.location="' . base_url('../file') . '";
+                    </script>';
+                    exit();
+                } else {
+                    echo '<script>window.location="' . base_url('file.php?error=bigfile') . '";</script>';
+                    exit();
+                }
+            } else {
+                echo '<script>window.location="' . base_url('file.php?error=upload') . '";</script>';
+                exit();
+            }
         }
 
-        if ($ktpSize >= 1500000 || $aktaSize >= 1500000 || $kkSize >= 1500000 || $ijazahSize >= 1500000 || $fotoSize >= 1500000 || $kipSize >= 1500000 || $pkhSize >= 1500000 || $kksSize >= 1500000) {
-            echo '<script>window.location="' . base_url('file.php?error=bigfile') . '";</script>';
-            exit();
+        if ($ktpError == 0 && $aktaError == 0 && $kkError == 0 && $ijazahError == 0 && $fotoError == 0 && $kipError == 0) {
+            if (in_array($ktpActExt, $allowed) && in_array($aktaActExt, $allowed) && in_array($kkActExt, $allowed) && in_array($ijazahActExt, $allowed) && in_array($fotoActExt, $allowed) && in_array($kipActExt, $allowed)) {
+                if ($ktpSize <= 1500000 && $aktaSize <= 1500000 && $kkSize <= 1500000 && $ijazahSize <= 1500000 && $fotoSize <= 1500000 && $kipSize <= 1500000) {
+
+                    $ktpNameNew    = $userName . '.' . $ktpActExt;
+                    $ktpDesti      = '../assets/files/ktp/' . $ktpNameNew;
+
+                    $aktaNameNew   = $userName . '.' . $aktaActExt;
+                    $aktaDesti     = '../assets/files/akta/' . $aktaNameNew;
+
+                    $kkNameNew     = $userName . '.' . $kkActExt;
+                    $kkDesti       = '../assets/files/kk/' . $kkNameNew;
+
+                    $ijazahNameNew = $userName . '.' . $ijazahActExt;
+                    $ijazahDesti   = '../assets/files/ijazah/' . $ijazahNameNew;
+
+                    $fotoNameNew   = $userName . '.' . $fotoActExt;
+                    $fotoDesti     = '../assets/files/foto/' . $fotoNameNew;
+
+                    $kipNameNew    = $userName . '.' . $kipActExt;
+                    $kipDesti      = '../assets/files/kip/' . $kipNameNew;
+
+                    move_uploaded_file($ktpTmpName, $ktpDesti);
+                    move_uploaded_file($aktaTmpName, $aktaDesti);
+                    move_uploaded_file($kkTmpName, $kkDesti);
+                    move_uploaded_file($ijazahTmpName, $ijazahDesti);
+                    move_uploaded_file($fotoTmpName, $fotoDesti);
+                    move_uploaded_file($kipTmpName, $kipDesti);
+
+                    $dataupdate = 'UPDATE `mahasiswas` SET `formKtp` = ?, `formAkta` = ?, `formKk` = ?, `formIjazah` = ?, `formFoto` = ?, `formKip` = ? WHERE `formEmail` = ?';
+                    $stmtupdate = mysqli_stmt_init($conn);
+
+                    if (!mysqli_stmt_prepare($stmtupdate, $dataupdate)) {
+                        echo '<script>window.location="' . base_url('file.php?error=stmtupdate') . '";</script>';
+                        exit();
+                    }
+
+                    mysqli_stmt_bind_param($stmtupdate, 'sssssss', $ktpNameNew, $aktaNameNew, $kkNameNew, $ijazahNameNew, $fotoNameNew, $kipNameNew, $userEmail);
+                    mysqli_stmt_execute($stmtupdate);
+                    mysqli_stmt_close($stmtupdate);
+
+                    echo
+                    '<script>
+                        alert("Upload Berkas Pendaftaran Berhasil")
+                        document.location="' . base_url('../file') . '";
+                    </script>';
+                    exit();
+                } else {
+                    echo '<script>window.location="' . base_url('file.php?error=bigfile') . '";</script>';
+                    exit();
+                }
+            } else {
+                echo '<script>window.location="' . base_url('file.php?error=upload') . '";</script>';
+                exit();
+            }
         }
 
-        $ktpNameNew    = $userName . '.' . $ktpActExt;
-        $ktpDesti      = '../assets/files/ktp/' . $ktpNameNew;
+        if ($ktpError == 0 && $aktaError == 0 && $kkError == 0 && $ijazahError == 0 && $fotoError == 0 && $sktmError == 0) {
+            if (in_array($ktpActExt, $allowed) && in_array($aktaActExt, $allowed) && in_array($kkActExt, $allowed) && in_array($ijazahActExt, $allowed) && in_array($fotoActExt, $allowed) && in_array($sktmActExt, $allowed)) {
+                if ($ktpSize <= 1500000 && $aktaSize <= 1500000 && $kkSize <= 1500000 && $ijazahSize <= 1500000 && $fotoSize <= 1500000 && $sktmSize <= 1500000) {
 
-        $aktaNameNew   = $userName . '.' . $aktaActExt;
-        $aktaDesti     = '../assets/files/akta/' . $aktaNameNew;
+                    $ktpNameNew    = $userName . '.' . $ktpActExt;
+                    $ktpDesti      = '../assets/files/ktp/' . $ktpNameNew;
 
-        $kkNameNew     = $userName . '.' . $kkActExt;
-        $kkDesti       = '../assets/files/kk/' . $kkNameNew;
+                    $aktaNameNew   = $userName . '.' . $aktaActExt;
+                    $aktaDesti     = '../assets/files/akta/' . $aktaNameNew;
 
-        $ijazahNameNew = $userName . '.' . $ijazahActExt;
-        $ijazahDesti   = '../assets/files/ijazah/' . $ijazahNameNew;
+                    $kkNameNew     = $userName . '.' . $kkActExt;
+                    $kkDesti       = '../assets/files/kk/' . $kkNameNew;
 
-        $fotoNameNew   = $userName . '.' . $fotoActExt;
-        $fotoDesti     = '../assets/files/foto/' . $fotoNameNew;
+                    $ijazahNameNew = $userName . '.' . $ijazahActExt;
+                    $ijazahDesti   = '../assets/files/ijazah/' . $ijazahNameNew;
 
-        $kipNameNew    = $userName . '.' . $kipActExt;
-        $kipDesti      = '../assets/files/kip/' . $kipNameNew;
+                    $fotoNameNew   = $userName . '.' . $fotoActExt;
+                    $fotoDesti     = '../assets/files/foto/' . $fotoNameNew;
 
-        $pkhNameNew    = $userName . '.' . $pkhActExt;
-        $pkhDesti      = '../assets/files/pkh/' . $pkhNameNew;
+                    $sktmNameNew    = $userName . '.' . $sktmActExt;
+                    $sktmDesti      = '../assets/files/sktm/' . $sktmNameNew;
 
-        $kksNameNew    = $userName . '.' . $kksActExt;
-        $kksDesti      = '../assets/files/kks/' . $kksNameNew;
+                    move_uploaded_file($ktpTmpName, $ktpDesti);
+                    move_uploaded_file($aktaTmpName, $aktaDesti);
+                    move_uploaded_file($kkTmpName, $kkDesti);
+                    move_uploaded_file($ijazahTmpName, $ijazahDesti);
+                    move_uploaded_file($fotoTmpName, $fotoDesti);
+                    move_uploaded_file($sktmTmpName, $sktmDesti);
 
-        move_uploaded_file($ktpTmpName, $ktpDesti);
-        move_uploaded_file($aktaTmpName, $aktaDesti);
-        move_uploaded_file($kkTmpName, $kkDesti);
-        move_uploaded_file($ijazahTmpName, $ijazahDesti);
-        move_uploaded_file($fotoTmpName, $fotoDesti);
-        move_uploaded_file($kipTmpName, $kipDesti);
-        move_uploaded_file($pkhTmpName, $pkhDesti);
-        move_uploaded_file($kksTmpName, $kksDesti);
+                    $dataupdate = 'UPDATE `mahasiswas` SET `formKtp` = ?, `formAkta` = ?, `formKk` = ?, `formIjazah` = ?, `formFoto` = ?, `formSktm` = ? WHERE `formEmail` = ?';
+                    $stmtupdate = mysqli_stmt_init($conn);
+
+                    if (!mysqli_stmt_prepare($stmtupdate, $dataupdate)) {
+                        echo '<script>window.location="' . base_url('file.php?error=stmtupdate') . '";</script>';
+                        exit();
+                    }
+
+                    mysqli_stmt_bind_param($stmtupdate, 'sssssss', $ktpNameNew, $aktaNameNew, $kkNameNew, $ijazahNameNew, $fotoNameNew, $sktmNameNew, $userEmail);
+                    mysqli_stmt_execute($stmtupdate);
+                    mysqli_stmt_close($stmtupdate);
+
+                    echo
+                    '<script>
+                        alert("Upload Berkas Pendaftaran Berhasil")
+                        document.location="' . base_url('../file') . '";
+                    </script>';
+                    exit();
+                } else {
+                    echo '<script>window.location="' . base_url('file.php?error=bigfile') . '";</script>';
+                    exit();
+                }
+            } else {
+                echo '<script>window.location="' . base_url('file.php?error=upload') . '";</script>';
+                exit();
+            }
+        }
         
-        $dataupdate = 'UPDATE `mahasiswas` SET `formKtp` = ?, `formAkta` = ?, `formKk` = ?, `formIjazah` = ?, `formFoto` = ?, `formKip` = ?, `formPkh` = ?, `formKks` = ? WHERE `formEmail` = ?';
-        $stmtupdate = mysqli_stmt_init($conn);
+        if ($ktpError == 0 && $aktaError == 0 && $kkError == 0 && $ijazahError == 0 && $fotoError == 0) {
+            if (in_array($ktpActExt, $allowed) && in_array($aktaActExt, $allowed) && in_array($kkActExt, $allowed) && in_array($ijazahActExt, $allowed) && in_array($fotoActExt, $allowed)) {
+                if ($ktpSize <= 1500000 && $aktaSize <= 1500000 && $kkSize <= 1500000 && $ijazahSize <= 1500000 && $fotoSize <= 1500000) {
 
-        if (!mysqli_stmt_prepare($stmtupdate, $dataupdate)) {
-            echo '<script>window.location="' . base_url('file.php?error=stmtupdate') . '";</script>';
-            exit();
-        }        
+                    $ktpNameNew    = $userName . '.' . $ktpActExt;
+                    $ktpDesti      = '../assets/files/ktp/' . $ktpNameNew;
 
-        mysqli_stmt_bind_param($stmtupdate, 'sssssssss', $ktpNameNew, $aktaNameNew, $kkNameNew, $ijazahNameNew, $fotoNameNew, $kipNameNew, $pkhNameNew, $kksNameNew, $userEmail);
-        mysqli_stmt_execute($stmtupdate);
-        mysqli_stmt_close($stmtupdate);
+                    $aktaNameNew   = $userName . '.' . $aktaActExt;
+                    $aktaDesti     = '../assets/files/akta/' . $aktaNameNew;
 
-        echo
-        '<script>
-                alert("Upload Berkas Pendaftaran Berhasil")
-                document.location="' . base_url('../file') . '";
-            </script>';
+                    $kkNameNew     = $userName . '.' . $kkActExt;
+                    $kkDesti       = '../assets/files/kk/' . $kkNameNew;
+
+                    $ijazahNameNew = $userName . '.' . $ijazahActExt;
+                    $ijazahDesti   = '../assets/files/ijazah/' . $ijazahNameNew;
+
+                    $fotoNameNew   = $userName . '.' . $fotoActExt;
+                    $fotoDesti     = '../assets/files/foto/' . $fotoNameNew;
+
+                    move_uploaded_file($ktpTmpName, $ktpDesti);
+                    move_uploaded_file($aktaTmpName, $aktaDesti);
+                    move_uploaded_file($kkTmpName, $kkDesti);
+                    move_uploaded_file($ijazahTmpName, $ijazahDesti);
+                    move_uploaded_file($fotoTmpName, $fotoDesti);
+
+                    $dataupdate = 'UPDATE `mahasiswas` SET `formKtp` = ?, `formAkta` = ?, `formKk` = ?, `formIjazah` = ?, `formFoto` = ? WHERE `formEmail` = ?';
+                    $stmtupdate = mysqli_stmt_init($conn);
+
+                    if (!mysqli_stmt_prepare($stmtupdate, $dataupdate)) {
+                        echo '<script>window.location="' . base_url('file.php?error=stmtupdate') . '";</script>';
+                        exit();
+                    }
+
+                    mysqli_stmt_bind_param($stmtupdate, 'ssssss', $ktpNameNew, $aktaNameNew, $kkNameNew, $ijazahNameNew, $fotoNameNew, $userEmail);
+                    mysqli_stmt_execute($stmtupdate);
+                    mysqli_stmt_close($stmtupdate);
+
+                    echo
+                    '<script>
+                        alert("Upload Berkas Pendaftaran Berhasil")
+                        document.location="' . base_url('../file') . '";
+                    </script>';
+                    exit();
+                } else {
+                    echo '<script>window.location="' . base_url('file.php?error=bigfile') . '";</script>';
+                    exit();
+                }
+            } else {
+                echo '<script>window.location="' . base_url('file.php?error=upload') . '";</script>';
+                exit();
+            }
+        }
+
+        echo '<script>window.location="' . base_url('file.php?error=error') . '";</script>';
         exit();
+
     } else {
         echo '<script>window.location="' . base_url('file.php?error=form') . '";</script>';
         exit();
@@ -667,4 +930,3 @@ if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {
 
 mysqli_stmt_execute($stmtselect);
 $mahasiswas = mysqli_stmt_get_result($stmtselect);
-

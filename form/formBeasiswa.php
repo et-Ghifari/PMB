@@ -22,7 +22,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
             <div class="card">
                 <div class="header">
                     <h2>FORMULIR PENDAFTARAN BEASISWA</h2>
-                    <small>Jika ada pertanyaan/masalah dalam pendaftaran bisa menghubungi petugas administrasi</small>
+                    <small>Jika ada pertanyaan/masalah dalam pendaftaran bisa menghubungi panitia pendaftaran</small>
                 </div>
                 <div class="body">
                     <div class="row clearfix">
@@ -33,6 +33,9 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                     if (isset($_GET['error'])) {
                                         if ($_GET['error'] == 'emptyform') {
                                             echo '<div class="alert alert-danger" align="center"><strong>Isi Semua Form yang Wajib di Isi!</strong></div>';
+                                        }
+                                        if ($_GET['error'] == 'registed') {
+                                            echo '<div class="alert alert-danger" align="center"><strong>NIK Sudah Terdaftar!</strong></div>';
                                         }
                                     }
                                     ?>
@@ -265,10 +268,10 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                         <input type="text" name="desa" class="form-control" placeholder="desa" required />
                                                     </div>
                                                 </div>
-                                                <label>Jl/No.Rumah/dll*</label>
+                                                <label>Jl/No.Rumah/dll</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <textarea type="text" name="jalan" class="form-control" placeholder="Jl./No.Rumah/dll" required></textarea>
+                                                        <textarea type="text" name="jalan" class="form-control" placeholder="Jl./No.Rumah/dll" ></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="row clearfix">
@@ -312,7 +315,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                         <input type="text" name="asalSekolah" class="form-control" placeholder="asal sekolah" required />
                                                     </div>
                                                 </div>
-                                                <label>No. SKHUN*</label>
+                                                <label>No. SKHUN</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
                                                         <input type="text" name="skhun" class="form-control" placeholder="no. skhun" />
@@ -324,7 +327,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                         <div class="form-group form-float">
                                                             <select name="tahunLulus" class="form-control show-tick" required>
                                                                 <option value="">-- Pilih Tahun --</option>
-                                                                <?php $th = date('Y') - 5; ?>
+                                                                <?php $th = date('Y') - 30; ?>
                                                                 <?php for ($th; $th <= date('Y'); $th++) {
                                                                 ?>
                                                                     <option value="<?php echo $th; ?>"><?php echo $th; ?></option>
@@ -519,10 +522,14 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                         <div id="collapseSix_19" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingSix_19">
                                             <div class="panel-body">
                                                 <label>Organisasi Masyarakat Orang Tua/Wali*</label>
-                                                <div class="form-group form-float">
-                                                    <div class="form-line">
-                                                        <input type="text" name="organisasi" class="form-control" placeholder="NU/Muhammadiyah/PERSIS dll" required />
-                                                    </div>
+                                                <div class="form-group form-float">                                                    
+                                                    <select name="organisasi" class="form-control show-tick" required>
+                                                        <option value="">-- Pilih --</option>
+                                                        <option value="NU">NU</option>
+                                                        <option value="Muhammadiyah">Muhammadiyah</option>
+                                                        <option value="PERSIS">PERSIS</option>
+                                                        <option value="Lainnya">Lainnya</option>
+                                                    </select>
                                                 </div>
                                                 <label>Keadaan Calon Mahasiswa*</label>
                                                 <div class="form-group form-float">

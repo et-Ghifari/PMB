@@ -23,7 +23,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                     <div class="card">
                         <div class="header">
                             <h2>BUKTI PEMBAYARAN PENDAFTARAN</h2>
-                            <small>Jika ada pertanyaan/masalah dalam pendaftaran bisa menghubungi petugas administrasi</small>
+                            <small>Jika ada pertanyaan/masalah dalam pendaftaran bisa menghubungi panitia pendaftaran</small>
                         </div>
                         <div class="body">
                             <blockquote class="m-b-25">

@@ -112,6 +112,25 @@ function displayFoto(e)
     }
 }
 
+function sktmClick()
+{
+    document.querySelector('#sktmFile').click();
+}
+
+function displaySktm(e)
+{
+    if (e.files[0])
+    {
+        var reader = new FileReader();
+
+        reader.onload = function(e)
+        {
+            document.querySelector('#sktmDisplay').setAttribute('src', e.target.result);
+        }
+        reader.readAsDataURL(e.files[0]);
+    }
+}
+
 function kipClick()
 {
     document.querySelector('#kipFile').click();
