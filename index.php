@@ -426,18 +426,18 @@ require_once 'progres/menuProgres.php';
                             </div>
                             <div class="member-info">
                                 <h4>Unit Bisnis</h4>
-                                <span>Gedung </span>
+                                <span>Gedung Bisnis</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="400">
                             <div class="member-img">
-                                <img src="<?php echo base_url('assets/images/fasilitas/image.jpg') ?>" class="img-fluid">
+                                <img src="<?php echo base_url('assets/images/fasilitas/lab1.jpg') ?>" class="img-fluid">
                             </div>
                             <div class="member-info">
                                 <h4>Lab Programmer</h4>
-                                <span>Neurosurgeon</span>
+                                <span>Laboratorium Komputer Rekayasa Perangkat Lunak</span>
                             </div>
                         </div>
                     </div>
@@ -448,7 +448,7 @@ require_once 'progres/menuProgres.php';
                             </div>
                             <div class="member-info">
                                 <h4>Lab Bisnis</h4>
-                                <span>Chief Medical Officer</span>
+                                <span>Laboratorium Komputer Administrasi Bisnis Internasional</span>
                             </div>
                         </div>
                     </div>
@@ -459,11 +459,11 @@ require_once 'progres/menuProgres.php';
                             </div>
                             <div class="member-info">
                                 <h4>Homestay</h4>
-                                <span>Anesthesiologist</span>
+                                <span>Tempat Penginapan</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="600">
                             <div class="member-img">
                                 <img src="<?php echo base_url('assets/images/fasilitas/kelas.jpeg') ?>" class="img-fluid">
@@ -495,7 +495,7 @@ require_once 'progres/menuProgres.php';
                                 <span>Anesthesiologist</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>

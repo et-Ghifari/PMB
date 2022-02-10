@@ -79,11 +79,11 @@ if (isset($_POST['addMandiri'])) {
     $formOrganisasi  = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['organisasi'])));
     $formKeadaan     = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['keadaan'])));
 
-    /* if (empty($formProdi) || empty($formNisn) || empty($formKkAyah) || empty($formOrganisasi))
+    if (empty($formProdi) || empty($formNisn) || empty($formKkAyah) || empty($formOrganisasi))
     {
         echo '<script>document.location="' . base_url('formMandiri.php?error=emptyform') . '";</script>';
         exit();
-    }  */   
+    }
 
     $dataselect = 'SELECT `formNik` FROM `mahasiswas` WHERE `formNik` = ?';
     $stmtselect = mysqli_stmt_init($conn);
@@ -315,10 +315,10 @@ if (isset($_POST['addBeasiswa'])) {
     $formOrganisasi  = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['organisasi'])));
     $formKeadaan     = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['keadaan'])));
 
-    /* if (empty($formProdi) || empty($formNisn) || empty($formKkAyah) || empty($formOrganisasi)) {
+    if (empty($formProdi) || empty($formNisn) || empty($formKkAyah) || empty($formOrganisasi)) {
         echo '<script>window.location="' . base_url('formBeasiswa.php?error=emptyform') . '";</script>';
         exit();
-    } */
+    }
 
     $dataselect = 'SELECT `formNik` FROM `mahasiswas` WHERE `formNik` = ?';
     $stmtselect = mysqli_stmt_init($conn);
