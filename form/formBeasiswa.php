@@ -114,13 +114,13 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>NISN*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="number" class="form-control" name="nisn" placeholder="nisn" maxlength="10" minlength="10" required>
+                                                        <input type="text" class="form-control" name="nisn" placeholder="nisn" maxlength="10" minlength="10" required>
                                                     </div>
                                                 </div>
                                                 <label>NIK*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="number" name="nik" class="form-control" placeholder="nik" maxlength="16" minlength="16" required />
+                                                        <input type="text" name="nik" class="form-control" placeholder="nik" maxlength="16" minlength="16" required />
                                                     </div>
                                                 </div>
                                                 <label>Nama Lengkap*</label>
@@ -209,13 +209,13 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Anak ke</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="number" name="anakke" class="form-control" placeholder="isi angka" />
+                                                        <input type="text" name="anakke" class="form-control" placeholder="isi angka" />
                                                     </div>
                                                 </div>
                                                 <label>Jumlah Saudara</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="number" name="saudara" class="form-control" placeholder="isi angka" />
+                                                        <input type="text" name="saudara" class="form-control" placeholder="isi angka" />
                                                     </div>
                                                 </div>
                                                 <label>Berat Badan</label>
@@ -223,7 +223,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                     <div class="col-sm-2">
                                                         <div class="input-group">
                                                             <div class="form-line">
-                                                                <input type="number" name="berat" class="form-control" placeholder="isi angka" />
+                                                                <input type="text" name="berat" class="form-control" placeholder="isi angka" />
                                                             </div>
                                                             <span class="input-group-addon">
                                                                 <label>Kg</label>
@@ -236,7 +236,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                     <div class="col-sm-2">
                                                         <div class="input-group">
                                                             <div class="form-line">
-                                                                <input type="number" name="tinggi" class="form-control" placeholder="isi angka" />
+                                                                <input type="text" name="tinggi" class="form-control" placeholder="isi angka" />
                                                             </div>
                                                             <span class="input-group-addon">
                                                                 <label>Cm</label>
@@ -278,21 +278,21 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                     <div class="col-sm-2">
                                                         <div class="form-group form-float">
                                                             <div class="form-line">
-                                                                <input type="number" name="rt" class="form-control" placeholder="RT" required />
+                                                                <input type="text" name="rt" class="form-control" placeholder="RT" required />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group form-float">
                                                             <div class="form-line">
-                                                                <input type="number" name="rw" class="form-control" placeholder="RW" required />
+                                                                <input type="text" name="rw" class="form-control" placeholder="RW" required />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-2">
                                                         <div class="form-group form-float">
                                                             <div class="form-line">
-                                                                <input type="number" name="kodepos" class="form-control" placeholder="Kode Pos" maxlength="5" minlength="5" required />
+                                                                <input type="text" name="kodepos" class="form-control" placeholder="Kode Pos" maxlength="5" minlength="5" required />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -354,14 +354,14 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Nomor KK*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="number" name="kk" class="form-control" placeholder="nomor kk" maxlength="16" minlength="16" required />
+                                                        <input type="text" name="kk" class="form-control" placeholder="nomor kk" maxlength="16" minlength="16" required />
                                                     </div>
                                                 </div>
                                                 <br></br>
                                                 <label>NIK Ayah*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="number" name="nikAyah" class="form-control" placeholder="nik ayah" maxlength="16" minlength="16" required />
+                                                        <input type="text" name="nikAyah" class="form-control" placeholder="nik ayah" maxlength="16" minlength="16" required />
                                                     </div>
                                                 </div>
                                                 <label>Nama Ayah*</label>
@@ -407,7 +407,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>NIK Ibu*</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="number" name="nikIbu" class="form-control" placeholder="nik ibu" maxlength="16" minlength="16" required />
+                                                        <input type="text" name="nikIbu" class="form-control" placeholder="nik ibu" maxlength="16" minlength="16" required />
                                                     </div>
                                                 </div>
                                                 <label>Nama Ibu*</label>
@@ -505,7 +505,7 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                                 <label>Tahun Lomba</label>
                                                 <div class="form-group form-float">
                                                     <div class="form-line">
-                                                        <input type="number" name="tahun" class="form-control" placeholder="tahun lomba" />
+                                                        <input type="text" name="tahun" class="form-control" placeholder="tahun lomba" />
                                                     </div>
                                                 </div>
                                             </div>

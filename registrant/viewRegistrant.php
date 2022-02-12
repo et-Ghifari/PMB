@@ -274,7 +274,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                                 <div class="media">
                                                     <div class="media-body">
                                                         <h4 class="media-heading">
-                                                            <?= empty($value['formNamaAyah']) ? '-' : $value['formNamaAyah'] . ', ' . $value['formTglLahir'] . ' ' . $value['formBlnLahir'] . ' ' . $value['formThnLahir'] ?>
+                                                            <?= empty($value['formNamaAyah']) ? '-' : $value['formNamaAyah'] ?>
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -286,7 +286,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                                 <div class="media">
                                                     <div class="media-body">
                                                         <h4 class="media-heading">
-                                                            <?= empty($value['formPekerjaanA']) ? '-' : $value['formPekerjaanA'] . ' ' . $value['formDesa'] . ' ' . $value['formRt'] . '/' . $value['formRw'] . ' ' . $value['formKec'] . ', ' . $value['formKab'] . ', ' . $value['formProv'] . ' - ' . $value['formKodepos'] ?>
+                                                            <?= empty($value['formPekerjaanA']) ? '-' : $value['formPekerjaanA'] ?>
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -396,7 +396,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                                 <div class="media">
                                                     <div class="media-body">
                                                         <h4 class="media-heading">
-                                                            <?= empty($value['formPeringkat']) ? '-' : $value['formPeringkat'] . ', ' . $value['formTglLahir'] . ' ' . $value['formBlnLahir'] . ' ' . $value['formThnLahir'] ?>
+                                                            <?= empty($value['formPeringkat']) ? '-' : $value['formPeringkat'] ?>
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -408,7 +408,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                                 <div class="media">
                                                     <div class="media-body">
                                                         <h4 class="media-heading">
-                                                            <?= empty($value['formTahun']) ? '-' : $value['formTahun'] . ' ' . $value['formDesa'] . ' ' . $value['formRt'] . '/' . $value['formRw'] . ' ' . $value['formKec'] . ', ' . $value['formKab'] . ', ' . $value['formProv'] . ' - ' . $value['formKodepos'] ?>
+                                                            <?= empty($value['formTahun']) ? '-' : $value['formTahun'] ?>
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -416,7 +416,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                         </div>
                                     </div>
                                     <div role="tabpanel" class="tab-pane fade in" id="penunjang">
-                                    <label>Organisasi Masyarakat Orang Tua/Wali</label>
+                                        <label>Organisasi Masyarakat Orang Tua/Wali</label>
                                         <div class="panel panel-default panel-post">
                                             <div class="panel-heading">
                                                 <div class="media">
@@ -440,15 +440,51 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                                 </div>
                                             </div>
                                         </div>
+                                        <label>KTP</label>
+                                        <div class="panel panel-default panel-post">
+                                            <iframe src="<?= !empty($value['formKtp']) ? base_url('../assets/files/ktp/' . $value['formKtp'] . '"') : base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
+                                        </div>
+                                        <label>Akta</label>
+                                        <div class="panel panel-default panel-post">
+                                            <iframe src="<?= !empty($value['formAkta']) ? base_url('../assets/files/akta/' . $value['formAkta'] . '"') : base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
+                                        </div>
+                                        <label>KK</label>
+                                        <div class="panel panel-default panel-post">
+                                            <iframe src="<?= !empty($value['formKk']) ? base_url('../assets/files/kk/' . $value['formKk'] . '"') : base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
+                                        </div>
+                                        <label>Ijazah</label>
+                                        <div class="panel panel-default panel-post">
+                                            <iframe src="<?= !empty($value['formIjazah']) ? base_url('../assets/files/ijazah/' . $value['formIjazah'] . '"') : base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
+                                        </div>
+                                        <label>Foto</label>
+                                        <div class="panel panel-default panel-post">
+                                            <iframe src="<?= !empty($value['formFoto']) ? base_url('../assets/files/foto/' . $value['formFoto'] . '"') : base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
+                                        </div>
+                                        <label>SKTM</label>
+                                        <div class="panel panel-default panel-post">
+                                            <iframe src="<?= !empty($value['formSktm']) ? base_url('../assets/files/sktm/' . $value['formSktm'] . '"') : base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
+                                        </div>
+                                        <label>KIP</label>
+                                        <div class="panel panel-default panel-post">
+                                            <iframe src="<?= !empty($value['formKip']) ? base_url('../assets/files/kip/' . $value['formKip'] . '"') : base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
+                                        </div>
+                                        <label>PKH</label>
+                                        <div class="panel panel-default panel-post">
+                                            <iframe src="<?= !empty($value['formPkh']) ? base_url('../assets/files/pkh/' . $value['formPkh'] . '"') : base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
+                                        </div>
+                                        <label>KKS</label>
+                                        <div class="panel panel-default panel-post">
+                                            <iframe src="<?= !empty($value['formKks']) ? base_url('../assets/files/kks/' . $value['formKks'] . '"') : base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
+                                        </div>
                                     </div>
-                                </div>                               
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>    
+    </section>
     <?php include_once '../include/script.php'; ?>
 </body>
 

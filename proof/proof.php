@@ -45,7 +45,7 @@ if (!empty($bukti['formBukti'])) {
                                         echo '<div class="alert alert-danger" align="center"><strong>File Terlalu Besar!</strong></div>';
                                     }
                                     if ($_GET['error'] == 'form') {
-                                        echo '<div class="alert alert-danger" align="center"><strong>Silahakan Upload Berkas Pendaftaran Terlabih Dahulu!</strong></div>';
+                                        echo '<div class="alert alert-danger" align="center"><strong>Silahkan Upload Berkas Pendaftaran Terlabih Dahulu!</strong></div>';
                                     }
                                 }
                                 ?>

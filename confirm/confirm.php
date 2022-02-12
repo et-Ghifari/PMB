@@ -52,7 +52,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                                 <td><?php echo $proof['formNama'] ?></td>
                                                 <td><?php echo $proof['formJalur'] ?></td>
                                                 <td><?php echo $proof['formEmail'] ?></td>
-                                                <td class="align-center"><img src="<?php echo base_url('../assets/files/bukti/' . $proof['formBukti'] . '"') ?>" width="40" height="40" alt="<?php echo $proof['formNama'] ?>"></td>
+                                                <td class="align-center"><iframe src="<?= !empty($proof['formBukti']) ? base_url('../assets/files/bukti/' . $proof['formBukti'] . '"') : base_url('../assets/files/file.pdf') ?>" width="40" height="40" alt="<?php echo $proof['formNama'] ?>"></iframe></td>
                                                 <td>                                                    
                                                     <div class="demo-switch">
                                                         <div class="switch">

@@ -60,7 +60,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                         <label for="username">Bukti Transfer</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                    <iframe id="aktaDisplay" onclick="aktaClick()" src="<?php echo base_url('../assets/files/bukti/' . $value['formBukti'] . '"') ?>" width="50%"></iframe>
+                                    <iframe src="<?= !empty($value['formBukti']) ? base_url('../assets/files/bukti/' . $value['formBukti'] . '"') : base_url('../assets/files/file.pdf') ?>" width="50%"></iframe>
                                     </div>
                                 </div>
                                 <div class="row clearfix">

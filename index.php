@@ -433,7 +433,7 @@ require_once 'progres/menuProgres.php';
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="400">
                             <div class="member-img">
-                                <img src="<?php echo base_url('assets/images/fasilitas/lab1.jpg') ?>" class="img-fluid">
+                                <img src="<?php echo base_url('assets/images/fasilitas/lab1.png') ?>" class="img-fluid">
                             </div>
                             <div class="member-info">
                                 <h4>Lab Programmer</h4>
@@ -539,16 +539,16 @@ require_once 'progres/menuProgres.php';
                     <p>Beberapa kegiatan Politeknik Balekambang Jepara</p>
                 </div>
                 <div class="owl-carousel gallery-carousel" data-aos="fade-up" data-aos-delay="100">
-                    <a href="<?php echo base_url('assets/images/gallery/gallery-1.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-1.jpg') ?>" alt=""></a>
+                    <a href="<?php echo base_url('assets/images/gallery/gallery-1.png') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-1.png') ?>" alt=""></a>
                     <a href="<?php echo base_url('assets/images/gallery/gallery-2.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-2.jpg') ?>" alt=""></a>
                     <a href="<?php echo base_url('assets/images/gallery/gallery-3.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-3.jpg') ?>" alt=""></a>
                     <a href="<?php echo base_url('assets/images/gallery/gallery-4.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-4.jpg') ?>" alt=""></a>
                     <a href="<?php echo base_url('assets/images/gallery/gallery-5.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-5.jpg') ?>" alt=""></a>
-                    <a href="<?php echo base_url('assets/images/gallery/gallery-6.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-6.jpg') ?>" alt=""></a>
-                    <a href="<?php echo base_url('assets/images/gallery/gallery-7.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-7.jpg') ?>" alt=""></a>
-                    <a href="<?php echo base_url('assets/images/gallery/gallery-8.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-8.jpg') ?>" alt=""></a>
-                    <a href="<?php echo base_url('assets/images/gallery/gallery-9.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-9.jpg') ?>" alt=""></a>
-                    <a href="<?php echo base_url('assets/images/gallery/gallery-10.jpg') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-10.jpg') ?>" alt=""></a>
+                    <a href="<?php echo base_url('assets/images/gallery/gallery-6.png') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-6.png') ?>" alt=""></a>
+                    <a href="<?php echo base_url('assets/images/gallery/gallery-7.png') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-7.png') ?>" alt=""></a>
+                    <a href="<?php echo base_url('assets/images/gallery/gallery-8.png') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-8.png') ?>" alt=""></a>
+                    <a href="<?php echo base_url('assets/images/gallery/gallery-9.png') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-9.png') ?>" alt=""></a>
+                    <a href="<?php echo base_url('assets/images/gallery/gallery-10.png') ?>" class="venobox" data-gall="gallery-carousel"><img src="<?php echo base_url('assets/images/gallery/gallery-10.png') ?>" alt=""></a>
                 </div>
             </div>
         </section>

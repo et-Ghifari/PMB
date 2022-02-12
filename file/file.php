@@ -45,7 +45,7 @@ if (!empty($ktp['formKtp'])) {
                                         echo '<div class="alert alert-danger" align="center"><strong>File Terlalu Besar!</strong></div>';
                                     }
                                     if ($_GET['error'] == 'form') {
-                                        echo '<div class="alert alert-danger" align="center"><strong>Silahakan Lengkapi Formulir Pendaftaran Terlabih Dahulu!</strong></div>';
+                                        echo '<div class="alert alert-danger" align="center"><strong>Silahkan Lengkapi Formulir Pendaftaran Terlabih Dahulu!</strong></div>';
                                     }
                                 }
                                 ?>

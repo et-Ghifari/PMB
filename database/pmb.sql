@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2022 at 10:43 AM
+-- Generation Time: Feb 11, 2022 at 03:37 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.30
 
@@ -82,19 +82,13 @@ CREATE TABLE `mahasiswas` (
   `formKk` varchar(128) DEFAULT NULL,
   `formIjazah` varchar(128) DEFAULT NULL,
   `formFoto` varchar(128) DEFAULT NULL,
+  `formSktm` varchar(128) DEFAULT NULL,
   `formKip` varchar(128) DEFAULT NULL,
   `formPkh` varchar(128) DEFAULT NULL,
   `formKks` varchar(128) DEFAULT NULL,
   `formBukti` varchar(128) DEFAULT NULL,
   `formStatus` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `mahasiswas`
---
-
-INSERT INTO `mahasiswas` (`formId`, `formNo`, `formJalur`, `formBeasiswa`, `formProdi`, `formKelas`, `formNisn`, `formNik`, `formNama`, `formTptLahir`, `formTglLahir`, `formBlnLahir`, `formThnLahir`, `formJk`, `formHobi`, `formCita`, `formAnakke`, `formSaudara`, `formBerat`, `formTinggi`, `formJalan`, `formRt`, `formRw`, `formDesa`, `formKec`, `formKab`, `formProv`, `formKodepos`, `formHp`, `formEmail`, `formAsalSekolah`, `formSkhun`, `formTahunLulus`, `formKkAyah`, `formNikAyah`, `formNamaAyah`, `formPekerjaanA`, `formPendidikanA`, `formNikIbu`, `formNamaIbu`, `formPekerjaanI`, `formPendidikanI`, `formPenghasilan`, `formLomba`, `formTingkat`, `formPeringkat`, `formTahun`, `formOrganisasi`, `formKeadaan`, `formKtp`, `formAkta`, `formKk`, `formIjazah`, `formFoto`, `formKip`, `formPkh`, `formKks`, `formBukti`, `formStatus`) VALUES
-(21, 'PMB202200001', 'Mandiri', NULL, 'RPL', 'Reguler', '', '', 'Bambang', '', 0, '', 0, '', '', '', 0, 0, 0, 0, '', 0, 0, '', '', '', '', 0, '', 'bambang@gmail.com', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Bambang.jpg', 'Bambang.jpg', 'Bambang.jpg', 'Bambang.jpg', 'Bambang.jpg', 'Bambang.jpg', 'Bambang.jpg', 'Bambang.jpg', 'Bambang.jpg', 'SELESAI');
 
 -- --------------------------------------------------------
 
@@ -120,7 +114,8 @@ INSERT INTO `menus` (`menusId`, `menusOrder`, `menusName`, `menusUrl`) VALUES
 (4, 4, 'prodi', 'prodi'),
 (6, 6, 'fasilitas', 'fasilitas'),
 (8, 5, 'biaya', 'biaya'),
-(12, 7, 'kontak', 'kontak');
+(12, 8, 'info', 'info'),
+(20, 7, 'testimoni', 'testimoni');
 
 -- --------------------------------------------------------
 
@@ -144,7 +139,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`usersId`, `usersName`, `usersEmail`, `usersUid`, `usersPwd`, `usersLevel`, `usersImage`) VALUES
 (38, 'Admin Ganteng', 'admin@gmail.com', 'Admin', '$2y$10$oZdp5Bbj2v6y3cLP6JOsNO.hG9.eRVbPk5xzk4tZWGUG3OEcdxF4W', 'admin', 'c61fcde318a71c.jpg'),
-(56, 'Bambang', 'bambang@gmail.com', 'bambang', '$2y$10$K0euoN.ZMt2PxU/C6CcNW.VuNUjP.Y05Ea4g5Z2cokXNNIUkaFdQW', NULL, 'c61fccca2d498c.jpg');
+(60, 'Politeknik Balekambang Jepara', 'politbangjepara@gmail.com', 'polibang', '$2y$10$wybX2UH7yyiNBLSEdP2oUeThTpRdeyGlQXZjdN4S8WfBwhefkLzBK', 'admin', 'c6205cb8dcc543.png');
 
 --
 -- Indexes for dumped tables
@@ -176,19 +171,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `mahasiswas`
 --
 ALTER TABLE `mahasiswas`
-  MODIFY `formId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `formId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `menusId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `menusId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `usersId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `usersId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
