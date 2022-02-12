@@ -111,7 +111,7 @@ if (isset($_GET['id']))
     }
 }
 
-$dataselect = 'SELECT `formId`, `formNo`, `formNama`, `formJalur`, `formEmail`, `formBukti`, `formStatus` FROM `mahasiswas` ORDER BY `formNama`';
+$dataselect = 'SELECT `formId`, `formNo`, `formNama`, `formJalur`, `formEmail`, `formBukti`, `formStatus` FROM `mahasiswas` ORDER BY `formNo` ASC';
 $stmtselect = mysqli_stmt_init($conn);
 
 if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {

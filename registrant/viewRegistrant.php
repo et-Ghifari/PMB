@@ -128,7 +128,7 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                                 <div class="media">
                                                     <div class="media-body">
                                                         <h4 class="media-heading">
-                                                            <?= empty($value['formJalan']) ? '-' : $value['formJalan'] . ' ' . $value['formDesa'] . ' ' . $value['formRt'] . '/' . $value['formRw'] . ' ' . $value['formKec'] . ', ' . $value['formKab'] . ', ' . $value['formProv'] . ' - ' . $value['formKodepos'] ?>
+                                                            <?= empty($value['formDesa']) ? '-' : $value['formJalan'] . ' ' . $value['formDesa'] . ' ' . $value['formRt'] . '/' . $value['formRw'] . ' ' . $value['formKec'] . ', ' . $value['formKab'] . ', ' . $value['formProv'] . ' - ' . $value['formKodepos'] ?>
                                                         </h4>
                                                     </div>
                                                 </div>

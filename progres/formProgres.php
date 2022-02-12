@@ -920,7 +920,7 @@ if (isset($_POST['uploadFile'])) {
 }
 
 
-$dataselect = 'SELECT `formId`, `formNo`, `formJalur`,`formNama`, `formEmail`, `formHp` FROM `mahasiswas` ORDER BY `formNo`';
+$dataselect = 'SELECT `formId`, `formNo`, `formJalur`,`formNama`, `formEmail`, `formHp` FROM `mahasiswas` ORDER BY `formNo` ASC';
 $stmtselect = mysqli_stmt_init($conn);
 
 if (!mysqli_stmt_prepare($stmtselect, $dataselect)) {
