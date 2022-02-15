@@ -28,46 +28,69 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                 <img src="<?= $value['formJk'] == 'L' ? base_url('../assets/images/male.png') : base_url('../assets/images/famale.png') ?>" width="100" height="100" alt="<?php echo $value['formNama'] ?>" />
                             </div>
                             <div class="content-area">
-                                <h4><?php echo $value['formNama'] ?></h4>
+                                <h5><?php echo $value['formNama'] ?></h5>
                                 <p><?php echo $value['formNo'] ?></p>
                                 <p><?php echo $value['formJalur'] ?></p>
                             </div>
                         </div>
                     </div>
                     <div class="card card-about-me">
-                        <div class="header">
-                            <h2>ABOUT ME</h2>
+                        <div class="header align-center">
+                            <h2>Informasi Akun</h2>
                         </div>
                         <div class="body">
                             <ul>
                                 <li>
                                     <div class="title">
                                         <i class="material-icons">school</i>
+                                        Beasiswa
+                                    </div>
+                                    <div class="content">
                                         <?= !isset($value['formBeasiswa']) ? '-' : $value['formBeasiswa'] ?>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="title">
                                         <i class="material-icons">business_center</i>
+                                        Program Studi
+                                    </div>
+                                    <div class="content">
                                         <?= empty($value['formProdi']) ? '-' : $value['formProdi'] ?>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="title">
                                         <i class="material-icons">access_time</i>
+                                        Kelas
+                                    </div>
+                                    <div class="content">
                                         <?= empty($value['formKelas']) ? '-' : $value['formKelas'] ?>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="title">
                                         <i class="material-icons">email</i>
+                                        Email
+                                    </div>
+                                    <div class="content">
                                         <?= empty($value['formEmail']) ? '-' : $value['formEmail'] ?>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="title">
                                         <i class="material-icons">smartphone</i>
+                                        No.Hp/WA
+                                    </div>
+                                    <div class="content">
                                         <?= empty($value['formHp']) ? '-' : $value['formHp'] ?>
+                                    </div>
+                                </li>
+                                <li class="align-center">
+                                    <div class="title">
+                                        <a href="">
+                                        <i class="material-icons">edit</i>
+                                        Edit Mahasiswa
+                                        </a>
                                     </div>
                                 </li>
                             </ul>

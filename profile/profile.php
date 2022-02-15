@@ -25,8 +25,8 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                 <img src="<?= !empty($_SESSION['userimage']) ? base_url('../assets/images/users/' . $_SESSION['userimage'] . '"') : base_url('../assets/images/users/image.png') ?>" width="125" height="125" alt="<?php echo $_SESSION['username'] ?>" />
                             </div>
                             <div class="content-area">
-                                <h4><?php echo $_SESSION['username'] ?></h4>
-                            </div>
+                                <h5><?php echo $_SESSION['username'] ?></h5>
+                            </div>                            
                         </div>
                     </div>
                     <div class="card card-about-me">
@@ -38,13 +38,19 @@ if (!isset($_SESSION['useremail']) || !isset($_SESSION['useruid'])) {
                                 <li>
                                     <div class="title">
                                         <i class="material-icons">person</i>
+                                        Username
+                                    </div>
+                                    <div class="content">
                                         <?php echo $_SESSION['useruid'] ?>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="title">
                                         <i class="material-icons">email</i>
-                                        <?php echo $_SESSION['useremail'] ?>
+                                        Email
+                                    </div>
+                                    <div class="content">
+                                        <?php echo $_SESSION['useremail'] ?>                                        
                                     </div>
                                 </li>
                             </ul>
