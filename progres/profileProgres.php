@@ -107,9 +107,9 @@ if (isset($_POST['editProfil']))
 if (isset($_POST['editPassword']))
 {
 
-    $passwordOld = trim(mysqli_real_escape_string($conn, $_POST['passwordOld']));
-    $password = trim(mysqli_real_escape_string($conn, $_POST['password']));
-    $confirm = trim(mysqli_real_escape_string($conn, $_POST['confirm']));    
+    $passwordOld = htmlspecialchars(trim($_POST['passwordOld']));
+    $password    = htmlspecialchars(trim($_POST['password']));
+    $confirm     = htmlspecialchars(trim($_POST['confirm']));    
 
     $dataselect = 'SELECT `usersPwd` FROM `users` WHERE `usersUid` = ?';
     $stmtselect = mysqli_stmt_init($conn);

@@ -23,61 +23,61 @@ $beasiswa = mysqli_num_rows($dataRpl);
 
 if (isset($_POST['addMandiri'])) {
 
-    $formJalur       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['jalur'])));
-    $formProdi       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['prodi'])));
-    $formKelas       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['kelas'])));
-    $formNisn        = trim(mysqli_real_escape_string($conn, $_POST['nisn']));
+    $formJalur       = htmlspecialchars(trim(strtoupper($_POST['jalur'])));
+    $formProdi       = htmlspecialchars(trim(strtoupper($_POST['prodi'])));
+    $formKelas       = htmlspecialchars(trim(strtoupper($_POST['kelas'])));
+    $formNisn        = htmlspecialchars(trim($_POST['nisn']));
 
-    $formNik         = trim(mysqli_real_escape_string($conn, $_POST['nik']));
-    $formNama        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['nama'])));
-    $formTptLahir    = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['tempat'])));
-    $formTglLahir    = trim(mysqli_real_escape_string($conn, $_POST['tgl']));
-    $formBlnLahir    = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['bln'])));
+    $formNik         = htmlspecialchars(trim($_POST['nik']));
+    $formNama        = htmlspecialchars(trim(strtoupper($_POST['nama'])));
+    $formTptLahir    = htmlspecialchars(trim(strtoupper($_POST['tempat'])));
+    $formTglLahir    = htmlspecialchars(trim($_POST['tgl']));
+    $formBlnLahir    = htmlspecialchars(trim(strtoupper($_POST['bln'])));
 
-    $formThnLahir    = trim(mysqli_real_escape_string($conn, $_POST['thn']));
-    $formJk          = trim(mysqli_real_escape_string($conn, $_POST['jk']));
-    $formHobi        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['hobi'])));
-    $formCita        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['cita'])));
-    $formAnakke      = trim(mysqli_real_escape_string($conn, $_POST['anakke']));
+    $formThnLahir    = htmlspecialchars(trim($_POST['thn']));
+    $formJk          = htmlspecialchars(trim($_POST['jk']));
+    $formHobi        = htmlspecialchars(trim(strtoupper($_POST['hobi'])));
+    $formCita        = htmlspecialchars(trim(strtoupper($_POST['cita'])));
+    $formAnakke      = htmlspecialchars(trim($_POST['anakke']));
 
-    $formSaudara     = trim(mysqli_real_escape_string($conn, $_POST['saudara']));
-    $formBerat       = trim(mysqli_real_escape_string($conn, $_POST['berat']));
-    $formTinggi      = trim(mysqli_real_escape_string($conn, $_POST['tinggi']));
-    $formJalan       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['jalan'])));
-    $formRt          = trim(mysqli_real_escape_string($conn, $_POST['rt']));
+    $formSaudara     = htmlspecialchars(trim($_POST['saudara']));
+    $formBerat       = htmlspecialchars(trim($_POST['berat']));
+    $formTinggi      = htmlspecialchars(trim($_POST['tinggi']));
+    $formJalan       = htmlspecialchars(trim(strtoupper($_POST['jalan'])));
+    $formRt          = htmlspecialchars(trim($_POST['rt']));
 
-    $formRw          = trim(mysqli_real_escape_string($conn, $_POST['rw']));
-    $formDesa        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['desa'])));
-    $formKec         = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['kecamatan'])));
-    $formKab         = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['kabupaten'])));
-    $formProv        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['provinsi'])));
+    $formRw          = htmlspecialchars(trim($_POST['rw']));
+    $formDesa        = htmlspecialchars(trim(strtoupper($_POST['desa'])));
+    $formKec         = htmlspecialchars(trim(strtoupper($_POST['kecamatan'])));
+    $formKab         = htmlspecialchars(trim(strtoupper($_POST['kabupaten'])));
+    $formProv        = htmlspecialchars(trim(strtoupper($_POST['provinsi'])));
 
-    $formKodepos     = trim(mysqli_real_escape_string($conn, $_POST['kodepos']));
-    $formHp          = trim(mysqli_real_escape_string($conn, $_POST['hp']));
-    $formEmail       = trim(mysqli_real_escape_string($conn, $_POST['email']));
-    $formAsalSekolah = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['asalSekolah'])));
-    $formSkhun       = trim(mysqli_real_escape_string($conn, $_POST['skhun']));
+    $formKodepos     = htmlspecialchars(trim($_POST['kodepos']));
+    $formHp          = htmlspecialchars(trim($_POST['hp']));
+    $formEmail       = htmlspecialchars(trim($_POST['email']));
+    $formAsalSekolah = htmlspecialchars(trim(strtoupper($_POST['asalSekolah'])));
+    $formSkhun       = htmlspecialchars(trim($_POST['skhun']));
 
-    $formTahunLulus  = trim(mysqli_real_escape_string($conn, $_POST['tahunLulus']));
-    $formKkAyah      = trim(mysqli_real_escape_string($conn, $_POST['kk']));
-    $formNikAyah     = trim(mysqli_real_escape_string($conn, $_POST['nikAyah']));
-    $formNamaAyah    = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['ayah'])));
-    $formPekerjaanA  = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['pekerjaanAyah'])));
+    $formTahunLulus  = htmlspecialchars(trim($_POST['tahunLulus']));
+    $formKkAyah      = htmlspecialchars(trim($_POST['kk']));
+    $formNikAyah     = htmlspecialchars(trim($_POST['nikAyah']));
+    $formNamaAyah    = htmlspecialchars(trim(strtoupper($_POST['ayah'])));
+    $formPekerjaanA  = htmlspecialchars(trim(strtoupper($_POST['pekerjaanAyah'])));
 
-    $formPendidikanA = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['pendidikanAyah'])));
-    $formNikIbu      = trim(mysqli_real_escape_string($conn, $_POST['nikIbu']));
-    $formNamaIbu     = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['ibu'])));
-    $formPekerjaanI  = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['pekerjaanIbu'])));
-    $formPendidikanI = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['pendidikanIbu'])));
+    $formPendidikanA = htmlspecialchars(trim(strtoupper($_POST['pendidikanAyah'])));
+    $formNikIbu      = htmlspecialchars(trim($_POST['nikIbu']));
+    $formNamaIbu     = htmlspecialchars(trim(strtoupper($_POST['ibu'])));
+    $formPekerjaanI  = htmlspecialchars(trim(strtoupper($_POST['pekerjaanIbu'])));
+    $formPendidikanI = htmlspecialchars(trim(strtoupper($_POST['pendidikanIbu'])));
 
-    $formPenghasilan = trim(mysqli_real_escape_string($conn, $_POST['penghasilan']));
-    $formLomba       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['lomba'])));
-    $formTingkat     = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['tingkat'])));
-    $formPeringkat   = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['peringkat'])));
-    $formTahun       = trim(mysqli_real_escape_string($conn, $_POST['tahun']));
+    $formPenghasilan = htmlspecialchars(trim($_POST['penghasilan']));
+    $formLomba       = htmlspecialchars(trim(strtoupper($_POST['lomba'])));
+    $formTingkat     = htmlspecialchars(trim(strtoupper($_POST['tingkat'])));
+    $formPeringkat   = htmlspecialchars(trim(strtoupper($_POST['peringkat'])));
+    $formTahun       = htmlspecialchars(trim($_POST['tahun']));
 
-    $formOrganisasi  = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['organisasi'])));
-    $formKeadaan     = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['keadaan'])));
+    $formOrganisasi  = htmlspecialchars(trim(strtoupper($_POST['organisasi'])));
+    $formKeadaan     = htmlspecialchars(trim(strtoupper($_POST['keadaan'])));
 
     if (empty($formProdi) || empty($formNisn) || empty($formKkAyah) || empty($formOrganisasi))
     {
@@ -258,62 +258,63 @@ if (isset($_POST['addMandiri'])) {
 }
 
 if (isset($_POST['addBeasiswa'])) {
-    $formBeasiswa    = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['beasiswa'])));
-    $formJalur       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['jalur'])));
-    $formProdi       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['prodi'])));
-    $formKelas       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['kelas'])));
+    
+    $formBeasiswa    = htmlspecialchars(trim(strtoupper($_POST['beasiswa'])));
+    $formJalur       = htmlspecialchars(trim(strtoupper($_POST['jalur'])));
+    $formProdi       = htmlspecialchars(trim(strtoupper($_POST['prodi'])));
+    $formKelas       = htmlspecialchars(trim(strtoupper($_POST['kelas'])));
 
-    $formNisn        = trim(mysqli_real_escape_string($conn, $_POST['nisn']));
-    $formNik         = trim(mysqli_real_escape_string($conn, $_POST['nik']));
-    $formNama        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['nama'])));
-    $formTptLahir    = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['tempat'])));
-    $formTglLahir    = trim(mysqli_real_escape_string($conn, $_POST['tgl']));
+    $formNisn        = htmlspecialchars(trim($_POST['nisn']));
+    $formNik         = htmlspecialchars(trim($_POST['nik']));
+    $formNama        = htmlspecialchars(trim(strtoupper($_POST['nama'])));
+    $formTptLahir    = htmlspecialchars(trim(strtoupper($_POST['tempat'])));
+    $formTglLahir    = htmlspecialchars(trim($_POST['tgl']));
 
-    $formBlnLahir    = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['bln'])));
-    $formThnLahir    = trim(mysqli_real_escape_string($conn, $_POST['thn']));
-    $formJk          = trim(mysqli_real_escape_string($conn, $_POST['jk']));
-    $formHobi        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['hobi'])));
-    $formCita        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['cita'])));
+    $formBlnLahir    = htmlspecialchars(trim(strtoupper($_POST['bln'])));
+    $formThnLahir    = htmlspecialchars(trim($_POST['thn']));
+    $formJk          = htmlspecialchars(trim($_POST['jk']));
+    $formHobi        = htmlspecialchars(trim(strtoupper($_POST['hobi'])));
+    $formCita        = htmlspecialchars(trim(strtoupper($_POST['cita'])));
 
-    $formAnakke      = trim(mysqli_real_escape_string($conn, $_POST['anakke']));
-    $formSaudara     = trim(mysqli_real_escape_string($conn, $_POST['saudara']));
-    $formBerat       = trim(mysqli_real_escape_string($conn, $_POST['berat']));
-    $formTinggi      = trim(mysqli_real_escape_string($conn, $_POST['tinggi']));
-    $formJalan       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['jalan'])));
+    $formAnakke      = htmlspecialchars(trim($_POST['anakke']));
+    $formSaudara     = htmlspecialchars(trim($_POST['saudara']));
+    $formBerat       = htmlspecialchars(trim($_POST['berat']));
+    $formTinggi      = htmlspecialchars(trim($_POST['tinggi']));
+    $formJalan       = htmlspecialchars(trim(strtoupper($_POST['jalan'])));
 
-    $formRt          = trim(mysqli_real_escape_string($conn, $_POST['rt']));
-    $formRw          = trim(mysqli_real_escape_string($conn, $_POST['rw']));
-    $formDesa        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['desa'])));
-    $formKec         = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['kecamatan'])));
-    $formKab         = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['kabupaten'])));
+    $formRt          = htmlspecialchars(trim($_POST['rt']));
+    $formRw          = htmlspecialchars(trim($_POST['rw']));
+    $formDesa        = htmlspecialchars(trim(strtoupper($_POST['desa'])));
+    $formKec         = htmlspecialchars(trim(strtoupper($_POST['kecamatan'])));
+    $formKab         = htmlspecialchars(trim(strtoupper($_POST['kabupaten'])));
 
-    $formProv        = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['provinsi'])));
-    $formKodepos     = trim(mysqli_real_escape_string($conn, $_POST['kodepos']));
-    $formHp          = trim(mysqli_real_escape_string($conn, $_POST['hp']));
-    $formEmail       = trim(mysqli_real_escape_string($conn, $_POST['email']));
-    $formAsalSekolah = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['asalSekolah'])));
+    $formProv        = htmlspecialchars(trim(strtoupper($_POST['provinsi'])));
+    $formKodepos     = htmlspecialchars(trim($_POST['kodepos']));
+    $formHp          = htmlspecialchars(trim($_POST['hp']));
+    $formEmail       = htmlspecialchars(trim($_POST['email']));
+    $formAsalSekolah = htmlspecialchars(trim(strtoupper($_POST['asalSekolah'])));
 
-    $formSkhun       = trim(mysqli_real_escape_string($conn, $_POST['skhun']));
-    $formTahunLulus  = trim(mysqli_real_escape_string($conn, $_POST['tahunLulus']));
-    $formKkAyah      = trim(mysqli_real_escape_string($conn, $_POST['kk']));
-    $formNikAyah     = trim(mysqli_real_escape_string($conn, $_POST['nikAyah']));
-    $formNamaAyah    = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['ayah'])));
+    $formSkhun       = htmlspecialchars(trim($_POST['skhun']));
+    $formTahunLulus  = htmlspecialchars(trim($_POST['tahunLulus']));
+    $formKkAyah      = htmlspecialchars(trim($_POST['kk']));
+    $formNikAyah     = htmlspecialchars(trim($_POST['nikAyah']));
+    $formNamaAyah    = htmlspecialchars(trim(strtoupper($_POST['ayah'])));
 
-    $formPekerjaanA  = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['pekerjaanAyah'])));
-    $formPendidikanA = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['pendidikanAyah'])));
-    $formNikIbu      = trim(mysqli_real_escape_string($conn, $_POST['nikIbu']));
-    $formNamaIbu     = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['ibu'])));
-    $formPekerjaanI  = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['pekerjaanIbu'])));
+    $formPekerjaanA  = htmlspecialchars(trim(strtoupper($_POST['pekerjaanAyah'])));
+    $formPendidikanA = htmlspecialchars(trim(strtoupper($_POST['pendidikanAyah'])));
+    $formNikIbu      = htmlspecialchars(trim($_POST['nikIbu']));
+    $formNamaIbu     = htmlspecialchars(trim(strtoupper($_POST['ibu'])));
+    $formPekerjaanI  = htmlspecialchars(trim(strtoupper($_POST['pekerjaanIbu'])));
 
-    $formPendidikanI = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['pendidikanIbu'])));
-    $formPenghasilan = trim(mysqli_real_escape_string($conn, $_POST['penghasilan']));
-    $formLomba       = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['lomba'])));
-    $formTingkat     = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['tingkat'])));
-    $formPeringkat   = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['peringkat'])));
+    $formPendidikanI = htmlspecialchars(trim(strtoupper($_POST['pendidikanIbu'])));
+    $formPenghasilan = htmlspecialchars(trim($_POST['penghasilan']));
+    $formLomba       = htmlspecialchars(trim(strtoupper($_POST['lomba'])));
+    $formTingkat     = htmlspecialchars(trim(strtoupper($_POST['tingkat'])));
+    $formPeringkat   = htmlspecialchars(trim(strtoupper($_POST['peringkat'])));
 
-    $formTahun       = trim(mysqli_real_escape_string($conn, $_POST['tahun']));
-    $formOrganisasi  = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['organisasi'])));
-    $formKeadaan     = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['keadaan'])));
+    $formTahun       = htmlspecialchars(trim($_POST['tahun']));
+    $formOrganisasi  = htmlspecialchars(trim(strtoupper($_POST['organisasi'])));
+    $formKeadaan     = htmlspecialchars(trim(strtoupper($_POST['keadaan'])));
 
     if (empty($formProdi) || empty($formNisn) || empty($formKkAyah) || empty($formOrganisasi)) {
         echo '<script>window.location="' . base_url('formBeasiswa.php?error=emptyform') . '";</script>';

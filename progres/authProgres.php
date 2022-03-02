@@ -3,11 +3,11 @@
 //Register user
 if (isset($_POST['register']))
 {
-    $name     = trim(strtoupper(mysqli_real_escape_string($conn, $_POST['name'])));
-    $email    = trim(mysqli_real_escape_string($conn, $_POST['email']));
-    $username = trim(mysqli_real_escape_string($conn, $_POST['username']));
-    $password = trim(mysqli_real_escape_string($conn, $_POST['password']));
-    $confirm  = trim(mysqli_real_escape_string($conn, $_POST['confirm']));
+    $name     = htmlspecialchars(trim(strtoupper($_POST['name'])));
+    $email    = htmlspecialchars(trim($_POST['email']));
+    $username = htmlspecialchars(trim($_POST['username']));
+    $password = htmlspecialchars(trim($_POST['password']));
+    $confirm  = htmlspecialchars(trim($_POST['confirm']));
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL))
     {
@@ -67,8 +67,8 @@ if (isset($_POST['register']))
 //Login user
 if (isset($_POST['login']))
 {
-    $uid      = trim(mysqli_real_escape_string($conn, $_POST['uid']));
-    $password = trim(mysqli_real_escape_string($conn, $_POST['password']));
+    $uid      = htmlspecialchars(trim($_POST['uid']));
+    $password = htmlspecialchars(trim($_POST['password']));
 
     $dataselect = 'SELECT `usersName`, `usersEmail`, `usersUid`, `usersPwd`, `usersLevel`, `usersImage` FROM `users` WHERE `usersEmail` = ? OR `usersUid` = ?';
     $stmtselect = mysqli_stmt_init($conn);
@@ -104,7 +104,7 @@ if (isset($_POST['login']))
     $_SESSION['useremail'] = $data['usersEmail'];
     $_SESSION['userlevel'] = $data['usersLevel'];
     $_SESSION['username']  = $data['usersName'];
-    $_SESSION['userimage']  = $data['usersImage'];
+    $_SESSION['userimage'] = $data['usersImage'];
 
     echo
     '<script>

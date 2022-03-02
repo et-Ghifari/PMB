@@ -86,7 +86,7 @@ if (isset($_GET['id']))
     //Update user
     if (isset($_POST['confirm']))
     {                
-        $status   = trim(mysqli_real_escape_string($conn, $_POST['status']));
+        $status   = htmlspecialchars(trim($_POST['status']));
 
         $dataupdate = 'UPDATE `mahasiswas` SET `formStatus` = ? WHERE `formId` = ?';
         $stmtupdate = mysqli_stmt_init($conn);

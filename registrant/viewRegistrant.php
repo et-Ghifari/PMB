@@ -87,7 +87,13 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                 </li>
                                 <li class="align-center">
                                     <div class="title">
-                                        <a href="">
+                                        <?php
+                                        foreach ($mahasiswas as $mahasiswa) {
+                                        ?>
+                                        <a href="editRegistrant.php?id=<?php echo $mahasiswa['formId'] ?>">
+                                        <?php
+                                        }
+                                        ?>
                                         <i class="material-icons">edit</i>
                                         Edit Mahasiswa
                                         </a>
@@ -498,6 +504,10 @@ if (!$_SESSION['userlevel'] == 'admin') {
                                         <label>KKS</label>
                                         <div class="panel panel-default panel-post">
                                             <iframe src="<?= !empty($value['formKks']) ? base_url('../assets/files/kks/' . $value['formKks'] . '"') : base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
+                                        </div>
+                                        <label>Bukti Pembayaran</label>
+                                        <div class="panel panel-default panel-post">
+                                            <iframe src="<?= !empty($value['formBukti']) ? base_url('../assets/files/bukti/' . $value['formBukti'] . '"') : base_url('../assets/files/file.pdf') ?>" width="100%"></iframe>
                                         </div>
                                     </div>
                                 </div>

@@ -3,11 +3,11 @@
 //Add user
 if (isset($_POST['add']))
 {
-    $name     = trim(mysqli_real_escape_string($conn, $_POST['name']));
-    $email    = trim(mysqli_real_escape_string($conn, $_POST['email']));
-    $username = trim(mysqli_real_escape_string($conn, $_POST['username']));
-    $password = trim(mysqli_real_escape_string($conn, $_POST['password']));
-    $confirm  = trim(mysqli_real_escape_string($conn, $_POST['confirm']));
+    $name     = htmlspecialchars(trim($_POST['name']));
+    $email    = htmlspecialchars(trim($_POST['email']));
+    $username = htmlspecialchars(trim($_POST['username']));
+    $password = htmlspecialchars(trim($_POST['password']));
+    $confirm  = htmlspecialchars(trim($_POST['confirm']));
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL))
     {

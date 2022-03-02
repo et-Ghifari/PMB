@@ -3,9 +3,9 @@
 //Add menu
 if (isset($_POST['add']))
 {
-    $order = trim(mysqli_real_escape_string($conn, $_POST['order']));
-    $name  = trim(strtolower(mysqli_real_escape_string($conn, $_POST['name'])));
-    $url   = trim(strtolower(mysqli_real_escape_string($conn, $_POST['url'])));    
+    $order = htmlspecialchars(trim($_POST['order']));
+    $name  = htmlspecialchars(trim(strtolower($_POST['name'])));
+    $url   = htmlspecialchars(trim(strtolower($_POST['url'])));    
 
     $dataselect = 'SELECT `menusOrder`, `menusUrl` FROM `menus` WHERE `menusOrder` = ? OR `menusUrl` = ?';
     $stmtselect = mysqli_stmt_init($conn);
@@ -74,8 +74,8 @@ if (isset($_GET['id']))
     //Update user
     if (isset($_POST['edit']))
     {
-        $name  = trim(strtolower(mysqli_real_escape_string($conn, $_POST['name'])));
-        $url   = trim(strtolower(mysqli_real_escape_string($conn, $_POST['url'])));        
+        $name  = htmlspecialchars(trim(strtolower($_POST['name'])));
+        $url   = htmlspecialchars(trim(strtolower($_POST['url'])));        
 
         $dataupdate = 'UPDATE `menus` SET `menusName` = ?, `menusUrl` = ? WHERE `menusId` = ?';
         $stmtupdate = mysqli_stmt_init($conn);
